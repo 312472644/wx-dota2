@@ -1,0 +1,28 @@
+{
+  "pages": ["pages/hero/hero", "pages/about/about", "pages/index/index"],
+  "tabBar": {
+    "selectedColor": "#3a82f6",
+    "list": [
+      {
+        "pagePath": "pages/hero/hero",
+        "iconPath": "./assets/icon/hero.png",
+        "selectedIconPath": "./assets/icon/hero_active.png",
+        "text": "英雄"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "./assets/icon/about.png",
+        "selectedIconPath": "./assets/icon/about_active.png",
+        "text": "关于"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Dota 2",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

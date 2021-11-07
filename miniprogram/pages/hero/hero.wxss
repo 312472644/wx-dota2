@@ -1,0 +1,36 @@
+/* pages/hero/hero.wxss */
+.hero-container {
+  font-size: 12px;
+  min-height: 100vh;
+  background: #f4f4f4;
+}
+
+.hero-condition {
+  position: sticky;
+  background: #57bead;
+  padding: 8px 8px;
+}
+
+.hero-input-container {
+  position: relative;
+}
+
+.hero-input_search-icon {
+  position: absolute;
+  top: 4px;
+  left: 7px;
+}
+
+.hero-input_search-input {
+  /* color: #fff; */
+  font-size: 12px;
+  padding: 3px 3px 3px 30px;
+  border-radius: 50px;
+  /* border: 1px solid #d2d2d2; */
+  background-color: #fff;
+}
+
+.hero-list {
+  padding: 8px;
+  background: #fff;
+}

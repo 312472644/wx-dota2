@@ -1,0 +1,20 @@
+/* components/select-text/index.wxss */
+.select-container {
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.select-text:first-of-type {
+  padding-left: 0;
+}
+
+.select-text {
+  color: #434343;
+  margin-right: 16px;
+}
+
+.select-text_active {
+  color: #fff;
+  text-align: center;
+}

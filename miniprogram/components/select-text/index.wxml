@@ -1,0 +1,4 @@
+<!--components/select-text/index.wxml-->
+<view class="select-container">
+    <text wx:for="{{list}}" class='select-text {{activeKey == item.value?"select-text_active":""}}' wx:key="value" bindtap="tapEvent" data-value="{{item.value}}">{{item.label}}</text>
+</view>
