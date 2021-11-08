@@ -26,3 +26,14 @@ export interface IEvent {
   }
   detail: any;
 }
+
+// 接口请求数据
+export interface IResult<T> {
+  cookies: any;
+  data: {
+    status: string;
+    result: T;
+  },
+  errMsg: string;
+  statusCode: number;
+}

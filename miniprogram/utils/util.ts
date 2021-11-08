@@ -1,19 +1,5 @@
-export const formatTime = (date: Date) => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return (
-    [year, month, day].map(formatNumber).join('/') +
-    ' ' +
-    [hour, minute, second].map(formatNumber).join(':')
-  )
-}
-
-const formatNumber = (n: number) => {
-  const s = n.toString()
-  return s[1] ? s : '0' + s
-}
+const primaryImgMap = new Map();
+primaryImgMap.set(0, '../../assets/common/power.png'); // 力量
+primaryImgMap.set(1, '../../assets/common/agile.png'); // 敏捷
+primaryImgMap.set(2, '../../assets/common/intellect.png'); // 智力 
+export { primaryImgMap };

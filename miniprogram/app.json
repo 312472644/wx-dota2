@@ -1,7 +1,7 @@
 {
   "pages": ["pages/hero/hero", "pages/about/about", "pages/index/index"],
   "tabBar": {
-    "selectedColor": "#3a82f6",
+    "selectedColor": "#57bead",
     "list": [
       {
         "pagePath": "pages/hero/hero",

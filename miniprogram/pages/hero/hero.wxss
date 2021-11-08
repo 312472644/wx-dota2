@@ -1,4 +1,8 @@
 /* pages/hero/hero.wxss */
+.scroll-view {
+  height:calc(100vh - 45px);
+}
+
 .hero-container {
   font-size: 12px;
   min-height: 100vh;
@@ -7,7 +11,8 @@
 
 .hero-condition {
   position: sticky;
-  background: #57bead;
+  top: 0;
+  background: linear-gradient(45deg, #57bead, #5dead3);
   padding: 8px 8px;
 }
 
@@ -21,16 +26,89 @@
   left: 7px;
 }
 
+.hero-attr-condition {
+  padding-bottom: 8px;
+}
+
 .hero-input_search-input {
-  /* color: #fff; */
   font-size: 12px;
   padding: 3px 3px 3px 30px;
   border-radius: 50px;
-  /* border: 1px solid #d2d2d2; */
   background-color: #fff;
 }
 
 .hero-list {
-  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 8px 8px;
   background: #fff;
+}
+
+.hero-item {
+  font-size: 0;
+  width: calc(50% - 8px);
+  margin: 8px 8px 0 0;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 8px 4px rgb(0 0 0 / 10%);
+  background: #fff;
+}
+
+.hero-item-logo {
+  width: 100%;
+  height: 120px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.hero-item-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 0 8px;
+  height: 35px;
+}
+
+.hero-item-type {
+  width: 20px;
+  height: 20px;
+}
+
+.no-data {
+  color: #8a8a8a;
+  display: flex;
+  padding: 10px 0;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+
+.no-data-img {
+  width: 63px;
+  height: 43px;
+}
+
+.no-data-text {
+  color: rgba(0, 0, 0, 0.25);
+  padding-top: 5px;
+}
+
+.go-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #f1f1f1;
+  background-color: #fff;
+}
+
+.go-top-image {
+  width: 32px;
+  height: 32px;
 }

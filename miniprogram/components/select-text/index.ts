@@ -25,11 +25,8 @@ Component<{}, ISelectText, {}>({
    */
   methods: {
     tapEvent(event: any) {
-      console.log('event', event);
       const currentValue = event.currentTarget.dataset.value;
-      this.setData({
-        activeKey: currentValue
-      });
+      this.setData({ activeKey: currentValue });
       this.triggerEvent("change", { value: currentValue })
     },
   },

@@ -2,7 +2,9 @@
 .select-container {
   display: flex;
   align-items: center;
-  padding-top: 8px;
+  padding: 0 8px;
+  line-height: 30px;
+  background: #fff;
 }
 
 .select-text:first-of-type {
@@ -15,6 +17,6 @@
 }
 
 .select-text_active {
-  color: #fff;
+  color: #57bead;
   text-align: center;
 }

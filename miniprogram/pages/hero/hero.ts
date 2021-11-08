@@ -1,5 +1,8 @@
 import { HeroTypeEnum, HeroComplexEnum, PropEnum } from "../../enum/index";
-import { IEvent } from "../../interface";
+import { IEvent, IResult } from "../../interface";
+import { primaryImgMap } from "../../utils/util";
+import { IHero } from "./interface";
+
 // pages/hero/hero.ts
 Page({
   /**
@@ -19,56 +22,113 @@ Page({
       { label: "困难", value: HeroComplexEnum.Hard },
     ],
     attrValue: PropEnum.All, // 属性值
-    complex: PropEnum.All // 难度值
+    complexValue: PropEnum.All, // 难度值
+    heroName: '', // 英雄名称
+    initHeroList: [], // 初始化列表
+    heroList: [], // 查询列表
+    isFirstLoad: false, // 是否第一次加载
+    scrollTop: 0, // 滚动距离
+    isShowTop: false // 是否现实滚动顶部按钮
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() { },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() { },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() { },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() { },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() { },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() { },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() { },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() { },
-  bindInputEvent(e: any) {
-    console.log("inupt", e.detail.value);
+  onLoad() {
+    this.getHeroList();
   },
-  // 属性change事件
+
+  bindInputEvent(event: IEvent) {
+    const { attrValue, complexValue } = this.data;
+    const value = event.detail.value;
+    this.setData({ heroName: event.detail.value })
+    this.filterHeroList(value, attrValue, complexValue);
+  },
   selectAttrChange(event: IEvent) {
-    console.log('value', event.detail.value);
+    const { heroName, complexValue } = this.data;
+    const value = event.detail.value;
+    this.setData({ attrValue: value });
+    this.filterHeroList(heroName, value, complexValue);
   },
   selectComplexChange(event: IEvent) {
-    console.log('value', event.detail.value);
+    const { heroName, attrValue } = this.data;
+    const value = event.detail.value;
+    this.setData({ complexValue: value });
+    this.filterHeroList(heroName, attrValue, value);
+  },
+  // 过滤英雄列表
+  filterHeroList(heroName: string, attrValue: string, complexValue: string) {
+    let heroList: IHero[] = this.data.initHeroList;
+    // 过滤英雄名
+    if (heroName) {
+      heroList = heroList.filter((item) => {
+        return item.name_loc.indexOf(heroName) > -1;
+      });
+    }
+    // 过滤英雄属性
+    if (attrValue !== PropEnum.All) {
+      heroList = heroList.filter((item) => {
+        return item.primary_attr.toString() == attrValue;
+      });
+    }
+    // 过滤难度
+    if (complexValue !== PropEnum.All) {
+      heroList = heroList.filter((item) => {
+        return item.complexity.toString() == complexValue;
+      });
+    }
+    this.setData({
+      heroList: heroList as any
+    });
+  },
+  // 获取英雄列表
+  getHeroList() {
+    wx.showLoading({
+      title: '加载中...'
+    });
+    wx.request({
+      url: "https://www.dota2.com.cn/datafeed/heroList?task=herolist",
+      method: "GET",
+      success: (res: IResult<{ heroes: IHero[] }>) => {
+        const { data, statusCode } = res;
+        if (statusCode === 200) {
+          const { result } = data;
+          if (result) {
+            const { heroes = [] } = result;
+            result.heroes.forEach(item => {
+              item.index_img = `https://images.weserv.nl/?url=${item.index_img}`;
+              item.primary_img = primaryImgMap.get(item.primary_attr);
+            });
+            this.setData({
+              heroList: heroes as any,
+              initHeroList: heroes as any
+            });
+          }
+        } else {
+          wx.showToast({
+            title: "获取数据失败",
+            icon: "error"
+          });
+        }
+      },
+      complete: () => {
+        this.setData({
+          isFirstLoad: true
+        });
+        wx.hideLoading();
+      },
+    })
+  },
+  // 回到顶部
+  bindGoTop() {
+    this.setData({ scrollTop: 0 })
+  },
+  // 滚动事件
+  bindscrollEvent(event: any) {
+    const scrollTop = event.detail.scrollTop;
+    if (scrollTop > 200 && !this.data.isShowTop) {
+      this.setData({ isShowTop: true });
+    } else if (scrollTop <= 200 && this.data.isShowTop) {
+      this.setData({ isShowTop: false });
+    }
   }
 });

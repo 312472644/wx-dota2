@@ -1,8 +1,8 @@
 // 英雄属性
 export enum HeroTypeEnum {
   Power = "0", // 力量
-  Intellect = "2", // 智力
   Agile = "1", // 敏捷
+  Intellect = "2", // 智力
 }
 
 // 英雄复杂度
