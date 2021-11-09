@@ -1,0 +1,76 @@
+<!--components/hero-status/index.wxml-->
+<!--英雄状态组件-->
+<view class="hero-status-container">
+    <view class="hero-detail_base_header">
+        <view class="title">属性</view>
+        <!--基本属性-->
+        <view class="hero-base">
+            <!--生命值-->
+            <view class="hero-life">
+                <image src="https://images.weserv.nl/?url=https://img.dota2.com.cn/dota2static/herostatic/index/npc_dota_hero_elder_titan.png"></image>
+                <view class="hero-health">
+                    <view class="major">720</view>
+                    <view class="minor">+2.9</view>
+                </view>
+                <view class="hero-mana">
+                    <view class="major">720</view>
+                    <view class="minor">+2.9</view>
+                </view>
+            </view>
+            <!--属性成长-->
+            <view class="hero-property">
+                <!--力量-->
+                <view class="hero-property-item">
+                    <image src="../../assets/common/power.png"></image>
+                    <text class="attr-value">26</text>
+                    <text class="attr-gain">+3.0</text>
+                </view>
+                <!--敏捷-->
+                <view class="hero-property-item">
+                    <image src="../../assets/common/agile.png"></image>
+                    <text class="attr-value">26</text>
+                    <text class="attr-gain">+3.0</text>
+                </view>
+                <!--智力-->
+                <view class="hero-property-item">
+                    <image src="../../assets/common/intellect.png"></image>
+                    <text class="attr-value">26</text>
+                    <text class="attr-gain">+3.0</text>
+                </view>
+            </view>
+        </view>
+        <view class="hero-status">
+            <view class="hero-status-title">
+                <text class="hero-status-title_item">攻击</text>
+                <text class="hero-status-title_item">防御</text>
+                <text class="hero-status-title_item">机动性</text>
+            </view>
+            <view class="hero-status-value">
+                <hero-status-item class="hero-status-item" statusType="icon_damage"></hero-status-item>
+                <hero-status-item class="hero-status-item" statusType="icon_armor"></hero-status-item>
+                <hero-status-item class="hero-status-item" statusType="icon_movement_speed"></hero-status-item>
+                <hero-status-item class="hero-status-item" statusType="icon_attack_time"></hero-status-item>
+                <hero-status-item class="hero-status-item" statusType="icon_magic_resist"></hero-status-item>
+                <hero-status-item class="hero-status-item" statusType="icon_turn_rate"></hero-status-item>
+                <hero-status-item class="hero-status-item" statusType="icon_attack_range"></hero-status-item>
+                <hero-status-item class="hero-status-item" statusType=""></hero-status-item>
+                <hero-status-item class="hero-status-item" statusType="icon_vision"></hero-status-item>
+                <hero-status-item class="hero-status-item" statusType="icon_projectile_speed"></hero-status-item>
+            </view>
+        </view>
+    </view>
+    <view class="hero-detail_base_header">
+        <view class="title">定位</view>
+        <view class="hero-role">
+            <hero-role class="hero-role-item" roleName="核心"></hero-role>
+            <hero-role class="hero-role-item" roleName="辅助" roleValue="{{20}}"></hero-role>
+            <hero-role class="hero-role-item" roleName="爆发"></hero-role>
+            <hero-role class="hero-role-item" roleName="控制"></hero-role>
+            <hero-role class="hero-role-item" roleName="打野"></hero-role>
+            <hero-role class="hero-role-item" roleName="耐久"></hero-role>
+            <hero-role class="hero-role-item" roleName="逃生"></hero-role>
+            <hero-role class="hero-role-item" roleName="推进"></hero-role>
+            <hero-role class="hero-role-item" roleName="先手"></hero-role>
+        </view>
+    </view>
+</view>

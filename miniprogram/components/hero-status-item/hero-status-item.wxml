@@ -1,0 +1,7 @@
+<!--components/hero-status-item/hero-status-item.wxml-->
+<view class="hero-status-item">
+    <view wx:if="{{statusType}}">
+        <image src="../../assets/common/{{statusType}}.png"></image>
+        <text>{{statusValue}}</text>
+    </view>
+</view>

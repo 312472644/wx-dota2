@@ -9,5 +9,5 @@ export interface IHero {
     index_img: string; // 英雄头像地址
     top_img: string; // 完整图片
     top_video: string; // 视频介绍
-    primary_img: string; // 属性图片地址
+    primary_img?: string; // 属性图片地址
 }

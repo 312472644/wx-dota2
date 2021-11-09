@@ -35,6 +35,6 @@ Component<{}, ISelectText, {}>({
       this.setData({
         list: this.properties.dataList,
       });
-    },
+    }
   },
 });

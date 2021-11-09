@@ -1,0 +1,7 @@
+<!--pages/hero-detail/hero-detail.wxml-->
+<view class="hero-detail-container">
+    <!--英雄简介-->
+    <hero-base></hero-base>
+    <!--英雄属性-->
+    <hero-status></hero-status>
+</view>

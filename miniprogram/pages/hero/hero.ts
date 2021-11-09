@@ -1,6 +1,6 @@
 import { HeroTypeEnum, HeroComplexEnum, PropEnum } from "../../enum/index";
 import { IEvent, IResult } from "../../interface";
-import { primaryImgMap } from "../../utils/util";
+import { HeroTypeMap } from "../../utils/util";
 import { IHero } from "./interface";
 
 // pages/hero/hero.ts
@@ -36,24 +36,19 @@ Page({
   onLoad() {
     this.getHeroList();
   },
-
+  setValue(propName: string, propValue: string) {
+    this.setData({ [propName]: propValue });
+    const { attrValue, complexValue, heroName } = this.data;
+    this.filterHeroList(heroName, attrValue, complexValue);
+  },
   bindInputEvent(event: IEvent) {
-    const { attrValue, complexValue } = this.data;
-    const value = event.detail.value;
-    this.setData({ heroName: event.detail.value })
-    this.filterHeroList(value, attrValue, complexValue);
+    this.setValue('heroName', event.detail.value);
   },
   selectAttrChange(event: IEvent) {
-    const { heroName, complexValue } = this.data;
-    const value = event.detail.value;
-    this.setData({ attrValue: value });
-    this.filterHeroList(heroName, value, complexValue);
+    this.setValue('attrValue', event.detail.value);
   },
   selectComplexChange(event: IEvent) {
-    const { heroName, attrValue } = this.data;
-    const value = event.detail.value;
-    this.setData({ complexValue: value });
-    this.filterHeroList(heroName, attrValue, value);
+    this.setValue('complexValue', event.detail.value);
   },
   // 过滤英雄列表
   filterHeroList(heroName: string, attrValue: string, complexValue: string) {
@@ -82,9 +77,7 @@ Page({
   },
   // 获取英雄列表
   getHeroList() {
-    wx.showLoading({
-      title: '加载中...'
-    });
+    wx.showLoading({ title: '加载中...' });
     wx.request({
       url: "https://www.dota2.com.cn/datafeed/heroList?task=herolist",
       method: "GET",
@@ -96,7 +89,7 @@ Page({
             const { heroes = [] } = result;
             result.heroes.forEach(item => {
               item.index_img = `https://images.weserv.nl/?url=${item.index_img}`;
-              item.primary_img = primaryImgMap.get(item.primary_attr);
+              item.primary_img = HeroTypeMap.get(item.primary_attr);
             });
             this.setData({
               heroList: heroes as any,
@@ -130,5 +123,12 @@ Page({
     } else if (scrollTop <= 200 && this.data.isShowTop) {
       this.setData({ isShowTop: false });
     }
+  },
+  // 跳转至英雄详情界面
+  goHeroDetail(event: IEvent) {
+    const heroInfo = event.currentTarget.dataset.hero;
+    wx.navigateTo({
+      url: `../hero-detail/hero-detail?id=${heroInfo.id}&name=${heroInfo.name_loc}`
+    });
   }
 });

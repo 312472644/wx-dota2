@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "hero-level":"../hero-level/hero-level"
+    }
+}

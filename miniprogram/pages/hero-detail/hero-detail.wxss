@@ -1,0 +1,5 @@
+/* pages/hero-detail/hero-detail.wxss */
+.hero-detail-container {
+    background: #f4f4f4;
+    min-height: 100vh;
+}

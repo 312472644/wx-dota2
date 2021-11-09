@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "hero-base": "../../components/hero-base/hero-base",
+    "hero-level": "../../components/hero-level/hero-level",
+    "hero-status": "../../components/hero-status/hero-status"
+  }
+}

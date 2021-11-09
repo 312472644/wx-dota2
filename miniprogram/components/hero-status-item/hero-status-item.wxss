@@ -1,0 +1,21 @@
+/* components/hero-status-item/hero-status-item.wxss */
+.hero-status-item {
+    display: flex;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+.hero-status-item image {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.hero-status-ite text {
+    font-size: 13px;
+}
+
+.hero-status-value {
+    display: flex;
+}

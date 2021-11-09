@@ -1,0 +1,9 @@
+<!--components/hero-role/idnex.wxml-->
+<!--英雄定位插件-->
+<view class="hero-role-item">
+    <view class="role-text">{{roleName}}</view>
+    <view class="role-bar">
+        <view class="role-bar_bg"></view>
+        <view class="role-bar_fill" style="width:{{roleValue+'%'}}"></view>
+    </view>
+</view>

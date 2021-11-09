@@ -1,0 +1,124 @@
+/* components/hero-status/index.wxss */
+.hero-status-container {
+    position: relative;
+    padding: 5px 8px;
+    color: #fff;
+    margin-bottom: 8px;
+    background: linear-gradient(45deg, #1d2228, #4a555b);
+    box-shadow: -1px 1px 8px 2px #333;
+}
+
+.hero-status-title_item {
+    width: 30%;
+}
+
+.hero-status-value {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 18px;
+}
+
+.hero-status-item {
+    width: 30%;
+}
+
+.hero-base {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.hero-life>image {
+    width: 120px;
+    height: 70px;
+}
+
+.hero-health,
+.hero-mana {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-health {
+    height: 20px;
+    background: linear-gradient(90deg, #286323, #7af03c);
+}
+
+.hero-mana {
+    height: 20px;
+    background: linear-gradient(90deg, #1056db, #73f5fe);
+}
+
+.major {
+    color: #fff;
+    font-size: 15px;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.minor {
+    position: absolute;
+    right: 10px;
+    color: #286323;
+    font-size: 11px;
+    font-weight: bolder;
+}
+
+.hero-property {
+    margin-left: 32px;
+}
+
+.hero-property-item:not(:last-of-type) {
+    padding-bottom: 8px;
+}
+
+.hero-property-item {
+    display: flex;
+    align-items: center;
+    font-size: 0;
+}
+
+.hero-property-item>image {
+    font-size: 0;
+    width: 24px;
+    height: 24px;
+    padding-right: 8px;
+}
+
+.attr-value {
+    color: #fff;
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.attr-gain {
+    color: #999;
+    font-size: 15px;
+    text-shadow: 1px 1px 2px #000;
+    margin-left: 8px;
+}
+
+.hero-status-title {
+    display: flex;
+    justify-content: space-between;
+    color: #969696;
+    margin-bottom: 8px;
+}
+
+.hero-role {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.hero-role-item {
+    width: 30%;
+}

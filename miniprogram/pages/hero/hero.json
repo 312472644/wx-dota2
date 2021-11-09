@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "select-text":"../../components/select-text/index"
+    "select-text":"../../components/select-text/select-text"
   }
 }
