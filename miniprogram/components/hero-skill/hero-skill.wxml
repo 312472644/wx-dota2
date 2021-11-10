@@ -1,0 +1,52 @@
+<!--components/hero-skill/hero-skill.wxml-->
+<view class="hero-skill-container">
+    <view class="title">技能</view>
+    <!--技能列表-->
+    <view class="skill-name-container">
+        <view class="skill-name-item">
+            <image class="skill-name" src="https://images.weserv.nl/?url=https://img.dota2.com.cn/dota2static/herostatic/npc_dota_hero_juggernaut/juggernaut_blade_fury.png"></image>
+        </view>
+        <view class="skill-name-item">
+            <image class="skill-name" src="https://images.weserv.nl/?url=https://img.dota2.com.cn/dota2static/herostatic/npc_dota_hero_juggernaut/juggernaut_blade_fury.png"></image>
+        </view>
+    </view>
+    <!--技能介绍-->
+    <view class="skill-content">
+        <view class="skill-logo">
+            <image class="skill-image" src="https://images.weserv.nl/?url=https://img.dota2.com.cn/dota2static/herostatic/npc_dota_hero_keeper_of_the_light/keeper_of_the_light_illuminate.png"></image>
+            <view class="skill-log">
+                <text class="skill-log_title">冲击波</text>
+                <text class="skill-log_detail">积攒光的能量，积攒时间越长，威力越大。释放后，光波沿直线发出，造成伤害并打开视野。</text>
+            </view>
+        </view>
+        <!--技能属性-->
+        <view class="skill-attr">
+            <view class="skill-attr-list">
+                <view class="skill-attr-item">
+                    <text class="skill-attr-item_text">最高伤害：</text>
+                    <text>200 / 300 / 400 / 500</text>
+                </view>
+                <view class="skill-attr-item">
+                    <text class="skill-attr-item_text">最高伤害：</text>
+                    <text>200 / 300 / 400 / 500</text>
+                </view>
+            </view>
+            <view class="skill-bottom">
+                <view class="skill-cd">
+                    <image src="../../assets/common/cooldown.png"></image>
+                    <text>13.0</text>
+                </view>
+                <view class="skill-mana">
+                    <text></text>
+                    <text>100 / 125 / 150 / 175</text>
+                </view>
+            </view>
+            <view class="skill-lore">
+                <text>伊扎洛深藏的光芒显现之时璀璨夺目。</text>
+            </view>
+            <view>
+                <!-- <video class="skill-video" src="https://img.dota2.com.cn/dota2static/herostatic/npc_dota_hero_keeper_of_the_light/keeper_of_the_light_illuminate.mp4" loop="loop" autoplay="{{true}}" controls="{{false}}" object-fit="fill"></video> -->
+            </view>
+        </view>
+    </view>
+</view>

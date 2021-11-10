@@ -4,4 +4,8 @@
     <hero-base></hero-base>
     <!--英雄属性-->
     <hero-status></hero-status>
+    <!--英雄技能-->
+    <hero-skill></hero-skill>
+    <!--英雄预览-->
+    <hero-preview></hero-preview>
 </view>

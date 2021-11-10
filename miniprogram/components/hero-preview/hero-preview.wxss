@@ -1,0 +1,51 @@
+/* components/hero-preview/hero-preview.wxss */
+.hero-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    background: linear-gradient(45deg, #1d2228, #4a555b);
+}
+
+.pre-hero,
+.next-hero {
+    display: flex;
+    align-items: center;
+}
+
+.pre-hero>image,
+.next-hero>image {
+    width: 90px;
+    height: 65px;
+}
+
+.hero-text {
+    font-size: 12px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.all-hero {
+    font-size: 12px;
+    width: 49px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.all-hero-box {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 3px;
+    background-color: #9e9fa0;
+}
+
+.all-hero-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

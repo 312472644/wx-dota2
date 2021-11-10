@@ -32,9 +32,16 @@
     align-items: center;
 }
 
+.hero-life {
+    display: flex;
+    flex-direction: column;
+}
+
 .hero-life>image {
     width: 120px;
     height: 70px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 }
 
 .hero-health,
@@ -53,6 +60,8 @@
 .hero-mana {
     height: 20px;
     background: linear-gradient(90deg, #1056db, #73f5fe);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 
 .major {

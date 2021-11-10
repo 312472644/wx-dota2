@@ -1,5 +1,5 @@
 /* components/hero-base/index.wxss */
-.hero-detail-desc {
+.hero-base-container {
     position: relative;
     color: #fff;
     margin-bottom: 8px;
@@ -86,10 +86,6 @@
 .hero-detail-label {
     width: 40px;
     vertical-align: top;
-}
-
-.hero-detail-item_text {
-    width: calc(100% - 40px);
 }
 
 .hero-bg {

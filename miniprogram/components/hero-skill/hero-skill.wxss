@@ -1,0 +1,126 @@
+/* components/hero-skill/hero-skill.wxss */
+.hero-skill-container {
+    position: relative;
+    color: #fff;
+    padding: 5px 8px;
+    margin-bottom: 8px;
+    background: linear-gradient(45deg, #1d2228, #4a555b);
+    box-shadow: -1px 1px 8px 2px #333;
+}
+
+.title {
+    font-size: 18px;
+}
+
+.skill-name-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.skill-name-item {
+    font-size: 0;
+    width: 12.5%;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.skill-name-item:nth-of-type(8n) {
+    width: calc(12.5% - 8px);
+    padding-right: 0;
+}
+
+.skill-name {
+    width: 100%;
+    height: 70rpx;
+    border-radius: 2px;
+}
+
+.skill-content {
+    margin-top: 8px;
+}
+
+.skill-logo {
+    display: flex;
+    align-items: flex-start;
+}
+
+.skill-image {
+    width: 60px;
+    height: 60px;
+}
+
+.skill-log {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 80px);
+    margin-left: 15px;
+}
+
+.skill-log_title {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.skill-log_detail {
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+.skill-attr {
+    margin-top: 16px;
+}
+
+.skill-attr-list {}
+
+.skill-attr-item {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.skill-attr-item_text {
+    color: #737373;
+}
+
+.skill-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-cd,
+.skill-mana {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.skill-cd>image {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+
+.skill-mana text:first-of-type {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    border-radius: 2px;
+    background: linear-gradient(#00a4db, #007196);
+}
+
+.skill-lore {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 13px;
+    background-color: #111;
+    border-radius: 2px;
+    font-style: italic;
+    opacity: .5;
+}
+
+.skill-video {
+    width: 100%;
+}

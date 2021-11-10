@@ -56,7 +56,7 @@
 
 .hero-item-logo {
   width: 100%;
-  height: 120px;
+  height: 240rpx;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }

@@ -1,0 +1,17 @@
+<!--components/hero-preview/hero-preview.wxml-->
+<view class="hero-preview">
+    <view class="pre-hero">
+        <image src="https://images.weserv.nl/?url=https://img.dota2.com.cn/dota2static/herostatic/crops/npc_dota_hero_furion.png" mode="heightFix"></image>
+        <view class="hero-content">
+            <text class="hero-text">上一个英雄</text>
+            <text class="hero-text">先知</text>
+        </view>
+    </view>
+    <view class="next-hero">
+        <view class="hero-content">
+            <text class="hero-text">下一个英雄</text>
+            <text class="hero-text">先知</text>
+        </view>
+        <image src="https://images.weserv.nl/?url=https://img.dota2.com.cn/dota2static/herostatic/crops/npc_dota_hero_furion.png"></image>
+    </view>
+</view>

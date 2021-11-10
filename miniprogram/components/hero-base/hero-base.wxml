@@ -1,6 +1,6 @@
 <!--components/hero-base/index.wxml-->
 <!--英雄基本信息-->
-<view class="hero-detail-desc">
+<view class="hero-base-container">
     <view class="hero-detail_header">
         <text>上古巨神</text>
         <text class="title">运用灵体游魂伤害并控制敌人</text>
@@ -14,14 +14,14 @@
         <view class="hero-detail-item hero-bg">
             <text class="hero-detail-label">背景：</text>
             <view class="hero-detail-item_bg">
-                <text class="hero-detail-item_text">用灵体游魂探明敌情后，上古巨神从任意方向发动突袭。他巨蹄的重踏可以让敌人停下，他的存在则蚕食敌人的防御，而他还能撕裂大地本身，使敌人一一倒下。</text>
+                <text>用灵体游魂探明敌情后，上古巨神从任意方向发动突袭。他巨蹄的重踏可以让敌人停下，他的存在则蚕食敌人的防御，而他还能撕裂大地本身，使敌人一一倒下。</text>
                 <text class="more-hero-bg" bindtap="readMoreBg">阅读完整背景</text>
             </view>
         </view>
         <view class="hero-detail-item">
             <text class="hero-detail-label">攻击：</text>
             <image class="hero-attck-type" src="../../assets/common/ranged.svg"></image>
-            <text class="hero-detail-item_text">近战</text>
+            <text>近战</text>
         </view>
         <view class="hero-detail-item">
             <text class="hero-detail-label">难度：</text>

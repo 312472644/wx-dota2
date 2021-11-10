@@ -1,6 +1,6 @@
 {
     "pages": [
-        "pages/hero/hero",
+        "pages/hero-list/hero-list",
         "pages/hero-detail/hero-detail",
         "pages/about/about",
         "pages/index/index"
@@ -8,7 +8,7 @@
     "tabBar": {
         "selectedColor": "#57bead",
         "list": [{
-                "pagePath": "pages/hero/hero",
+                "pagePath": "pages/hero-list/hero-list",
                 "iconPath": "./assets/icon/hero.png",
                 "selectedIconPath": "./assets/icon/hero_active.png",
                 "text": "英雄"
