@@ -8,8 +8,7 @@ Component({
             type: String
         },
         statusValue: {
-            type: String,
-            value: "1"
+            type: String
         }
     },
 

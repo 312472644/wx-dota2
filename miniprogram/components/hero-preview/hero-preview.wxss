@@ -15,8 +15,8 @@
 
 .pre-hero>image,
 .next-hero>image {
-    width: 90px;
-    height: 65px;
+    width: 180rpx;
+    height: 130rpx;
 }
 
 .hero-text {

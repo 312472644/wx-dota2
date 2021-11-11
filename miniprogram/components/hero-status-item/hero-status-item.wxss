@@ -8,11 +8,11 @@
 .hero-status-item image {
     width: 20px;
     height: 20px;
-    margin-right: 8px;
+    margin-right: 5px;
     vertical-align: middle;
 }
 
-.hero-status-ite text {
+.hero-status-item text {
     font-size: 13px;
 }
 

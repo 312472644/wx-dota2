@@ -1,6 +1,6 @@
 import { HeroTypeEnum, HeroComplexEnum, PropEnum } from "../../enum/index";
 import { IEvent, IResult } from "../../interface";
-import { HeroTypeMap } from "../../utils/util";
+import { HeroTypeImgMap } from "../../map/index";
 import { IHero } from "./interface";
 
 // pages/hero/hero.ts
@@ -89,7 +89,7 @@ Page({
             const { heroes = [] } = result;
             result.heroes.forEach(item => {
               item.index_img = `https://images.weserv.nl/?url=${item.index_img}`;
-              item.primary_img = HeroTypeMap.get(item.primary_attr);
+              item.primary_img = HeroTypeImgMap.get(item.primary_attr);
             });
             this.setData({
               heroList: heroes as any,

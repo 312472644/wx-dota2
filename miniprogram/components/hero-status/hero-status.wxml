@@ -1,4 +1,5 @@
 <!--components/hero-status/index.wxml-->
+<wxs src="../../wxs/index.wxs" module="utils" />
 <!--英雄状态组件-->
 <view class="hero-status-container">
     <view class="hero-detail_base_header">
@@ -7,14 +8,14 @@
         <view class="hero-base">
             <!--生命值-->
             <view class="hero-life">
-                <image src="https://images.weserv.nl/?url=https://img.dota2.com.cn/dota2static/herostatic/index/npc_dota_hero_elder_titan.png"></image>
+                <image src="{{heroLogo}}"></image>
                 <view class="hero-health">
-                    <view class="major">720</view>
-                    <view class="minor">+2.9</view>
+                    <view class="major">{{heroes.max_health}}</view>
+                    <view class="minor">+{{utils.valueToFixed(heroes.health_regen)}}</view>
                 </view>
                 <view class="hero-mana">
-                    <view class="major">720</view>
-                    <view class="minor">+2.9</view>
+                    <view class="major">{{heroes.max_mana}}</view>
+                    <view class="minor">+{{utils.valueToFixed(heroes.mana_regen)}}</view>
                 </view>
             </view>
             <!--属性成长-->
@@ -22,20 +23,20 @@
                 <!--力量-->
                 <view class="hero-property-item">
                     <image src="../../assets/common/power.png"></image>
-                    <text class="attr-value">26</text>
-                    <text class="attr-gain">+3.0</text>
+                    <text class="attr-value">{{heroes.str_base}}</text>
+                    <text class="attr-gain">+{{utils.valueToFixed(heroes.str_gain)}}</text>
                 </view>
                 <!--敏捷-->
                 <view class="hero-property-item">
                     <image src="../../assets/common/agile.png"></image>
-                    <text class="attr-value">26</text>
-                    <text class="attr-gain">+3.0</text>
+                    <text class="attr-value">{{heroes.agi_base}}</text>
+                    <text class="attr-gain">+{{utils.valueToFixed(heroes.agi_gain)}}</text>
                 </view>
                 <!--智力-->
                 <view class="hero-property-item">
                     <image src="../../assets/common/intellect.png"></image>
-                    <text class="attr-value">26</text>
-                    <text class="attr-gain">+3.0</text>
+                    <text class="attr-value">{{heroes.int_base}}</text>
+                    <text class="attr-gain">+{{utils.valueToFixed(heroes.int_gain)}}</text>
                 </view>
             </view>
         </view>
@@ -46,31 +47,14 @@
                 <text class="hero-status-title_item">机动性</text>
             </view>
             <view class="hero-status-value">
-                <hero-status-item class="hero-status-item" statusType="icon_damage"></hero-status-item>
-                <hero-status-item class="hero-status-item" statusType="icon_armor"></hero-status-item>
-                <hero-status-item class="hero-status-item" statusType="icon_movement_speed"></hero-status-item>
-                <hero-status-item class="hero-status-item" statusType="icon_attack_time"></hero-status-item>
-                <hero-status-item class="hero-status-item" statusType="icon_magic_resist"></hero-status-item>
-                <hero-status-item class="hero-status-item" statusType="icon_turn_rate"></hero-status-item>
-                <hero-status-item class="hero-status-item" statusType="icon_attack_range"></hero-status-item>
-                <hero-status-item class="hero-status-item" statusType=""></hero-status-item>
-                <hero-status-item class="hero-status-item" statusType="icon_vision"></hero-status-item>
-                <hero-status-item class="hero-status-item" statusType="icon_projectile_speed"></hero-status-item>
+                <hero-status-item class="hero-status-item" wx:key="index" wx:for="{{statusList}}" statusType="{{item.label}}" statusValue="{{item.value}}"></hero-status-item>
             </view>
         </view>
     </view>
     <view class="hero-detail_base_header">
         <view class="title">定位</view>
         <view class="hero-role">
-            <hero-role class="hero-role-item" roleName="核心"></hero-role>
-            <hero-role class="hero-role-item" roleName="辅助" roleValue="{{20}}"></hero-role>
-            <hero-role class="hero-role-item" roleName="爆发"></hero-role>
-            <hero-role class="hero-role-item" roleName="控制"></hero-role>
-            <hero-role class="hero-role-item" roleName="打野"></hero-role>
-            <hero-role class="hero-role-item" roleName="耐久"></hero-role>
-            <hero-role class="hero-role-item" roleName="逃生"></hero-role>
-            <hero-role class="hero-role-item" roleName="推进"></hero-role>
-            <hero-role class="hero-role-item" roleName="先手"></hero-role>
+            <hero-role wx:for="{{roleList}}" wx:key="index" class="hero-role-item" roleName="{{item.label}}" roleValue="{{item.value}}"></hero-role>
         </view>
     </view>
 </view>

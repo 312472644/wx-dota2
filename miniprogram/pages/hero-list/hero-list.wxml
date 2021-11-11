@@ -8,7 +8,7 @@
         </view>
     </view>
     <!--英雄列表-->
-    <scroll-view bindscroll="bindscrollEvent" scroll-y="true" scroll-top="{{scrollTop}}" class="scroll-view" id="scroll-view">
+    <scroll-view bindscroll="bindscrollEvent" scroll-y="true" scroll-top="{{scrollTop}}" class="scroll-view" id="scroll-view" scroll-with-animation="true">
         <view class="hero-attr-condition">
             <select-text dataList="{{attrList}}" bindchange="selectAttrChange"></select-text>
             <select-text dataList="{{complexList}}" bindchange="selectComplexChange"></select-text>

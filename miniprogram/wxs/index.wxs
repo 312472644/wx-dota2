@@ -1,0 +1,8 @@
+// 保留一位小数
+function valueToFixed(value) {
+    return value ? value.toFixed(1) : '';
+};
+
+module.exports = {
+    valueToFixed: valueToFixed
+};
