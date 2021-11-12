@@ -3,50 +3,51 @@
     <view class="title">技能</view>
     <!--技能列表-->
     <view class="skill-name-container">
-        <view class="skill-name-item">
-            <image class="skill-name" src="https://images.weserv.nl/?url=https://img.dota2.com.cn/dota2static/herostatic/npc_dota_hero_juggernaut/juggernaut_blade_fury.png"></image>
-        </view>
-        <view class="skill-name-item">
-            <image class="skill-name" src="https://images.weserv.nl/?url=https://img.dota2.com.cn/dota2static/herostatic/npc_dota_hero_juggernaut/juggernaut_blade_fury.png"></image>
+        <view class='skill-name-item {{item.guid === selectSkillId ? "select-skill":""}}' wx:for="{{skillLogoList}}" wx:key="index" bindtap="changeSkill" data-skill="{{item}}">
+            <image class="skill-name" src="{{item.logo}}"></image>
+            <image wx:if="{{item.hasShard}}" src="../../assets/common/aghs_shard.png" class="upgrade-logo"></image>
+            <image wx:if="{{item.hasScepter}}" src="../../assets/common/aghs_scepter.png" class="upgrade-logo"></image>
         </view>
     </view>
     <!--技能介绍-->
     <view class="skill-content">
         <view class="skill-logo">
-            <image class="skill-image" src="https://images.weserv.nl/?url=https://img.dota2.com.cn/dota2static/herostatic/npc_dota_hero_keeper_of_the_light/keeper_of_the_light_illuminate.png"></image>
+            <image class="skill-image" src="{{skillDetal.logo}}"></image>
             <view class="skill-log">
-                <text class="skill-log_title">冲击波</text>
-                <text class="skill-log_detail">积攒光的能量，积攒时间越长，威力越大。释放后，光波沿直线发出，造成伤害并打开视野。</text>
+                <view class="skill-log_title">
+                    <text>{{skillDetal.nameLoc}}</text>
+                    <text class="upgrade-text" wx:if="{{skillDetal.hasShard}}">{{skillDetal.grantedShard?'魔晶提供新技能':'魔晶技能升级'}}</text>
+                    <text class="upgrade-text" wx:if="{{skillDetal.hasScepter}}">{{skillDetal.grantedScepter?'神杖提供新技能':'神杖技能升级'}}
+                    </text>
+                </view>
+                <rich-text class="skill-log_detail" nodes="{{skillDetal.descLog}}"></rich-text>
             </view>
         </view>
         <!--技能属性-->
         <view class="skill-attr">
+            <!--技能详情-->
             <view class="skill-attr-list">
-                <view class="skill-attr-item">
-                    <text class="skill-attr-item_text">最高伤害：</text>
-                    <text>200 / 300 / 400 / 500</text>
-                </view>
-                <view class="skill-attr-item">
-                    <text class="skill-attr-item_text">最高伤害：</text>
-                    <text>200 / 300 / 400 / 500</text>
+                <view class="skill-attr-item" wx:for="{{skillDetal.specialValues}}" wx:key="index">
+                    <text class="skill-attr-item_text">{{item.label}}</text>
+                    <text>{{item.value}}</text>
                 </view>
             </view>
+            <!--技能消耗-->
             <view class="skill-bottom">
-                <view class="skill-cd">
+                <view class="skill-cd" wx:if="{{skillDetal.cooldowns}}">
                     <image src="../../assets/common/cooldown.png"></image>
-                    <text>13.0</text>
+                    <text>{{skillDetal.cooldowns}}</text>
                 </view>
-                <view class="skill-mana">
+                <view class="skill-mana" wx:if="{{skillDetal.manaCosts}}">
                     <text></text>
-                    <text>100 / 125 / 150 / 175</text>
+                    <text>{{skillDetal.manaCosts}}</text>
                 </view>
             </view>
             <view class="skill-lore">
-                <text>伊扎洛深藏的光芒显现之时璀璨夺目。</text>
+                <text>{{skillDetal.loreLoc}}</text>
             </view>
-            <view>
-                <!-- <video class="skill-video" src="https://img.dota2.com.cn/dota2static/herostatic/npc_dota_hero_keeper_of_the_light/keeper_of_the_light_illuminate.mp4" loop="loop" autoplay="{{true}}" controls="{{false}}" object-fit="fill"></video> -->
-            </view>
+            <!--技能视频介绍-->
+            <video class="skill-video" wx:if="{{skillDetal.video}}" src="{{skillDetal.video}}" loop="loop" autoplay="{{true}}" controls="{{false}}" object-fit="fill"></video>
         </view>
     </view>
 </view>

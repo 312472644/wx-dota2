@@ -1,9 +1,8 @@
 {
     "pages": [
-        "pages/hero-detail/hero-detail",
         "pages/hero-list/hero-list",
-        "pages/about/about",
-        "pages/index/index"
+        "pages/hero-detail/hero-detail",
+        "pages/about/about"
     ],
     "tabBar": {
         "selectedColor": "#57bead",

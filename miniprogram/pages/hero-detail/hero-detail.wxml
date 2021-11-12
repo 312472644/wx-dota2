@@ -1,11 +1,11 @@
 <!--pages/hero-detail/hero-detail.wxml-->
-<view class="hero-detail-container" wx:if="{{load && heroes}}">
+<view class="hero-detail-container" wx:if="{{heroes}}">
     <!--英雄简介-->
     <hero-base heroes="{{heroes}}"></hero-base>
     <!--英雄属性-->
     <hero-status heroes="{{heroes}}"></hero-status>
     <!--英雄技能-->
-    <hero-skill></hero-skill>
+    <hero-skill heroes="{{heroes}}"></hero-skill>
     <!--英雄预览-->
     <hero-preview leftHero="{{heroes.left_hero_info}}" rightHero="{{heroes.next_hero_info}}" 
     bindperview="perviewHero"

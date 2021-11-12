@@ -4,7 +4,6 @@
   align-items: center;
   padding: 0 8px;
   line-height: 30px;
-  background: #fff;
 }
 
 .select-text:first-of-type {
@@ -12,7 +11,7 @@
 }
 
 .select-text {
-  color: #434343;
+  color: #fff;
   margin-right: 16px;
 }
 

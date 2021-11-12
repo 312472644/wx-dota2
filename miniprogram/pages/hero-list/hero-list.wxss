@@ -12,7 +12,7 @@
 .hero-condition {
   position: sticky;
   top: 0;
-  background: linear-gradient(45deg, #57bead, #5dead3);
+  background: linear-gradient(45deg, #3e454d, #747e84);
   padding: 8px 8px;
 }
 
@@ -28,6 +28,7 @@
 
 .hero-attr-condition {
   padding-bottom: 8px;
+  background: linear-gradient(45deg, #3e454d, #747e84);
 }
 
 .hero-input_search-input {
