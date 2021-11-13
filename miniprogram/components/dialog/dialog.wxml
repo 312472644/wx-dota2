@@ -1,0 +1,27 @@
+<!--components/dialog/dialog.wxml-->
+<view class="dialog" wx:if="{{visible}}">
+    <view class="close" bindtap="closeDialog">
+        <image src="../../assets/common/ios-close.svg"></image>
+    </view>
+    <view class="category-logo">
+        <image src="https://images.weserv.nl/?url=https://www.dota2.com.cn/items/images/{{categoryDetail.img}}"></image>
+        <text>{{categoryDetail.dname}}</text>
+    </view>
+    <view class="category-detail">
+        <rich-text class="rich-text" nodes="{{desc}}"></rich-text>
+        <rich-text class="rich-text rich-text-notes" nodes="{{notes}}"></rich-text>
+        <rich-text class="rich-text rich-text-attrib" nodes="{{attrib}}"></rich-text>
+        <view class="rich-text category-top">{{lore}}</view>
+        <view class="category-refresh">
+            <view class="category-refresh_item" wx:if="{{categoryDetail.cd}}">
+                <image src="../../assets/common/cooldown.png"></image>
+                <text>{{categoryDetail.cd}}</text>
+            </view>
+            <view class="category-refresh_item" wx:if="{{categoryDetail.mc > 0}}">
+                <text class="mana"></text>
+                <text>{{categoryDetail.mc}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="dialog-bg" wx:if="{{visible}}"></view>

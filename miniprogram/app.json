@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/hero-list/hero-list",
+        "pages/hero-goods/hero-goods",
         "pages/hero-detail/hero-detail",
         "pages/about/about"
     ],
@@ -11,6 +12,12 @@
                 "iconPath": "./assets/icon/hero.png",
                 "selectedIconPath": "./assets/icon/hero_active.png",
                 "text": "英雄"
+            },
+            {
+                "pagePath": "pages/hero-goods/hero-goods",
+                "iconPath": "./assets/icon/goods.png",
+                "selectedIconPath": "./assets/icon/goods_active.png",
+                "text": "物品"
             },
             {
                 "pagePath": "pages/about/about",

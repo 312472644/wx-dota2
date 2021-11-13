@@ -1,0 +1,99 @@
+/* components/dialog/dialog.wxss */
+.dialog {
+    position: fixed;
+    padding: 12px;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    min-height: 10%;
+    border-radius: 3px;
+    background: #252525;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
+
+.category-logo {
+    display: flex;
+    align-items: start;
+}
+
+.category-logo image {
+    width: 60px;
+    height: 50px;
+    border-radius: 2px;
+}
+
+.category-logo text {
+    color: #fff;
+    font-size: 13px;
+    margin-left: 15px;
+}
+
+.dialog-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    background-color: #00000073;
+}
+
+.category-top {
+    padding-top: 10px;
+}
+
+.rich-text {
+    color: #c0c0c0;
+    font-size: 12px;
+}
+
+.rich-text.rich-text-notes {
+    color: #6fe771;
+}
+
+.color_yellow {
+    color: #fbb040;
+}
+
+.category-refresh {
+    color: #fbb040;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.category-refresh_item {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    line-height: 16px;
+}
+
+.mana {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    border-radius: 3px;
+    background: linear-gradient(#00a4db, #007196);
+}
+
+.category-refresh_item image {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.close {
+    position: absolute;
+    right: -11px;
+    top: -13px;
+}
+
+.close image {
+    width: 26px;
+    height: 26px;
+}

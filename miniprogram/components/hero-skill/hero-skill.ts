@@ -50,7 +50,6 @@ Component({
                     guid: this.guid()
                 }
             });
-            console.log('normalList', normalList);
             return normalList;
         },
         // 获取可升级的技能列表
@@ -70,7 +69,6 @@ Component({
                     hasShard: ability_has_shard
                 }
             });
-            console.log('upgradeList', upgradeList);
             return upgradeList;
         },
         // 获取技能图标列表
@@ -135,7 +133,6 @@ Component({
                 upgradeText = upgradeText.replace(`%${locItem}%`, value);
             });
             return upgradeText;
-            return '';
         },
         // 获取技能详情
         getSkillDetail(skillId: number, hasScepter = false, hasShard = false) {

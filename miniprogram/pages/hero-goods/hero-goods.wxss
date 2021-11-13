@@ -1,0 +1,88 @@
+/* pages/hero-goods/hero-goods.wxss */
+.tab {
+    background: #f4f4f4;
+}
+
+.tab-header {
+    padding: 8px;
+    background: linear-gradient(45deg, #3e454d, #747e84);
+}
+
+.tab-header_text {
+    position: relative;
+    color: #969696;
+    margin-right: 16px;
+    font-size: 13px;
+}
+
+.tab-header_text.active {
+    color: #fff;
+}
+
+.tab-header_text.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -9px;
+    border-bottom: 2px solid #fff;
+}
+
+.tab-header_text:last-of-type {
+    margin-right: 0;
+}
+
+.tab-body {
+    background: #fff;
+}
+
+.category {
+    color: #fff;
+    margin-bottom: 8px;
+    background: linear-gradient(45deg, #3e454d, #747e84);
+    box-shadow: 0px 0px 8px 0px #666;
+}
+
+.category_header {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 35px;
+}
+
+.category_body {
+    padding: 0 0 8px 8px;
+}
+
+.category-item_title {
+    font-size: 14px;
+}
+
+.category-item_body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0 0 0;
+}
+
+.category-logo {
+    width: calc(16.66667% - 8px);
+    height: 100rpx;
+    margin: 0 8px 8px 0;
+    border-radius: 2px;
+}
+
+.category-logo:nth-of-type(6n) {
+    margin-right: 0;
+}
+
+.rich-text {
+    font-size: 13px;
+}
+
+.rich-text h1 {
+    font-size: 13px;
+}
+
+.pop_skill_p {
+    color: red;
+}
