@@ -21,18 +21,20 @@ Component({
         attrib: '',
         lore: ''
     },
-    lifetimes: {
-        ready() {
-            this.getCategoryDesc();
+    observers: {
+        categoryDetail: function (newValue, oldValue) {
+            this.getCategoryDesc(newValue);
+        },
+        visible: function (newValue) {
+            console.log(newValue);
         }
     },
     /**
      * 组件的方法列表
      */
     methods: {
-        getCategoryDesc() {
+        getCategoryDesc(categoryDetail: any) {
             // 技能属性描述
-            const { categoryDetail } = this.properties;
             if (!categoryDetail) {
                 return;
             }

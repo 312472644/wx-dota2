@@ -13,7 +13,8 @@ Page({
         neutralCategory: null,
         categoryDetail: {},
         currentCategoryDetail: null,
-        dialogVisible: false
+        dialogVisible: false,
+        scrollTop: 0
     },
 
     /**
@@ -33,7 +34,7 @@ Page({
     tabChangeEvent(event: IEvent) {
         const { currentTarget } = event;
         const activeTabKey = currentTarget.dataset.tab;
-        this.setData({ activeTabKey });
+        this.setData({ activeTabKey, scrollTop: 0 });
     },
     // 获取物品分类
     getCategory() {
