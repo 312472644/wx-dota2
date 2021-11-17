@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "strictNullChecks": true,
     "noImplicitAny": true,
     "module": "CommonJS",
