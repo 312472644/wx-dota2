@@ -1,6 +1,5 @@
 import { HeroTypeEnum, HeroComplexEnum, PropEnum } from "../../enum/index";
 import { IEvent, IResult } from "../../interface";
-import { HeroTypeImgMap } from "../../map/index";
 import { IHero } from "./interface";
 
 // pages/hero/hero.ts

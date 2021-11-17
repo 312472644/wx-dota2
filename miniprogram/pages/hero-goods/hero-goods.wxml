@@ -1,53 +1,13 @@
 <!--pages/hero-goods/hero-goods.wxml-->
 <view class="hero-goods-container">
-    <view class="tab">
-        <view class="tab-header">
-            <text class="tab-header_text {{activeTabKey === 'shop'?'active':''}}" data-tab="shop" bindtap="tabChangeEvent">商店物品</text>
-            <text class="tab-header_text {{activeTabKey === 'neutral'?'active':''}}" data-tab="neutral" bindtap="tabChangeEvent">中立物品</text>
-        </view>
-        <scroll-view scroll-y="true" class="scroll-view" scroll-top="{{scrollTop}}">
-            <view class="tab-body">
-                <!--商店物品-->
-                <view role="shop" wx:if="{{activeTabKey === 'shop'}}">
-                    <view class="category">
-                        <view class="category_header">- 基础分类 -</view>
-                        <view class="category_body">
-                            <view class="category-item" wx:for="{{baseCategory}}" wx:key="index">
-                                <view class="category-item_title">{{item.name}}</view>
-                                <view class="category-item_body">
-                                    <image class="category-logo" wx:for="{{item.items}}" wx:for-item="categoryItem" wx:key="item_id" src="https://images.weserv.nl/?url=https://www.dota2.com.cn/items/images/{{categoryItem.img}}" bindtap="perviewCategory" data-category="{{categoryItem}}"></image>
-                                </view>
-                            </view>
-                        </view>
-                    </view>
-                    <view class="category">
-                        <view class="category_header">- 合成分类 -</view>
-                        <view class="category_body">
-                            <view class="category-item" wx:for="{{upgradeCategory}}" wx:key="index">
-                                <view class="category-item_title">{{item.name}}</view>
-                                <view class="category-item_body">
-                                    <image class="category-logo" wx:for="{{item.items}}" wx:for-item="categoryItem" wx:key="item_id" src="https://images.weserv.nl/?url=https://www.dota2.com.cn/items/images/{{categoryItem.img}}" bindtap="perviewCategory" data-category="{{categoryItem}}"></image>
-                                </view>
-                            </view>
-                        </view>
-                    </view>
-                </view>
-                <!--中立物品-->
-                <view role="neutral" wx:if="{{activeTabKey === 'neutral'}}">
-                    <view class="category">
-                        <view class="category_header">- 中立物品 -</view>
-                        <view class="category_body">
-                            <view class="category-item" wx:for="{{neutralCategory}}" wx:key="index">
-                                <view class="category-item_title">{{item.name}}</view>
-                                <view class="category-item_body">
-                                    <image class="category-logo" wx:for="{{item.items}}" wx:for-item="categoryItem" wx:key="item_id" src="https://images.weserv.nl/?url=https://www.dota2.com.cn/items/images/{{categoryItem.img}}" lazy-load="true" bindtap="perviewCategory" data-category="{{categoryItem}}"></image>
-                                </view>
-                            </view>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </scroll-view>
-    </view>
+    <van-tabs color="#000000" title-inactive-color="#787d7e" sticky="true">
+        <van-tab title="商店物品">
+            <goods-item title="基础分类" categoryList="{{baseCategory}}" bindcategory="perviewCategory"></goods-item>
+            <goods-item title="合成分类" categoryList="{{upgradeCategory}}" bindcategory="perviewCategory"></goods-item>
+        </van-tab>
+        <van-tab title="中立物品">
+            <goods-item title="中立物品" categoryList="{{neutralCategory}}" bindcategory="perviewCategory"></goods-item>
+        </van-tab>
+    </van-tabs>
     <dialog visible="{{dialogVisible}}" bindclose="closeDialog" categoryDetail="{{currentCategoryDetail}}"></dialog>
 </view>

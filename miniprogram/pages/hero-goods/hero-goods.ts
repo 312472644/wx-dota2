@@ -7,7 +7,6 @@ Page({
      * 页面的初始数据
      */
     data: {
-        activeTabKey: 'shop',
         baseCategory: null,
         upgradeCategory: null,
         neutralCategory: null,
@@ -31,11 +30,6 @@ Page({
         wx.showShareMenu({ withShareTicket: true });
         this.getCategory();
         this.getCategoryDetail();
-    },
-    tabChangeEvent(event: IEvent) {
-        const { currentTarget } = event;
-        const activeTabKey = currentTarget.dataset.tab;
-        this.setData({ activeTabKey, scrollTop: 0 });
     },
     // 获取物品分类
     getCategory() {
@@ -76,7 +70,7 @@ Page({
     // 预览物品
     perviewCategory(event: IEvent) {
         let currentCategoryDetail = null;
-        const category = event.currentTarget.dataset.category;
+        const category = event.detail.category;
         const categoryDetail = this.data.categoryDetail as any;
         for (const prop in categoryDetail) {
             for (const key in categoryDetail[prop]) {

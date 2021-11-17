@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "dialog": "../../components/dialog/dialog"
+    "goods-item": "../../components/goods-item/goods-item",
+    "dialog": "../../components/dialog/dialog",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
   }
 }

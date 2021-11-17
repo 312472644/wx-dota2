@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/hero-list/hero-list",
         "pages/hero-goods/hero-goods",
+        "pages/hero-list/hero-list",
         "pages/hero-detail/hero-detail",
         "pages/upgrade-log/upgrade-log"
     ],
