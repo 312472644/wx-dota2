@@ -2,8 +2,7 @@
 .select-container {
   display: flex;
   align-items: center;
-  padding: 0 8px;
-  line-height: 30px;
+  padding: 0 12px;
 }
 
 .select-text:first-of-type {
@@ -11,11 +10,17 @@
 }
 
 .select-text {
-  color: #fff;
-  margin-right: 16px;
+  width: 80px;
+  color: #787d7e;
+  padding: 6px 0;
+  margin: 0 12px 8px 0;
+  border-radius: 3px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
 }
 
 .select-text_active {
-  color: #57bead;
-  text-align: center;
+  color: #fff;
+  border-color: #000;
+  background-color: #000;
 }

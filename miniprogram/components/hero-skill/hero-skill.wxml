@@ -28,8 +28,8 @@
             <!--技能详情-->
             <view class="skill-attr-list">
                 <view class="skill-attr-item" wx:for="{{skillDetal.specialValues}}" wx:key="index">
-                    <text class="skill-attr-item_text">{{item.label}}</text>
-                    <text>{{item.value}}</text>
+                    <rich-text nodes="{{item.label}}" class="skill-attr-item_text"></rich-text>
+                    <rich-text nodes="{{item.value}}" class="skill-attr-item_value"></rich-text>
                 </view>
             </view>
             <!--技能消耗-->
@@ -43,7 +43,7 @@
                     <text>{{skillDetal.manaCosts}}</text>
                 </view>
             </view>
-            <view class="skill-lore">
+            <view class="skill-lore" wx:if="{{skillDetal.loreLoc}}">
                 <text>{{skillDetal.loreLoc}}</text>
             </view>
             <!--技能视频介绍-->

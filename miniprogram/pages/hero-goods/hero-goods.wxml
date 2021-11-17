@@ -40,7 +40,7 @@
                             <view class="category-item" wx:for="{{neutralCategory}}" wx:key="index">
                                 <view class="category-item_title">{{item.name}}</view>
                                 <view class="category-item_body">
-                                    <image class="category-logo" wx:for="{{item.items}}" wx:for-item="categoryItem" wx:key="item_id" src="https://images.weserv.nl/?url=https://www.dota2.com.cn/items/images/{{categoryItem.img}}" bindtap="perviewCategory" data-category="{{categoryItem}}"></image>
+                                    <image class="category-logo" wx:for="{{item.items}}" wx:for-item="categoryItem" wx:key="item_id" src="https://images.weserv.nl/?url=https://www.dota2.com.cn/items/images/{{categoryItem.img}}" lazy-load="true" bindtap="perviewCategory" data-category="{{categoryItem}}"></image>
                                 </view>
                             </view>
                         </view>

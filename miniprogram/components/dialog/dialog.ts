@@ -22,11 +22,8 @@ Component({
         lore: ''
     },
     observers: {
-        categoryDetail: function (newValue, oldValue) {
+        categoryDetail: function (newValue) {
             this.getCategoryDesc(newValue);
-        },
-        visible: function (newValue) {
-            console.log(newValue);
         }
     },
     /**

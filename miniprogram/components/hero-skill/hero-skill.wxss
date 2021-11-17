@@ -16,7 +16,10 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    padding: 0 8px;
     margin-top: 8px;
+    margin-left: -8px;
+    margin-right: -16px;
 }
 
 .skill-name-item {
@@ -52,6 +55,7 @@
 .skill-image {
     width: 60px;
     height: 60px;
+    border-radius: 2px;
 }
 
 .skill-log {
@@ -81,7 +85,12 @@
 }
 
 .skill-attr-item_text {
+    display: inline-block;
     color: #737373;
+}
+
+.skill-attr-item_value{
+    display: inline-block;
 }
 
 .skill-bottom {

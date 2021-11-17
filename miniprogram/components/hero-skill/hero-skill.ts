@@ -58,15 +58,17 @@ Component({
             const skillShard = abilities.find((item: any) => item.ability_has_shard || item.ability_is_granted_by_shard) || {};
             // 神杖
             const skillScepter = abilities.find((item: any) => item.ability_has_scepter || item.ability_is_granted_by_scepter) || {};
-            const upgradeList = [skillShard, skillScepter].map((item: any) => {
+            // 魔晶碎片和神杖为同一个技能
+            const sameUpgrade = [skillShard, skillScepter].some((item: any) => item.ability_has_scepter && item.ability_has_shard);
+            const upgradeList = [skillShard, skillScepter].map((item: any, index: number) => {
                 const { ability_has_scepter, ability_has_shard, img, id, name_loc } = item;
                 return {
                     id,
                     name_loc,
                     logo: `https://images.weserv.nl/?url=${img}`,
                     guid: this.guid(),
-                    hasScepter: ability_has_scepter,
-                    hasShard: ability_has_shard
+                    hasScepter: sameUpgrade ? index === 1 : ability_has_scepter,
+                    hasShard: sameUpgrade ? index === 0 : ability_has_shard,
                 }
             });
             return upgradeList;
@@ -80,6 +82,7 @@ Component({
             // 升级技能
             const upgradeSkillList: any = this.getUpgradeList(abilities);
             const logoSkillList = normalList.concat(...upgradeSkillList);
+            console.log('logoSkillList', logoSkillList);
             this.setData({
                 skillLogoList: logoSkillList,
                 selectSkillId: logoSkillList[0].guid
@@ -153,7 +156,7 @@ Component({
             skill.specialValues = this.getSpecialValues(special_values); // 技能其他信息
             skill.loreLoc = lore_loc;
             skill.grantedShard = ability_is_granted_by_shard;// 魔晶提供技能
-            skill.grantedScepter = ability_is_granted_by_scepter;// 神杖提供技能
+            skill.grantedScepter = ability_is_granted_by_scepter;// 神杖提供技能、
             // 神杖
             if (hasScepter) {
                 skill.video = video_scepter_mp4;

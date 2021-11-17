@@ -5,10 +5,14 @@ import { IHero } from "./interface";
 
 // pages/hero/hero.ts
 Page({
+  options: {
+    pureDataPattern: /^_/
+  },
   /**
    * 页面的初始数据
    */
   data: {
+    _initHeroList: [], // 初始化列表,
     attrList: [
       { label: "全部属性", value: PropEnum.All },
       { label: "力量", value: HeroTypeEnum.Power },
@@ -24,7 +28,6 @@ Page({
     attrValue: PropEnum.All, // 属性值
     complexValue: PropEnum.All, // 难度值
     heroName: '', // 英雄名称
-    initHeroList: [], // 初始化列表
     heroList: [], // 查询列表
     isFirstLoad: false, // 是否第一次加载
     scrollTop: 0, // 滚动距离
@@ -34,6 +37,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
+    wx.showShareMenu({ withShareTicket: true });
     this.getHeroList();
   },
   setValue(propName: string, propValue: string) {
@@ -41,8 +45,8 @@ Page({
     const { attrValue, complexValue, heroName } = this.data;
     this.filterHeroList(heroName, attrValue, complexValue);
   },
-  bindInputEvent(event: IEvent) {
-    this.setValue('heroName', event.detail.value);
+  searchEvent(event: IEvent) {
+    this.setValue('heroName', event.detail);
   },
   selectAttrChange(event: IEvent) {
     this.setValue('attrValue', event.detail.value);
@@ -52,28 +56,44 @@ Page({
   },
   // 过滤英雄列表
   filterHeroList(heroName: string, attrValue: string, complexValue: string) {
-    let heroList: IHero[] = this.data.initHeroList;
+    let heroList: IHero[] = this.data._initHeroList;
     // 过滤英雄名
     if (heroName) {
-      heroList = heroList.filter((item) => {
-        return item.name_loc.indexOf(heroName) > -1;
-      });
+      heroList = heroList.filter((item) => item.name_loc.indexOf(heroName) > -1);
     }
     // 过滤英雄属性
     if (attrValue !== PropEnum.All) {
-      heroList = heroList.filter((item) => {
-        return item.primary_attr.toString() == attrValue;
-      });
+      heroList = heroList.filter((item) => item.primary_attr.toString() == attrValue);
     }
     // 过滤难度
     if (complexValue !== PropEnum.All) {
-      heroList = heroList.filter((item) => {
-        return item.complexity.toString() == complexValue;
-      });
+      heroList = heroList.filter((item) => item.complexity.toString() == complexValue);
     }
     this.setData({
-      heroList: heroList as any
+      heroList: this.getCategoryHero([...heroList]) as any
     });
+  },
+  // 获取英雄分类列表
+  getCategoryHero(heroes: IHero[] = []) {
+    // 力量英雄
+    const powerHeroList = heroes.filter((item: IHero) => item.primary_attr.toString() === HeroTypeEnum.Power) || [];
+    // 智力英雄
+    const intellectHeroList = heroes.filter((item: IHero) => item.primary_attr.toString() === HeroTypeEnum.Intellect) || [];
+    // 敏捷英雄
+    const AgileHeroList = heroes.filter((item: IHero) => item.primary_attr.toString() === HeroTypeEnum.Agile) || [];
+    const heroList = [
+      {
+        name: '力量',
+        list: powerHeroList
+      }, {
+        name: '智力',
+        list: intellectHeroList
+      }, {
+        name: '敏捷',
+        list: AgileHeroList
+      }];
+    const hasNotEmpty = heroList.some((item) => item.list.length > 0);
+    return hasNotEmpty ? heroList : [];
   },
   // 获取英雄列表
   getHeroList() {
@@ -89,11 +109,10 @@ Page({
             const { heroes = [] } = result;
             result.heroes.forEach(item => {
               item.index_img = `https://images.weserv.nl/?url=${item.index_img}`;
-              item.primary_img = HeroTypeImgMap.get(item.primary_attr);
             });
             this.setData({
-              heroList: heroes as any,
-              initHeroList: heroes as any
+              heroList: this.getCategoryHero(heroes as IHero[]) as any,
+              _initHeroList: heroes as any
             });
           }
         } else {

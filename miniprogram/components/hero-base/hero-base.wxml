@@ -28,5 +28,5 @@
             <hero-level level="{{heroBase.complexity}}"></hero-level>
         </view>
     </view>
-    <video class="hero-video" src="{{heroVideoUrl}}" loop="loop" autoplay="{{true}}" controls="{{false}}"></video>
+    <video class="hero-video" poster="{{heroTopImg}}" src="{{heroVideoUrl}}" loop="loop" autoplay="{{true}}" controls="{{false}}"></video>
 </view>

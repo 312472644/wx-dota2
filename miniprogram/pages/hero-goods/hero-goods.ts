@@ -28,6 +28,7 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
+        wx.showShareMenu({ withShareTicket: true });
         this.getCategory();
         this.getCategoryDetail();
     },
@@ -96,5 +97,8 @@ Page({
             currentCategoryDetail: null,
             dialogVisible: false
         })
+    },
+    imgLoad(event: any) {
+        console.log('event', event);
     }
 })

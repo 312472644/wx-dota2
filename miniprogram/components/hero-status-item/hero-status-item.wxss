@@ -13,7 +13,7 @@
 }
 
 .hero-status-item text {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .hero-status-value {

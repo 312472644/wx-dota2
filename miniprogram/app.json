@@ -3,11 +3,12 @@
         "pages/hero-list/hero-list",
         "pages/hero-goods/hero-goods",
         "pages/hero-detail/hero-detail",
-        "pages/about/about"
+        "pages/upgrade-log/upgrade-log"
     ],
     "tabBar": {
         "selectedColor": "#57bead",
-        "list": [{
+        "list": [
+            {
                 "pagePath": "pages/hero-list/hero-list",
                 "iconPath": "./assets/icon/hero.png",
                 "selectedIconPath": "./assets/icon/hero_active.png",
@@ -20,10 +21,10 @@
                 "text": "物品"
             },
             {
-                "pagePath": "pages/about/about",
+                "pagePath": "pages/upgrade-log/upgrade-log",
                 "iconPath": "./assets/icon/about.png",
                 "selectedIconPath": "./assets/icon/about_active.png",
-                "text": "关于"
+                "text": "日志"
             }
         ]
     },
@@ -33,6 +34,5 @@
         "navigationBarTitleText": "Dota 2",
         "navigationBarTextStyle": "black"
     },
-    "style": "v2",
     "sitemapLocation": "sitemap.json"
 }

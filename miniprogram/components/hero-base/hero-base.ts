@@ -20,15 +20,17 @@ Component({
         heroAttack: {},
         heroLoc: '',
         heroVideoUrl: '',
+        heroTopImg: '',
     },
     lifetimes: {
         ready() {
             const { heroes } = this.properties;
-            const { attack_capability, primary_attr, hype_loc, top_video } = heroes;
+            const { attack_capability, primary_attr, hype_loc, top_video, top_img } = heroes;
             const heroLoc = hype_loc.replaceAll('<b>', '').replaceAll('</b>', '');
             this.setData({
                 heroLoc,
                 heroVideoUrl: top_video,
+                heroTopImg: `https://images.weserv.nl/?url=${top_img}`,
                 heroType: {
                     heroTypeUrl: HeroTypeImgMap.get(primary_attr),
                     heroTypeText: HeroTypeMap.get(primary_attr)

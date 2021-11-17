@@ -1,12 +1,7 @@
 <!--pages/hero/hero.wxml-->
 <view class="hero-container">
     <!--查询条件-->
-    <view class="hero-condition">
-        <view class="hero-input-container">
-            <icon type="search" class="hero-input_search-icon"></icon>
-            <input class="hero-input_search-input" type="text" placeholder="请输入英雄名称" bindinput="bindInputEvent" />
-        </view>
-    </view>
+    <van-search placeholder="请输入英雄名称" shape="round" bind:change="searchEvent" />
     <!--英雄列表-->
     <scroll-view bindscroll="bindscrollEvent" scroll-y="true" scroll-top="{{scrollTop}}" class="scroll-view" id="scroll-view" scroll-with-animation="true">
         <view class="hero-attr-condition">
@@ -14,18 +9,17 @@
             <select-text dataList="{{complexList}}" bindchange="selectComplexChange"></select-text>
         </view>
         <view class="hero-list" wx:if="{{heroList.length > 0}}" id="hero-list">
-            <view data-hero="{{item}}" class="hero-item" wx:for="{{heroList}}" wx:key="id" bindtap="goHeroDetail">
-                <image class="hero-item-logo" src="{{item.index_img}}"></image>
-                <view class="hero-item-text">
-                    <text>{{item.name_loc}}</text>
-                    <image class="hero-item-type" src="{{item.primary_img}}"></image>
+            <view wx:for="{{heroList}}" wx:key="index" style="width:100%">
+                <view class="hero-category" wx:if="{{item.list.length > 0}}">{{item.name}}</view>
+                <view class="hero-category-container" wx:if="{{item.list.length > 0}}">
+                    <view data-hero="{{item}}" wx:for="{{item.list}}" class="hero-item" bindtap="goHeroDetail" wx:for-item="heroItem" wx:for-index="id">
+                        <van-image width="100%" height="80rpx" lazy-load src="{{heroItem.index_img}}"></van-image>
+                        <text class="hero-item-text">{{heroItem.name_loc}}</text>
+                    </view>
                 </view>
             </view>
         </view>
-        <view wx:elif="{{heroList.length == 0 && isFirstLoad}}" class="no-data">
-            <image class="no-data-img" src="../../assets/common/no-data.png"></image>
-            <text class="no-data-text">暂无数据</text>
-        </view>
+        <van-empty wx:elif="{{heroList.length == 0 && isFirstLoad}}" image="search" description="暂无数据~"></van-empty>
     </scroll-view>
     <view class="go-top" bindtap="bindGoTop" wx:if="{{isShowTop}}">
         <image class="go-top-image" src="../../assets/common/et-rocket.svg"></image>
