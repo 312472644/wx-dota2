@@ -1,17 +1,13 @@
-// components/hero-status-item/hero-status-item.ts
+// components/hero-card/hero-card.ts
 Component({
     /**
      * 组件的属性列表
      */
     properties: {
-        statusLabel: {
-            type: String
-        },
-        statusValue: {
+        title: {
             type: String
         }
     },
-
     /**
      * 组件的初始数据
      */

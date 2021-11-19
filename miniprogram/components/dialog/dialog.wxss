@@ -17,13 +17,13 @@
     align-items: start;
 }
 
-.category-logo image {
+.category-logo_image {
     width: 60px;
     height: 50px;
     border-radius: 2px;
 }
 
-.category-logo text {
+.category-logo_text {
     color: #fff;
     font-size: 13px;
     margin-left: 15px;
@@ -87,22 +87,11 @@
     background: linear-gradient(#00a4db, #007196);
 }
 
-.category-refresh_item image {
+.category-refresh_item_image {
     width: 16px;
     height: 16px;
     border-radius: 3px;
     margin-right: 5px;
-}
-
-.close {
-    position: absolute;
-    right: -11px;
-    top: -13px;
-}
-
-.close image {
-    width: 26px;
-    height: 26px;
 }
 
 .category-detail {

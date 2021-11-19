@@ -1,0 +1,23 @@
+/* components/hero-card/hero-card.wxss */
+.hero-card {
+    width: 100%;
+}
+
+.hero-card_title {
+    position: relative;
+    padding: 0 0 10px 10px;
+    margin-top: 10px;
+    font-size: 15px;   
+    font-weight: bolder;
+}
+
+.hero-card_title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    bottom: 0;
+    height: 15px;
+    width: 3px;
+    background: #000;
+}

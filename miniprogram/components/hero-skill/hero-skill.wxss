@@ -1,15 +1,7 @@
 /* components/hero-skill/hero-skill.wxss */
 .hero-skill-container {
     position: relative;
-    color: #fff;
-    padding: 5px 8px;
-    margin-bottom: 8px;
-    background: linear-gradient(45deg, #1d2228, #4a555b);
-    box-shadow: -1px 1px 8px 2px #333;
-}
-
-.title {
-    font-size: 18px;
+    padding: 0 8px;
 }
 
 .skill-name-container {
@@ -89,7 +81,7 @@
     color: #737373;
 }
 
-.skill-attr-item_value{
+.skill-attr-item_value {
     display: inline-block;
 }
 
@@ -105,14 +97,14 @@
     align-items: center;
 }
 
-.skill-cd>image {
+.skill-cd_image {
     width: 16px;
     height: 16px;
     margin-right: 5px;
     border-radius: 2px;
 }
 
-.skill-mana text:first-of-type {
+.skill-mana_text {
     width: 16px;
     height: 16px;
     margin-right: 5px;
@@ -123,11 +115,11 @@
 .skill-lore {
     margin: 10px 0;
     padding: 10px;
+    color: #fff;
     font-size: 13px;
-    background-color: #111;
-    border-radius: 2px;
     font-style: italic;
-    opacity: .5;
+    background: rgba(000, 000, 000, 0.7);
+    border-radius: 2px;
 }
 
 .skill-video {

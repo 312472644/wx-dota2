@@ -1,6 +1,8 @@
 {
     "component": true,
     "usingComponents": {
-        "hero-level":"../hero-level/hero-level"
+        "hero-level":"../hero-level/hero-level",
+        "van-image": "@vant/weapp/image/index",
+        "van-dialog": "@vant/weapp/dialog/index"
     }
 }

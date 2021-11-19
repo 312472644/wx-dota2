@@ -1,4 +1,7 @@
 {
     "component": true,
-    "usingComponents": {}
+    "usingComponents": {
+        "hero-card": "../hero-card/hero-card",
+        "van-image": "@vant/weapp/image/index"
+    }
 }

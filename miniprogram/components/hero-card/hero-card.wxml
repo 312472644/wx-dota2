@@ -1,0 +1,5 @@
+<!--components/hero-card/hero-card.wxml-->
+<view class="hero-card">
+    <view class="hero-card_title">{{title}}</view>
+    <view class="hero-card_body"><slot></slot></view>
+</view>

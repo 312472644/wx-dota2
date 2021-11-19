@@ -1,11 +1,17 @@
 /* components/hero-status/index.wxss */
 .hero-status-container {
     position: relative;
-    padding: 5px 8px;
-    color: #fff;
+    padding: 0 8px;
     margin-bottom: 8px;
-    background: linear-gradient(45deg, #1d2228, #4a555b);
-    box-shadow: -1px 1px 8px 2px #333;
+}
+
+.hero-card {
+    color: #000;
+}
+
+.hero-status {
+    display: flex;
+    align-items: center;
 }
 
 .hero-status-title_item {
@@ -18,12 +24,17 @@
     justify-content: space-between;
 }
 
+.hero-status-value .hero-status-item:nth-of-type(n + 4) {
+    padding-bottom: 0;
+}
+
 .title {
     font-size: 18px;
 }
 
 .hero-status-item {
-    width: 30%;
+    width: 25%;
+    padding-bottom: 16px;
 }
 
 .hero-base {
@@ -35,9 +46,10 @@
 .hero-life {
     display: flex;
     flex-direction: column;
+    width: 120px;
 }
 
-.hero-life>image {
+.hero-life_image {
     width: 120px;
     height: 70px;
     border-top-left-radius: 2px;
@@ -92,25 +104,21 @@
     font-size: 0;
 }
 
-.hero-property-item>image {
-    font-size: 0;
-    width: 24px;
-    height: 24px;
-    padding-right: 8px;
+.hero-property-item_img{
+    width: 30px;
+    height: 30px;
 }
 
 .attr-value {
-    color: #fff;
+    color: #1b1b1b;
     margin-left: 8px;
     font-size: 14px;
     font-weight: 600;
-    text-shadow: 1px 1px 2px #000;
 }
 
 .attr-gain {
-    color: #999;
+    color: #646464;
     font-size: 15px;
-    text-shadow: 1px 1px 2px #000;
     margin-left: 8px;
 }
 
@@ -125,9 +133,8 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 8px;
 }
 
-.hero-role-item {
+.hero-role-item{
     width: 30%;
 }

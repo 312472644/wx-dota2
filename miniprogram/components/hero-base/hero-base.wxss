@@ -1,10 +1,14 @@
 /* components/hero-base/index.wxss */
 .hero-base-container {
     position: relative;
-    color: #fff;
     margin-bottom: 8px;
+    color: #fff;
     background: linear-gradient(45deg, #1d2228, #4a555b);
-    box-shadow: -1px 1px 8px 2px #333;
+}
+
+.hero-detail_header_log {
+    font-size: 14px;
+    color: #a5e0f3;
 }
 
 .hero-detail_header {
@@ -16,15 +20,8 @@
     z-index: 9;
 }
 
-.hero-detail_header text:nth-of-type(1) {
+.hero-detail_header_text {
     font-size: 18px;
-}
-
-.hero-detail_header text:nth-of-type(2) {
-    padding-top: 3px;
-    color: #a5e0f3;
-    font-size: 14px;
-    font-weight: bolder;
 }
 
 .hero-detail-item_bg {
@@ -51,19 +48,9 @@
     padding-left: 3px;
 }
 
-.hero-type+text,
-.hero-attck-type+text {
+.hero-type_text,
+.hero-attck-type_text {
     padding-left: 5px;
-}
-
-.hero-video {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    opacity: 0.2;
 }
 
 .hero-attck-type {
@@ -97,6 +84,10 @@
     padding: 8px;
 }
 
-.title {
-    font-size: 18px;
+.hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .5;
 }

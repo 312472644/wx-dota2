@@ -3,8 +3,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
-    background: linear-gradient(45deg, #1d2228, #4a555b);
 }
 
 .pre-hero,
@@ -13,8 +11,8 @@
     align-items: center;
 }
 
-.pre-hero>image,
-.next-hero>image {
+.pre-hero_image,
+.next-hero_image {
     width: 180rpx;
     height: 130rpx;
 }

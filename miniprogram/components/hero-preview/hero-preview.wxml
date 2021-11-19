@@ -1,7 +1,7 @@
 <!--components/hero-preview/hero-preview.wxml-->
 <view class="hero-preview">
     <view class="pre-hero" data-id="{{leftHero.id}}" bindtap="previewHero">
-        <image src="https://images.weserv.nl/?url={{leftHero.img}}"></image>
+        <image class="pre-hero_image" src="https://images.weserv.nl/?url={{leftHero.img}}"></image>
         <view class="hero-content">
             <text class="hero-text">上一个英雄</text>
             <text class="hero-text">{{leftHero.name_loc}}</text>
@@ -12,6 +12,6 @@
             <text class="hero-text">下一个英雄</text>
             <text class="hero-text">{{rightHero.name_loc}}</text>
         </view>
-        <image src="https://images.weserv.nl/?url={{rightHero.img}}"></image>
+        <image class="next-hero_image" src="https://images.weserv.nl/?url={{rightHero.img}}"></image>
     </view>
 </view>

@@ -82,7 +82,6 @@ Component({
             // 升级技能
             const upgradeSkillList: any = this.getUpgradeList(abilities);
             const logoSkillList = normalList.concat(...upgradeSkillList);
-            console.log('logoSkillList', logoSkillList);
             this.setData({
                 skillLogoList: logoSkillList,
                 selectSkillId: logoSkillList[0].guid

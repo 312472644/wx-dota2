@@ -1,5 +1,4 @@
 import { HeroAttackTypeImgMap, HeroAttackTypeMap, HeroTypeImgMap, HeroTypeMap } from "../../map/index";
-
 // components/hero-base/index.ts
 Component({
     /**
@@ -15,6 +14,8 @@ Component({
      * 组件的初始数据
      */
     data: {
+        dialogVisible: false,
+        message: null,
         heroBase: {},
         heroType: {},
         heroAttack: {},
@@ -50,10 +51,9 @@ Component({
         // 阅读完整背景
         readMoreBg() {
             const { heroes } = this.properties;
-            wx.showModal({
-                title: "背景",
-                content: heroes.bio_loc.replaceAll('<br>', ''),
-                confirmText: "关闭"
+            this.setData({
+                dialogVisible: true,
+                message: heroes.bio_loc.replaceAll('<br>', '')
             })
         }
     }

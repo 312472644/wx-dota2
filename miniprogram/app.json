@@ -1,8 +1,8 @@
 {
     "pages": [
-        "pages/hero-goods/hero-goods",
         "pages/hero-list/hero-list",
         "pages/hero-detail/hero-detail",
+        "pages/hero-goods/hero-goods",
         "pages/upgrade-log/upgrade-log"
     ],
     "tabBar": {

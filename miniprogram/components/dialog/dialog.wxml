@@ -1,11 +1,8 @@
 <!--components/dialog/dialog.wxml-->
 <view class="dialog" wx:if="{{visible}}">
-    <view class="close" bindtap="closeDialog">
-        <image src="../../assets/common/ios-close.svg"></image>
-    </view>
     <view class="category-logo">
-        <image src="https://images.weserv.nl/?url=https://www.dota2.com.cn/items/images/{{categoryDetail.img}}"></image>
-        <text>{{categoryDetail.dname}}</text>
+        <image class="category-logo_image" src="https://images.weserv.nl/?url=https://www.dota2.com.cn/items/images/{{categoryDetail.img}}"></image>
+        <text class="category-logo_text">{{categoryDetail.dname}}</text>
     </view>
     <view class="category-detail">
         <rich-text class="rich-text" nodes="{{desc}}"></rich-text>
@@ -14,7 +11,7 @@
         <view class="rich-text category-top">{{lore}}</view>
         <view class="category-refresh">
             <view class="category-refresh_item" wx:if="{{categoryDetail.cd}}">
-                <image src="../../assets/common/cooldown.png"></image>
+                <image class="category-refresh_item_image" src="../../assets/common/cooldown.png"></image>
                 <text>{{categoryDetail.cd}}</text>
             </view>
             <view class="category-refresh_item" wx:if="{{categoryDetail.mc > 0}}">
@@ -24,4 +21,4 @@
         </view>
     </view>
 </view>
-<view class='dialog-bg {{visible?"show":""}}'></view>
+<view class='dialog-bg {{visible?"show":""}}' bindtap="closeDialog"></view>

@@ -50,16 +50,14 @@ Component({
         getStatusList(heroes: any) {
             const { damage_min, damage_max, movement_speed, attack_rate, magic_resistance, turn_rate, attack_range, sight_range_day, sight_range_night, projectile_speed } = heroes;
             const statusList = [
-                { label: 'icon_damage', value: `${damage_min}-${damage_max}` },
-                { label: 'icon_armor', value: heroes.armor.toFixed(1) },
-                { label: 'icon_movement_speed', value: movement_speed },
-                { label: 'icon_attack_time', value: attack_rate.toFixed(1) },
-                { label: 'icon_magic_resist', value: `${magic_resistance}%` },
-                { label: 'icon_turn_rate', value: turn_rate.toFixed(1) },
-                { label: 'icon_attack_range', value: attack_range },
-                { label: '', value: '' },
-                { label: 'icon_vision', value: `${sight_range_day}/${sight_range_night}` },
-                { label: 'icon_projectile_speed', value: projectile_speed }
+                { label: '攻击力', value: `${damage_min}-${damage_max}` },
+                { label: '防御', value: heroes.armor.toFixed(1) },
+                { label: '移速', value: movement_speed },
+                { label: '攻击间隔', value: attack_rate.toFixed(1) },
+                { label: '魔抗', value: `${magic_resistance}%` },
+                { label: '攻击范围', value: attack_range },
+                { label: '视野(白/夜)', value: `${sight_range_day}/${sight_range_night}` },
+                { label: '攻击距离', value: projectile_speed }
             ];
             this.setData({
                 statusList: statusList as any

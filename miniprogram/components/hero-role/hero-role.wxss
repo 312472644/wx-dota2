@@ -1,11 +1,6 @@
 /* components/hero-role/idnex.wxss */
-.hero-role-item {
-    margin-bottom: 8px;
-}
-
 .role-text {
     width: 100%;
-    color: #fff;
     font-size: 12px;
     text-align: left;
 }
@@ -13,7 +8,7 @@
 .role-bar {
     position: relative;
     height: 6px;
-    margin-top: 5px;
+    margin: 5px 0;
 }
 
 .role-bar_bg {
@@ -24,7 +19,7 @@
 .role-bar_fill {
     position: absolute;
     top: 0;
-    background: #fff;
     height: 100%;
-    box-shadow: 0 0 10px #427ed1, 0 0 10px #427ed1;
+    background: #fff;
+    box-shadow: 0 0 10px #666, 0 0 10px #666;
 }

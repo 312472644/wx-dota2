@@ -122,9 +122,7 @@ Page({
         }
       },
       complete: () => {
-        this.setData({
-          isFirstLoad: true
-        });
+        this.setData({ isFirstLoad: true });
         wx.hideLoading();
       },
     })

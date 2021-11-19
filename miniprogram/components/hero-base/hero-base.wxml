@@ -1,15 +1,16 @@
 <!--components/hero-base/index.wxml-->
 <!--英雄基本信息-->
 <view class="hero-base-container">
+    <van-image show-loading="{{false}}" custom-class="hero-image" src="{{heroTopImg}}" width="50%" height="100%"></van-image>
     <view class="hero-detail_header">
-        <text>{{heroBase.name_loc}}</text>
-        <text class="title">{{heroBase.npe_desc_loc}}</text>
+        <text class="hero-detail_header_text">{{heroBase.name_loc}}</text>
+        <text class="hero-detail_header_log">{{heroBase.npe_desc_loc}}</text>
     </view>
     <view class="hero-detail_body">
         <view class="hero-detail-item">
             <text class="hero-detail-label">类型：</text>
             <image src="{{heroType.heroTypeUrl}}" class="hero-type"></image>
-            <text>{{heroType.heroTypeText}}</text>
+            <text class="hero-type_text">{{heroType.heroTypeText}}</text>
         </view>
         <view class="hero-detail-item hero-bg">
             <text class="hero-detail-label">背景：</text>
@@ -21,12 +22,12 @@
         <view class="hero-detail-item">
             <text class="hero-detail-label">攻击：</text>
             <image class="hero-attck-type" src="{{heroAttack.heroAttackUrl}}"></image>
-            <text>{{heroAttack.heroAttackText}}</text>
+            <text class="hero-attck-type_text">{{heroAttack.heroAttackText}}</text>
         </view>
         <view class="hero-detail-item">
             <text class="hero-detail-label">难度：</text>
             <hero-level level="{{heroBase.complexity}}"></hero-level>
         </view>
     </view>
-    <video class="hero-video" poster="{{heroTopImg}}" src="{{heroVideoUrl}}" loop="loop" autoplay="{{true}}" controls="{{false}}"></video>
+    <van-dialog show="{{dialogVisible}}" message="{{message}}" title="标题" show-cancel-button></van-dialog>
 </view>
