@@ -1,9 +1,9 @@
 {
     "pages": [
+        "pages/upgrade-log/upgrade-log",
         "pages/hero-list/hero-list",
         "pages/hero-detail/hero-detail",
-        "pages/hero-goods/hero-goods",
-        "pages/upgrade-log/upgrade-log"
+        "pages/hero-goods/hero-goods"
     ],
     "tabBar": {
         "selectedColor": "#57bead",

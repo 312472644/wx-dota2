@@ -92,7 +92,7 @@ Page({
             dialogVisible: false
         })
     },
-    imgLoad(event: any) {
-        console.log('event', event);
+    changeEvent() {
+        this.setData({ scrollTop: 0 });
     }
 })

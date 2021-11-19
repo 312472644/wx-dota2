@@ -1,2 +1,27 @@
 <!--pages/upgrade-log/upgrade-log.wxml-->
-<text>pages/upgrade-log/upgrade-log.wxml</text>
+<van-tabs color="#000000" title-inactive-color="#787d7e" sticky="true" bind:change="changeEvent">
+    <van-tab title="更新日志" name="news_update">
+        <view class="new-log" wx:for="{{newList}}" wx:key="index">
+            <view class="new-log-logo">
+                <van-image class="new-log-logo_image" radius="2" width="100%" height="200rpx" src="https://images.weserv.nl/?url={{item.img}}"></van-image>
+            </view>
+            <view class="new-info">
+                <text class="new-info_title word-break">{{item.title}}</text>
+                <text class="new-info_content word-break">{{item.content}}</text>
+                <text class="new-info_date">{{item.date}}</text>
+            </view>
+        </view>
+    </van-tab>
+    <van-tab title="公告" name="announcement">
+        <view class="new-log" wx:for="{{newList}}" wx:key="index">
+            <view class="new-log-logo">
+                <van-image class="new-log-logo_image" radius="2" width="100%" height="200rpx" src="https://images.weserv.nl/?url={{item.img}}"></van-image>
+            </view>
+            <view class="new-info">
+                <text class="new-info_title word-break">{{item.title}}</text>
+                <text class="new-info_content word-break">{{item.content}}</text>
+                <text class="new-info_date">{{item.date}}</text>
+            </view>
+        </view>
+    </van-tab>
+</van-tabs>

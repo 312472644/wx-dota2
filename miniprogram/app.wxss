@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "./wxParse/wxParse.wxss";
 .hero-item-type {
     width: 20px;
     height: 20px;

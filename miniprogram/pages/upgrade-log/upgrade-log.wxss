@@ -1,1 +1,47 @@
 /* pages/upgrade-log/upgrade-log.wxss */
+.new-log {
+    display: flex;
+    padding: 8px 12px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.new-log:last-of-type {
+    border-bottom: none;
+}
+
+.new-log-logo {
+    width: 120px;
+    margin-right: 16px;
+}
+
+.word-break {
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.new-info {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 280rpx);
+    justify-content: space-around;
+}
+
+.new-info_title {
+    color: #404040;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.new-info_content,
+.new-info_date {
+    color: #666;
+    font-size: 12px;
+}
+
+.load {
+    width: 100%;
+    text-align: center;
+}
