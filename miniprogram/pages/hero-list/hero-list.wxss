@@ -40,25 +40,6 @@
   box-sizing: border-box;
 }
 
-.go-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  box-shadow: 0 0 15px 0 rgb(0 0 0 / 20%);
-  background-color: #fff;
-}
-
-.go-top-image {
-  width: 32px;
-  height: 32px;
-}
-
 .hero-category {
   position: relative;
   font-size: 14px;

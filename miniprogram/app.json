@@ -1,17 +1,19 @@
 {
     "pages": [
-        "pages/upgrade-log/upgrade-log",
         "pages/hero-list/hero-list",
+        "pages/new-log/new-log",
         "pages/hero-detail/hero-detail",
-        "pages/hero-goods/hero-goods"
+        "pages/hero-goods/hero-goods",
+        "pages/new-log-detail/new-log-detail"
     ],
     "tabBar": {
-        "selectedColor": "#57bead",
+        "color": "#787d7e",
+        "selectedColor": "#000",
         "list": [
             {
                 "pagePath": "pages/hero-list/hero-list",
-                "iconPath": "./assets/icon/hero.png",
-                "selectedIconPath": "./assets/icon/hero_active.png",
+                "iconPath": "./assets/icon/home.png",
+                "selectedIconPath": "./assets/icon/home_active.png",
                 "text": "英雄"
             },
             {
@@ -21,9 +23,9 @@
                 "text": "物品"
             },
             {
-                "pagePath": "pages/upgrade-log/upgrade-log",
-                "iconPath": "./assets/icon/about.png",
-                "selectedIconPath": "./assets/icon/about_active.png",
+                "pagePath": "pages/new-log/new-log",
+                "iconPath": "./assets/icon/log.png",
+                "selectedIconPath": "./assets/icon/log_active.png",
                 "text": "日志"
             }
         ]

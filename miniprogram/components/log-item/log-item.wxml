@@ -1,0 +1,12 @@
+<!--components/log-item/log-item.wxml-->
+<view class="new-log" wx:for="{{logList}}" wx:key="index" bindtap="goNewsDetail" data-news="{{item}}">
+    <view class="new-log-logo">
+        <van-image class="new-log-logo_image" radius="2" width="100%" height="200rpx" src="https://images.weserv.nl/?url={{item.img}}"></van-image>
+    </view>
+    <view class="new-info">
+        <text class="new-info_title word-break">{{item.title}}</text>
+        <text class="new-info_content word-break">{{item.content}}</text>
+        <text class="new-info_date">{{item.date}}</text>
+    </view>
+</view>
+<van-divider contentPosition="center" wx:if="{{isFinshed}}">人家是有底线的~</van-divider>

@@ -1,0 +1,5 @@
+/* pages/upgrade-log/upgrade-log.wxss */
+.load {
+    width: 100%;
+    text-align: center;
+}

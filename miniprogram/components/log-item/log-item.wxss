@@ -1,4 +1,4 @@
-/* pages/upgrade-log/upgrade-log.wxss */
+/* components/log-item/log-item.wxss */
 .new-log {
     display: flex;
     padding: 8px 12px;
@@ -39,9 +39,4 @@
 .new-info_date {
     color: #666;
     font-size: 12px;
-}
-
-.load {
-    width: 100%;
-    text-align: center;
 }

@@ -1,0 +1,7 @@
+<!--pages/new-log-detail/new-log-detail.wxml-->
+<view class="new-log-detail">
+    <view class="new-log-title">{{title}}</view>
+    <view class="new-log-date">{{date}}</view>
+    <van-divider customStyle="margin:10px -12px"></van-divider>
+    <rich-text nodes="{{html}}" class="content"></rich-text>
+</view>
