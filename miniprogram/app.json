@@ -1,7 +1,8 @@
 {
     "pages": [
-        "pages/new-log/new-log",
         "pages/hero-list/hero-list",
+        "pages/rank/rank",
+        "pages/new-log/new-log",
         "pages/hero-detail/hero-detail",
         "pages/hero-goods/hero-goods",
         "pages/new-log-detail/new-log-detail"
@@ -9,8 +10,7 @@
     "tabBar": {
         "color": "#787d7e",
         "selectedColor": "#000",
-        "list": [
-            {
+        "list": [{
                 "pagePath": "pages/hero-list/hero-list",
                 "iconPath": "./assets/icon/home.png",
                 "selectedIconPath": "./assets/icon/home_active.png",
@@ -23,10 +23,16 @@
                 "text": "物品"
             },
             {
+                "pagePath": "pages/rank/rank",
+                "iconPath": "./assets/icon/log.png",
+                "selectedIconPath": "./assets/icon/log_active.png",
+                "text": "天梯排名"
+            },
+            {
                 "pagePath": "pages/new-log/new-log",
                 "iconPath": "./assets/icon/log.png",
                 "selectedIconPath": "./assets/icon/log_active.png",
-                "text": "日志"
+                "text": "新闻"
             }
         ]
     },

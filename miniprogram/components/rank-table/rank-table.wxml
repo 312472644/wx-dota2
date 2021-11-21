@@ -1,0 +1,18 @@
+<!--components/rank-table/rank-table.wxml-->
+<view class="rank-table">
+    <view class="rank-table-head">
+        <view class="rank-table-head_item first-column">排名</view>
+        <view class="rank-table-head_item second-column">玩家</view>
+        <view class="rank-table-head_item third-column">队伍</view>
+    </view>
+    <view class="rank-table-body">
+        <table class="rank-table-body_table">
+            <tr class="rank-table-tr" wx:for="{{tableList}}" wx:key="index">
+                <td class="rank first-column"><text class="rank_text">{{item.rank}}</text></td>
+                <td class="player second-column">{{item.name}}</td>
+                <td class="team third-column">{{item.team_tag || '-'}}</td>
+            </tr>
+        </table>
+    </view>
+    <van-empty wx:if="{{tableList.length === 0}}" description="暂无数据" />
+</view>

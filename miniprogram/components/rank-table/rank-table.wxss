@@ -1,0 +1,93 @@
+/* components/rank-table/rank-table.wxss */
+.rank-table-head {
+    position: fixed;
+    top: 44px;
+    left: 0;
+    right: 0;
+    color: #3a3d44;
+    border: 1px solid #ebedf2;
+    z-index: 99;
+}
+
+.rank-table-head_item {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+    background: #f7f8fa;
+}
+
+.first-column {
+    display: inline-block;
+    width: 80px;
+}
+
+.second-column {
+    display: inline-block;
+    width: calc(100% - 180px);
+}
+
+.third-column {
+    display: inline-block;
+    width: 100px;
+}
+
+.rank-table-body {
+    margin-top: 40px;
+}
+
+.rank-table-body,
+.rank-table-body_table {
+    width: 100%;
+}
+
+.rank-table-tr {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    border-bottom: 1px solid #ebedf2;
+}
+
+.rank-table-tr:nth-of-type(2n) {
+    background: #f7f8fa;
+}
+
+.rank_text {
+    padding: 2px 6px;
+    color: #636873;
+    font-size: 12px;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgb(2 5 13 / 8%);
+}
+
+.rank-table-tr:nth-of-type(1) .rank_text:nth-of-type(1) {
+    color: #fff;
+    background: linear-gradient(39deg, #fa0, #ffd500 99%);
+    box-shadow: 0 2px 6px 0 rgb(255 179 0 / 40%);
+}
+
+.rank-table-tr:nth-of-type(2) .rank_text:nth-of-type(1) {
+    color: #fff;
+    background: linear-gradient(39deg, #bcc1cc, #dadde3 99%);
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 12%);
+}
+
+.rank-table-tr:nth-of-type(3) .rank_text:nth-of-type(1) {
+    color: #fff;
+    background: linear-gradient(39deg, #ff9a57, #ffbb80 99%);
+    box-shadow: 0 2px 6px 0 rgb(255 154 87 / 40%);
+}
+
+.rank,
+.player,
+.team {
+    color: #636873;
+    font-size: 13px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
