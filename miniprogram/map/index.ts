@@ -20,7 +20,13 @@ const HeroAttackTypeMap: Map<number, string> = new Map();
 HeroAttackTypeMap.set(1, '近战'); // 近战
 HeroAttackTypeMap.set(2, '远程'); // 远程
 
+// 英雄难度
+const HeroComplexityMap: Map<number, string> = new Map();
+HeroComplexityMap.set(1,'简单');
+HeroComplexityMap.set(2,'中等');
+HeroComplexityMap.set(3,'困难');
+
 // 英雄定位
 const RoleList: string[] = ['核心', '辅助', '爆发', '控制', '打野', '耐久', '逃生', '推进', '先手'];
 
-export { HeroTypeMap, HeroTypeImgMap, HeroAttackTypeImgMap, HeroAttackTypeMap, RoleList };
+export { HeroTypeMap, HeroTypeImgMap, HeroAttackTypeImgMap, HeroAttackTypeMap, RoleList, HeroComplexityMap };

@@ -1,5 +1,0 @@
-<!--components/hero-level/index.wxml-->
-<!--英雄难度插件-->
-<view class="hero-level-container">
-    <text class="hero-level-item {{index<level?' fill':''}}" wx:for="{{totalLevel}}" wx:key="index"></text>
-</view>

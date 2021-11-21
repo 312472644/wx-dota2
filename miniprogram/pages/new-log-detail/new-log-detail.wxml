@@ -3,5 +3,6 @@
     <view class="new-log-title">{{title}}</view>
     <view class="new-log-date">{{date}}</view>
     <van-divider customStyle="margin:10px -12px"></van-divider>
-    <rich-text nodes="{{html}}" class="content"></rich-text>
+    <rich-text wx:if="{{html}}" nodes="{{html}}" class="content"></rich-text>
+    <van-empty wx:if="{{!html && loadComplete}}" description="暂无新闻消息" />
 </view>

@@ -1,4 +1,4 @@
-import { HeroAttackTypeImgMap, HeroAttackTypeMap, HeroTypeImgMap, HeroTypeMap } from "../../map/index";
+import { HeroAttackTypeImgMap, HeroAttackTypeMap, HeroComplexityMap, HeroTypeImgMap, HeroTypeMap } from "../../map/index";
 // components/hero-base/index.ts
 Component({
     /**
@@ -22,11 +22,12 @@ Component({
         heroLoc: '',
         heroVideoUrl: '',
         heroTopImg: '',
+        heroComplexity: ''
     },
     lifetimes: {
         ready() {
             const { heroes } = this.properties;
-            const { attack_capability, primary_attr, hype_loc, top_video, top_img } = heroes;
+            const { attack_capability, primary_attr, hype_loc, top_video, top_img, complexity } = heroes;
             const heroLoc = hype_loc.replaceAll('<b>', '').replaceAll('</b>', '');
             this.setData({
                 heroLoc,
@@ -40,7 +41,8 @@ Component({
                     heroAttackUrl: HeroAttackTypeImgMap.get(attack_capability),
                     heroAttackText: HeroAttackTypeMap.get(attack_capability),
                 },
-                heroBase: heroes
+                heroBase: heroes,
+                heroComplexity: HeroComplexityMap.get(complexity)
             });
         }
     },

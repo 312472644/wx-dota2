@@ -63,8 +63,8 @@ Page({
             const img = item.match(/\bsrc\b\s*=\s*[\'\"]?([^\'\"]*)[\'\"]?/i)?.[1];
             const newHerf = item.match(/\href\b\s*=\s*[\'\"]?([^\'\"]*)[\'\"]?/i)?.[1];
             if (messageDomList.length > 0) {
-                const title = getTagByClassRegex('h2', 'title', messageDomList?.[0])?.[0]?.match(/>(.+)</)?.[1];
-                const content = getTagByClassRegex('p', 'content', messageDomList?.[1])?.[0]?.match(/>(.+)</)?.[1];
+                const title = getTagByClassRegex('h2', 'title', messageDomList?.[0])?.[0]?.match(/>(.+)</)?.[1].replaceAll('&mdash;', '—');
+                const content = getTagByClassRegex('p', 'content', messageDomList?.[1])?.[0]?.match(/>(.+)</)?.[1].replaceAll('&ldquo;', '"').replaceAll('&rdquo;', '"');;
                 const date = getTagByClassRegex('p', 'date', messageDomList?.[2])?.[0]?.match(/>(.+)</)?.[1];
                 news.title = title;
                 news.content = content;
@@ -122,9 +122,10 @@ Page({
         this.getNews(1);
     },
     goNewsDetail(event: IEvent) {
-        const { detail } = event;
+        const { detail = {} } = event;
+        const { href, title, date } = detail;
         wx.navigateTo({
-            url: `../new-log-detail/new-log-detail?href=${detail.href}&title=${detail.title}&date=${detail.date}`
+            url: `../new-log-detail/new-log-detail?href=${href}&title=${title}&date=${date}`
         });
     }
 })

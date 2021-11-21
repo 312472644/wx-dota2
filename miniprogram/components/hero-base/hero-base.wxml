@@ -7,26 +7,16 @@
         <text class="hero-detail_header_log">{{heroBase.npe_desc_loc}}</text>
     </view>
     <view class="hero-detail_body">
-        <view class="hero-detail-item">
-            <text class="hero-detail-label">类型：</text>
-            <image src="{{heroType.heroTypeUrl}}" class="hero-type"></image>
-            <text class="hero-type_text">{{heroType.heroTypeText}}</text>
-        </view>
         <view class="hero-detail-item hero-bg">
-            <text class="hero-detail-label">背景：</text>
             <view class="hero-detail-item_bg">
                 <text>{{heroLoc}}</text>
                 <text class="more-hero-bg" bindtap="readMoreBg">阅读完整背景</text>
             </view>
         </view>
         <view class="hero-detail-item">
-            <text class="hero-detail-label">攻击：</text>
-            <image class="hero-attck-type" src="{{heroAttack.heroAttackUrl}}"></image>
-            <text class="hero-attck-type_text">{{heroAttack.heroAttackText}}</text>
-        </view>
-        <view class="hero-detail-item">
-            <text class="hero-detail-label">难度：</text>
-            <hero-level level="{{heroBase.complexity}}"></hero-level>
+            <view class="attr">{{heroAttack.heroAttackText}}</view>
+            <view class="attr">{{heroType.heroTypeText}}</view>
+            <view class="attr">{{heroComplexity}}</view>
         </view>
     </view>
     <van-dialog show="{{dialogVisible}}" message="{{message}}" title="标题" show-cancel-button></van-dialog>

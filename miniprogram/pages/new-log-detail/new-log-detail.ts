@@ -10,7 +10,8 @@ Page({
     data: {
         title: '',
         date: '',
-        html: ''
+        html: '',
+        loadComplete: false
     },
 
     /**
@@ -38,19 +39,19 @@ Page({
 
     },
     getNewDetailList(data: string) {
-        const detailDom = getTagByClassRegex('div', 'content', data as any);
+        const detailDom = getTagByClassRegex('div', 'content', data as any) || [];
         const list: string[] = [];
-        const domList = (detailDom?.[0])?.match(/<(\S*)[^>]*>[^<]*/gi) || [];
+        const domList = (detailDom?.[0])?.match(/<(\S*)[^>]*>[^<]*<\//gi) || [];
         domList.forEach((item: string) => {
             if (item.indexOf('<p') > -1) {
-                const pDom = item.replace(new RegExp("(i?)(\<p.*?style=['\"])([^\>]+\>)", "gmi"), `<p style="color:#333;font-size:12px;padding:4px 0">`);
-                list.push(pDom);
+                const pDom = item.replace(new RegExp("(i?)(\<p.*?style=['\"])([^\>]+\>)", "gmi"), `<p style="color:#333;font-size:12px;font-weight: normal;line-height:26px">`);
+                list.push(`${pDom}p>`);
             } else if (item.indexOf('<h2') > -1) {
-                const h2Dom = item.replace(new RegExp("(i?)(\<h2.*?style=['\"])([^\>]+\>)", "gmi"), `<h2 style="color:#000;font-size:14px;padding:2px 0;margin:0">`);
-                list.push(h2Dom);
+                const h2Dom = item.replace(new RegExp("(i?)(\<h2.*?style=['\"])([^\>]+\>)", "gmi"), `<h2 style="color:#000;font-size:16px;margin:0;font-weight: normal;line-height:31px">`);
+                list.push(`${h2Dom}2>`);
             } else if (item.indexOf('<span') > -1) {
                 const spanDom = item.replace(new RegExp("(i?)(\<span.*?style=['\"])([^\>]+\>)", "gmi"), `<span style="color:#000;font-size:12px;display:block">`);
-                list.push(spanDom);
+                list.push(`${spanDom}span>`);
             } else if (item.indexOf('<img') > -1) {
                 const imgDom = item.match(new RegExp("(i?)(\<img.*?src=['\"])([^\>]+\>)", "gmi"))?.[0];
                 const imgUrl = imgDom?.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, (match: string, capture: string) => {
@@ -60,9 +61,6 @@ Page({
                 if (imgUrl?.indexOf('https') > -1) {
                     list.push(`<img src=${imgUrl} style="width:100%;padding:6px 0 3px 0" />`);
                 }
-            }
-            else {
-                list.push(item);
             }
         });
         return list;
@@ -81,8 +79,9 @@ Page({
                     })
                 }
             },
-            complete() {
+            complete: () => {
                 wx.hideLoading();
+                this.setData({ loadComplete: true });
             }
         })
     }

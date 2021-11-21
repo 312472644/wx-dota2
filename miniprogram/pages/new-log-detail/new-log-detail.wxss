@@ -1,7 +1,7 @@
 /* pages/new-log-detail/new-log-detail.wxss */
 .new-log-detail {
     padding: 8px 12px;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .new-log-title {
