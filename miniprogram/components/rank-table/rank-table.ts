@@ -5,17 +5,13 @@ Component({
      */
     properties: {
         tableList: {
-            type: Array
+            type: Array,
         }
     },
-
     /**
      * 组件的初始数据
      */
-    data: {
-
-    },
-
+    data: {},
     /**
      * 组件的方法列表
      */

@@ -5,12 +5,12 @@
     left: 0;
     right: 0;
     color: #3a3d44;
+    height: 40px;
     border: 1px solid #ebedf2;
     z-index: 99;
 }
 
 .rank-table-head_item {
-    height: 40px;
     line-height: 40px;
     font-size: 14px;
     text-align: center;
@@ -33,11 +33,10 @@
 }
 
 .rank-table-body {
-    margin-top: 40px;
+    padding-top: 40px;
 }
 
-.rank-table-body,
-.rank-table-body_table {
+.rank-table-body {
     width: 100%;
 }
 

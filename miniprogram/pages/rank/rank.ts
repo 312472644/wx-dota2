@@ -24,7 +24,6 @@ Page({
     onReady() {
         this.getRankList();
     },
-
     changeEvent(event: IEvent) {
         const { detail } = event;
         this.setData({ tabName: detail.name });
@@ -38,7 +37,8 @@ Page({
             success: (res: IResult<any>) => {
                 const { data, statusCode } = res;
                 if (statusCode === 200) {
-                    this.setData({ rankList: (data as any).leaderboard.splice(0, 100) })
+                    const rankList = (data as any).leaderboard.splice(0, 100);
+                    this.setData({ rankList })
                 } else {
                     wx.showToast({ title: "获取数据失败", icon: "error" });
                 }
