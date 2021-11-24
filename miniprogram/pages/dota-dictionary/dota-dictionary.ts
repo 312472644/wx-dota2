@@ -13,7 +13,8 @@ Page({
         categoryDetail: {},
         currentCategoryDetail: null,
         dialogVisible: false,
-        scrollTop: 0
+        scrollTop: 0,
+        activeTab: 'hero'
     },
 
     /**
@@ -27,9 +28,8 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
-        wx.showShareMenu({ withShareTicket: true });
-        this.getCategory();
-        this.getCategoryDetail();
+        // this.getCategory();
+        // this.getCategoryDetail();
     },
     // 获取物品分类
     getCategory() {
@@ -50,7 +50,6 @@ Page({
             },
             complete: () => {
                 wx.hideLoading();
-                this.selectComponent('#pull-refresh').stopRefresh();
             }
         })
     },
@@ -93,10 +92,13 @@ Page({
             dialogVisible: false
         })
     },
-    changeEvent() {
-        this.setData({ scrollTop: 0 });
-    },
-    pulldownEvent() {
-      this.getCategory();
+    changeEvent(event: IEvent) {
+        const { detail } = event;
+        const activeTab = detail.name;
+        if (activeTab === 'goods' && !this.data.baseCategory) {
+            this.getCategory();
+            this.getCategoryDetail();
+        }
+        this.setData({ scrollTop: 0, activeTab });
     }
 })

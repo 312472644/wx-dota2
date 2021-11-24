@@ -1,8 +1,8 @@
 {
     "pages": [
-        "pages/hero-goods/hero-goods",
-        "pages/hero-list/hero-list",
-        "pages/rank/rank",
+        "pages/dota-team/dota-team",
+        "pages/dota-dictionary/dota-dictionary",
+        "pages/dota-rank/dota-rank",
         "pages/new-log/new-log",
         "pages/hero-detail/hero-detail",
         "pages/new-log-detail/new-log-detail"
@@ -10,20 +10,21 @@
     "tabBar": {
         "color": "#787d7e",
         "selectedColor": "#000",
-        "list": [{
-                "pagePath": "pages/hero-list/hero-list",
+        "list": [
+            {
+                "pagePath": "pages/dota-team/dota-team",
                 "iconPath": "./assets/icon/home.png",
                 "selectedIconPath": "./assets/icon/home_active.png",
-                "text": "英雄"
+                "text": "战队"
             },
             {
-                "pagePath": "pages/hero-goods/hero-goods",
+                "pagePath": "pages/dota-dictionary/dota-dictionary",
                 "iconPath": "./assets/icon/goods.png",
                 "selectedIconPath": "./assets/icon/goods_active.png",
-                "text": "物品"
+                "text": "百科"
             },
             {
-                "pagePath": "pages/rank/rank",
+                "pagePath": "pages/dota-rank/dota-rank",
                 "iconPath": "./assets/icon/log.png",
                 "selectedIconPath": "./assets/icon/log_active.png",
                 "text": "天梯排名"

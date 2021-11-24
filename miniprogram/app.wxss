@@ -28,3 +28,9 @@
     width: 32px;
     height: 32px;
 }
+
+page {
+    font-family: BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+        Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+        sans-serif;
+}

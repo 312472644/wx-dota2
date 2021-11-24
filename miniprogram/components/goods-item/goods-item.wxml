@@ -6,7 +6,7 @@
             <view class="category-item_title">{{item.name}}</view>
             <view class="category-item_body">
                 <view class="category-logo_container" image-class="category-logo" wx:for-item="categoryItem" bindtap="perviewCategory" data-category="{{categoryItem}}" wx:for="{{item.items}}" wx:key="index">
-                    <van-image class="category-logo-item" width="100%" height="100rpx" src="https://images.weserv.nl/?url=https://www.dota2.com.cn/items/images/{{categoryItem.img}}" lazy-load="true"></van-image>
+                    <van-image class="category-logo-item" width="100%" height="100rpx" src="https://images.weserv.nl/?url=https://www.dota2.com.cn/items/images/{{categoryItem.img}}" lazy-load></van-image>
                     <text class="category-logo_text">{{categoryItem.name_loc}}</text>
                 </view>
             </view>

@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "select-text": "../select-text/select-text",
+        "van-search": "@vant/weapp/search/index",
+        "van-empty": "@vant/weapp/empty/index",
+        "van-image": "@vant/weapp/image/index"
+    }
+}
