@@ -2,6 +2,7 @@
   "usingComponents": {
     "goods-item": "../../components/goods-item/goods-item",
     "dialog": "../../components/dialog/dialog",
+    "pull-refresh": "../../components/pull-refresh/pull-refresh",
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index"
   }

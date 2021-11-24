@@ -1,0 +1,12 @@
+<!--components/pull-refresh/pull-refresh.wxml-->
+<wxs src="./refresh.wxs" module="refresh"></wxs>
+<view class="pull-refresh">
+    <view class="pull-refresh-content">
+        <image src="../../assets/common/refresh.svg" class="refresh-image"></image>
+    </view>
+    <view class="slot-container" data-threshold="{{threshold}}" bindtouchstart="{{refresh.touchStart}}" bindtouchend="{{refresh.touchEnd}}" bindtouchmove="{{refresh.touchMove}}">
+        <slot></slot>
+    </view>
+    <!--加载完成-->
+    <view wx:if="{{isStopRefresh}}">{{refresh.loadComplete()}}</view>
+</view>

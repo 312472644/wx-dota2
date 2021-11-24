@@ -50,6 +50,7 @@ Page({
             },
             complete: () => {
                 wx.hideLoading();
+                this.selectComponent('#pull-refresh').stopRefresh();
             }
         })
     },
@@ -94,5 +95,8 @@ Page({
     },
     changeEvent() {
         this.setData({ scrollTop: 0 });
+    },
+    pulldownEvent() {
+      this.getCategory();
     }
 })

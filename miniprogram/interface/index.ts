@@ -25,6 +25,14 @@ export interface IEvent {
     id: string;
   }
   detail: any;
+  changedTouches: ITouches[]
+}
+
+interface ITouches {
+  clientX: number; // x轴位置
+  clientY: number;
+  pageX: number;
+  pageY: number;
 }
 
 // 接口请求数据

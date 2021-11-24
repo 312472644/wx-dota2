@@ -1,0 +1,32 @@
+/* components/pull-refresh/pull-refresh.wxss */
+.pull-refresh-content {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    margin-left: -16px;
+    z-index: 999;
+    background: #fff;
+    border-radius: 50%;
+    transform-origin: center center;
+}
+
+.refresh-image {
+    opacity: 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: 1px solid #d8d8d8;
+    box-sizing: border-box;
+}
+
+@keyframes animate-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

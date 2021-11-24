@@ -1,10 +1,10 @@
 {
     "pages": [
+        "pages/hero-goods/hero-goods",
         "pages/hero-list/hero-list",
         "pages/rank/rank",
         "pages/new-log/new-log",
         "pages/hero-detail/hero-detail",
-        "pages/hero-goods/hero-goods",
         "pages/new-log-detail/new-log-detail"
     ],
     "tabBar": {

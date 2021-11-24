@@ -1,0 +1,108 @@
+var data = {
+    startTop: 0,
+    endTop: 0,
+    isBottom: false, // 是否到达边界值
+    isTrigger: false, // 是否触发事件
+    initDistance: 120,
+    timer: null,
+    pullInstance: null // 下拉实例
+};
+// 手势开始触发事件
+var touchStartEvent = function (event) {
+    var distance = event.changedTouches[0].clientY;
+    data.startTop = distance;
+}
+// 手势移动事件
+var touchMoveEvent = function (event, instance) {
+    // 到达边界值或未加载完成
+    if (data.isTrigger) {
+        return;
+    }
+    var clientY = event.changedTouches[0].clientY;
+    var component = instance.selectComponent('.pull-refresh-content');
+    var imgComponent = instance.selectComponent('.refresh-image');
+    var startTop = data.startTop;
+    var translateY = clientY - startTop;
+    var initDistance = data.initDistance;
+    // 旋转比例
+    var rotateRatio = 360 / initDistance;
+    var rotate = Math.ceil(translateY * rotateRatio) + 'deg';
+    var moveDistance = translateY + 'px';
+    var opacity = translateY / initDistance;
+    if (translateY >= initDistance) {
+        rotate = '360deg';
+        moveDistance = initDistance + 'px';
+        opacity = 1;
+        data.isBottom = true;
+    } else {
+        data.isBottom = false;
+    }
+    component.setStyle({
+        top: moveDistance,
+        transform: 'rotate(' + rotate + ')',
+    });
+    imgComponent.setStyle({ opacity: opacity })
+};
+
+// 触摸结束事件
+var touchEndEvent = function (event, instance) {
+    // 到达边界值或未加载完成
+    if (data.isTrigger) {
+        return;
+    }
+    var component = instance.selectComponent('.pull-refresh-content');
+    var imgComponent = instance.selectComponent('.refresh-image');
+    var top = '-' + data.initDistance + 'px';
+    var animation = '';
+    // 到达边界值，释放触发更新
+    if (data.isBottom) {
+        top = data.initDistance / 2 + 'px';
+        animation = 'animate-spin .6s linear infinite';
+        triggerEvent(event, instance);
+    } else {
+        imgComponent.setStyle({ opacity: 0.3 })
+    }
+    component.setStyle({
+        top: top,
+        transition: 'top .2s linear',
+        animation: animation
+    })
+}
+
+// 事件触发
+var triggerEvent = function (event, instance) {
+    if (data.timer) {
+        instance.clearTimeout(data.timer);
+    }
+    var threshold = event.currentTarget.dataset.threshold;
+    data.timer = instance.setTimeout(function () {
+        data.isTrigger = true;
+        data.pullInstance = instance;
+        instance.triggerEvent('pulldown');
+        console.log('trigger');
+    }, threshold);
+}
+
+// 加载完成
+var loadComplete = function () {
+    if (!data.pullInstance) {
+        return;
+    }
+    var component = data.pullInstance.selectComponent('.pull-refresh-content');
+    var imgComponent = data.pullInstance.selectComponent('.refresh-image');
+    component.setStyle({
+        top: '-' + data.initDistance + 'px',
+        transition: 'top .2s linear',
+    });
+    imgComponent.setStyle({
+        opacity: 0.3
+    })
+    data.isTrigger = false;
+}
+
+module.exports = {
+    touchMove: touchMoveEvent,
+    touchStart: touchStartEvent,
+    touchEnd: touchEndEvent,
+    loadComplete: loadComplete
+};
