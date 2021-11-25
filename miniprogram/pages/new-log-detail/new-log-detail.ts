@@ -1,5 +1,6 @@
 import { IResult } from "miniprogram/interface";
 import { getTagByClassRegex } from '../../utils/index';
+import { axios } from '../../utils/index';
 
 // pages/new-log-detail/new-log-detail.ts
 Page({
@@ -66,23 +67,18 @@ Page({
         return list;
     },
     getNewDetail(url: string) {
-        wx.showLoading({ title: '加载中...' });
-        wx.request({
+        axios({
             url,
             method: 'GET',
-            success: (res: IResult<any>) => {
-                const { statusCode, data } = res;
-                if (statusCode === 200) {
-                    const newDetailList = this.getNewDetailList(data as any) || [];
-                    this.setData({
-                        html: newDetailList.join('').toString().replaceAll('<br/>', '')
-                    })
-                }
-            },
             complete: () => {
                 wx.hideLoading();
                 this.setData({ loadComplete: true });
             }
-        })
+        }).then((res: IResult<any>) => {
+            const newDetailList = this.getNewDetailList(res.data as any) || [];
+            this.setData({
+                html: newDetailList.join('').toString().replaceAll('<br/>', '')
+            })
+        });
     }
 })

@@ -1,6 +1,4 @@
 /* pages/dota-team/dota-team.wxss */
-.dota-team-container {}
-
 .text-describe {
   display: flex;
   align-items: center;

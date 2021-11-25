@@ -5,7 +5,8 @@
         "pages/dota-dictionary/dota-dictionary",
         "pages/new-log/new-log",
         "pages/hero-detail/hero-detail",
-        "pages/new-log-detail/new-log-detail"
+        "pages/new-log-detail/new-log-detail",
+        "pages/dota-team-detail/dota-team-detail"
     ],
     "tabBar": {
         "color": "#787d7e",

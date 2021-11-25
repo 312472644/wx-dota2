@@ -1,5 +1,6 @@
 import { IEvent, IResult } from "../../interface";
 import { getTagByClassRegex } from '../../utils/index';
+import { axios } from '../../utils/index';
 
 interface INews {
     title?: string;
@@ -82,22 +83,17 @@ Page({
         if (!isLoadIng && pageIndex > 1) {
             return;
         }
-        wx.showLoading({ title: "加载中..." });
-        wx.request({
+        axios({
             url: this.getRequestUrl(pageIndex, activeTab),
             method: 'GET',
-            success: (res: IResult<any>) => {
-                const { data, statusCode } = res;
-                if (statusCode === 200) {
-                    const newResultList = this.getNewList(data as any);
-                    this.setData({ newList: newList.concat(newResultList as any) });
-                }
-            },
             complete: () => {
                 wx.hideLoading();
-                this.setData({ isLoadIng: false })
+                this.setData({ isLoadIng: false });
             }
-        })
+        }).then((res: IResult<any>) => {
+            const newResultList = this.getNewList(res.data as any);
+            this.setData({ newList: newList.concat(newResultList as any) });
+        });
     },
 
     // 获取请求地址

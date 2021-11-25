@@ -1,4 +1,5 @@
 import { IEvent, IResult } from "miniprogram/interface";
+import { axios } from "../../utils/index";
 
 // pages/dota-team/dota-team.ts
 Page({
@@ -24,19 +25,21 @@ Page({
 
     },
     getTeamList() {
-        wx.showLoading({ title: '加载中...' });
-        wx.request({
+        axios({
             url: 'https://api.opendota.com/api/teams',
             method: 'GET',
-            success: (res: IResult<any>) => {
-                const { data = [], statusCode } = res;
-                if (statusCode === 200) {
-                    this.setData({ teamList: (data as any).filter((item: any) => item.name && item.logo_url).splice(0, 100) })
-                }
-            },
-            complete: () => {
-                wx.hideLoading();
+        }).then((res: IResult<any>) => {
+            const { data = [], statusCode } = res;
+            if (statusCode === 200) {
+                this.setData({ teamList: (data as any).filter((item: any) => item.name && item.logo_url).splice(0, 100) })
             }
+        });
+    },
+    toDotaTeamDetail(event: IEvent) {
+        const { currentTarget } = event;
+        const { team } = currentTarget.dataset;
+        wx.navigateTo({
+            url: `../dota-team-detail/dota-team-detail?team=${JSON.stringify(team)}`
         })
     }
 })

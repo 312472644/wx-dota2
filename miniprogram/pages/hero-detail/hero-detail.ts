@@ -1,4 +1,5 @@
 import { IEvent, IResult } from "../../interface";
+import { axios } from "../../utils/index";
 
 // pages/hero-detail/hero-detail.ts
 Page({
@@ -24,26 +25,12 @@ Page({
     },
     // 获取英雄技能详情
     getHeroDetail(heroId: number) {
-        wx.showLoading({ title: '加载中...' });
-        wx.request({
+        axios({
             url: `https://www.dota2.com.cn/datafeed/hero?hero_id=${heroId}`,
             method: "GET",
-            success: (res: IResult<any>) => {
-                const { data, statusCode } = res;
-                if (statusCode === 200) {
-                    const { result } = data;
-                    this.setData({ heroes: result.heroes });
-                } else {
-                    wx.showToast({
-                        title: "获取数据失败",
-                        icon: "error"
-                    });
-                }
-            },
-            complete() {
-                wx.hideLoading();
-            }
-        })
+        }).then((res: IResult<any>) => {
+            this.setData({ heroes: res.data.result.heroes });
+        });
     },
     // 英雄预览
     perviewHero(event: IEvent) {

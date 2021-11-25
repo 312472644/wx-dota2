@@ -13,7 +13,9 @@
 </wxs>
 <view class="dota-team-container">
       <view class="text-describe">
-            <van-icon name="question-o" size="18" /><text>Elo等级分排名</text>
+            <van-icon name="question-o" size="18" />
+            <text style="padding-right: 5px;">Elo等级分排名</text>
+            <text>k = 32, init = 1000</text>
       </view>
       <view class="table">
             <view class="table-header">
@@ -26,7 +28,7 @@
             <view class="table-body">
                   <view class="table-tr" wx:for="{{teamList}}" wx:key="index">
                         <view class="table-body-item" style="width:50px"><text class="level-text">{{table.getRowIndex(index)}}</text></view>
-                        <view class="table-body-item" style="width:130px">
+                        <view class="table-body-item" style="width:130px" data-team="{{item}}" bindtap="toDotaTeamDetail">
                               <view class="team-tag">
                                     <van-image image-class="team-tag-image" class="team-tag-image-box" width="35" height="35" src="https://images.weserv.nl/?url={{item.logo_url}}" />
                                     <text class="team-tag-text">{{item.name}}</text>

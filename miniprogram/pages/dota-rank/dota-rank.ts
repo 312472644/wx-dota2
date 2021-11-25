@@ -1,4 +1,5 @@
 import { IEvent, IResult } from "miniprogram/interface";
+import { axios } from "../../utils/index";
 
 // pages/rank/rank.ts
 Page({
@@ -30,22 +31,12 @@ Page({
         this.getRankList(detail.name);
     },
     getRankList(tabName: string = 'china') {
-        wx.showLoading({ title: '加载中...' });
-        wx.request({
+        axios({
             url: `http://www.dota2.com/webapi/ILeaderboard/GetDivisionLeaderboard/v0001?division=${tabName}&leaderboard=0`,
-            method: 'GET',
-            success: (res: IResult<any>) => {
-                const { data, statusCode } = res;
-                if (statusCode === 200) {
-                    const rankList = (data as any).leaderboard.splice(0, 100);
-                    this.setData({ rankList })
-                } else {
-                    wx.showToast({ title: "获取数据失败", icon: "error" });
-                }
-            },
-            complete: () => {
-                wx.hideLoading();
-            }
+            method: 'GET'
+        }).then((res: IResult<any>) => {
+            const rankList = (res.data as any).leaderboard.splice(0, 100);
+            this.setData({ rankList })
         })
     }
 })

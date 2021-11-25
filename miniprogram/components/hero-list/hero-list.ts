@@ -1,6 +1,7 @@
 import { HeroComplexEnum, HeroTypeEnum, PropEnum } from "../../enum/index";
 import { IEvent, IResult } from "../../interface";
 import { IHero } from "./interface";
+import { axios } from '../../utils/index';
 
 // components/hero-list/hero-list.ts
 Component({
@@ -105,36 +106,28 @@ Component({
         },
         // 获取英雄列表
         getHeroList() {
-            wx.showLoading({ title: '加载中...' });
-            wx.request({
+            axios({
                 url: "https://www.dota2.com.cn/datafeed/heroList?task=herolist",
                 method: "GET",
-                success: (res: IResult<{ heroes: IHero[] }>) => {
-                    const { data, statusCode } = res;
-                    if (statusCode === 200) {
-                        const { result } = data;
-                        if (result) {
-                            const { heroes = [] } = result;
-                            result.heroes.forEach(item => {
-                                item.index_img = `https://images.weserv.nl/?url=${item.index_img}`;
-                            });
-                            this.setData({
-                                heroList: this.getCategoryHero(heroes as IHero[]) as any,
-                                _initHeroList: heroes as any
-                            });
-                        }
-                    } else {
-                        wx.showToast({
-                            title: "获取数据失败",
-                            icon: "error"
-                        });
-                    }
-                },
                 complete: () => {
                     this.setData({ isFirstLoad: true });
                     wx.hideLoading();
                 },
-            })
+            }).then((res: IResult<any>) => {
+                const { data } = res;
+                const { result } = data;
+                if (!result) {
+                    return;
+                }
+                const { heroes = [] } = result;
+                result.heroes.forEach((item: any) => {
+                    item.index_img = `https://images.weserv.nl/?url=${item.index_img}`;
+                });
+                this.setData({
+                    heroList: this.getCategoryHero(heroes as IHero[]) as any,
+                    _initHeroList: heroes as any
+                });
+            });
         },
         // 回到顶部
         bindGoTop() {

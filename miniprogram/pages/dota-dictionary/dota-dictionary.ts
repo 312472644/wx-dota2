@@ -1,5 +1,5 @@
 import { IEvent, IResult } from "../../interface";
-
+import { axios } from '../../utils/index';
 // pages/hero-goods/hero-goods.ts
 Page({
 
@@ -55,17 +55,13 @@ Page({
     },
     // 获取物品详情
     getCategoryDetail() {
-        wx.request({
+        axios({
             url: 'https://www.dota2.com.cn/items/json?callback=HeropediaDFReceive',
             method: 'GET',
-            success: (res: IResult<any>) => {
-                const { data, statusCode } = res;
-                if (statusCode === 200) {
-                    const result = JSON.parse((data as any).replace('HeropediaDFReceive', '').replace('(', '').replace(')', ''));
-                    this.setData({ categoryDetail: result });
-                }
-            }
-        });
+        }).then((res: IResult<any>) => {
+            const result = JSON.parse((res.data as any).replace('HeropediaDFReceive', '').replace('(', '').replace(')', ''));
+            this.setData({ categoryDetail: result });
+        })
     },
     // 预览物品
     perviewCategory(event: IEvent) {
