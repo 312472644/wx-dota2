@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/dota-rank/dota-rank",
         "pages/dota-team/dota-team",
+        "pages/dota-rank/dota-rank",
         "pages/dota-dictionary/dota-dictionary",
         "pages/new-log/new-log",
         "pages/hero-detail/hero-detail",
@@ -15,7 +15,7 @@
                 "pagePath": "pages/dota-team/dota-team",
                 "iconPath": "./assets/icon/home.png",
                 "selectedIconPath": "./assets/icon/home_active.png",
-                "text": "战队"
+                "text": "职业战队"
             },
             {
                 "pagePath": "pages/dota-dictionary/dota-dictionary",

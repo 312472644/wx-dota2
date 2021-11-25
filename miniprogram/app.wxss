@@ -1,4 +1,10 @@
 /**app.wxss**/
+page {
+    font-family: BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+        Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+        sans-serif;
+}
+
 .hero-item-type {
     width: 20px;
     height: 20px;
@@ -29,8 +35,75 @@
     height: 32px;
 }
 
-page {
-    font-family: BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
-        Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
-        sans-serif;
+.table {}
+
+.table-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #3a3d44;
+    height: 40px;
+    border: 1px solid #ebedf2;
+    z-index: 99;
+}
+
+.table-header-item {
+    display: inline-block;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+    background: #f7f8fa;
+}
+
+.table-tr:nth-of-type(2n) {
+    background: #f7f8fa;
+}
+
+.table-body {
+    width: 100%;
+}
+
+.table-tr {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ebedf2;
+}
+
+.table-body-item {
+    height: 40px;
+    color: #636873;
+    font-size: 13px;
+    line-height: 40px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.level-text {
+    padding: 2px 6px;
+    color: #636873;
+    font-size: 12px;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgb(2 5 13 / 8%);
+}
+
+.table-tr:nth-of-type(1) .level-text:nth-of-type(1) {
+    color: #fff;
+    background: linear-gradient(39deg, #fa0, #ffd500 99%);
+    box-shadow: 0 2px 6px 0 rgb(255 179 0 / 40%);
+}
+
+.table-tr:nth-of-type(2) .level-text:nth-of-type(1) {
+    color: #fff;
+    background: linear-gradient(39deg, #bcc1cc, #dadde3 99%);
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 12%);
+}
+
+.table-tr:nth-of-type(3) .level-text:nth-of-type(1) {
+    color: #fff;
+    background: linear-gradient(39deg, #ff9a57, #ffbb80 99%);
+    box-shadow: 0 2px 6px 0 rgb(255 154 87 / 40%);
 }

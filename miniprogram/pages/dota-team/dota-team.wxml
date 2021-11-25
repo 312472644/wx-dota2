@@ -1,4 +1,41 @@
 <!--pages/dota-team/dota-team.wxml-->
-<view>
-      <text>pages/dota-team/dota-team.wxml</text>
+<wxs module="table">
+      var parseIntValue = function (value) {
+            return parseInt(value);
+      }
+      var getRowIndex = function (index) {
+            return parseInt(index) + 1;
+      }
+      module.exports = {
+            parseIntValue: parseIntValue,
+            getRowIndex: getRowIndex
+      };
+</wxs>
+<view class="dota-team-container">
+      <view class="text-describe">
+            <van-icon name="question-o" size="18" /><text>Elo等级分排名</text>
+      </view>
+      <view class="table">
+            <view class="table-header">
+                  <view class="table-header-item" style="width:50px">排名</view>
+                  <view class="table-header-item" style="width:130px">名称</view>
+                  <view class="table-header-item" style="width:calc(33.333333% - 60px)">等级分</view>
+                  <view class="table-header-item" style="width:calc(33.333333% - 60px)">胜</view>
+                  <view class="table-header-item" style="width:calc(33.333333% - 60px)">败</view>
+            </view>
+            <view class="table-body">
+                  <view class="table-tr" wx:for="{{teamList}}" wx:key="index">
+                        <view class="table-body-item" style="width:50px"><text class="level-text">{{table.getRowIndex(index)}}</text></view>
+                        <view class="table-body-item" style="width:130px">
+                              <view class="team-tag">
+                                    <van-image image-class="team-tag-image" class="team-tag-image-box" width="35" height="35" src="https://images.weserv.nl/?url={{item.logo_url}}" />
+                                    <text class="team-tag-text">{{item.name}}</text>
+                              </view>
+                        </view>
+                        <view class="table-body-item" style="width:calc(33.333333% - 60px)">{{table.parseIntValue(item.rating)}}</view>
+                        <view class="table-body-item win" style="width:calc(33.333333% - 60px)">{{item.wins}}</view>
+                        <view class="table-body-item lose" style="width:calc(33.333333% - 60px)">{{item.losses}}</view>
+                  </view>
+            </view>
+      </view>
 </view>

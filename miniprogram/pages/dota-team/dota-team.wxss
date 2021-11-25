@@ -1,1 +1,51 @@
 /* pages/dota-team/dota-team.wxss */
+.dota-team-container {}
+
+.text-describe {
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.win {
+  color: #66bb6a;
+}
+
+.lose {
+  color: #f77c4e;
+}
+
+.team-tag {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.team-tag-image-box {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-right: 5px;
+}
+
+.table-body-item {
+  height: 50px;
+  line-height: 50px;
+}
+
+.team-tag-text {
+  font-size: 12px;
+  max-width: 95px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-tag-image {
+  border-radius: 50%;
+  background-color: #141e30;
+}

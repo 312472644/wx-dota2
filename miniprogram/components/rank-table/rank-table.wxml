@@ -1,15 +1,15 @@
 <!--components/rank-table/rank-table.wxml-->
-<view class="rank-table">
-    <view class="rank-table-head">
-        <view class="rank-table-head_item first-column">排名</view>
-        <view class="rank-table-head_item second-column">玩家</view>
-        <view class="rank-table-head_item third-column">队伍</view>
+<view class="table">
+    <view class="table-header">
+        <view class="table-header-item first-column">排名</view>
+        <view class="table-header-item second-column">玩家</view>
+        <view class="table-header-item third-column">队伍</view>
     </view>
-    <view class="rank-table-body">
-        <view class="rank-table-tr" wx:for="{{tableList}}" wx:key="index">
-            <view class="rank-table-item first-column"><text class="rank_text">{{item.rank}}</text></view>
-            <view class="rank-table-item second-column">{{item.name}}</view>
-            <view class="rank-table-item third-column">{{item.team_tag || '-'}}</view>
+    <view class="table-body">
+        <view class="table-tr" wx:for="{{tableList}}" wx:key="index">
+            <view class="table-body-item first-column"><text class="level-text">{{item.rank}}</text></view>
+            <view class="table-body-item second-column">{{item.name}}</view>
+            <view class="table-body-item third-column">{{item.team_tag || '-'}}</view>
         </view>
     </view>
     <van-empty wx:if="{{tableList.length === 0}}" description="暂无数据" />
