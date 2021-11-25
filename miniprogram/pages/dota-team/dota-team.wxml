@@ -1,2 +1,4 @@
 <!--pages/dota-team/dota-team.wxml-->
-<text>pages/dota-team/dota-team.wxml</text>
+<view>
+      <text>pages/dota-team/dota-team.wxml</text>
+</view>

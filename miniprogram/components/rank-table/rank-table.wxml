@@ -7,9 +7,9 @@
     </view>
     <view class="rank-table-body">
         <view class="rank-table-tr" wx:for="{{tableList}}" wx:key="index">
-            <view class="rank first-column"><text class="rank_text">{{item.rank}}</text></view>
-            <view class="player second-column">{{item.name}}</view>
-            <view class="team third-column">{{item.team_tag || '-'}}</view>
+            <view class="rank-table-item first-column"><text class="rank_text">{{item.rank}}</text></view>
+            <view class="rank-table-item second-column">{{item.name}}</view>
+            <view class="rank-table-item third-column">{{item.team_tag || '-'}}</view>
         </view>
     </view>
     <van-empty wx:if="{{tableList.length === 0}}" description="暂无数据" />

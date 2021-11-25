@@ -3,7 +3,7 @@
     position: relative;
     margin-bottom: 8px;
     color: #fff;
-    background: linear-gradient(to right, #2a2c2d, #71787b);
+    background-image: linear-gradient(to right, #1a2b3e, #141e30);
 }
 
 .hero-detail_header_log {

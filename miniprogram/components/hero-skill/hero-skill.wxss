@@ -118,7 +118,7 @@
     color: #fff;
     font-size: 13px;
     font-style: italic;
-    background: rgba(000, 000, 000, 0.7);
+    background: linear-gradient(to right, #1a2b3e, #141e30);
     border-radius: 2px;
 }
 

@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/dota-rank/dota-rank",
         "pages/dota-team/dota-team",
         "pages/dota-dictionary/dota-dictionary",
-        "pages/dota-rank/dota-rank",
         "pages/new-log/new-log",
         "pages/hero-detail/hero-detail",
         "pages/new-log-detail/new-log-detail"

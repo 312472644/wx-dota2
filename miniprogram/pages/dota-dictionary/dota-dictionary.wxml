@@ -4,7 +4,7 @@
         <van-tab title="英雄" name="hero">
             <hero-list wx:if="{{activeTab === 'hero'}}"></hero-list>
         </van-tab>
-        <van-tab title="商店物品" name="goods">
+        <van-tab title="物品" name="goods">
             <view wx:if="{{activeTab === 'goods'}}">
                 <goods-item title="基础分类" wx:if="{{baseCategory}}" categoryList="{{baseCategory}}" bindcategory="perviewCategory"></goods-item>
                 <goods-item title="合成分类" wx:if="{{upgradeCategory}}" categoryList="{{upgradeCategory}}" bindcategory="perviewCategory"></goods-item>

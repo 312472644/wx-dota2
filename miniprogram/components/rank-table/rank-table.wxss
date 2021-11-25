@@ -80,9 +80,7 @@
     box-shadow: 0 2px 6px 0 rgb(255 154 87 / 40%);
 }
 
-.rank,
-.player,
-.team {
+.rank-table-item {
     color: #636873;
     font-size: 13px;
     text-align: center;
