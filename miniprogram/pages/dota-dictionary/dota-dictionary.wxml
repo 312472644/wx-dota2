@@ -1,15 +1,13 @@
 <!--pages/hero-goods/hero-goods.wxml-->
 <view class="hero-goods-container">
-    <van-tabs color="#000000" title-inactive-color="#787d7e" active="{{ activeTab }}" sticky="true" bind:change="changeEvent">
+    <van-tabs color="#000000" title-inactive-color="#787d7e" sticky="true" bind:change="changeEvent">
         <van-tab title="英雄" name="hero">
-            <hero-list wx:if="{{activeTab === 'hero'}}"></hero-list>
+            <hero-list></hero-list>
         </van-tab>
         <van-tab title="物品" name="goods">
-            <view wx:if="{{activeTab === 'goods'}}">
-                <goods-item title="基础分类" wx:if="{{baseCategory}}" categoryList="{{baseCategory}}" bindcategory="perviewCategory"></goods-item>
-                <goods-item title="合成分类" wx:if="{{upgradeCategory}}" categoryList="{{upgradeCategory}}" bindcategory="perviewCategory"></goods-item>
-                <goods-item title="中立物品" wx:if="{{neutralCategory}}" categoryList="{{neutralCategory}}" bindcategory="perviewCategory"></goods-item>
-            </view>
+            <goods-item title="基础分类" wx:if="{{baseCategory.length > 0}}" categoryList="{{baseCategory}}" bindcategory="perviewCategory"></goods-item>
+            <goods-item title="合成分类" wx:if="{{upgradeCategory.length > 0}}" categoryList="{{upgradeCategory}}" bindcategory="perviewCategory"></goods-item>
+            <goods-item title="中立物品" wx:if="{{neutralCategory.length > 0}}" categoryList="{{neutralCategory}}" bindcategory="perviewCategory"></goods-item>
             <dialog visible="{{dialogVisible}}" bindclose="closeDialog" categoryDetail="{{currentCategoryDetail}}"></dialog>
         </van-tab>
     </van-tabs>

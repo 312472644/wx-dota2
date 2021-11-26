@@ -23,7 +23,11 @@ export interface IEvent {
   currentTarget: {
     dataset: any;
     id: string;
-  }
+  };
+  target: {
+    id: string;
+    dataset: any;
+  };
   detail: any;
   changedTouches: ITouches[]
 }
@@ -38,10 +42,14 @@ interface ITouches {
 // 接口请求数据
 export interface IResult<T> {
   cookies: any;
-  data: {
-    status: string;
-    result: T;
-  },
+  data: T;
   errMsg: string;
   statusCode: number;
 }
+
+//Page onLoad 接定义
+export type PageLoad<T> = T & Record<string, string | undefined>;
+
+export interface ICustom {
+  [k: string]: any;
+};

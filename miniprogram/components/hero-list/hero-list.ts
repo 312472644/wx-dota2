@@ -1,10 +1,23 @@
+import { IHero, IHeroResult } from "miniprogram/interface/IPage";
 import { HeroComplexEnum, HeroTypeEnum, PropEnum } from "../../enum/index";
-import { IEvent, IResult } from "../../interface";
-import { IHero } from "./interface";
+import { IEvent, IOption, IResult } from "../../interface";
 import { axios } from '../../utils/index';
 
+interface IData {
+    _initHeroList: IHero[],
+    heroList: IHero[],
+    attrList: IOption[],
+    complexList: IOption[],
+    attrValue: string;
+    complexValue: string;
+    heroName: string;
+    isFirstLoad: boolean;
+    scrollTop: number;
+    isShowTop: boolean;
+}
+
 // components/hero-list/hero-list.ts
-Component({
+Component<IData, any, any>({
     options: {
         pureDataPattern: /^_/
     },
@@ -38,7 +51,7 @@ Component({
         heroList: [], // 查询列表
         isFirstLoad: false, // 是否第一次加载
         scrollTop: 0, // 滚动距离
-        isShowTop: false // 是否现实滚动顶部按钮
+        isShowTop: false, // 是否现实滚动顶部按钮
     },
     lifetimes: {
         ready() {
@@ -113,19 +126,17 @@ Component({
                     this.setData({ isFirstLoad: true });
                     wx.hideLoading();
                 },
-            }).then((res: IResult<any>) => {
-                const { data } = res;
-                const { result } = data;
-                if (!result) {
+            }).then((res: IResult<IHeroResult>) => {
+                const heroList = res.data?.result?.heroes || [];
+                if (heroList.length === 0) {
                     return;
                 }
-                const { heroes = [] } = result;
-                result.heroes.forEach((item: any) => {
+                heroList.forEach((item: any) => {
                     item.index_img = `https://images.weserv.nl/?url=${item.index_img}`;
                 });
                 this.setData({
-                    heroList: this.getCategoryHero(heroes as IHero[]) as any,
-                    _initHeroList: heroes as any
+                    heroList: this.getCategoryHero(heroList),
+                    _initHeroList: heroList
                 });
             });
         },
@@ -134,7 +145,7 @@ Component({
             this.setData({ scrollTop: 0 })
         },
         // 滚动事件
-        bindscrollEvent(event: any) {
+        bindscrollEvent(event: IEvent) {
             const scrollTop = event.detail.scrollTop;
             if (scrollTop > 200 && !this.data.isShowTop) {
                 this.setData({ isShowTop: true });

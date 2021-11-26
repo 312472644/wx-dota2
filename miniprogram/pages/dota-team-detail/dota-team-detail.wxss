@@ -1,1 +1,49 @@
 /* pages/dota-team-detail/dota-team-detail.wxss */
+.dota-team-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    background-image: linear-gradient(to right, rgb(26, 43, 62), rgb(20, 30, 48));
+}
+
+.dota-team {
+    display: flex;
+    flex-direction: column;
+    color: #2d2f33;
+}
+
+.dota-team_name {
+    color: #f5f5f5;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dota-team_result {
+    display: flex;
+}
+
+.dota-team_result_item {
+    padding: 8px 8px 0 0;
+}
+
+.dota-team-item-text {
+    display: inline-block;
+    color: #ffffff8a;
+    padding-bottom: 8px;
+    font-size: 12px;
+    width: 50px;
+}
+
+.dota-team-item-value {
+    color: #ffffffde;
+    font-size: 16px;
+}
+
+.win {
+    color: #66bb6a;
+}
+
+.lose {
+    color: #ff4c4c;
+}

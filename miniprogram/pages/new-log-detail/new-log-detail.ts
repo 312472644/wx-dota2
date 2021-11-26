@@ -1,9 +1,16 @@
-import { IResult } from "miniprogram/interface";
+import { ICustom, IResult } from "miniprogram/interface";
 import { getTagByClassRegex } from '../../utils/index';
 import { axios } from '../../utils/index';
 
+interface IData {
+    title: string;
+    date: string;
+    html: string;
+    loadComplete: boolean;
+}
+
 // pages/new-log-detail/new-log-detail.ts
-Page({
+Page<IData, ICustom>({
 
     /**
      * 页面的初始数据
@@ -74,8 +81,8 @@ Page({
                 wx.hideLoading();
                 this.setData({ loadComplete: true });
             }
-        }).then((res: IResult<any>) => {
-            const newDetailList = this.getNewDetailList(res.data as any) || [];
+        }).then((res: IResult<string>) => {
+            const newDetailList = this.getNewDetailList(res.data) || [];
             this.setData({
                 html: newDetailList.join('').toString().replaceAll('<br/>', '')
             })

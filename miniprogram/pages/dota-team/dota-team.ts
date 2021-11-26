@@ -1,8 +1,12 @@
-import { IEvent, IResult } from "miniprogram/interface";
+import { ICustom, IEvent, IResult } from "miniprogram/interface";
+import { ITeam } from "miniprogram/interface/IPage";
 import { axios } from "../../utils/index";
 
+interface IData {
+    teamList: ITeam[]
+}
 // pages/dota-team/dota-team.ts
-Page({
+Page<IData, ICustom>({
 
     /**
      * 页面的初始数据
@@ -28,11 +32,9 @@ Page({
         axios({
             url: 'https://api.opendota.com/api/teams',
             method: 'GET',
-        }).then((res: IResult<any>) => {
-            const { data = [], statusCode } = res;
-            if (statusCode === 200) {
-                this.setData({ teamList: (data as any).filter((item: any) => item.name && item.logo_url).splice(0, 100) })
-            }
+        }).then((res: IResult<ITeam[]>) => {
+            const { data = [] } = res;
+            this.setData({ teamList: data.filter((item: ITeam) => item.name && item.logo_url).splice(0, 100) })
         });
     },
     toDotaTeamDetail(event: IEvent) {

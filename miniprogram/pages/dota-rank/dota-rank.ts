@@ -1,8 +1,14 @@
-import { IEvent, IResult } from "miniprogram/interface";
+import { ICustom, IEvent, IResult } from "miniprogram/interface";
+import { IRank, IRankResult } from "miniprogram/interface/IPage";
 import { axios } from "../../utils/index";
 
+interface IData {
+    tabName: string;
+    rankList: IRank[]
+}
+
 // pages/rank/rank.ts
-Page({
+Page<IData, ICustom>({
 
     /**
      * 页面的初始数据
@@ -34,8 +40,8 @@ Page({
         axios({
             url: `http://www.dota2.com/webapi/ILeaderboard/GetDivisionLeaderboard/v0001?division=${tabName}&leaderboard=0`,
             method: 'GET'
-        }).then((res: IResult<any>) => {
-            const rankList = (res.data as any).leaderboard.splice(0, 100);
+        }).then((res: IResult<IRankResult>) => {
+            const rankList = res.data.leaderboard.splice(0, 100);
             this.setData({ rankList })
         })
     }

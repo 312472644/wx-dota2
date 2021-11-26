@@ -1,2 +1,21 @@
 <!--pages/dota-team-detail/dota-team-detail.wxml-->
-<text>pages/dota-team-detail/dota-team-detail.wxml</text>
+<view class="dota-team-info">
+    <van-image src="{{team.logo_url}}" width="80px" height="80px"></van-image>
+    <view class="dota-team">
+        <view class="dota-team_name">{{team.name}}</view>
+        <view class="dota-team_result">
+            <view class="dota-team_result_item">
+                <view class="dota-team-item-text">胜</view>
+                <view class="dota-team-item-value win">{{team.wins}}</view>
+            </view>
+            <view class="dota-team_result_item">
+                <view class="dota-team-item-text">败</view>
+                <view class="dota-team-item-value lose">{{team.losses}}</view>
+            </view>
+            <view class="dota-team_result_item">
+                <view class="dota-team-item-text">等级分</view>
+                <view class="dota-team-item-value">{{team.rating}}</view>
+            </view>
+        </view>
+    </view>
+</view>

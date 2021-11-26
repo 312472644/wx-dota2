@@ -37,6 +37,8 @@
 
 .team-tag-text {
   font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
   max-width: 95px;
   white-space: nowrap;
   overflow: hidden;

@@ -1,4 +1,4 @@
-import { IEvent, IResult } from "../../interface";
+import { ICustom, IEvent, IResult } from "../../interface";
 import { getTagByClassRegex } from '../../utils/index';
 import { axios } from '../../utils/index';
 
@@ -9,8 +9,17 @@ interface INews {
     img?: string;
     href?: string;
 }
+
+interface IData {
+    pageIndex: number;
+    isLoadIng: boolean;
+    isFinshed: boolean;
+    activeTab: string;
+    newList: INews[]
+}
+
 // pages/upgrade-log/upgrade-log.ts
-Page({
+Page<IData, ICustom>({
 
     /**
      * 页面的初始数据
@@ -90,9 +99,9 @@ Page({
                 wx.hideLoading();
                 this.setData({ isLoadIng: false });
             }
-        }).then((res: IResult<any>) => {
-            const newResultList = this.getNewList(res.data as any);
-            this.setData({ newList: newList.concat(newResultList as any) });
+        }).then((res: IResult<string>) => {
+            const newResultList = this.getNewList(res.data);
+            this.setData({ newList: newList.concat(newResultList) });
         });
     },
 

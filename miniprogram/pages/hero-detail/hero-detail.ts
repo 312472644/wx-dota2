@@ -1,8 +1,13 @@
-import { IEvent, IResult } from "../../interface";
+import { IHeroDetail } from "miniprogram/interface/IPage";
+import { ICustom, IEvent, IResult } from "../../interface";
 import { axios } from "../../utils/index";
 
+interface IData {
+    heroes: any
+}
+
 // pages/hero-detail/hero-detail.ts
-Page({
+Page<IData, ICustom>({
 
     /**
      * 页面的初始数据
@@ -28,7 +33,7 @@ Page({
         axios({
             url: `https://www.dota2.com.cn/datafeed/hero?hero_id=${heroId}`,
             method: "GET",
-        }).then((res: IResult<any>) => {
+        }).then((res: IResult<IHeroDetail>) => {
             this.setData({ heroes: res.data.result.heroes });
         });
     },

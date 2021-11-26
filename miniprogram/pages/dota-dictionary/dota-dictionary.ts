@@ -1,20 +1,30 @@
-import { IEvent, IResult } from "../../interface";
+import { IGoodCategoryList, IGoodDetail, IGoodResult, IGoodResultDetail } from "miniprogram/interface/IPage";
+import { ICustom, IEvent, IResult } from "../../interface";
 import { axios } from '../../utils/index';
-// pages/hero-goods/hero-goods.ts
-Page({
 
+interface IData {
+    baseCategory: IGoodCategoryList[];
+    upgradeCategory: IGoodCategoryList[];
+    neutralCategory: IGoodCategoryList[];
+    categoryDetail: IGoodResultDetail | null;
+    currentCategoryDetail: IGoodDetail | null;
+    dialogVisible: boolean;
+    scrollTop: number;
+}
+
+// pages/hero-goods/hero-goods.ts
+Page<IData, ICustom>({
     /**
      * 页面的初始数据
      */
     data: {
-        baseCategory: null,
-        upgradeCategory: null,
-        neutralCategory: null,
-        categoryDetail: {},
+        baseCategory: [],
+        upgradeCategory: [],
+        neutralCategory: [],
+        categoryDetail: null,
         currentCategoryDetail: null,
         dialogVisible: false,
-        scrollTop: 0,
-        activeTab: 'hero'
+        scrollTop: 0
     },
 
     /**
@@ -27,39 +37,28 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady() {
-        // this.getCategory();
-        // this.getCategoryDetail();
-    },
+    onReady() { },
     // 获取物品分类
     getCategory() {
-        wx.showLoading({ title: '加载中...' });
-        wx.request({
+        axios({
             url: "https://www.dota2.com.cn/itemscategory/json",
             method: 'GET',
-            success: (res: IResult<any>) => {
-                const { data, statusCode } = res;
-                if (statusCode === 200) {
-                    const { result } = data;
-                    this.setData({
-                        baseCategory: result.basic,
-                        upgradeCategory: result.upgrade,
-                        neutralCategory: result.neutral
-                    });
-                }
-            },
-            complete: () => {
-                wx.hideLoading();
-            }
-        })
+        }).then((res: IResult<IGoodResult>) => {
+            const { result } = res.data;
+            this.setData({
+                baseCategory: result.basic,
+                upgradeCategory: result.upgrade,
+                neutralCategory: result.neutral
+            });
+        });
     },
     // 获取物品详情
     getCategoryDetail() {
         axios({
             url: 'https://www.dota2.com.cn/items/json?callback=HeropediaDFReceive',
             method: 'GET',
-        }).then((res: IResult<any>) => {
-            const result = JSON.parse((res.data as any).replace('HeropediaDFReceive', '').replace('(', '').replace(')', ''));
+        }).then((res: IResult<string>) => {
+            const result = JSON.parse((res.data).replace('HeropediaDFReceive', '').replace('(', '').replace(')', '')) as IGoodResultDetail;
             this.setData({ categoryDetail: result });
         })
     },
@@ -91,10 +90,10 @@ Page({
     changeEvent(event: IEvent) {
         const { detail } = event;
         const activeTab = detail.name;
-        if (activeTab === 'goods' && !this.data.baseCategory) {
+        const { baseCategory } = this.data;
+        if (activeTab === 'goods' && baseCategory.length === 0) {
             this.getCategory();
             this.getCategoryDetail();
         }
-        this.setData({ scrollTop: 0, activeTab });
     }
 })
