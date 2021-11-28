@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "van-tab": "@vant/weapp/tab/index",
+    "van-icon": "@vant/weapp/icon/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "rank-table": "../../components/rank-table/rank-table"
   }

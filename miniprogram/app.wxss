@@ -35,13 +35,28 @@ page {
     height: 32px;
 }
 
-.table {}
+.help-info {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    color: #666;
+    font-size: 13px;
+}
+
+.help-info-icon {
+    padding-left: 8px;
+}
+
+.help-info-text {
+    padding: 0 3px;
+}
 
 .table-header {
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
+    font-weight: bolder;
     color: #3a3d44;
     height: 40px;
     border: 1px solid #ebedf2;
@@ -50,8 +65,9 @@ page {
 
 .table-header-item {
     display: inline-block;
-    line-height: 40px;
     font-size: 14px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
     background: #f7f8fa;
 }
@@ -73,12 +89,20 @@ page {
 .table-body-item {
     height: 40px;
     color: #636873;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 40px;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.win {
+    color: #66bb6a !important;
+}
+
+.lose {
+    color: #ff4c4c !important;
 }
 
 .level-text {

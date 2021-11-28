@@ -3,6 +3,12 @@ function valueToFixed(value) {
     return value ? value.toFixed(1) : '';
 };
 
+// 保留整数
+function parseIntValue(value) {
+    return parseInt(value);
+}
+
 module.exports = {
-    valueToFixed: valueToFixed
+    valueToFixed: valueToFixed,
+    parseIntValue: parseIntValue
 };

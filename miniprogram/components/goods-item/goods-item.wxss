@@ -53,7 +53,7 @@
 }
 
 .category-logo-item {
-    width: 100%;
+    border-radius: 2px;
 }
 
 .category-logo:nth-of-type(5n) {

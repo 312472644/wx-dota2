@@ -12,9 +12,9 @@
       };
 </wxs>
 <view class="dota-team-container">
-      <view class="text-describe">
-            <van-icon name="question-o" size="18" />
-            <text style="padding-right: 5px;">Elo等级分排名</text>
+      <view class="help-info">
+            <van-icon class="help-info-icon" name="question-o" size="18" />
+            <text class="help-info-text">Elo等级分排名</text>
             <text>k = 32, init = 1000</text>
       </view>
       <view class="table">

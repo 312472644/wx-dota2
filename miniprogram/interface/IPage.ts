@@ -91,3 +91,17 @@ export interface IHeroDetail {
     };
     status: string;
 }
+
+// 比赛接口
+export interface IMatch {
+    duration: number; // 时长
+    league_name: string;
+    leagueid: number;
+    match_id: number;
+    opposing_team_id: number;
+    opposing_team_logo: string;
+    opposing_team_name: string;
+    radiant: boolean;
+    radiant_win: boolean;
+    start_time: number;
+}

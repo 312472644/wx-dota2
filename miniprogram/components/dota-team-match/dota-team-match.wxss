@@ -1,0 +1,53 @@
+/* components/dota-team-match/dota-team-match.wxss */
+@import "../../app.wxss";
+
+.help-info {
+    position: relative;
+    padding: 8px;
+}
+
+.match {
+    line-height: normal;
+}
+
+.table-body-item-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.ellipsis-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+
+.table-body-item-box_text {
+    padding: 2px 8px 0 8px;
+    font-size: 12px;
+    max-width: 100%;
+}
+
+.enemy {
+    display: flex;
+    align-items: center;
+}
+
+.enemy-image {
+    background-image: linear-gradient(to right, #1a2b3e, #141e30);
+}
+
+.enemy-text {
+    padding-left: 3px;
+    max-width: calc(100% - 35px);
+}
+
+.match-id {
+    color: #0c9dfc;
+}
+
+.table-body-item {
+    height: 45px;
+}

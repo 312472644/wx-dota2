@@ -1,0 +1,22 @@
+<!--components/dota-team-info/dota-team-info.wxml-->
+<wxs src="../../wxs/index.wxs" module="utils"></wxs>
+<view class="dota-team-info">
+    <image src="{{dotaTeamInfo.logo_url}}" class="dota-team-logo" />
+    <view class="dota-team">
+        <view class="dota-team_name">{{dotaTeamInfo.name}}</view>
+        <view class="dota-team_result">
+            <view class="dota-team_result_item">
+                <view class="dota-team-item-text">胜</view>
+                <view class="dota-team-item-value win">{{dotaTeamInfo.wins}}</view>
+            </view>
+            <view class="dota-team_result_item">
+                <view class="dota-team-item-text">败</view>
+                <view class="dota-team-item-value lose">{{dotaTeamInfo.losses}}</view>
+            </view>
+            <view class="dota-team_result_item">
+                <view class="dota-team-item-text">等级分</view>
+                <view class="dota-team-item-value">{{utils.parseIntValue(dotaTeamInfo.rating)}}</view>
+            </view>
+        </view>
+    </view>
+</view>

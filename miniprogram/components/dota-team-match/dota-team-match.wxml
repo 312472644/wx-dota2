@@ -1,0 +1,30 @@
+<!--components/dota-team-match/dota-team-match.wxml-->
+<view class="dota-team-match">
+    <view class="table-header">
+        <view class="table-header-item" style="width:50px">胜败</view>
+        <view class="table-header-item" style="width:calc(100% - 250px)">比赛ID</view>
+        <view class="table-header-item" style="width:80px">时长</view>
+        <view class="table-header-item" style="width:120px">敌方</view>
+    </view>
+    <view class="table-body">
+        <view class="table-tr" wx:for="{{matchList}}" wx:key="match_id">
+            <view class="table-body-item {{item.radiant_win?'win':'lose'}}" style="width:50px">{{item.radiant_win?'胜利':'失败'}}</view>
+            <view class="table-body-item match" style="width:calc(100% - 250px)">
+                <view class="table-body-item-box">
+                    <text class="table-body-item-box_text match-id ellipsis-text">{{item.match_id}}</text>
+                    <text class="table-body-item-box_text ellipsis-text">{{item.league_name}}</text>
+                </view>
+            </view>
+            <view class="table-body-item match" style="width:80px">
+                <view class="table-body-item-box">
+                    <text class="table-body-item-box_text">{{item.duration}}</text>
+                    <text class="table-body-item-box_text">{{item.radiant}}</text>
+                </view>
+            </view>
+            <view class="table-body-item enemy" style="width:120px">
+                <van-image src="{{item.opposing_team_logo}}" round class="enemy" image-class="enemy-image" width="25px" height="25px"></van-image>
+                <text class="enemy-text ellipsis-text">{{item.opposing_team_name}}</text>
+            </view>
+        </view>
+    </view>
+</view>
