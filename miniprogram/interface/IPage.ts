@@ -105,3 +105,12 @@ export interface IMatch {
     radiant_win: boolean;
     start_time: number;
 }
+
+// 玩家接口
+export interface IPlayer {
+    account_id: number;
+    games_played: number;
+    is_current_team_member: boolean;
+    name: string;
+    wins: number;
+}

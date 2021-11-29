@@ -2,7 +2,8 @@ import { ICustom, PageLoad } from "miniprogram/interface";
 import { ITeam } from "miniprogram/interface/IPage";
 
 interface IData {
-    team: ITeam;
+    team: ITeam | null;
+    activeTab: string;
 }
 // pages/dota-team-detail/dota-team-detail.ts
 Page<IData, ICustom>({
@@ -11,15 +12,8 @@ Page<IData, ICustom>({
      * 页面的初始数据
      */
     data: {
-        team: {
-            logo_url: "https://steamcdn-a.akamaihd.net/apps/dota2/images/team_logos/15.png",
-            losses: 898,
-            name: "PSG.LGD",
-            rating: 1598.17,
-            tag: "PSG.LGD",
-            team_id: 15,
-            wins: 1460,
-        },
+        team: null,
+        activeTab: 'player'
     },
 
     /**
@@ -29,8 +23,9 @@ Page<IData, ICustom>({
         if (!query) {
             return;
         }
-        // console.log(JSON.parse(option.team));
-        // console.log(JSON.parse(option));
+        this.setData({
+            team: JSON.parse(query.team as string)
+        })
     },
 
     /**

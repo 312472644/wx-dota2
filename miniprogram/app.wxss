@@ -87,6 +87,7 @@ page {
 }
 
 .table-body-item {
+    padding: 0 8px;
     height: 40px;
     color: #636873;
     font-size: 12px;

@@ -8,7 +8,9 @@ Component({
      * 组件的属性列表
      */
     properties: {
-
+        teamId: {
+            type: Number
+        }
     },
 
     /**
@@ -27,8 +29,9 @@ Component({
      */
     methods: {
         getMatchList() {
+            const teamId = this.properties.teamId;
             axios({
-                url: 'https://api.opendota.com/api/teams/15/matches',
+                url: `https://api.opendota.com/api/teams/${teamId}/matches`,
                 method: 'GET'
             }).then((res: IResult<IMatch[]>) => {
                 const list = (res.data || []).splice(0, 20)

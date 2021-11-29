@@ -1,6 +1,7 @@
 {
     "component": true,
     "usingComponents": {
+        "van-switch": "@vant/weapp/switch/index",
         "van-image": "@vant/weapp/image/index",
         "van-icon": "@vant/weapp/icon/index"
     }

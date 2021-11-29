@@ -5,6 +5,7 @@
     "van-icon": "@vant/weapp/icon/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "dota-team-info":"../../components/dota-team-info/dota-team-info",
-    "dota-team-match":"../../components/dota-team-match/dota-team-match"
+    "dota-team-match":"../../components/dota-team-match/dota-team-match",
+    "dota-team-player":"../../components/dota-team-player/dota-team-player"
   }
 }

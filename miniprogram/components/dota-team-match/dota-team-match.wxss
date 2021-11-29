@@ -46,8 +46,13 @@
 
 .match-id {
     color: #0c9dfc;
+    padding-right: 0;
 }
 
 .table-body-item {
     height: 45px;
+}
+
+.table-body-item.lose {
+    line-height: 45px;
 }

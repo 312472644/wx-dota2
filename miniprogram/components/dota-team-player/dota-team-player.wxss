@@ -1,0 +1,74 @@
+/* components/dota-team-player/dota-team-player.wxss */
+@import "../../app.wxss";
+
+.dota-team-player-filter {
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dota-team-player-filter_text,
+.dota-team-player-switch_text {
+    color: #636873;
+    font-size: 13px;
+    padding-right: 5px;
+}
+
+.dota-team-player-switch {
+    display: flex;
+    align-items: center;
+}
+
+.van-switch {
+    margin-top: 5px;
+}
+
+.player-name {
+    color: #0c9dfc;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.custom-image,
+.image-error {
+    display: flex;
+    align-items: center;
+}
+
+.player-logo {
+    width: 25px;
+    height: 25px;
+    padding-right: 5px;
+}
+
+.line-unset {
+    line-height: normal;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.progress-text {
+    font-size: 12px;
+    text-align: left;
+    padding-bottom: 3px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: #d8d8d8;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(-45deg, #666 0%, #878787 100%);
+}

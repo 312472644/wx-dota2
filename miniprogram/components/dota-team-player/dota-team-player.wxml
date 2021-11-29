@@ -1,0 +1,44 @@
+<!--components/dota-team-player/dota-team-player.wxml-->
+<view class="dota-team-player">
+    <view class="dota-team-player-filter">
+        <text class="dota-team-player-filter_text">当前玩家</text>
+        <view class="dota-team-player-switch">
+            <text class="dota-team-player-switch_text">所有玩家</text>
+            <van-switch size="20px" checked="{{isAllPlayer}}" custom-class="van-switch" bind:change="onChange" disabled="{{isDelete}}"></van-switch>
+        </view>
+    </view>
+    <view class="table-header">
+        <view class="table-header-item" style="width:33.33333%">名称</view>
+        <view class="table-header-item" style="width:33.33333%">游戏次数</view>
+        <view class="table-header-item" style="width:33.33333%">胜率</view>
+    </view>
+    <view class="table-body">
+        <view class="table-tr" wx:for="{{playerList}}" wx:key="index">
+            <view class="table-body-item custom-image" style="width:33.33333%">
+                <van-image use-error-slot class="player-logo" width="25px" height="25px" src="{{item.avatar}}">
+                    <view slot="error" class="image-error">
+                        <image src="../../assets/common/portrait.png" class="player-logo"></image>
+                    </view>
+                </van-image>
+                <text class="player-name">{{item.name}}</text>
+                <van-icon name="arrow" size="12px" color="#0c9dfc" />
+            </view>
+            <view class="table-body-item line-unset" style="width:33.33333%">
+                <view class="progress">
+                    <view class="progress-text">{{item.games_played}}</view>
+                    <view class="progress-bar">
+                        <view class="progress-fill" style="width:{{item.playedRate}}"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="table-body-item line-unset" style="width:33.33333%">
+                <view class="progress">
+                    <view class="progress-text">{{item.winText}}</view>
+                    <view class="progress-bar">
+                        <view class="progress-fill" style="width:{{item.winRate}}"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,11 +1,13 @@
 <!--pages/dota-team-detail/dota-team-detail.wxml-->
 <view>
     <dota-team-info dota-team-info="{{team}}"></dota-team-info>
-    <van-tabs bind:change="onChange" color="#000000" title-inactive-color="#787d7e">
-        <van-tab title="概观">
-            <dota-team-match></dota-team-match>
+    <van-tabs bind:change="onChange" active="{{activeTab}}" color="#000000" title-inactive-color="#787d7e">
+        <van-tab title="概观" name="base">
+            <dota-team-match team-id="{{team.team_id}}"></dota-team-match>
         </van-tab>
-        <van-tab title="英雄">内容 2</van-tab>
-        <van-tab title="玩家">内容 2</van-tab>
+        <van-tab title="玩家" name="player">
+            <dota-team-player team-id="{{team.team_id}}"></dota-team-player>
+        </van-tab>
+        <van-tab title="英雄" name="hero">内容 2</van-tab>
     </van-tabs>
 </view>
