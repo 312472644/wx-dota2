@@ -1,0 +1,20 @@
+/* components/dota-team-logo/dota-team-logo.wxss */
+.player-logo {
+    width: 25px;
+    height: 25px;
+}
+
+.player-name {
+    /* color: #0c9dfc; */
+    margin-left: 12px;
+    color: #787d7e;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dota-team-logo,
+.image-error {
+    display: flex;
+    align-items: center;
+}

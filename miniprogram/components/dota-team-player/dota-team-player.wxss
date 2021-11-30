@@ -24,51 +24,12 @@
     margin-top: 5px;
 }
 
-.player-name {
-    color: #0c9dfc;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
 .custom-image,
 .image-error {
     display: flex;
     align-items: center;
 }
 
-.player-logo {
-    width: 25px;
-    height: 25px;
-    padding-right: 5px;
-}
-
 .line-unset {
     line-height: normal;
-}
-
-.progress {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
-}
-
-.progress-text {
-    font-size: 12px;
-    text-align: left;
-    padding-bottom: 3px;
-}
-
-.progress-bar {
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    background: #d8d8d8;
-}
-
-.progress-fill {
-    height: 100%;
-    border-radius: 2px;
-    background: linear-gradient(-45deg, #666 0%, #878787 100%);
 }

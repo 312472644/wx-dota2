@@ -15,29 +15,13 @@
     <view class="table-body">
         <view class="table-tr" wx:for="{{playerList}}" wx:key="index">
             <view class="table-body-item custom-image" style="width:33.33333%">
-                <van-image use-error-slot class="player-logo" width="25px" height="25px" src="{{item.avatar}}">
-                    <view slot="error" class="image-error">
-                        <image src="../../assets/common/portrait.png" class="player-logo"></image>
-                    </view>
-                </van-image>
-                <text class="player-name">{{item.name}}</text>
-                <van-icon name="arrow" size="12px" color="#0c9dfc" />
+                <dota-team-logo avatar="{{item.avatar}}" avatar-text="{{item.name}}" tap-info="{{item}}"></dota-team-logo>
             </view>
             <view class="table-body-item line-unset" style="width:33.33333%">
-                <view class="progress">
-                    <view class="progress-text">{{item.games_played}}</view>
-                    <view class="progress-bar">
-                        <view class="progress-fill" style="width:{{item.playedRate}}"></view>
-                    </view>
-                </view>
+                <dota-team-bar count="{{item.games_played}}" rate="{{item.playedRate}}"></dota-team-bar>
             </view>
             <view class="table-body-item line-unset" style="width:33.33333%">
-                <view class="progress">
-                    <view class="progress-text">{{item.winText}}</view>
-                    <view class="progress-bar">
-                        <view class="progress-fill" style="width:{{item.winRate}}"></view>
-                    </view>
-                </view>
+                <dota-team-bar count="{{item.winText}}" rate="{{item.winRate}}"></dota-team-bar>
             </view>
         </view>
     </view>

@@ -114,3 +114,11 @@ export interface IPlayer {
     name: string;
     wins: number;
 }
+
+// 队伍英雄接口
+export interface ITeamHero {
+    games_played: number;
+    hero_id: number;
+    localized_name: string;
+    wins: number;
+}

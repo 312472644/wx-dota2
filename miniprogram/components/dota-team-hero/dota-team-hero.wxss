@@ -1,0 +1,6 @@
+/* components/dota-team-hero/dota-team-hero.wxss */
+@import "../../app.wxss";
+
+.line-unset{
+    line-height: normal;
+}

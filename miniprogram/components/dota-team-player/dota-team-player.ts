@@ -51,7 +51,7 @@ Component({
                 const dataList = data.filter(item => item.name !== null);
                 const playerList = dataList.filter(item => item.is_current_team_member && item.name !== null);
                 // 战队可能解散默认显示所有队员
-                if (playerList.length === 0) {
+                if (playerList.length < 5) {
                     this.setData({
                         playerList: this.getPorgess(dataList) as any,
                         isDelete: true,

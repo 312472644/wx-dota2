@@ -1,4 +1,4 @@
-import { ICustom, PageLoad } from "miniprogram/interface";
+import { ICustom, IEvent, PageLoad } from "miniprogram/interface";
 import { ITeam } from "miniprogram/interface/IPage";
 
 interface IData {
@@ -13,7 +13,7 @@ Page<IData, ICustom>({
      */
     data: {
         team: null,
-        activeTab: 'player'
+        activeTab: 'base'
     },
 
     /**
@@ -25,7 +25,7 @@ Page<IData, ICustom>({
         }
         this.setData({
             team: JSON.parse(query.team as string)
-        })
+        });
     },
 
     /**
@@ -41,5 +41,11 @@ Page<IData, ICustom>({
     // 获取英雄列表
     getHeroList() { },
     // 获选选手列表
-    getPlayerList() { }
+    getPlayerList() { },
+    onChange(event: IEvent) {
+        const { detail } = event;
+        this.setData({
+            activeTab: detail.name
+        })
+    }
 })
