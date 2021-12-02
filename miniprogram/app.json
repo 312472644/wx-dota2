@@ -15,27 +15,27 @@
         "list": [
             {
                 "pagePath": "pages/dota-team/dota-team",
-                "iconPath": "./assets/icon/home.png",
-                "selectedIconPath": "./assets/icon/home_active.png",
+                "iconPath": "./assets/icon/team.png",
+                "selectedIconPath": "./assets/icon/team_active.png",
                 "text": "职业战队"
             },
             {
                 "pagePath": "pages/dota-dictionary/dota-dictionary",
-                "iconPath": "./assets/icon/goods.png",
-                "selectedIconPath": "./assets/icon/goods_active.png",
+                "iconPath": "./assets/icon/category.png",
+                "selectedIconPath": "./assets/icon/category_active.png",
                 "text": "百科"
             },
             {
                 "pagePath": "pages/dota-rank/dota-rank",
-                "iconPath": "./assets/icon/log.png",
-                "selectedIconPath": "./assets/icon/log_active.png",
+                "iconPath": "./assets/icon/rank.png",
+                "selectedIconPath": "./assets/icon/rank_active.png",
                 "text": "天梯排名"
             },
             {
                 "pagePath": "pages/new-log/new-log",
-                "iconPath": "./assets/icon/log.png",
-                "selectedIconPath": "./assets/icon/log_active.png",
-                "text": "新闻"
+                "iconPath": "./assets/icon/news.png",
+                "selectedIconPath": "./assets/icon/news_active.png",
+                "text": "资讯"
             }
         ]
     },

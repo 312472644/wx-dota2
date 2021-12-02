@@ -72,9 +72,9 @@ page {
     background: #f7f8fa;
 }
 
-.table-tr:nth-of-type(2n) {
+/* .table-tr:nth-of-type(2n) {
     background: #f7f8fa;
-}
+} */
 
 .table-body {
     width: 100%;

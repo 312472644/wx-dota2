@@ -5,9 +5,9 @@
             <hero-list></hero-list>
         </van-tab>
         <van-tab title="物品" name="goods">
-            <goods-item title="基础分类" wx:if="{{baseCategory.length > 0}}" categoryList="{{baseCategory}}" bindcategory="perviewCategory"></goods-item>
-            <goods-item title="合成分类" wx:if="{{upgradeCategory.length > 0}}" categoryList="{{upgradeCategory}}" bindcategory="perviewCategory"></goods-item>
-            <goods-item title="中立物品" wx:if="{{neutralCategory.length > 0}}" categoryList="{{neutralCategory}}" bindcategory="perviewCategory"></goods-item>
+            <goods-item title="基础分类" categoryList="{{baseCategory}}" bindcategory="perviewCategory"></goods-item>
+            <goods-item title="合成分类" categoryList="{{upgradeCategory}}" bindcategory="perviewCategory"></goods-item>
+            <goods-item title="中立物品" categoryList="{{neutralCategory}}" bindcategory="perviewCategory"></goods-item>
             <dialog visible="{{dialogVisible}}" bindclose="closeDialog" categoryDetail="{{currentCategoryDetail}}"></dialog>
         </van-tab>
     </van-tabs>
