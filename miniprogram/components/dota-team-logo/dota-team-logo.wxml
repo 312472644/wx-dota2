@@ -5,6 +5,13 @@
             <image src="../../assets/common/portrait.png" class="player-logo"></image>
         </view>
     </van-image>
-    <text class="player-name">{{avatarText}}</text>
-    <van-icon name="arrow" size="12px" color="#787d7e" />
+    <view class="player-box">
+        <view class="line-unset">
+            <text class="player-box_text">{{avatarText}}</text>
+            <van-icon name="arrow" size="12px" color="#0c9dfc" />
+        </view>
+        <view class="line-unset" wx:if="{{startTime}}">
+            <text class="player-box_text start-time">{{startTime}}</text>
+        </view>
+    </view>
 </view>

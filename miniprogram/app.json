@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/dota-player-detail/dota-player-detail",
         "pages/dota-team/dota-team",
         "pages/dota-team-detail/dota-team-detail",
         "pages/dota-rank/dota-rank",

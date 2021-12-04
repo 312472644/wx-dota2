@@ -7,15 +7,19 @@
         <view class="dota-team_result">
             <view class="dota-team_result_item">
                 <view class="dota-team-item-text">胜</view>
-                <view class="dota-team-item-value win">{{dotaTeamInfo.wins}}</view>
+                <view class="dota-team-item-value win">{{dotaTeamInfo.wins || 0}}</view>
             </view>
             <view class="dota-team_result_item">
                 <view class="dota-team-item-text">败</view>
-                <view class="dota-team-item-value lose">{{dotaTeamInfo.losses}}</view>
+                <view class="dota-team-item-value lose">{{dotaTeamInfo.losses || 0}}</view>
             </view>
             <view class="dota-team_result_item">
-                <view class="dota-team-item-text">等级分</view>
-                <view class="dota-team-item-value">{{utils.parseIntValue(dotaTeamInfo.rating)}}</view>
+                <view class="dota-team-item-text">{{dotaTeamInfo.rating?'等级分':'胜率'}}</view>
+                <view class="dota-team-item-value">{{dotaTeamInfo.rating?utils.parseIntValue(dotaTeamInfo.rating):utils.getPercent(dotaTeamInfo.wins,dotaTeamInfo.losses)}}</view>
+            </view>
+            <view class="dota-team_result_item" wx:if="{{dotaTeamInfo.rank}}">
+                <view class="dota-team-item-text">排名</view>
+                <view class="dota-team-item-value">{{dotaTeamInfo.rank}}</view>
             </view>
         </view>
     </view>

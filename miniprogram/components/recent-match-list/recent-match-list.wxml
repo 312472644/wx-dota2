@@ -1,0 +1,25 @@
+<!--components/recent-match-list/recent-match-list.wxml-->
+<view>
+    <view class="table-header">
+        <view class="table-header-item" style="width:35%">英雄</view>
+        <view class="table-header-item" style="width:22%">胜败</view>
+        <view class="table-header-item" style="width:23%">游戏模式</view>
+        <view class="table-header-item" style="width:20%">时长</view>
+    </view>
+    <view class="table-body">
+        <view class="table-tr" wx:for="{{matchList}}" wx:key="matchId">
+            <view class="table-body-item" style="width:35%">
+                <dota-team-logo avatar="{{item.avatar}}" width="30px" height="30px" avatar-text="{{item.heroName}}" startTime="{{item.startTime}}"></dota-team-logo>
+            </view>
+            <view class="table-body-item flex" style="width:22%">
+                <text class="flex-text {{item.radiantWin?'win':'lose'}}">{{item.radiantWin?'胜利':'失败'}} ({{item.gameType}})</text>
+                <text class="flex-text">{{item.kda}}</text>
+            </view>
+            <view class="table-body-item" style="width:23%">{{item.gameMode}}</view>
+            <view class="table-body-item flex" style="width:20%">
+                <text class="flex-text">{{item.gameDuration}}</text>
+                <text class="flex-text">{{item.radiantText}}</text>
+            </view>
+        </view>
+    </view>
+</view>

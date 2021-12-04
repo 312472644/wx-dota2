@@ -122,3 +122,33 @@ export interface ITeamHero {
     localized_name: string;
     wins: number;
 }
+
+// 队员信息
+export interface IProfile {
+    leaderboard_rank: number;
+    profile: {
+        account_id: number;
+        avatar: string;
+        avatarfull: string;
+        name: string;
+        personaname: string;
+        profileurl: string;
+        steamid: string;
+    }
+}
+
+// 近期比赛接口
+export interface IRecentMacth {
+    match_id: number;
+    assists: number;
+    deaths: number;
+    duration: number;
+    game_mode: number; // 游戏模式
+    hero_id: number;
+    kills: number;
+    party_size: number;
+    player_slot: number;
+    radiant_win: number;
+    start_time: number;
+    lobby_type: number; // 游戏类型
+}

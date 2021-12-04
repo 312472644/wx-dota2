@@ -1,6 +1,6 @@
 import { IResult } from "miniprogram/interface";
 import { IMatch } from "miniprogram/interface/IPage";
-import { axios } from "../../utils/index";
+import { axios, transFormMS } from "../../utils/index";
 
 // components/dota-team-match/dota-team-match.ts
 Component({
@@ -41,19 +41,13 @@ Component({
                         ...item,
                         radiant: radiant ? '天辉' : '夜魇',
                         radiant_win: radiant ? radiant_win : !radiant_win,
-                        duration: this.getDuration(duration)
+                        duration: transFormMS(duration)
                     }
                 });
                 this.setData({
                     matchList: matchList as any
                 })
             })
-        },
-        // 时长转化
-        getDuration(duration: number) {
-            const mins = Math.floor(duration / 60).toString().padStart(2, '0');
-            const seconds = Math.floor(duration % 60).toString().padStart(2, '0');
-            return `${mins}:${seconds}`;
         }
     }
 })

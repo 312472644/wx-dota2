@@ -128,14 +128,14 @@ Component<IData, any, any>({
                 },
             }).then((res: IResult<IHeroResult>) => {
                 const heroList = res.data?.result?.heroes || [];
-                if (heroList.length === 0) {
-                    return;
-                }
-                heroList.forEach((item: any) => {
-                    item.index_img = `https://images.weserv.nl/?url=${item.index_img}`;
-                });
+                const list = heroList.map(item => {
+                    return {
+                        avatar: `https://images.weserv.nl/?url=${item.index_img}`,
+                        ...item
+                    }
+                })
                 this.setData({
-                    heroList: this.getCategoryHero(heroList),
+                    heroList: this.getCategoryHero(list),
                     _initHeroList: heroList
                 });
             });

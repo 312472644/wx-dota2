@@ -67,3 +67,8 @@
     font-size: 13px;
     justify-content: center;
 }
+
+.custom-class-loading {
+    display: flex;
+    justify-content: center;
+}

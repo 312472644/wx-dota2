@@ -1,7 +1,7 @@
 <!--components/goods-item/goods-item.wxml-->
 <view class="category">
     <van-divider contentPosition="center">{{title}}</van-divider>
-    <view class="category_body">
+    <view class="category_body" wx:if="{{categoryList.length > 0}}">
         <view wx:for="{{categoryList}}" wx:key="index">
             <view class="category-item_title">{{item.name}}</view>
             <view class="category-item_body">
@@ -12,4 +12,5 @@
             </view>
         </view>
     </view>
+    <van-loading class="custom-class-loading" wx:if="{{categoryList.length === 0}}" />
 </view>

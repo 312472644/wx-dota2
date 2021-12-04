@@ -1,4 +1,5 @@
 import { IResult } from "miniprogram/interface";
+import { IHeroResult } from "miniprogram/interface/IPage";
 
 /***
  * 通过标签和类名获取dom元素内容
@@ -36,4 +37,45 @@ const axios = (option: any, loadText = '加载中...'): Promise<IResult<any>> =>
     });
 };
 
-export { getTagByClassRegex, axios }
+/***
+ * 时间戳转换分秒
+ * @param timeStamp 时间戳
+ */
+const transFormMS = (timeStamp: number) => {
+    const mins = Math.floor(timeStamp / 60).toString().padStart(2, '0');
+    const seconds = Math.floor(timeStamp % 60).toString().padStart(2, '0');
+    return `${mins}:${seconds}`;
+}
+
+/***
+ * 获取英雄列表中文
+ */
+const getHeroCNList = () => {
+    return new Promise((resolve) => {
+        wx.request({
+            url: 'https://www.dota2.com.cn/datafeed/heroList?task=herolist',
+            method: 'GET',
+            success: (res: IResult<IHeroResult>) => {
+                resolve(res.data.result.heroes || []);
+            }
+        })
+    })
+};
+
+/***
+ * 时间戳转换年月日 时分秒
+ * @param timeStamp 时间戳
+ * @param isNeedMS 是否需要时分秒
+ */
+const formatDateTime = (timeStamp: number, isNeedMS = false) => {
+    const time = new Date(timeStamp);
+    const year = time.getFullYear();
+    const month = (time.getMonth() + 1).toString().padStart(2, '0');
+    const day = time.getDate().toString().padStart(2, '0');
+    const hours = time.getHours().toString().padStart(2, '0');
+    const mins = time.getMinutes().toString().padStart(2, '0');
+    const seconds = time.getSeconds().toString().padStart(2, '0');
+    return isNeedMS ? `${year}-${month}-${day} ${hours}:${mins}:${seconds}` : `${year}-${month}-${day}`;
+};
+
+export { getTagByClassRegex, axios, transFormMS, getHeroCNList, formatDateTime }

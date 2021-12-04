@@ -8,7 +8,14 @@ function parseIntValue(value) {
     return parseInt(value);
 }
 
+// 获取胜率
+function getPercent(wins, losses) {
+    var percent = wins / (wins + losses);
+    return percent ? (percent * 100).toFixed(2) + '%' : '0%';
+}
+
 module.exports = {
     valueToFixed: valueToFixed,
-    parseIntValue: parseIntValue
+    parseIntValue: parseIntValue,
+    getPercent: getPercent
 };

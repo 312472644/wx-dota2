@@ -4,17 +4,36 @@
     height: 25px;
 }
 
-.player-name {
-    /* color: #0c9dfc; */
+.player-box_text {
+    color: #0c9dfc;
     margin-left: 8px;
-    color: #787d7e;
+    /* color: #787d7e; */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.start-time {
+    color: #787d7e;
 }
 
 .dota-team-logo,
 .image-error {
     display: flex;
     align-items: center;
+    height: 100%;
+}
+
+.player-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.line-unset {
+    line-height: normal;
+}
+
+.line-unset:first-child {
+    margin-bottom: 3px;
 }

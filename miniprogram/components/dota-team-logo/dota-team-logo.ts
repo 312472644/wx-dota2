@@ -12,6 +12,9 @@ Component({
         avatarText: {
             type: String
         },
+        startTime: {
+            type: String
+        },
         width: {
             type: String,
             value: '25px'
