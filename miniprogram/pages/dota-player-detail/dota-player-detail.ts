@@ -10,7 +10,9 @@ interface IPlayerInfo {
 }
 
 interface IData {
-    playerInfo: IPlayerInfo
+    playerInfo: IPlayerInfo;
+    recentMatchPageIndex: number;
+    activeTab: string;
 }
 
 // pages/dota-player-detail/dota-player-detail.ts
@@ -20,7 +22,9 @@ Page<IData, ICustom>({
      * 页面的初始数据
      */
     data: {
-        playerInfo: {} as IPlayerInfo
+        playerInfo: {} as IPlayerInfo,
+        recentMatchPageIndex: 1,
+        activeTab: 'category',
     },
 
     /**
@@ -30,7 +34,13 @@ Page<IData, ICustom>({
 
     },
     onReachBottom() {
-        console.log('onReachBottom');
+        if (this.data.activeTab === 'match') {
+            const { recentMatchPageIndex } = this.data;
+            const pageIndex = recentMatchPageIndex + 1;
+            this.setData({
+                recentMatchPageIndex: pageIndex
+            });
+        }
     },
     onReady() {
         this.getPlayerInfo();
@@ -39,7 +49,7 @@ Page<IData, ICustom>({
     getPlayerInfo() {
         axios({
             url: 'https://api.opendota.com/api/players/898754153',
-            methods: 'GET'
+            method: 'GET'
         }).then((res: IResult<IProfile>) => {
             const { data } = res;
             const { profile, leaderboard_rank } = data;

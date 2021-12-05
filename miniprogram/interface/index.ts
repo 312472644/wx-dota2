@@ -53,3 +53,18 @@ export type PageLoad<T> = T & Record<string, string | undefined>;
 export interface ICustom {
   [k: string]: any;
 };
+
+// 请求接口
+export interface IAxiosOption {
+  url: string;
+  data?: string | Object | ArrayBuffer;
+  header?: Object;
+  timeout?: number;
+  method?: 'GET' | 'POST' | 'DELETE' | 'OPTIONS' | 'HEAD' | 'PUT';
+  dataType?: string;
+  responseType?: string;
+  enableCache?: boolean;
+  success?: (res: any) => void;
+  fail?: () => void;
+  complete?: () => void;
+}

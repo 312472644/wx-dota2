@@ -37,11 +37,24 @@
 
 .team-tag-text {
   font-size: 12px;
-  font-weight: bold;
-  max-width: 95px;
+  max-width: 100%;
+  max-width: 80px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: normal;
+}
+
+.team-tag-text:first-child {
+  color: #0c9dfc;
+  margin-bottom: 3px;
+}
+
+.team-tag-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: calc(100% - 40px);
 }
 
 .team-tag-image {

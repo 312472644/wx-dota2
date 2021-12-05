@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "hero-status-item": "../hero-status-item/hero-status-item",
+        "hero-card": "../hero-card/hero-card"
+    }
+}

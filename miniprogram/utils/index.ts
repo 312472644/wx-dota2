@@ -1,5 +1,5 @@
-import { IResult } from "miniprogram/interface";
-import { IHeroResult } from "miniprogram/interface/IPage";
+import { IAxiosOption, IResult } from "miniprogram/interface";
+import { IHeroResult } from "../interface/IPage";
 
 /***
  * 通过标签和类名获取dom元素内容
@@ -17,7 +17,7 @@ const getTagByClassRegex = (tag: string, cls: string, html: string) => {
  * @param loadText loading文案
  * @param option 请求参数
  */
-const axios = (option: any, loadText = '加载中...'): Promise<IResult<any>> => {
+const axios = (option: IAxiosOption, loadText = '加载中...'): Promise<IResult<any>> => {
     wx.showLoading({ title: loadText });
     return new Promise((resolve: any) => {
         const assignOption = Object.assign(option, {
@@ -33,7 +33,7 @@ const axios = (option: any, loadText = '加载中...'): Promise<IResult<any>> =>
                 wx.hideLoading();
             },
         });
-        wx.request(assignOption);
+        wx.request(assignOption as any);
     });
 };
 

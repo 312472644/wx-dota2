@@ -32,7 +32,7 @@ Component({
             const teamId = this.properties.teamId || 15;
             axios({
                 url: `https://api.opendota.com/api/teams/${teamId}/heroes?`,
-                methods: 'GET'
+                method: 'GET'
             }).then(async (res: IResult<ITeamHero[]>) => {
                 const { data } = res;
                 const result = await this.getCNHeroList();
@@ -45,7 +45,7 @@ Component({
         getCNHeroList() {
             return axios({
                 url: 'https://www.dota2.com.cn/datafeed/heroList?task=herolist',
-                methods: 'GET'
+                method: 'GET'
             });
         },
         getPorgess(heroList: ITeamHero[], cnHeroList: IHero[]) {

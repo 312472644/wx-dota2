@@ -1,0 +1,14 @@
+/* components/category-total/category-total.wxss */
+.category-total {
+    padding: 0 8px;
+}
+
+.status-tr {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.status-item {
+    width: 31%;
+}

@@ -7,6 +7,7 @@ export interface ITeam {
     tag: string, // 标签
     team_id: number, // id
     wins: number, // 胜场
+    last_match_time: number;
 }
 
 // 排名接口
@@ -151,4 +152,11 @@ export interface IRecentMacth {
     radiant_win: number;
     start_time: number;
     lobby_type: number; // 游戏类型
+}
+
+// 分类统计
+export interface ICategoryTotal {
+    field: string;
+    n: number;
+    sum: number;
 }

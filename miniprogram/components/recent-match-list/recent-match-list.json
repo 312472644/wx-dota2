@@ -1,6 +1,7 @@
 {
     "component": true,
     "usingComponents": {
+        "van-divider": "@vant/weapp/divider/index",
         "dota-team-logo": "../dota-team-logo/dota-team-logo"
     }
 }

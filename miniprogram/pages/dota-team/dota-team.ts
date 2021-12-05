@@ -1,6 +1,6 @@
 import { ICustom, IEvent, IResult } from "miniprogram/interface";
 import { ITeam } from "miniprogram/interface/IPage";
-import { axios } from "../../utils/index";
+import { axios, formatDateTime } from "../../utils/index";
 
 interface IData {
     teamList: ITeam[]
@@ -34,7 +34,14 @@ Page<IData, ICustom>({
             method: 'GET',
         }).then((res: IResult<ITeam[]>) => {
             const { data = [] } = res;
-            this.setData({ teamList: data.filter((item: ITeam) => item.name && item.logo_url).splice(0, 100) })
+            const list = data.filter((item: ITeam) => item.name && item.logo_url).splice(0, 100);
+            const teamList = list.map(item => {
+                return {
+                    ...item,
+                    lastMatchTime: formatDateTime(item.last_match_time * 1000)
+                }
+            });
+            this.setData({ teamList: teamList })
         });
     },
     toDotaTeamDetail(event: IEvent) {

@@ -3,6 +3,7 @@
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "recent-match-list": "../../components/recent-match-list/recent-match-list",
-    "dota-team-info": "../../components/dota-team-info/dota-team-info"
+    "dota-team-info": "../../components/dota-team-info/dota-team-info",
+    "category-total": "../../components/category-total/category-total"
   }
 }

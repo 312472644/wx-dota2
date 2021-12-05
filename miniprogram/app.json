@@ -15,16 +15,16 @@
         "selectedColor": "#000",
         "list": [
             {
-                "pagePath": "pages/dota-team/dota-team",
-                "iconPath": "./assets/icon/team.png",
-                "selectedIconPath": "./assets/icon/team_active.png",
-                "text": "职业战队"
-            },
-            {
                 "pagePath": "pages/dota-dictionary/dota-dictionary",
                 "iconPath": "./assets/icon/category.png",
                 "selectedIconPath": "./assets/icon/category_active.png",
                 "text": "百科"
+            },
+            {
+                "pagePath": "pages/dota-team/dota-team",
+                "iconPath": "./assets/icon/team.png",
+                "selectedIconPath": "./assets/icon/team_active.png",
+                "text": "职业战队"
             },
             {
                 "pagePath": "pages/dota-rank/dota-rank",
