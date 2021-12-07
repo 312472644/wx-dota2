@@ -1,7 +1,7 @@
 <!--components/dota-team-info/dota-team-info.wxml-->
 <wxs src="../../wxs/index.wxs" module="utils"></wxs>
 <view class="dota-team-info">
-    <image src="{{dotaTeamInfo.logo_url}}" class="dota-team-logo" />
+    <image src="{{dotaTeamInfo.logo_url}}" class="dota-team-logo {{radius?'radius':''}}" />
     <view class="dota-team">
         <view class="dota-team_name">{{dotaTeamInfo.name}}</view>
         <view class="dota-team_result">

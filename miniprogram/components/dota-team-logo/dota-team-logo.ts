@@ -39,12 +39,6 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        tapEvent(event: IEvent) {
-            const { currentTarget } = event;
-            const heroInfo = currentTarget.dataset.info;
-            wx.navigateTo({
-                url: `../../pages/hero-detail/hero-detail?id=${heroInfo.hero_id}&name=${heroInfo.name}`
-            });
-        }
+      
     }
 })

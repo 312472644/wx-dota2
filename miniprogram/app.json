@@ -1,9 +1,9 @@
 {
     "pages": [
         "pages/dota-player-detail/dota-player-detail",
-        "pages/dota-team/dota-team",
-        "pages/dota-team-detail/dota-team-detail",
         "pages/dota-rank/dota-rank",
+        "pages/dota-team/dota-team", 
+        "pages/dota-team-detail/dota-team-detail",
         "pages/dota-dictionary/dota-dictionary",
         "pages/new-log/new-log",
         "pages/hero-detail/hero-detail",
@@ -13,8 +13,7 @@
     "tabBar": {
         "color": "#787d7e",
         "selectedColor": "#000",
-        "list": [
-            {
+        "list": [{
                 "pagePath": "pages/dota-dictionary/dota-dictionary",
                 "iconPath": "./assets/icon/category.png",
                 "selectedIconPath": "./assets/icon/category_active.png",

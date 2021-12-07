@@ -19,6 +19,9 @@
     width: 80px;
     height: 80px;
     margin-right: 16px;
+}
+
+.radius {
     border-radius: 50%;
 }
 
@@ -46,5 +49,5 @@
 
 .dota-team-item-value {
     color: #ffffffde;
-    font-size: 16px;
+    font-size: 14px;
 }

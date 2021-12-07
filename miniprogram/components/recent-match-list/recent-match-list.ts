@@ -15,6 +15,9 @@ Component({
         pageIndex: {
             type: Number,
             value: 1
+        },
+        accountId: {
+            type: String
         }
     },
     observers: {
@@ -58,9 +61,9 @@ Component({
             const heroList = await getHeroCNList();
             this.setData({ _heroList: heroList as any })
         },
-        getRecentList(accountId = 898754153) {
+        getRecentList() {
             axios({
-                url: `https://api.opendota.com/api/players/${accountId}/matches?significant=0`,
+                url: `https://api.opendota.com/api/players/${this.properties.accountId}/matches?significant=0`,
                 method: 'GET'
             }).then((res: IResult<IRecentMacth[]>) => {
                 const { data } = res;

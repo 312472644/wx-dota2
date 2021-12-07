@@ -160,3 +160,9 @@ export interface ICategoryTotal {
     n: number;
     sum: number;
 }
+
+// 输赢接口
+export interface IWL {
+    win: number;
+    lose: number;
+}

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "van-icon": "@vant/weapp/icon/index",
-    "van-image": "@vant/weapp/image/index"
+    "van-image": "@vant/weapp/image/index",
+    "dota-team-logo":"../../components/dota-team-logo/dota-team-logo"
   }
 }

@@ -8,7 +8,9 @@ Component({
      * 组件的属性列表
      */
     properties: {
-
+        accountId: {
+            type: String
+        }
     },
 
     /**
@@ -26,9 +28,9 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        getTotalList(accountId: number = 898754153) {
+        getTotalList() {
             axios({
-                url: `https://api.opendota.com/api/players/${accountId}/totals`,
+                url: `https://api.opendota.com/api/players/${this.properties.accountId}/totals`,
                 method: 'GET'
             }).then((res: IResult<ICategoryTotal[]>) => {
                 const { data } = res;
@@ -38,7 +40,6 @@ Component({
                         ...item
                     }
                 });
-                console.log(list);
                 this.setData({ totalList: list as any });
             })
         }

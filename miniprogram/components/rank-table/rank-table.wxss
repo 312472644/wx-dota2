@@ -15,3 +15,25 @@
     display: inline-block;
     width: 100px;
 }
+
+.team-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.table-header {
+    border: none;
+    margin: 0 8px;
+    border-radius: 3px;
+}
+
+.table-tr {
+    display: flex;
+    align-items: center;
+    border-bottom: none;
+    background: #f9f9f9;
+    margin: 8px;
+    border-radius: 3px;
+}

@@ -1,5 +1,5 @@
-import { ICustom, IResult } from "miniprogram/interface";
-import { IProfile } from "miniprogram/interface/IPage";
+import { ICustom, IResult, PageLoad } from "miniprogram/interface";
+import { IProfile, IWL } from "miniprogram/interface/IPage";
 import { axios } from "../../utils/index";
 interface IPlayerInfo {
     logo_url: string;
@@ -12,6 +12,7 @@ interface IPlayerInfo {
 interface IData {
     playerInfo: IPlayerInfo;
     recentMatchPageIndex: number;
+    accountId: string;
     activeTab: string;
 }
 
@@ -22,6 +23,7 @@ Page<IData, ICustom>({
      * 页面的初始数据
      */
     data: {
+        accountId: '898754153',
         playerInfo: {} as IPlayerInfo,
         recentMatchPageIndex: 1,
         activeTab: 'category',
@@ -30,8 +32,11 @@ Page<IData, ICustom>({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad() {
-
+    onLoad(query: PageLoad<{ account_id: string }>) {
+        if (!query.account_id) {
+            return;
+        }
+        this.setData({ accountId: query.account_id })
     },
     onReachBottom() {
         if (this.data.activeTab === 'match') {
@@ -45,21 +50,33 @@ Page<IData, ICustom>({
     onReady() {
         this.getPlayerInfo();
     },
+    // 获取队员输赢
+    getWL() {
+        return new Promise((resolve) => {
+            axios({
+                url: `https://api.opendota.com/api/players/${this.data.accountId}/wl`
+            }).then((res: IResult<IWL>) => {
+                const { data } = res;
+                resolve(data);
+            })
+        });
+    },
     // 获取队员信息
     getPlayerInfo() {
         axios({
-            url: 'https://api.opendota.com/api/players/898754153',
+            url: `https://api.opendota.com/api/players/${this.data.accountId}`,
             method: 'GET'
-        }).then((res: IResult<IProfile>) => {
+        }).then(async (res: IResult<IProfile>) => {
             const { data } = res;
             const { profile, leaderboard_rank } = data;
             const { avatarfull, name } = profile;
+            const { win, lose } = await this.getWL();
             this.setData({
                 playerInfo: {
                     logo_url: avatarfull,
                     name,
-                    wins: 0,
-                    losses: 0,
+                    wins: win,
+                    losses: lose,
                     rank: leaderboard_rank
                 }
             })

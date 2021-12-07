@@ -15,7 +15,7 @@
     <view class="table-body">
         <view class="table-tr" wx:for="{{playerList}}" wx:key="index">
             <view class="table-body-item custom-image" style="width:33.33333%">
-                <dota-team-logo avatar="{{item.avatar}}" avatar-text="{{item.name}}" tap-info="{{item}}"></dota-team-logo>
+                <dota-team-logo avatar="{{item.avatar}}" avatar-text="{{item.name}}" data-player="{{item}}" bindtap="toDoterDetail"></dota-team-logo>
             </view>
             <view class="table-body-item line-unset" style="width:33.33333%">
                 <dota-team-bar count="{{item.games_played}}" rate="{{item.playedRate}}"></dota-team-bar>

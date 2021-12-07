@@ -1,15 +1,14 @@
 <!--pages/dota-player-detail/dota-player-detail.wxml-->
 <view class="dota-player-detail">
-    <dota-team-info dota-team-info="{{playerInfo}}"></dota-team-info>
+    <dota-team-info dota-team-info="{{playerInfo}}" radius></dota-team-info>
     <van-tabs color="#000000" title-inactive-color="#787d7e" sticky="true" active="{{activeTab}}">
-        <van-tab title="分类统计" name="category">
-            <category-total></category-total>
-        </van-tab>
         <van-tab title="近期战绩" name="match">
-            <recent-match-list page-index="{{recentMatchPageIndex}}"></recent-match-list>
+            <recent-match-list page-index="{{recentMatchPageIndex}}" account-id="{{accountId}}"></recent-match-list>
         </van-tab>
         <van-tab title="英雄" name="hero">
-
+        </van-tab>
+        <van-tab title="分类统计" name="category">
+            <category-total account-id="{{accountId}}"></category-total>
         </van-tab>
         <van-tab title="记录" name="record">
             记录

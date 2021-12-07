@@ -38,7 +38,6 @@
 .team-tag-text {
   font-size: 12px;
   max-width: 100%;
-  max-width: 80px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -60,4 +59,15 @@
 .team-tag-image {
   border-radius: 50%;
   background-color: #141e30;
+}
+
+.team-tag_logo {
+  margin-bottom: 5px;
+}
+
+.team-tag-logo-box {
+  display: flex;
+  width: 100%;
+  line-height: normal;
+  align-items: center;
 }

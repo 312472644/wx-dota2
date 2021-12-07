@@ -43,7 +43,7 @@ Component({
             this.setData({ isAllPlayer: detail, playerList: list as any });
         },
         getPlayerList() {
-            const teamId = this.properties.teamId || 15;
+            const teamId = this.properties.teamId;
             axios({
                 url: `https://api.opendota.com/api/teams/${teamId}/players`
             }).then((res: IResult<IPlayer[]>) => {
@@ -88,5 +88,12 @@ Component({
             const maxPlayed = Math.max(...playedList);
             return maxPlayed;
         },
+        toDoterDetail(event: IEvent) {
+            const { target } = event;
+            const player = target.dataset.player;
+            wx.navigateTo({
+                url: `../../pages/dota-player-detail/dota-player-detail?account_id=${player.account_id}`
+            });
+        }
     }
 })

@@ -6,6 +6,10 @@ Component({
     properties: {
         dotaTeamInfo: {
             type: Object
+        },
+        radius: {
+            type: Boolean,
+            value: false
         }
     },
 

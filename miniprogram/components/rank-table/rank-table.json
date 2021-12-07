@@ -1,6 +1,7 @@
 {
     "component": true,
     "usingComponents": {
-        "van-sticky": "@vant/weapp/sticky/index"
+        "van-sticky": "@vant/weapp/sticky/index",
+        "van-image": "@vant/weapp/image/index"
     }
 }

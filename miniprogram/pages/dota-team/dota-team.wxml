@@ -32,7 +32,10 @@
                               <view class="team-tag">
                                     <van-image image-class="team-tag-image" class="team-tag-image-box" width="35" height="35" src="https://images.weserv.nl/?url={{item.logo_url}}" />
                                     <view class="team-tag-box">
-                                          <text class="team-tag-text">{{item.name}}</text>
+                                          <view class="team-tag-logo-box">
+                                                <text class="team-tag-text team-tag_logo">{{item.name}}</text>
+                                                <van-icon name="arrow" size="12px" color="#0c9dfc" />
+                                          </view>
                                           <text class="team-tag-text">{{item.lastMatchTime}}</text>
                                     </view>
                               </view>

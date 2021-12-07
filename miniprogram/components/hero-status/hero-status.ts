@@ -48,7 +48,7 @@ Component({
         },
         // 获取状态列表
         getStatusList(heroes: any) {
-            const { damage_min, damage_max, movement_speed, attack_rate, magic_resistance, turn_rate, attack_range, sight_range_day, sight_range_night, projectile_speed } = heroes;
+            const { damage_min, damage_max, movement_speed, attack_rate, magic_resistance, attack_range, sight_range_day, sight_range_night, projectile_speed } = heroes;
             const statusList = [
                 { label: '攻击力', value: `${damage_min}-${damage_max}` },
                 { label: '防御', value: heroes.armor.toFixed(1) },
