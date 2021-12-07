@@ -1,0 +1,13 @@
+/* components/player-record/player-record.wxss */
+@import "../../app.wxss";
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: normal;
+}
+
+.content-bottom {
+    margin-bottom: 3px;
+}

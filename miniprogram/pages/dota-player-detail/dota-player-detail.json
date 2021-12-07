@@ -4,6 +4,8 @@
     "van-tabs": "@vant/weapp/tabs/index",
     "recent-match-list": "../../components/recent-match-list/recent-match-list",
     "dota-team-info": "../../components/dota-team-info/dota-team-info",
-    "category-total": "../../components/category-total/category-total"
+    "category-total": "../../components/category-total/category-total",
+    "player-record":"../../components/player-record/player-record",
+    "player-hero":"../../components/player-hero/player-hero"
   }
 }

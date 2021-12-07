@@ -1,6 +1,6 @@
 import { ICustom, IResult, PageLoad } from "miniprogram/interface";
-import { IProfile, IWL } from "miniprogram/interface/IPage";
-import { axios } from "../../utils/index";
+import { IHero, IProfile, IWL } from "miniprogram/interface/IPage";
+import { axios, getHeroCNList } from "../../utils/index";
 interface IPlayerInfo {
     logo_url: string;
     wins: number;
@@ -14,6 +14,7 @@ interface IData {
     recentMatchPageIndex: number;
     accountId: string;
     activeTab: string;
+    heroList: IHero[]
 }
 
 // pages/dota-player-detail/dota-player-detail.ts
@@ -23,10 +24,11 @@ Page<IData, ICustom>({
      * 页面的初始数据
      */
     data: {
+        heroList: [],
         accountId: '898754153',
         playerInfo: {} as IPlayerInfo,
         recentMatchPageIndex: 1,
-        activeTab: 'category',
+        activeTab: 'match',
     },
 
     /**
@@ -48,7 +50,12 @@ Page<IData, ICustom>({
         }
     },
     onReady() {
+        this.getHeroList();
         this.getPlayerInfo();
+    },
+    async getHeroList() {
+        const heroList = await getHeroCNList();
+        this.setData({ heroList: heroList as any })
     },
     // 获取队员输赢
     getWL() {

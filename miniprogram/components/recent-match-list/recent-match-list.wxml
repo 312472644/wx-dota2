@@ -12,7 +12,7 @@
                 <dota-team-logo avatar="{{item.avatar}}" width="30px" height="30px" avatar-text="{{item.heroName}}" startTime="{{item.startTime}}"></dota-team-logo>
             </view>
             <view class="table-body-item flex" style="width:22%">
-                <text class="flex-text {{item.radiantWin?'win':'lose'}}">{{item.radiantWin?'胜利':'失败'}} ({{item.gameType}})</text>
+                <text class="flex-text {{item.radiantWin?'win':'lose'}}">{{item.radiantWin?'胜利':'失败'}}</text>
                 <text class="flex-text">{{item.kda}}</text>
             </view>
             <view class="table-body-item" style="width:23%">{{item.gameMode}}</view>

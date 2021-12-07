@@ -1,10 +1,10 @@
 {
     "pages": [
-        "pages/dota-player-detail/dota-player-detail",
-        "pages/dota-rank/dota-rank",
-        "pages/dota-team/dota-team", 
-        "pages/dota-team-detail/dota-team-detail",
         "pages/dota-dictionary/dota-dictionary",
+        "pages/dota-player-detail/dota-player-detail",
+        "pages/dota-team/dota-team", 
+        "pages/dota-rank/dota-rank",
+        "pages/dota-team-detail/dota-team-detail",
         "pages/new-log/new-log",
         "pages/hero-detail/hero-detail",
         "pages/new-log-detail/new-log-detail",

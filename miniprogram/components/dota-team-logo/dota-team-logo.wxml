@@ -6,11 +6,11 @@
         </view>
     </van-image>
     <view class="player-box">
-        <view class="line-unset">
+        <view class="player-box-item">
             <text class="player-box_text">{{avatarText}}</text>
             <van-icon name="arrow" size="12px" color="#0c9dfc" />
         </view>
-        <view class="line-unset" wx:if="{{startTime}}">
+        <view class="player-box-item" wx:if="{{startTime}}">
             <text class="player-box_text start-time">{{startTime}}</text>
         </view>
     </view>

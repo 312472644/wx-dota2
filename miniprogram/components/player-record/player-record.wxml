@@ -1,0 +1,23 @@
+<!--components/player-record/player-record.wxml-->
+<view class="table-header">
+    <view class="table-header-item" style="width:35%">击杀英雄</view>
+    <view class="table-header-item" style="width:22%">胜败</view>
+    <view class="table-header-item" style="width:23%">时长</view>
+    <view class="table-header-item" style="width:20%">击杀</view>
+</view>
+<view class="table-body">
+    <view class="table-tr" wx:for="{{recordList}}" wx:key="matchId">
+        <view class="table-body-item" style="width:35%">
+            <dota-team-logo avatar="{{item.avatar}}" width="30px" height="30px" avatar-text="{{item.heroName}}" startTime="{{item.startTime}}"></dota-team-logo>
+        </view>
+        <view class="table-body-item flex-column" style="width:22%">
+            <text class="content-bottom {{item.radiantWin?'win':'lose'}}">{{item.radiantWin?'胜利':'失败'}}</text>
+            <text>{{item.gameType}}</text>
+        </view>
+        <view class="table-body-item flex-column" style="width:23%">
+            <text class="content-bottom">{{item.radiantText}}</text>
+            <text>{{item.gameDuration}}</text>
+        </view>
+        <view class="table-body-item" style="width:20%">{{item.kills}}</view>
+    </view>
+</view>

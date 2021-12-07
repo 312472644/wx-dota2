@@ -166,3 +166,14 @@ export interface IWL {
     win: number;
     lose: number;
 }
+
+export interface IPlayerHero {
+    against_games: number; // 对方游戏场数
+    against_win: number; // 对方胜率
+    games: number; // 次数
+    hero_id: string; 
+    last_played: number; // 游戏时间
+    win: number; // 胜场
+    with_games: number; // 己方游戏场数
+    with_win: number; // 己方胜率
+}

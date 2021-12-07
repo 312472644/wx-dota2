@@ -1,0 +1,35 @@
+<!--components/player-hero/player-hero.wxml-->
+<view class="table-fixed">
+    <view>
+        <view class="table-header">
+            <view class="table-header-item fixed" style="width:130px">击杀英雄</view>
+        </view>
+        <view class="table-body">
+            <view class="table-tr" wx:for="{{playerHeroList}}" wx:key="index">
+                <view class="table-body-item fixed" style="width:130px">
+                    <dota-team-logo avatar="{{item.avatar}}" width="30px" height="30px" avatar-text="{{item.heroName}}" startTime="{{item.startTime}}"></dota-team-logo>
+                </view>
+            </view>
+        </view>
+    </view>
+    <scroll-view scroll-x="true" class="scroll">
+        <view class="table-header">
+            <view class="table-header-item" style="width:70px">次数</view>
+            <view class="table-header-item" style="width:70px">胜率</view>
+            <view class="table-header-item" style="width:70px">己方</view>
+            <view class="table-header-item" style="width:70px">己方胜率</view>
+            <view class="table-header-item" style="width:70px">对方</view>
+            <view class="table-header-item" style="width:70px">对方胜率</view>
+        </view>
+        <view class="table-body">
+            <view class="table-tr scroll-tr clear-float" wx:for="{{playerHeroList}}" wx:key="index">
+                <view class="table-body-item scroll-item" style="width:70px">{{item.games}}</view>
+                <view class="table-body-item scroll-item" style="width:70px">{{item.winRate}}</view>
+                <view class="table-body-item scroll-item" style="width:70px">{{item.withGames}}</view>
+                <view class="table-body-item scroll-item" style="width:70px">{{item.withWinRate}}</view>
+                <view class="table-body-item scroll-item" style="width:70px">{{item.againstGames}}</view>
+                <view class="table-body-item scroll-item" style="width:70px">{{item.againstWinRate}}</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
