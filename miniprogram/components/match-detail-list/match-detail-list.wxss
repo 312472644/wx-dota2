@@ -1,0 +1,9 @@
+/* components/match-detail-list/match-detail-list.wxss */
+.team {
+  padding: 8px 0;
+}
+
+.team-text {
+  color: #666;
+  font-size: 13px;
+}

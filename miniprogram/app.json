@@ -1,49 +1,50 @@
 {
-    "pages": [
-        "pages/dota-dictionary/dota-dictionary",
-        "pages/dota-player-detail/dota-player-detail",
-        "pages/dota-team/dota-team", 
-        "pages/dota-rank/dota-rank",
-        "pages/dota-team-detail/dota-team-detail",
-        "pages/new-log/new-log",
-        "pages/hero-detail/hero-detail",
-        "pages/new-log-detail/new-log-detail",
-        "components/dota-team-hero/dota-team-hero"
-    ],
-    "tabBar": {
-        "color": "#787d7e",
-        "selectedColor": "#000",
-        "list": [{
-                "pagePath": "pages/dota-dictionary/dota-dictionary",
-                "iconPath": "./assets/icon/category.png",
-                "selectedIconPath": "./assets/icon/category_active.png",
-                "text": "百科"
-            },
-            {
-                "pagePath": "pages/dota-team/dota-team",
-                "iconPath": "./assets/icon/team.png",
-                "selectedIconPath": "./assets/icon/team_active.png",
-                "text": "职业战队"
-            },
-            {
-                "pagePath": "pages/dota-rank/dota-rank",
-                "iconPath": "./assets/icon/rank.png",
-                "selectedIconPath": "./assets/icon/rank_active.png",
-                "text": "天梯排名"
-            },
-            {
-                "pagePath": "pages/new-log/new-log",
-                "iconPath": "./assets/icon/news.png",
-                "selectedIconPath": "./assets/icon/news_active.png",
-                "text": "资讯"
-            }
-        ]
-    },
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "Dota 2",
-        "navigationBarTextStyle": "black"
-    },
-    "sitemapLocation": "sitemap.json"
+  "pages": [
+    "pages/match-detail/match-detail",
+    "pages/dota-player-detail/dota-player-detail",
+    "pages/dota-dictionary/dota-dictionary",
+    "pages/dota-team/dota-team",
+    "pages/dota-rank/dota-rank",
+    "pages/dota-team-detail/dota-team-detail",
+    "pages/new-log/new-log",
+    "pages/hero-detail/hero-detail",
+    "pages/new-log-detail/new-log-detail"
+  ],
+  "tabBar": {
+    "color": "#787d7e",
+    "selectedColor": "#000",
+    "list": [
+      {
+        "pagePath": "pages/dota-dictionary/dota-dictionary",
+        "iconPath": "./assets/icon/category.png",
+        "selectedIconPath": "./assets/icon/category_active.png",
+        "text": "百科"
+      },
+      {
+        "pagePath": "pages/dota-team/dota-team",
+        "iconPath": "./assets/icon/team.png",
+        "selectedIconPath": "./assets/icon/team_active.png",
+        "text": "职业战队"
+      },
+      {
+        "pagePath": "pages/dota-rank/dota-rank",
+        "iconPath": "./assets/icon/rank.png",
+        "selectedIconPath": "./assets/icon/rank_active.png",
+        "text": "天梯排名"
+      },
+      {
+        "pagePath": "pages/new-log/new-log",
+        "iconPath": "./assets/icon/news.png",
+        "selectedIconPath": "./assets/icon/news_active.png",
+        "text": "资讯"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Dota 2",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
 }

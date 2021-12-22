@@ -9,7 +9,7 @@
     <view class="table-body">
         <view class="table-tr" wx:for="{{matchList}}" wx:key="matchId">
             <view class="table-body-item" style="width:35%">
-                <dota-team-logo avatar="{{item.avatar}}" width="30px" height="30px" avatar-text="{{item.heroName}}" startTime="{{item.startTime}}"></dota-team-logo>
+                <dota-team-logo avatar="{{item.avatar}}" width="30px" height="30px" avatar-text="{{item.heroName}}" startTime="{{item.startTime}}" data-info="{{item}}" bindtap="toMatchDetail"></dota-team-logo>
             </view>
             <view class="table-body-item flex" style="width:22%">
                 <text class="flex-text {{item.radiantWin?'win':'lose'}}">{{item.radiantWin?'胜利':'失败'}}</text>

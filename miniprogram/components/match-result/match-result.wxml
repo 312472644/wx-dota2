@@ -1,0 +1,20 @@
+<!--components/match-result/match-result.wxml-->
+<view class="match-detail-result" wx:if="{{result}}">
+  <view class="match-team {{result.radiant_win?'win':'lose'}}">
+    <text>{{result.radiant_win?'天辉胜利':'夜魇胜利'}}</text>
+  </view>
+  <view class="match-score">
+    <view class="match-score-item win">{{result.radiant_score}}</view>
+    <view class="match-game">
+      <view class="match-game-mode">{{gameMode}}</view>
+      <view class="match-game-mode-time">{{duration}}</view>
+    </view>
+    <view class="match-score-item lose">{{result.dire_score}}</view>
+  </view>
+  <view class="match-info">
+    <view class="match-info-item">
+      <text class="match-info-item_label">比赛编号</text>
+      <text class="match-info-item_value">{{result.match_id}}</text>
+    </view>
+  </view>
+</view>

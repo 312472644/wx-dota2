@@ -1,5 +1,5 @@
 <!--components/dota-team-logo/dota-team-logo.wxml-->
-<view class="dota-team-logo" bindtap="tapEvent" data-info="{{tapInfo}}">
+<view class="dota-team-logo" data-info="{{tapInfo}}">
     <van-image use-error-slot class="player-logo" width="{{width}}" height="{{height}}" src="{{avatar}}" style="width:{{width}};height:{{height}}">
         <view slot="error" class="image-error">
             <image src="../../assets/common/portrait.png" class="player-logo"></image>

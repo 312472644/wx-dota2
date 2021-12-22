@@ -1,4 +1,4 @@
-import { IResult } from "miniprogram/interface";
+import { IEvent, IResult } from "miniprogram/interface";
 import { IHero, IRecentMacth } from "miniprogram/interface/IPage";
 import { GameModeMap, GameTypeMap } from "../../map/index";
 import { axios, formatDateTime, transFormMS } from "../../utils/index"
@@ -94,6 +94,13 @@ Component({
                 };
             });
             return list;
+        },
+        toMatchDetail(event: IEvent) {
+            const { currentTarget } = event;
+            const matchId = currentTarget.dataset.info.matchId;
+            wx.navigateTo({
+                url:`../../pages/match-detail/match-detail?matchId=${matchId}`
+            });
         }
     }
 })

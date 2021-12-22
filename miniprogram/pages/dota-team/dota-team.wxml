@@ -34,7 +34,6 @@
                                     <view class="team-tag-box">
                                           <view class="team-tag-logo-box">
                                                 <text class="team-tag-text team-tag_logo">{{item.name}}</text>
-                                                <van-icon name="arrow" size="12px" color="#0c9dfc" />
                                           </view>
                                           <text class="team-tag-text">{{item.lastMatchTime}}</text>
                                     </view>

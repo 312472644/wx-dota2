@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "match-result": "../../components/match-result/match-result",
+    "match-detail-list": "../../components/match-detail-list/match-detail-list"
+  }
+}

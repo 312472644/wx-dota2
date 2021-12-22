@@ -167,13 +167,41 @@ export interface IWL {
     lose: number;
 }
 
+// 玩家常用英雄接口
 export interface IPlayerHero {
     against_games: number; // 对方游戏场数
     against_win: number; // 对方胜率
     games: number; // 次数
-    hero_id: string; 
+    hero_id: string;
     last_played: number; // 游戏时间
     win: number; // 胜场
     with_games: number; // 己方游戏场数
     with_win: number; // 己方胜率
+}
+
+// 比赛详情接口
+export interface IMatchDetail {
+    dire_score: number; //最终得分
+    dire_team: IMatchTeam;
+    dire_team_id: Number;
+    duration: number; // 耗时
+    first_blood_time: number; // 一血产生时间
+    game_mode: number;
+    human_players: number;
+    lobby_type: number;
+    match_id: number;
+    picks_bans: []; //选择和禁用
+    players: []; //玩家列表
+    radiant_score: number;
+    radiant_team: IMatchTeam;
+    radiant_team_id: number;
+    radiant_win: number;
+    start_time: number;
+}
+
+export interface IMatchTeam {
+    logo_url: string;
+    name: string;
+    tag: string;
+    team_id: number;
 }

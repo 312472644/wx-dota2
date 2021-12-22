@@ -1,0 +1,6 @@
+<!--pages/match-detail/match-detail.wxml-->
+<view>
+  <!--比赛结果-->
+  <match-result result="{{matchResult}}"></match-result>
+  <match-detail-list></match-detail-list>
+</view>

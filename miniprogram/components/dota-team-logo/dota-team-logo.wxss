@@ -7,10 +7,6 @@
 .player-box_text {
     color: #0c9dfc;
     margin-left: 8px;
-    /* color: #787d7e; */
-    /* overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap; */
 }
 
 .start-time {
