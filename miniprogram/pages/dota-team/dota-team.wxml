@@ -1,48 +1,48 @@
 <!--pages/dota-team/dota-team.wxml-->
 <wxs module="table">
-      var parseIntValue = function (value) {
-            return parseInt(value);
-      }
-      var getRowIndex = function (index) {
-            return parseInt(index) + 1;
-      }
-      module.exports = {
-            parseIntValue: parseIntValue,
-            getRowIndex: getRowIndex
-      };
+  var parseIntValue = function (value) {
+    return parseInt(value);
+  }
+  var getRowIndex = function (index) {
+    return parseInt(index) + 1;
+  }
+  module.exports = {
+    parseIntValue: parseIntValue,
+    getRowIndex: getRowIndex
+  };
 </wxs>
 <view class="dota-team-container">
-      <view class="help-info">
-            <van-icon class="help-info-icon" name="question-o" size="18" />
-            <text class="help-info-text">Elo等级分排名</text>
-            <text>k = 32, init = 1000</text>
-      </view>
-      <view class="table">
-            <view class="table-header">
-                  <view class="table-header-item" style="width:60px">排名</view>
-                  <view class="table-header-item" style="width:calc(100% - 240px)">名称</view>
-                  <view class="table-header-item" style="width:60px">等级分</view>
-                  <view class="table-header-item" style="width:60px">胜</view>
-                  <view class="table-header-item" style="width:60px">败</view>
+  <view class="help-info">
+    <van-icon class="help-info-icon" name="question-o" size="18" />
+    <text class="help-info-text">Elo等级分排名</text>
+    <text>k = 32, init = 1000</text>
+  </view>
+  <view class="table">
+    <view class="table-header">
+      <view class="table-header-item" style="width:60px">排名</view>
+      <view class="table-header-item" style="width:calc(100% - 180px)">名称</view>
+      <view class="table-header-item" style="width:120px">MMR</view>
+    </view>
+    <view class="table-body">
+      <view class="table-tr" wx:for="{{teamList}}" wx:key="index">
+        <view class="table-body-item" style="width:60px"><text class="level-text">{{item.rank}}</text></view>
+        <view class="table-body-item" style="width:calc(100% - 180px)" data-team="{{item}}" bindtap="toDotaTeamDetail">
+          <view class="team-tag">
+            <van-image image-class="team-tag-image" class="team-tag-image-box" width="35" height="35" src="{{item.team_info.logo}}" />
+            <view class="team-tag-box">
+              <view class="team-tag-logo-box">
+                <text class="team-tag-text team-tag_logo">{{item.team_name}}</text>
+              </view>
             </view>
-            <view class="table-body">
-                  <view class="table-tr" wx:for="{{teamList}}" wx:key="index">
-                        <view class="table-body-item" style="width:60px"><text class="level-text">{{table.getRowIndex(index)}}</text></view>
-                        <view class="table-body-item" style="width:calc(100% - 240px)" data-team="{{item}}" bindtap="toDotaTeamDetail">
-                              <view class="team-tag">
-                                    <van-image image-class="team-tag-image" class="team-tag-image-box" width="35" height="35" src="https://images.weserv.nl/?url={{item.logo_url}}" />
-                                    <view class="team-tag-box">
-                                          <view class="team-tag-logo-box">
-                                                <text class="team-tag-text team-tag_logo">{{item.name}}</text>
-                                          </view>
-                                          <text class="team-tag-text">{{item.lastMatchTime}}</text>
-                                    </view>
-                              </view>
-                        </view>
-                        <view class="table-body-item" style="width:60px">{{table.parseIntValue(item.rating)}}</view>
-                        <view class="table-body-item win" style="width:60px">{{item.wins}}</view>
-                        <view class="table-body-item lose" style="width:60px">{{item.losses}}</view>
-                  </view>
-            </view>
+          </view>
+        </view>
+        <view class="table-body-item" style="width:120px">
+          <view class="mmr-progress">
+            <text class="mmr-value">{{item.mmr}}</text>
+            <van-progress percentage="{{item.mmr_percent}}" show-pivot="{{false}}" />
+          </view>
+        </view>
       </view>
+    </view>
+  </view>
 </view>

@@ -58,7 +58,7 @@
 
 .team-tag-image {
   border-radius: 50%;
-  background-color: #141e30;
+  background-color: #333;
 }
 
 .team-tag_logo {
@@ -70,4 +70,14 @@
   width: 100%;
   line-height: normal;
   align-items: center;
+}
+
+.mmr-progress{
+  display: flex;
+  flex-direction: column;
+}
+
+.mmr-value {
+  height: 40px;
+  text-align: left;
 }

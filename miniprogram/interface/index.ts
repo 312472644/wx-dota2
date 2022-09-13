@@ -60,7 +60,7 @@ export interface IAxiosOption {
   data?: string | Object | ArrayBuffer;
   header?: Object;
   timeout?: number;
-  method?: 'GET' | 'POST' | 'DELETE' | 'OPTIONS' | 'HEAD' | 'PUT';
+  method?: "GET" | "POST" | "DELETE" | "OPTIONS" | "HEAD" | "PUT";
   dataType?: string;
   responseType?: string;
   enableCache?: boolean;

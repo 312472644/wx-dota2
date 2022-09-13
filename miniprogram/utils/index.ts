@@ -78,4 +78,29 @@ const formatDateTime = (timeStamp: number, isNeedMS = false) => {
     return isNeedMS ? `${year}-${month}-${day} ${hours}:${mins}:${seconds}` : `${year}-${month}-${day}`;
 };
 
-export { getTagByClassRegex, axios, transFormMS, getHeroCNList, formatDateTime }
+/***
+ * 获取dota max api公共查询参数
+ */
+const getDotaMaxQueryParam = () => {
+  return {
+    max_id: 0,
+    game_type: "dota2",
+    os_type: "Android",
+    os_version: "5.1.1",
+    version: "4.4.53",
+    lang: "zh-cn",
+    channel: "dotamax",
+    x_app: "maxjia",
+    x_client_type: "mobile",
+    x_os_type: "Android",
+  };
+};
+
+export {
+  getTagByClassRegex,
+  axios,
+  transFormMS,
+  getHeroCNList,
+  formatDateTime,
+  getDotaMaxQueryParam,
+};

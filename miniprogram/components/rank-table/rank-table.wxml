@@ -1,21 +1,39 @@
 <!--components/rank-table/rank-table.wxml-->
 <view class="table">
-    <view class="table-header">
-        <view class="table-header-item first-column">排名</view>
-        <view class="table-header-item second-column">玩家</view>
-        <view class="table-header-item third-column">队伍</view>
-    </view>
-    <view class="table-body">
-        <view class="table-tr" wx:for="{{tableList}}" wx:key="index">
-            <view class="table-body-item first-column"><text class="level-text">{{item.rank}}</text></view>
-            <view class="table-body-item second-column">{{item.name}}</view>
-            <view class="table-body-item third-column" wx:if="{{item.team_id}}">
-                <van-image width="30" height="30" class="team-logo" radius src="https://steamcdn-a.akamaihd.net/apps/dota2/images/team_logos/{{item.team_id}}.png" use-error-slot>
-                    <text slot="error" error-class="team-logo">-</text>
-                </van-image>
-            </view>
-            <view wx:else="{{!item.team_id}}" class="table-body-item third-column">-</view>
+  <view class="table-header">
+    <view class="table-header-item first-column">排名</view>
+    <view class="table-header-item fourth-column">排名变化</view>
+    <view class="table-header-item second-column">玩家</view>
+    <view class="table-header-item third-column"></view>
+  </view>
+  <view class="table-body">
+    <view class="table-tr" wx:for="{{tableList}}" wx:key="index">
+      <view class="table-body-item first-column"><text class="level-text">{{item.rank}}</text></view>
+      <view class="table-body-item fourth-column">
+        <view wx:if="{{item.diff_rank === 0 }}">-</view>
+        <view wx:elif="{{item.diff_rank < 0}}">
+          <van-icon name="arrow-up" size="13px" color="#07c160" />
+          <text style="color:#07c160;padding-left: 5px;">{{item.diff_rank_desc}}</text>
         </view>
+        <view wx:else>
+          <van-icon name="arrow-down" size="13px" color="#ee0a24" />
+          <text style="color:#ee0a24;padding-left: 5px;">{{item.diff_rank_desc}}</text>
+        </view>
+      </view>
+      <view class="table-body-item second-column">
+        <view class="player-box">
+          <van-image wx:if="{{item.avatar_url}}" width="30" height="30" class="player-avatar" round src="{{item.avatar_url}}"></van-image>
+          <image wx:else width="30" height="30" class="player-default-avatar" src="../../assets/common/dota_logo.png"></image>
+          <text class="player-name">{{item.name}}</text>
+        </view>
+      </view>
+      <view class="table-body-item third-column" wx:if="{{item.rank_img_url}}">
+        <van-image width="30" height="30" class="team-logo" round src="{{item.rank_img_url}}" use-error-slot>
+          <text slot="error" error-class="team-logo">-</text>
+        </van-image>
+      </view>
+      <view wx:else class="table-body-item third-column">-</view>
     </view>
-    <van-empty wx:if="{{tableList.length === 0}}" description="暂无数据" />
+  </view>
+  <van-empty wx:if="{{tableList.length === 0}}" description="暂无数据" />
 </view>

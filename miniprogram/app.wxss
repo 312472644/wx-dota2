@@ -1,77 +1,78 @@
 /**app.wxss**/
 page {
-    font-family: BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
-        Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
-        sans-serif;
+  font-family: BlinkMacSystemFont, "Helvetica Neue", Helvetica, Segoe UI, Arial,
+    Roboto, "PingFang SC", "miui", "Hiragino Sans GB", "Microsoft Yahei",
+    sans-serif;
 }
 
 .hero-item-type {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .clear-float::after {
-    content: "";
-    display: block;
-    clear: both;
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .go-top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 0 15px 0 rgb(0 0 0 / 20%);
-    background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 0 rgb(0 0 0 / 20%);
+  background-color: #fff;
 }
 
 .go-top-image {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 .help-info {
-    display: flex;
-    align-items: center;
-    padding: 5px 0;
-    color: #666;
-    font-size: 13px;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  color: #666;
+  font-size: 13px;
 }
 
 .help-info-icon {
-    padding-left: 8px;
+  padding-left: 8px;
 }
 
 .help-info-text {
-    padding: 0 3px;
+  padding: 0 3px;
 }
 
 .table-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    font-weight: bolder;
-    color: #3a3d44;
-    height: 40px;
-    border: 1px solid #ebedf2;
-    z-index: 99;
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-weight: bolder;
+  color: #3a3d44;
+  height: 40px;
+  border: 1px solid #ebedf2;
+  z-index: 99;
 }
 
 .table-header-item {
-    display: inline-block;
-    font-size: 14px;
-    padding: 0 8px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    background: #f7f8fa;
-    box-sizing: border-box;
+  display: inline-block;
+  font-size: 14px;
+  padding: 0 8px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #f7f8fa;
+  box-sizing: border-box;
 }
 
 /* .table-tr:nth-of-type(2n) {
@@ -79,60 +80,60 @@ page {
 } */
 
 .table-body {
-    width: 100%;
+  width: 100%;
 }
 
 .table-tr {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #ebedf2;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ebedf2;
 }
 
 .table-body-item {
-    padding: 0 8px;
-    width: 100%;
-    height: 40px;
-    color: #636873;
-    font-size: 12px;
-    line-height: 40px;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    box-sizing: border-box;
+  padding: 0 8px;
+  width: 100%;
+  height: 40px;
+  color: #636873;
+  font-size: 12px;
+  line-height: 40px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
 }
 
 .win {
-    color: #66bb6a !important;
+  color: #66bb6a !important;
 }
 
 .lose {
-    color: #ff4c4c !important;
+  color: #ff4c4c !important;
 }
 
 .level-text {
-    padding: 2px 6px;
-    color: #636873;
-    font-size: 12px;
-    border-radius: 3px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgb(2 5 13 / 8%);
+  padding: 2px 6px;
+  color: #636873;
+  font-size: 12px;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgb(2 5 13 / 8%);
 }
 
 .table-tr:nth-of-type(1) .level-text:nth-of-type(1) {
-    color: #fff;
-    background: linear-gradient(39deg, #fa0, #ffd500 99%);
-    box-shadow: 0 2px 6px 0 rgb(255 179 0 / 40%);
+  color: #fff;
+  background: linear-gradient(39deg, #fa0, #ffd500 99%);
+  box-shadow: 0 2px 6px 0 rgb(255 179 0 / 40%);
 }
 
 .table-tr:nth-of-type(2) .level-text:nth-of-type(1) {
-    color: #fff;
-    background: linear-gradient(39deg, #bcc1cc, #dadde3 99%);
-    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 12%);
+  color: #fff;
+  background: linear-gradient(39deg, #bcc1cc, #dadde3 99%);
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 12%);
 }
 
 .table-tr:nth-of-type(3) .level-text:nth-of-type(1) {
-    color: #fff;
-    background: linear-gradient(39deg, #ff9a57, #ffbb80 99%);
-    box-shadow: 0 2px 6px 0 rgb(255 154 87 / 40%);
+  color: #fff;
+  background: linear-gradient(39deg, #ff9a57, #ffbb80 99%);
+  box-shadow: 0 2px 6px 0 rgb(255 154 87 / 40%);
 }

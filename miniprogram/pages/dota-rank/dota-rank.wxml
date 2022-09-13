@@ -1,15 +1,17 @@
 <!--pages/rank/rank.wxml-->
-<van-tabs color="#000000" title-inactive-color="#787d7e" bind:change="changeEvent">
+<scroll-view scroll-y="true" style="height: 100vh;" scroll-top="{{scrollTop}}">
+  <van-tabs sticky color="#000000" title-inactive-color="#787d7e" bind:change="changeEvent">
     <van-tab title="国服" name="china">
-        <rank-table tableList="{{rankList}}"></rank-table>
+      <rank-table tableList="{{rankList}}"></rank-table>
     </van-tab>
     <van-tab title="美洲" name="americas">
-        <rank-table tableList="{{rankList}}"></rank-table>
+      <rank-table tableList="{{rankList}}"></rank-table>
     </van-tab>
     <van-tab title="欧洲" name="europe">
-        <rank-table tableList="{{rankList}}"></rank-table>
+      <rank-table tableList="{{rankList}}"></rank-table>
     </van-tab>
     <van-tab title="东南亚" name="se_asia">
-        <rank-table tableList="{{rankList}}"></rank-table>
+      <rank-table tableList="{{rankList}}"></rank-table>
     </van-tab>
-</van-tabs>
+  </van-tabs>
+</scroll-view>

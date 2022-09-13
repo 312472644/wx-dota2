@@ -1,18 +1,19 @@
 // 战队接口
 export interface ITeam {
-    logo_url: string, // logo地址
-    losses: number, // 败场
-    name: string, // 队名
-    rating: number, // 等级分
-    tag: string, // 标签
-    team_id: number, // id
-    wins: number, // 胜场
-    last_match_time: number;
+  msg: string;
+  status: string;
+  result: [];
 }
 
 // 排名接口
 export interface IRankResult {
-    leaderboard: IRank[];
+  msg: string;
+  result: {
+    list: [];
+    ranking_distribution: [];
+  };
+  status: string;
+  version: string;
 }
 
 export interface IRank {
