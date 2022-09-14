@@ -1,0 +1,47 @@
+/* components/dota-schedule/dota-schedule.wxss */
+.schedule-box {
+  padding: 10px 15px;
+  background: #f7f8fa;
+}
+
+.schedule-item {
+  border-radius: 3px;
+  background: #ffffff;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 10px #ccc;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.schedule-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.schedule-text {
+  color: #333;
+  font-size: 13px;
+  font-weight: bolder;
+  padding-bottom: 5px;
+}
+
+.schedule-date {
+  color: #666;
+  font-size: 12px;
+}
+
+.schedule-type {
+  color: #fdb948;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.schedule-image {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}

@@ -1,11 +1,8 @@
 {
   "pages": [
-    "pages/dota-team/dota-team",
+    "pages/team-match/team-match",
     "pages/dota-rank/dota-rank",
-    "pages/match-detail/match-detail",
-    "pages/dota-player-detail/dota-player-detail",
     "pages/dota-dictionary/dota-dictionary",
-    "pages/dota-team-detail/dota-team-detail",
     "pages/new-log/new-log",
     "pages/hero-detail/hero-detail",
     "pages/new-log-detail/new-log-detail"
@@ -18,13 +15,13 @@
         "pagePath": "pages/dota-dictionary/dota-dictionary",
         "iconPath": "./assets/icon/category.png",
         "selectedIconPath": "./assets/icon/category_active.png",
-        "text": "百科"
+        "text": "英雄物品"
       },
       {
-        "pagePath": "pages/dota-team/dota-team",
+        "pagePath": "pages/team-match/team-match",
         "iconPath": "./assets/icon/team.png",
         "selectedIconPath": "./assets/icon/team_active.png",
-        "text": "职业战队"
+        "text": "赛事信息"
       },
       {
         "pagePath": "pages/dota-rank/dota-rank",

@@ -1,7 +1,7 @@
 // 战队接口
 export interface ITeam {
-  msg: string;
-  status: string;
+  code: number;
+  message: string;
   result: [];
 }
 

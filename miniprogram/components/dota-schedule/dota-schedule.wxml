@@ -1,0 +1,15 @@
+<!--components/dota-schedule/dota-schedule.wxml-->
+<view class="schedule-box">
+  <view class="schedule-item" wx:for="{{scheduleList}}">
+    <van-image width="100%" fit="widthFix" image-class="schedule-image" lazy-load src="https://images.weserv.nl/?url={{item.coverUrl}}"></van-image>
+    <view class="footer">
+      <view class="schedule-name">
+        <text class="schedule-text">{{item.eventName}}</text>
+        <text class="schedule-date">{{item.startTime}} - {{item.endTime}}</text>
+      </view>
+      <view class="schedule-type">
+        {{item.eventAward}}
+      </view>
+    </view>
+  </view>
+</view>

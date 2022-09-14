@@ -1,6 +1,0 @@
-<!--components/match-detail-list/match-detail-list.wxml-->
-<view>
-  <view class="team">
-    <view class="team-text">天辉 - 摘要</view>
-  </view>
-</view>

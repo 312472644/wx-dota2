@@ -1,5 +1,4 @@
 /* components/hero-list/hero-list.wxss */
-/* pages/hero/hero.wxss */
 .scroll-view {
     height: calc(100vh - 45px);
 }
