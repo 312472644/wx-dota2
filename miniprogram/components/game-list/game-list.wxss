@@ -117,9 +117,6 @@
   line-height: 30px;
 }
 
-.filter-content {
-}
-
 .button {
   margin-right: 10px;
 }

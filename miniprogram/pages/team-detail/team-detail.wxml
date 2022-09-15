@@ -1,0 +1,45 @@
+<scroll-view scroll-y="true">
+  <view style="opacity:{{scrollTop > 90?1:0}};" class="team-base-info thumbnail">
+    <view class="team-logo">
+      <van-image width="30" height="30" src="https://images.weserv.nl/?url={{teamInfo.logo}}"></van-image>
+    </view>
+    <view class="team-name">{{teamInfo.name}}</view>
+    <view class="team-mmr">
+      <view class="mmr-item">
+        <text class="team-mmr-text">Ti积分</text>
+        <text class="team-mmr-text">{{teamInfo.tiScore}}</text>
+      </view>
+      <view class="mmr-item">
+        <text class="team-mmr-text">世界排名</text>
+        <text class="team-mmr-text">{{teamInfo.tiRank}}</text>
+      </view>
+    </view>
+  </view>
+  <view style="opacity:{{scrollTop <= 90?1:0}};" class="team-base-info">
+    <view class="team-logo">
+      <van-image width="55" fit="widthFix" src="https://images.weserv.nl/?url={{teamInfo.logo}}"></van-image>
+    </view>
+    <view class="team-name">{{teamInfo.name}}</view>
+    <view class="team-mmr">
+      <view class="mmr-item">
+        <text class="team-mmr-text">Ti积分</text>
+        <text class="team-mmr-text">{{teamInfo.tiScore}}</text>
+      </view>
+      <view class="mmr-item">
+        <text class="team-mmr-text">世界排名</text>
+        <text class="team-mmr-text">{{teamInfo.tiRank}}</text>
+      </view>
+    </view>
+  </view>
+  <van-tabs nav-class="nav-tabs" offset-top="{{35}}" sticky color="#000000" title-inactive-color="#787d7e">
+    <van-tab title="概览" name="overview">
+      <team-overview teamId="{{teamId}}" playerList="{{teamInfo.teamPlayerList}}"></team-overview>
+    </van-tab>
+    <van-tab title="赛程" name="schedule">
+      赛程
+    </van-tab>
+    <van-tab title="资料" name="data">
+      资料
+    </van-tab>
+  </van-tabs>
+</scroll-view>

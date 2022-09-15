@@ -140,6 +140,14 @@ page {
   font-size: 13px !important;
 }
 
+.van-ellipsis {
+  font-size: 13px;
+}
+
+.van-dropdown-menu {
+  box-shadow: none !important;
+}
+
 .van-dropdown-menu__item {
   justify-content: flex-start !important;
 }

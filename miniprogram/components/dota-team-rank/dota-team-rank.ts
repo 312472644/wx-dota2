@@ -52,9 +52,7 @@ Component({
       const { currentTarget } = event;
       const { team } = currentTarget.dataset;
       wx.navigateTo({
-        url: `../dota-team-detail/dota-team-detail?team=${JSON.stringify(
-          team
-        )}`,
+        url: `../../pages/team-detail/team-detail?teamId=${team.teamId}`,
       });
     },
   },

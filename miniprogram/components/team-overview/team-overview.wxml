@@ -1,0 +1,168 @@
+<!--components/team-overview/team-overview.wxml-->
+<view class="team-overview">
+  <view class="team-item">
+    <view class="team-item-title">队员信息</view>
+    <view class="team-item-body">
+      <view class="team-player-item" wx:for="{{playerList}}">
+        <van-image width="35" height="35" round src="https://images.weserv.nl/?url={{item.logo}}"></van-image>
+        <text class="player-name">{{item.name}}</text>
+        <text class="player-role">{{item.position}}号位</text>
+      </view>
+    </view>
+  </view>
+  <view class="team-item">
+    <view class="filter">
+      <view class="team-item-title">战队数据</view>
+      <view class="team-match">
+        <van-dropdown-menu active-color="#1989fa">
+          <van-dropdown-item bindchange="bindChange" value="{{ matchId }}" options="{{ matchOptions }}" />
+        </van-dropdown-menu>
+      </view>
+    </view>
+    <view class="team-item-body team-flex" style="padding:0">
+      <view class="statistics-item">
+        <text>{{matchDetail.matchTotalCount}}</text>
+        <text>比赛场次</text>
+        <text>{{matchDetail.matchWinCount}}胜{{matchDetail.matchDefeatedCount}}负</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.winRate.value}}</text>
+        <text>胜率</text>
+        <text>第{{matchDetail.winRate.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.kda.value}}</text>
+        <text>KDA</text>
+        <text>第{{matchDetail.kda.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.averageMatchDuration.value}}</text>
+        <text>场均时长</text>
+        <text>第{{matchDetail.averageMatchDuration.rank}}名</text>
+      </view>
+    </view>
+  </view>
+  <view class="team-item">
+    <view class="progress">
+      <view class="progress-text">
+        <text>天辉胜率</text>
+        <text>{{matchDetail.radiantWinRate}}%</text>
+      </view>
+      <view class="progress-bar">
+        <van-progress color="linear-gradient(to right, #abe148,#ade149)" percentage="{{matchDetail.radiantWinRate}}" stroke-width="5" show-pivot="{{false}}" />
+      </view>
+    </view>
+    <view class="progress">
+      <view class="progress-text">
+        <text>夜魇胜率</text>
+        <text>{{matchDetail.direWinRate}}%</text>
+      </view>
+      <view class="progress-bar">
+        <van-progress color="linear-gradient(to right, #e95730,#e85730)" percentage="{{matchDetail.direWinRate}}" stroke-width="5" show-pivot="{{false}}" />
+      </view>
+    </view>
+  </view>
+  <view class="team-item">
+    <view class="team-item-title">进攻和经济</view>
+    <view class="team-item-body team-flex" style="padding: 15px 0 0 0;">
+      <view class="statistics-item">
+        <text>{{matchDetail.averageMinuteEconomy.value}}</text>
+        <text>分均经济</text>
+        <text>第{{matchDetail.averageMinuteEconomy.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.averageMinuteExp.value}}</text>
+        <text>分均经验</text>
+        <text>第{{matchDetail.averageMinuteExp.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.averageKill.value}}</text>
+        <text>场均击杀</text>
+        <text>第{{matchDetail.averageKill.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.averageDeath.value}}</text>
+        <text>场均死亡</text>
+        <text>第{{matchDetail.averageDeath.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.firstBloodRate.value}}</text>
+        <text>一血率</text>
+        <text>第{{matchDetail.firstBloodRate.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.lastHit.value}}</text>
+        <text>分均正补</text>
+        <text>第{{matchDetail.lastHit.rank}}名</text>
+      </view>
+    </view>
+  </view>
+  <view class="team-item">
+    <view class="team-item-title">视野和资源</view>
+    <view class="team-item-body team-flex" style="padding: 15px 0 0 0;">
+      <view class="statistics-item">
+        <text>{{matchDetail.lineLeaderRate.value}}</text>
+        <text>线优率</text>
+        <text>第{{matchDetail.lineLeaderRate.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.averageToppleTower.value}}</text>
+        <text>场均推塔</text>
+        <text>第{{matchDetail.averageToppleTower.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.averageBeToppledTower.value}}</text>
+        <text>场均被推塔</text>
+        <text>第{{matchDetail.averageBeToppledTower.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.firstToppleTowerRate.value}}</text>
+        <text>一塔率</text>
+        <text>第{{matchDetail.firstToppleTowerRate.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.firstTenKillRate.value}}</text>
+        <text>首十杀率</text>
+        <text>第{{matchDetail.firstTenKillRate.rank}}名</text>
+      </view>
+      <view class="statistics-item">
+        <text>{{matchDetail.firstRsKillRate.value}}</text>
+        <text>首肉山率</text>
+        <text>第{{matchDetail.firstRsKillRate.rank}}名</text>
+      </view>
+    </view>
+  </view>
+  <view class="team-item">
+    <view class="team-item-title">Ban-Pick</view>
+    <view class="team-item-body" style="padding: 15px 0 0 0;display: block;">
+      <view class="team-item-text">被Ban最多</view>
+      <view class="hero-item-box">
+        <view class="hero-item" wx:for="{{matchDetail.mostBeBanned}}">
+          <van-image width="40" height="40" src="https://images.weserv.nl/?url={{item.logoUrl}}"></van-image>
+          <text class="bn-text">{{item.bpTimes}}次</text>
+        </view>
+      </view>
+    </view>
+    <view class="team-item-body" style="padding: 15px 0 0 0;display: block;">
+      <view class="team-item-text">Ban掉最多</view>
+      <view class="hero-item-box">
+        <view class="hero-item" wx:for="{{matchDetail.mostToBan}}">
+          <van-image width="40" height="40" src="https://images.weserv.nl/?url={{item.logoUrl}}"></van-image>
+          <text class="bn-text">{{item.bpTimes}}次</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="team-item">
+    <view class="team-item-title">Pick最多</view>
+    <view class="most-pick" wx:for="{{matchDetail.mostPick}}" wx:for-item="pickItem">
+      <view class="pick-player-name">{{pickItem.player.name}}</view>
+      <view class="pick-player-hero">
+        <view class="hero-item pick-item" wx:for="{{pickItem.pickItems}}">
+          <van-image width="40" height="40" src="https://images.weserv.nl/?url={{item.logoUrl}}"></van-image>
+          <text class="bn-text">{{item.bpTimes}}次</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

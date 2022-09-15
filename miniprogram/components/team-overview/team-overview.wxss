@@ -1,0 +1,168 @@
+/* components/team-overview/team-overview.wxss */
+.team-overview {
+  padding: 15px;
+  border-top: 10px solid #f3f2f7;
+}
+
+.team-item {
+  margin-bottom: 10px;
+}
+
+.team-item-title {
+  color: #333;
+  font-size: 14px;
+}
+
+.team-item-body {
+  display: flex;
+  padding: 15px 15px 0 15px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.team-player-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  margin-bottom: 10px;
+}
+
+.player-name {
+  display: inline-block;
+  padding-top: 3px;
+  color: #333;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.player-role {
+  padding-top: 2px;
+  font-size: 12px;
+  color: #666;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-flex {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.statistics-item {
+  display: flex;
+  margin: 0 10px 10px 0;
+  width: calc((100% - 30px) / 4);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fefffa;
+  border-radius: 3px;
+  padding: 15px 0;
+  box-shadow: 1px 1px 10px #d8d8d8;
+}
+
+.statistics-item:nth-of-type(4n) {
+  margin-right: 0;
+}
+
+.statistics-item text {
+  font-size: 12px;
+}
+.statistics-item text:nth-of-type(1) {
+  color: #100e0e;
+  font-weight: bolder;
+}
+.statistics-item text:nth-of-type(2) {
+  color: #8e8d8b;
+  padding: 5px 0;
+}
+.statistics-item text:nth-of-type(3) {
+  color: #312e2d;
+}
+
+.progress {
+  margin-top: 15px;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  margin-top: 8px;
+}
+
+.progress-text text {
+  color: #312e2d;
+  font-size: 13px;
+}
+
+.team-item-text {
+  color: #312e2d;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.hero-item-box {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.hero-item {
+  display: flex;
+  margin: 0 10px 10px 0;
+  width: calc((100% - 60px) / 7);
+  /* min-width: calc((100% - 60px) / 7);
+  max-width: calc((100% - 60px) / 7); */
+  flex-direction: column;
+  align-items: center;
+}
+
+.pick-item {
+  width: calc((100% - 40px) / 5);
+}
+
+.pick-item:nth-of-type(5n) {
+  margin-right: 0;
+}
+
+.hero-item:nth-of-type(7n) {
+  margin-right: 0px;
+}
+
+.bn-text {
+  color: #666;
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+.most-pick {
+  display: flex;
+  padding: 10px 0;
+}
+.pick-player-name {
+  color: #333;
+  font-weight: bolder;
+  font-size: 13px;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+.pick-player-hero {
+  display: flex;
+  width: calc(100% - 100px);
+}

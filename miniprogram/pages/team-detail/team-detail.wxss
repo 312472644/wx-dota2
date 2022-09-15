@@ -1,0 +1,46 @@
+/* pages/team-detail/team-detail.wxss */
+.team-base-info {
+  display: flex;
+  background: linear-gradient(45deg, #24292e, #71787f);
+  padding-bottom: 15px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.thumbnail {
+  position: fixed;
+  left: 0;
+  right: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 0;
+  z-index: 999;
+}
+
+.thumbnail .team-name {
+  padding-bottom: 0;
+}
+
+.team-name {
+  color: #fff;
+  font-size: 12px;
+  padding-bottom: 8px;
+}
+
+.team-mmr {
+  display: flex;
+  font-size: 12px;
+}
+
+.team-mmr-text {
+  color: #fff;
+  opacity: 0.7;
+  padding-right: 3px;
+}
+
+.mmr-item + .mmr-item {
+  margin-left: 8px;
+}
