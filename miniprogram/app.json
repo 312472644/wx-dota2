@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/team-detail/team-detail",
     "pages/team-match/team-match",
     "pages/dota-rank/dota-rank",
     "pages/dota-dictionary/dota-dictionary",
     "pages/new-log/new-log",
     "pages/hero-detail/hero-detail",
-    "pages/new-log-detail/new-log-detail"
+    "pages/new-log-detail/new-log-detail",
+    "pages/team-detail/team-detail"
   ],
   "tabBar": {
     "color": "#787d7e",

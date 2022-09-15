@@ -1,0 +1,91 @@
+/* components/team-data/team-data.wxss */
+@import "../../app.wxss";
+
+.team-data {
+  border-top: 10px solid #f3f2f7;
+}
+
+.text {
+  color: #7a7a7a;
+  font-size: 13px;
+}
+
+.value {
+  color: #2b2b2b;
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+.total-bonus {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.team-honor,
+.team-transfer {
+  padding: 15px 16px;
+  border-top: 10px solid #f3f2f7;
+}
+
+.title {
+  color: #2b2b2b;
+  font-size: 14px;
+}
+
+.honor {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+
+.honor-count {
+  display: flex;
+  align-items: flex-start;
+  width: 80px;
+}
+
+.honor-list {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 80px);
+}
+
+.honor-item {
+  color: #4e4e4e;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+
+.honor-count-text {
+  display: inline-block;
+  font-size: 13px;
+  padding-left: 5px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+}
+
+.table-header {
+  border: none;
+  border-bottom: 1px solid #ebedf2;
+}
+.table-header-item {
+  background: #fff;
+  font-weight: normal;
+  text-align: left;
+  padding: 0;
+}
+
+.table-body-item {
+  padding: 0;
+  width: 25%;
+  text-align: left;
+}
+
+.team-tag-image {
+  vertical-align: middle;
+}
+
+.help-text {
+  padding-left: 3px;
+}

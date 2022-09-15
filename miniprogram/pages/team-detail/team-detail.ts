@@ -1,5 +1,5 @@
 import { IResult } from "miniprogram/interface";
-import { axios } from "../../utils/index";
+import { axios, formatDateTime } from "../../utils/index";
 
 // pages/team-detail/team-detail.ts
 Page({
@@ -10,7 +10,6 @@ Page({
     teamId: 0,
     teamInfo: null,
     scrollTop: 0,
-    offsetTop: 90,
   },
 
   /**
@@ -29,11 +28,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {},
-  getTeamDetail(teamId: string = "3505") {
+  getTeamDetail(teamId:string) {
     axios({
       url: `https://appengine.wmpvp.com/dota/team/getDotaTeamSummary?teamId=${teamId}`,
     }).then((res: IResult<any>) => {
       const { result } = res.data;
+      result.establishTime = formatDateTime(result.establishTime);
+      result.totalBonus = result.totalBonus.toString().replace(/\d(?=(\d{3})+$)/g, "$&,");
       this.setData({ teamInfo: result });
     });
   },

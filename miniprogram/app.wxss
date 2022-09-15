@@ -59,21 +59,19 @@ page {
   top: 0;
   left: 0;
   right: 0;
-  font-weight: bolder;
   color: #3a3d44;
   height: 40px;
-  border: 1px solid #ebedf2;
+  border-bottom: 1px solid #ebedf2;
   z-index: 99;
 }
 
 .table-header-item {
   display: inline-block;
-  font-size: 14px;
+  font-size: 13px;
   padding: 0 8px;
   height: 40px;
   line-height: 40px;
   text-align: center;
-  background: #f7f8fa;
   box-sizing: border-box;
 }
 

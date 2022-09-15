@@ -1,0 +1,87 @@
+<!--components/team-data/team-data.wxml-->
+<view class="team-data">
+  <view class="team-base">
+    <van-grid border="{{false}}">
+      <van-grid-item use-slot>
+        <text class="text">成立时间</text>
+        <text class="value">{{teamInfo.establishTime}}</text>
+      </van-grid-item>
+      <van-grid-item use-slot>
+        <text class="text">赛区</text>
+        <text class="value">{{teamInfo.region}}</text>
+      </van-grid-item>
+      <van-grid-item use-slot>
+        <text class="text">选手</text>
+        <text class="value">{{teamInfo.playerNumber}}名</text>
+      </van-grid-item>
+      <van-grid-item use-slot>
+        <text class="text">平均年龄</text>
+        <text class="value">{{teamInfo.averAge}}</text>
+      </van-grid-item>
+    </van-grid>
+    <van-grid border="{{false}}">
+      <van-grid-item use-slot>
+        <text class="text">累计奖金</text>
+        <text class="value total-bonus">${{teamInfo.totalBonus}}</text>
+      </van-grid-item>
+    </van-grid>
+  </view>
+  <view class="team-honor">
+    <view class="title">历史荣誉</view>
+    <view class="honor">
+      <view class="honor-count">
+        <van-icon name="medal-o" size="25px" color="#efd075" />
+        <text class="honor-count-text">x{{teamHonor.firstHonorList.length}}</text>
+      </view>
+      <view class="honor-list">
+        <view class="honor-item" wx:for="{{teamHonor.firstHonorList}}">{{item.eventName}}</view>
+      </view>
+    </view>
+    <view class="honor">
+      <view class="honor-count">
+        <van-icon name="medal-o" size="25px" color="#b6c8eb" />
+        <text class="honor-count-text">x{{teamHonor.secondHonorList.length}}</text>
+      </view>
+      <view class="honor-list">
+        <view class="honor-item" wx:for="{{teamHonor.secondHonorList}}">{{item.eventName}}</view>
+      </view>
+    </view>
+    <view class="honor">
+      <view class="honor-count">
+        <van-icon name="medal-o" size="25px" color="#db953c" />
+        <text class="honor-count-text">x{{teamHonor.thirdHonorList.length}}</text>
+      </view>
+      <view class="honor-list">
+        <view class="honor-item" wx:for="{{teamHonor.thirdHonorList}}">{{item.eventName}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="team-transfer">
+    <view class="title">转会记录</view>
+    <view class="table">
+      <view class="table-header">
+        <view class="table-header-item" style="width:calc((100% - 70px)/3)">选手</view>
+        <view class="table-header-item" style="width:calc((100% - 70px)/3)">转出</view>
+        <view class="table-header-item" style="width:calc((100% - 70px)/3)">转入</view>
+        <view class="table-header-item" style="width:70px">时间</view>
+      </view>
+      <view class="table-body">
+        <view class="table-tr" wx:for="{{transferList}}">
+          <view class="table-body-item" style="width:calc((100% - 70px)/3)">
+            <van-image width="25" height="25" custom-class="team-tag-image" round src="https://images.weserv.nl/?url={{item.player.logo}}"></van-image>
+            <text class="help-text">{{item.player.name}}</text>
+          </view>
+          <view class="table-body-item" style="width:calc((100% - 70px)/3)">
+            <van-image width="25" height="25" custom-class="team-tag-image" round src="https://images.weserv.nl/?url={{item.fromTeam.logo}}"></van-image>
+            <text class="help-text">{{item.fromTeam.name}}</text>
+          </view>
+          <view class="table-body-item" style="width:calc((100% - 70px)/3)">
+            <van-image width="25" height="25" custom-class="team-tag-image" round src="https://images.weserv.nl/?url={{item.toTeam.logo}}"></van-image>
+            <text>{{item.toTeam.name}}</text>
+          </view>
+          <view class="table-body-item" style="width:70px">{{item.joinTime}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

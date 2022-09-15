@@ -35,11 +35,9 @@
     <van-tab title="概览" name="overview">
       <team-overview teamId="{{teamId}}" playerList="{{teamInfo.teamPlayerList}}"></team-overview>
     </van-tab>
-    <van-tab title="赛程" name="schedule">
-      赛程
-    </van-tab>
+    <van-tab title="赛程" name="schedule"></van-tab>
     <van-tab title="资料" name="data">
-      资料
+      <team-data teamId="{{teamId}}" teamInfo="{{teamInfo}}"></team-data>
     </van-tab>
   </van-tabs>
 </scroll-view>

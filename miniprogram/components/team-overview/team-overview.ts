@@ -20,7 +20,7 @@ Component({
     matchOptions: [],
   },
   lifetimes: {
-    created() {
+    ready() {
       this.getMatchOptions();
     },
   },
@@ -29,7 +29,7 @@ Component({
    */
   methods: {
     getMatchOptions() {
-      const teamId = this.properties.teamId || 3505;
+      const teamId = this.properties.teamId;
       axios({
         url: `https://appengine.wmpvp.com/dota/team/getEventSimplifyInfoList?teamId=${teamId}`,
       }).then((res: IResult<any>) => {
@@ -58,7 +58,7 @@ Component({
     },
     bindChange(event: IEvent) {
       const eventId = event.detail;
-      const teamId = 3505 || this.properties.teamId;
+      const teamId = this.properties.teamId;
       this.getMatchDetail(teamId, eventId);
     },
   },
