@@ -1,8 +1,8 @@
 {
   "usingComponents": {
-    "hero-list": "../../components/hero-list/hero-list",
-    "goods-item": "../../components/goods-item/goods-item",
-    "dialog": "../../components/dialog/dialog",
+    "hero-list": "../../components/dota-dictionary/hero-list/hero-list",
+    "goods-item": "../../components/dota-dictionary/goods-item/goods-item",
+    "dialog": "../../components/dota-dictionary/dialog/dialog",
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index"
   }

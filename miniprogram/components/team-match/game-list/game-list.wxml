@@ -1,0 +1,82 @@
+<!--components/game-list/game-list.wxml-->
+<scroll-view scroll-y="true" style="height: calc(100vh - 50px);" scroll-into-view="{{scrollIntoView}}">
+  <view class="game-list-box">
+    <view wx:for="{{gameList}}" class="game-list-item" id="{{item.anchor}}">
+      <view class="game-header">
+        <text class="game-date">{{item.matchDate}}</text>
+      </view>
+      <view class="game-body">
+        <view class="game-name">
+          <van-image width="30" height="30" src="https://images.weserv.nl/?url={{item.eventLogo}}"></van-image>
+          <text class="game-name-text">{{item.eventName}}</text>
+        </view>
+        <view class="game-team">
+          <view wx:for="{{item.children}}" wx:for-item="subItem" class="schedule-item">
+            <view class="game-team-item">
+              <view class="team-info">
+                <view class="game-team-box">
+                  <van-image wx:if="{{subItem.homeLogo}}" width="30" height="30" src="https://images.weserv.nl/?url={{subItem.homeLogo}}"></van-image>
+                  <image wx:else class="default-image" src="../../../assets/common/default_team.png"></image>
+                  <text class="game-name-text">{{subItem.homeName}}</text>
+                </view>
+                <view class="game-team-middle">
+                  <view class="game-score">{{subItem.homeScore}} - {{subItem.awayScore}}</view>
+                  <view class="game-status">
+                    <text>{{subItem.statusText}}</text>
+                    <view class="arrow-down" wx:if="{{subItem.matchStatus === 3}}">
+                      <van-icon name="arrow-down" data-team="{{subItem}}" bind:click="getMatchHeroes" />
+                    </view>
+                  </view>
+                </view>
+                <view class="game-team-box">
+                  <van-image wx:if="{{subItem.awayLogo}}" width="30" height="30" src="https://images.weserv.nl/?url={{subItem.awayLogo}}"></van-image>
+                  <image wx:else class="default-image" src="../../../assets/common/default_team.png"></image>
+                  <text class="game-name-text">{{subItem.awayName}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="team-heroes" wx:if="{{subItem.showHeros}}">
+              <view class="hero-row" wx:for="{{subItem.heroList}}" wx:for-item="hero">
+                <view class="heros-item">
+                  <van-image width="20" custom-class="custom-image" height="20" wx:for="{{hero.radiantHeros}}" wx:for-item="radiantHeros" src="https://images.weserv.nl/?url={{radiantHeros.heroIcon}}"></van-image>
+                </view>
+                <view class="hero-score">
+                  <text>{{hero.radiantScore}}</text>
+                  <text class="separator">:</text>
+                  <text>{{hero.direScore}}</text>
+                </view>
+                <view class="heros-item">
+                  <van-image width="20" height="20" custom-class="custom-image" wx:for="{{hero.direHeros}}" wx:for-item="direHeros" src="https://images.weserv.nl/?url={{direHeros.heroIcon}}"></van-image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--筛选弹框-->
+  <van-popup show="{{ showFilter }}" position="bottom" round custom-style="height: 45%;">
+    <view class="filter-title">
+      <text class="text-item" bindtap="cancelEvent">取消</text>
+      <text class="text-item">筛选</text>
+      <text class="text-item" bindtap="confirmEvent">确认</text>
+    </view>
+    <view class="filter-body">
+      <view class="filter-item">
+        <view class="filter-title-text">赛事</view>
+        <view class="filter-content">
+          <van-dropdown-menu custom-class="match-dropdown" active-color="#1989fa">
+            <van-dropdown-item bind:change="matchChangeEvent" title-class="dropdown-menu-title" value="{{ eventId }}" options="{{ gameOptions }}" />
+          </van-dropdown-menu>
+        </view>
+      </view>
+      <view class="filter-item">
+        <view class="filter-title-text">状态</view>
+        <view class="filter-content">
+          <van-button class="button" data-status="{{item}}" wx:for="{{statusList}}" type="{{item.value===status?'info':'default'}}" size="small" bindtap="statusEvent">{{item.text}}</van-button>
+        </view>
+      </view>
+    </view>
+  </van-popup>
+</scroll-view>

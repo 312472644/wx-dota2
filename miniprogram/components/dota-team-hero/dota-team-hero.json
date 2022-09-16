@@ -1,7 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "dota-team-bar": "../dota-team-bar/dota-team-bar",
-        "dota-team-logo": "../dota-team-logo/dota-team-logo"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "van-switch": "@vant/weapp/switch/index",
-        "dota-team-bar": "../dota-team-bar/dota-team-bar",
-        "dota-team-logo": "../dota-team-logo/dota-team-logo"
-    }
-}

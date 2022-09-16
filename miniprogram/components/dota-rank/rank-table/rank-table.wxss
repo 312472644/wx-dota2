@@ -1,0 +1,68 @@
+/* components/rank-table/rank-table.wxss */
+@import '../../../app.wxss';
+
+.first-column {
+    display: inline-block;
+    width: 50px;
+}
+
+.second-column {
+    display: inline-block;
+    width: calc(100% - 230px);
+}
+
+.third-column {
+    display: inline-block;
+    width: 100px;
+}
+
+.fourth-column {
+  display: inline-block;
+  width: 80px;
+}
+
+.team-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.table-header {
+    border: none;
+    margin: 0 8px;
+    border-radius: 3px;
+}
+
+.table-tr {
+    display: flex;
+    align-items: center;
+    border-bottom: none;
+    background: #f9f9f9;
+    margin: 8px;
+    border-radius: 3px;
+}
+
+.player-box {
+  display: flex;
+  align-items: center;
+}
+
+.player-avatar {
+  padding-right: 10px;
+  height: 40px;
+  padding-top: 5px;
+}
+.player-default-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.player-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 40px);
+}

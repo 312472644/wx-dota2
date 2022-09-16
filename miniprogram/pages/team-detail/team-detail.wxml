@@ -31,7 +31,7 @@
       </view>
     </view>
   </view>
-  <van-tabs nav-class="nav-tabs" offset-top="{{35}}" sticky color="#000000" title-inactive-color="#787d7e">
+  <van-tabs nav-class="nav-tabs" offset-top="{{34}}" sticky color="#000000" title-inactive-color="#787d7e">
     <van-tab title="概览" name="overview">
       <team-overview teamId="{{teamId}}" playerList="{{teamInfo.teamPlayerList}}"></team-overview>
     </van-tab>

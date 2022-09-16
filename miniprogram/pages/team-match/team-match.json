@@ -3,8 +3,8 @@
     "van-tab": "@vant/weapp/tab/index",
     "van-icon": "@vant/weapp/icon/index",
     "van-tabs": "@vant/weapp/tabs/index",
-    "dota-team-rank": "../../components/dota-team-rank/dota-team-rank",
-    "game-list": "../../components/game-list/game-list",
-    "dota-schedule": "../../components/dota-schedule/dota-schedule"
+    "dota-team-rank": "../../components/team-match/dota-team-rank/dota-team-rank",
+    "game-list": "../../components/team-match/game-list/game-list",
+    "dota-schedule": "../../components/team-match/dota-schedule/dota-schedule"
   }
 }

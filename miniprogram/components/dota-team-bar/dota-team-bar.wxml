@@ -1,7 +1,0 @@
-<!--components/dota-team-bar/dota-team-bar.wxml-->
-<view class="progress">
-    <view class="progress-text">{{count}}</view>
-    <view class="progress-bar">
-        <view class="progress-fill" style="width:{{rate}}"></view>
-    </view>
-</view>
