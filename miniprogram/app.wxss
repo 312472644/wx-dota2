@@ -79,6 +79,15 @@ page {
   width: 100%;
 }
 
+.table-image {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.table-image+text {
+  vertical-align: middle;
+}
+
 .table-tr {
   display: flex;
   align-items: center;

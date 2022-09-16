@@ -1,5 +1,5 @@
 import { IEvent, IResult } from "miniprogram/interface";
-import { axios } from "../../utils/index";
+import { axios } from "../../../utils/index";
 
 // components/team-overview/team-overview.ts
 Component({
@@ -61,5 +61,11 @@ Component({
       const teamId = this.properties.teamId;
       this.getMatchDetail(teamId, eventId);
     },
+    toPlayerDetail(event: IEvent) {
+      const player = event.currentTarget.dataset.player;
+      wx.navigateTo({
+        url: `../../pages/team-player-detail/team-player-detail?playerId=${player.id}`
+      });
+    }
   },
 });

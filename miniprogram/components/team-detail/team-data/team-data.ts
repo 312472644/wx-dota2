@@ -1,5 +1,5 @@
 import { IResult } from "miniprogram/interface";
-import { axios, formatDateTime } from "../../utils/index";
+import { axios, formatDateTime } from "../../../utils/index";
 
 // components/team-data/team-data.ts
 Component({

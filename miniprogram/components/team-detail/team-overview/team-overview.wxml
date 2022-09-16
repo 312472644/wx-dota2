@@ -3,7 +3,7 @@
   <view class="team-item">
     <view class="team-item-title">队员信息</view>
     <view class="team-item-body">
-      <view class="team-player-item" wx:for="{{playerList}}">
+      <view class="team-player-item" data-player="{{item}}" wx:for="{{playerList}}" bindtap="toPlayerDetail">
         <van-image width="35" height="35" round src="https://images.weserv.nl/?url={{item.logo}}"></van-image>
         <text class="player-name">{{item.name}}</text>
         <text class="player-role">{{item.position}}号位</text>

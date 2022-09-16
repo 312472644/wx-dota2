@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/team-match/team-match",
+    "pages/team-player-detail/team-player-detail",
     "pages/dota-rank/dota-rank",
     "pages/dota-dictionary/dota-dictionary",
     "pages/new-log/new-log",

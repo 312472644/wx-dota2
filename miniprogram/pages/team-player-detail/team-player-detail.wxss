@@ -1,0 +1,120 @@
+/* pages/team-player-detail/team-player-detail.wxss */
+@import "../../app.wxss";
+
+.player-base {
+  display: flex;
+  background: linear-gradient(45deg, #24292e, #71787f);
+  padding-bottom: 15px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  position: relative;
+}
+
+.player-name {
+  padding: 8px 0;
+  color: #fff;
+  font-size: 13px;
+}
+
+.player-honor {
+  padding: 5px 15px;
+  color: #cdc7c4;
+  font-size: 11px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.player-extra {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+  padding: 10px 20px;
+  background: #f6fafd;
+  font-size: 13px;
+}
+
+.player-extra-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.extra-item-text {
+  color: #8f9395;
+  padding-bottom: 10px;
+}
+
+.extra-item-name {
+  color: #1f1f1f;
+}
+
+.team-logo-bg {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  opacity: 0.3;
+}
+
+.player-honor-box,
+.player-transfer-box {
+  border-top: 10px solid #f3f2f7;
+  padding: 10px 0;
+}
+
+.title {
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  width: 3px;
+  position: absolute;
+  background: #1f1f1f;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.title text {
+  color: #1f1f1f;
+  font-size: 13px;
+  padding-left: 15px;
+}
+
+.body {
+  padding: 20px 15px;
+}
+
+.player-honor-item {
+  display: flex;
+  padding: 10px;
+  background: #f6fafd;
+  align-items: center;
+  color: #8f9395;
+  font-size: 13px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.left {
+  width: 100px;
+}
+
+.right {
+  width: calc(100% - 100px);
+}
+
+.medal-iamge {
+  width: 20px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+.medal-text {
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.honor-text {}
