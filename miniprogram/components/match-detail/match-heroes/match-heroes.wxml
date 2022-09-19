@@ -1,5 +1,5 @@
 <!--components/match-detail/match-heroes.wxml-->
-<view class="match-heroes-result {{isWin?'win':'lose'}}">
+<view class="match-heroes-result {{isWin?'win':'lose'}}" wx:if="{{dataList.length > 0}}">
   <view class="match-result {{isWin?'win':'lose'}}">
     <text class="match-result_text">{{campText}}</text>
   </view>
@@ -8,7 +8,7 @@
     <text class="match-kill-item">经济 {{totalGold}}</text>
   </view>
 </view>
-<view class="match-heroes_list">
+<view class="match-heroes_list" wx:if="{{dataList.length > 0}}">
   <view wx:for="{{dataList}}">
     <view class="match-heroes_item">
       <view class="match-heroes_left">

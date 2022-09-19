@@ -4,8 +4,30 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #000000;
+  background: linear-gradient(45deg, #24292e, #71787f);
   height: 100px;
+}
+
+.abbreviate {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: linear-gradient(45deg, #24292e, #71787f);
+  transition: all 0.3s ease-in-out;
+}
+
+.full-match-team {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
 }
 
 .team-item {
@@ -47,6 +69,10 @@
   border-radius: 3px;
   padding: 8px;
   background-color: #1a1a1b;
+}
+
+.abbreviate .custom-image {
+  background-color: transparent;
 }
 
 .match-statistics {

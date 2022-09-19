@@ -15,9 +15,13 @@ Page({
     heroesList: [],
     radiantHeroList: [],
     direHeroList: [],
-    activeTab: null
+    activeTab: null,
+    scrollTop: 0,
   },
-
+  onPageScroll(event: any) {
+    const scrollTop = event.scrollTop;
+    this.setData({ scrollTop });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

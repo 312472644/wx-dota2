@@ -1,43 +1,53 @@
 <!--pages/match-detail/match-detail.wxml-->
-<view class="match-team">
-  <view class="team-item">
-    <van-image custom-class="custom-image" width="40" height="40" src="https://images.weserv.nl/?url={{matchResult.homeTeamDTO.blackLogo}}"></van-image>
-    <text class="team-name">{{matchResult.homeTeamDTO.name}}</text>
-  </view>
-  <view class="team-score">
-    <view class="match-time">{{matchResult.matchTime}}</view>
-    <view class="match-count">{{matchResult.homeTeamDTO.score}} - {{matchResult.awayTeamDTO.score}}</view>
-    <view class="match-bo">BO{{matchResult.box}}</view>
-  </view>
-  <view class="team-item">
-    <van-image custom-class="custom-image" width="40" height="40" src="https://images.weserv.nl/?url={{matchResult.awayTeamDTO.blackLogo}}"></van-image>
-    <text class="team-name">{{matchResult.awayTeamDTO.name}}</text>
-  </view>
-</view>
-<view class="team-detail">
-  <van-tabs color="#000000" bind:change="tabsChange" active="{{activeTab}}" id="tabs">
-    <van-tab title="第{{index+1}}场" name="{{item.matchId}}" wx:for="{{matchResult.matchStatusList}}"></van-tab>
-  </van-tabs>
-  <view class="match-statistics">
-    <view class="join-team {{!radiantWin?'win':'lose'}}">
-      <van-image width="30" height="30" style="padding-left: 3px;" src="https://images.weserv.nl/?url={{activeMatch.radiant_logo}}"></van-image>
+<scroll-view scroll-y="true">
+  <view class="match-team" wx:if="{{matchResult}}">
+    <view class="abbreviate" style="opacity:{{scrollTop > 40?1:0}}; ">
+      <van-image custom-class="custom-image" width="15" height="15" src="https://images.weserv.nl/?url={{matchResult.homeTeamDTO.blackLogo}}"></van-image>
+      <view class="match-count">{{matchResult.homeTeamDTO.score}} - {{matchResult.awayTeamDTO.score}}</view>
+      <van-image custom-class="custom-image" width="15" height="15" src="https://images.weserv.nl/?url={{matchResult.awayTeamDTO.blackLogo}}"></van-image>
     </view>
-    <view class="join-team-extra">
-      <view class="join-team-score">{{activeMatch.radiant_total_kill}}</view>
-      <view class="join-team-time">
-        <text>时长</text>
-        <text>{{activeMatch.duration}}</text>
+    <view class="full-match-team" style="opacity:{{scrollTop <= 40?1:0}};">
+      <view class="team-item">
+        <van-image custom-class="custom-image" width="40" height="40" src="https://images.weserv.nl/?url={{matchResult.homeTeamDTO.blackLogo}}"></van-image>
+        <text class="team-name">{{matchResult.homeTeamDTO.name}}</text>
       </view>
-      <view class="join-team-score">{{activeMatch.dire_total_kill}}</view>
-    </view>
-    <view class="join-team {{radiantWin?'win':'lose'}}">
-      <van-image width="30" height="30" style="padding-right: 3px;" src="https://images.weserv.nl/?url={{activeMatch.dire_logo}}"></van-image>
+      <view class="team-score">
+        <view class="match-time">{{matchResult.matchTime}}</view>
+        <view class="match-count">{{matchResult.homeTeamDTO.score}} - {{matchResult.awayTeamDTO.score}}</view>
+        <view class="match-bo">BO{{matchResult.box}}</view>
+      </view>
+      <view class="team-item">
+        <van-image custom-class="custom-image" width="40" height="40" src="https://images.weserv.nl/?url={{matchResult.awayTeamDTO.blackLogo}}"></van-image>
+        <text class="team-name">{{matchResult.awayTeamDTO.name}}</text>
+      </view>
     </view>
   </view>
-</view>
-<view class="match-heroes">
-  <match-heroes heroesList="{{radiantHeroList}}" totalKill="{{activeMatch.radiant_total_kill}}" totalGold="{{activeMatch.radiant_total_gold}}" campText="{{activeMatch.radiantWin?'天辉胜利':'夜魇失败'}}" isWin="{{activeMatch.radiantWin}}"></match-heroes>
-</view>
-<view class="match-heroes">
-  <match-heroes heroesList="{{direHeroList}}" totalKill="{{activeMatch.dire_total_kill}}" totalGold="{{activeMatch.dire_total_gold}}" campText="{{!activeMatch.radiantWin?'夜魇胜利':'天辉失败'}}" isWin="{{!activeMatch.radiantWin}}"></match-heroes>
-</view>
+  <van-tabs color="#000000" offset-top="{{40}}" sticky wx:if="{{matchResult.matchStatusList.length > 0}}" bind:change="tabsChange" active="{{activeTab}}" id="tabs">
+    <van-tab title="第{{index+1}}场" name="{{item.matchId}}" wx:for="{{matchResult.matchStatusList}}">
+      <view class="team-detail">
+        <view class="match-statistics" wx:if="{{matchResult.matchStatusList.length > 0}}">
+          <view class="join-team {{!radiantWin?'win':'lose'}}">
+            <van-image width="30" height="30" style="padding-left: 3px;" src="https://images.weserv.nl/?url={{matchResult.homeTeamDTO.blackLogo}}"></van-image>
+          </view>
+          <view class="join-team-extra">
+            <view class="join-team-score">{{activeMatch.radiant_total_kill}}</view>
+            <view class="join-team-time">
+              <text>时长</text>
+              <text>{{activeMatch.duration}}</text>
+            </view>
+            <view class="join-team-score">{{activeMatch.dire_total_kill}}</view>
+          </view>
+          <view class="join-team {{radiantWin?'win':'lose'}}">
+            <van-image width="30" height="30" style="padding-right: 3px;" src="https://images.weserv.nl/?url={{matchResult.awayTeamDTO.blackLogo}}"></van-image>
+          </view>
+        </view>
+      </view>
+      <view class="match-heroes">
+        <match-heroes heroesList="{{radiantHeroList}}" totalKill="{{activeMatch.radiant_total_kill}}" totalGold="{{activeMatch.radiant_total_gold}}" campText="{{activeMatch.radiantWin?'天辉胜利':'夜魇失败'}}" isWin="{{activeMatch.radiantWin}}"></match-heroes>
+      </view>
+      <view class="match-heroes">
+        <match-heroes heroesList="{{direHeroList}}" totalKill="{{activeMatch.dire_total_kill}}" totalGold="{{activeMatch.dire_total_gold}}" campText="{{!activeMatch.radiantWin?'夜魇胜利':'天辉失败'}}" isWin="{{!activeMatch.radiantWin}}"></match-heroes>
+      </view>
+    </van-tab>
+  </van-tabs>
+</scroll-view>

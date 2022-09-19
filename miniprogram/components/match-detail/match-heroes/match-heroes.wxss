@@ -202,12 +202,13 @@
 }
 
 .honor {
-  padding: 3px;
+  padding: 3px 8px;
   color: #ecb851;
   font-size: 12px;
   font-style: italic;
   background: #fcf1df;
   margin-left: 10px;
+  border-radius: 3px;
 }
 
 .mvp {
