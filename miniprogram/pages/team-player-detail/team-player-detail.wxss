@@ -33,6 +33,7 @@
   padding: 10px 20px;
   background: #f6fafd;
   font-size: 13px;
+  border-radius: 3px;
 }
 
 .player-extra-item {
@@ -89,11 +90,11 @@
 
 .player-honor-item {
   display: flex;
-  padding: 10px;
+  padding: 5px 10px;
   background: #f6fafd;
   align-items: center;
   color: #8f9395;
-  font-size: 13px;
+  font-size: 12px;
   border-radius: 3px;
   margin-bottom: 10px;
 }
@@ -107,13 +108,13 @@
 }
 
 .medal-iamge {
-  width: 20px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   vertical-align: middle;
 }
 
 .medal-text {
-  padding-left: 10px;
+  padding-left: 5px;
   vertical-align: middle;
 }
 

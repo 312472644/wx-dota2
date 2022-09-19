@@ -54,6 +54,6 @@ Component({
       wx.navigateTo({
         url: `../../pages/team-detail/team-detail?teamId=${team.teamId}`,
       });
-    },
+    }
   },
 });

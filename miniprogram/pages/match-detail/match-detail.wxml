@@ -1,6 +1,43 @@
 <!--pages/match-detail/match-detail.wxml-->
-<view>
-  <!--比赛结果-->
-  <match-result result="{{matchResult}}"></match-result>
-  <match-detail-list></match-detail-list>
+<view class="match-team">
+  <view class="team-item">
+    <van-image custom-class="custom-image" width="40" height="40" src="https://images.weserv.nl/?url={{matchResult.homeTeamDTO.blackLogo}}"></van-image>
+    <text class="team-name">{{matchResult.homeTeamDTO.name}}</text>
+  </view>
+  <view class="team-score">
+    <view class="match-time">{{matchResult.matchTime}}</view>
+    <view class="match-count">{{matchResult.homeTeamDTO.score}} - {{matchResult.awayTeamDTO.score}}</view>
+    <view class="match-bo">BO{{matchResult.box}}</view>
+  </view>
+  <view class="team-item">
+    <van-image custom-class="custom-image" width="40" height="40" src="https://images.weserv.nl/?url={{matchResult.awayTeamDTO.blackLogo}}"></van-image>
+    <text class="team-name">{{matchResult.awayTeamDTO.name}}</text>
+  </view>
+</view>
+<view class="team-detail">
+  <van-tabs color="#000000" bind:change="tabsChange" active="{{activeTab}}" id="tabs">
+    <van-tab title="第{{index+1}}场" name="{{item.matchId}}" wx:for="{{matchResult.matchStatusList}}"></van-tab>
+  </van-tabs>
+  <view class="match-statistics">
+    <view class="join-team {{!radiantWin?'win':'lose'}}">
+      <van-image width="30" height="30" style="padding-left: 3px;" src="https://images.weserv.nl/?url={{activeMatch.radiant_logo}}"></van-image>
+    </view>
+    <view class="join-team-extra">
+      <view class="join-team-score">{{activeMatch.radiant_total_kill}}</view>
+      <view class="join-team-time">
+        <text>时长</text>
+        <text>{{activeMatch.duration}}</text>
+      </view>
+      <view class="join-team-score">{{activeMatch.dire_total_kill}}</view>
+    </view>
+    <view class="join-team {{radiantWin?'win':'lose'}}">
+      <van-image width="30" height="30" style="padding-right: 3px;" src="https://images.weserv.nl/?url={{activeMatch.dire_logo}}"></van-image>
+    </view>
+  </view>
+</view>
+<view class="match-heroes">
+  <match-heroes heroesList="{{radiantHeroList}}" totalKill="{{activeMatch.radiant_total_kill}}" totalGold="{{activeMatch.radiant_total_gold}}" campText="{{activeMatch.radiantWin?'天辉胜利':'夜魇失败'}}" isWin="{{activeMatch.radiantWin}}"></match-heroes>
+</view>
+<view class="match-heroes">
+  <match-heroes heroesList="{{direHeroList}}" totalKill="{{activeMatch.dire_total_kill}}" totalGold="{{activeMatch.dire_total_gold}}" campText="{{!activeMatch.radiantWin?'夜魇胜利':'天辉失败'}}" isWin="{{!activeMatch.radiantWin}}"></match-heroes>
 </view>

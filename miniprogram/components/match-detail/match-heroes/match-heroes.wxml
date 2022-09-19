@@ -1,0 +1,142 @@
+<!--components/match-detail/match-heroes.wxml-->
+<view class="match-heroes-result {{isWin?'win':'lose'}}">
+  <view class="match-result {{isWin?'win':'lose'}}">
+    <text class="match-result_text">{{campText}}</text>
+  </view>
+  <view class="match-kill">
+    <text class="match-kill-item">杀敌 {{totalKill}}</text>
+    <text class="match-kill-item">经济 {{totalGold}}</text>
+  </view>
+</view>
+<view class="match-heroes_list">
+  <view wx:for="{{dataList}}">
+    <view class="match-heroes_item">
+      <view class="match-heroes_left">
+        <view class="heroes_box">
+          <van-image width="80" fit="widthFix" image-class="hero-image" src="https://images.weserv.nl/?url={{item.hero_img}}"></van-image>
+          <view class="heroes_detail">
+            <text>LV.{{item.level}}</text>
+            <text>{{item.role}}</text>
+          </view>
+        </view>
+        <view class="player_box">
+          <view class="player_name">
+            <text class="player_name_text">{{item.nickname}}</text>
+            <text wx:if="{{item.honor}}" class="honor">荣誉提名</text>
+            <text wx:if="{{item.mvp}}" class="honor mvp">MVP</text>
+          </view>
+          <view class="goods_item">
+            <van-image use-error-slot width="25" height="25" wx:for="{{item.items}}" wx:for-item="goodsItem" custom-class="custom_item_image" image-class="goods_item_image" src="https://images.weserv.nl/?url={{goodsItem.item_img}}">
+              <view slot="error" class="no-item"></view>
+            </van-image>
+            <van-image width="25" height="25" wx:if="{{item.neutralItem}}" round custom-class="custom_item_image" image-class="goods_item_image" src="https://images.weserv.nl/?url={{item.neutralItem.item_img}}"></van-image>
+          </view>
+          <view class="player-statistics">
+            <view class="player_kda">
+              <text class="player_kda_item">{{item.kills}}</text>
+              <text class="player-separator">/</text>
+              <text class="player_kda_item">{{item.deaths}}</text>
+              <text class="player-separator">/</text>
+              <text class="player_kda_item">{{item.assists}}</text>
+            </view>
+            <view class="player_money">
+              <image src="../../../assets/common/money_bag_silver.svg" class="svg-image"></image>
+              <text class="player_name_text">{{item.gold}}</text>
+            </view>
+            <view class="player_damage">
+              <image src="../../../assets/common/sword-line.svg" class="svg-image"></image>
+              <text class="player_name_text">{{item.hero_damage}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="match-heroes_right" data-item="{{item}}" bindtap="tapEvent">
+        <text>{{item.imp_name}}</text>
+        <van-icon name="arrow-down" />
+      </view>
+    </view>
+    <view class="match_extra {{item.isExpand?'expand':''}}">
+      <view class="match-package">
+        <view class="match-package-item" wx:if="{{item.backpacks}}">
+          <view class="match-package-item_left">背包</view>
+          <view class="match-package-item_right">
+            <van-image image-class="package-image" custom-class="custom-package-image" wx:for-item="packageItem" wx:for="{{item.backpacks}}" width="25" height="25" src="https://images.weserv.nl/?url={{packageItem.item_img}}"></van-image>
+          </view>
+        </view>
+        <view class="match-package-item">
+          <view class="match-package-item_left">辅助</view>
+          <view class="match-package-item_right">
+            <view class="auxiliary-item" wx:if="{{item.observer}}">
+              <van-image image-class="package-image" custom-class="custom-package-image" width="25" height="25" src="https://images.weserv.nl/?url={{item.observer.img}}"></van-image>
+              <text class="auxiliary-count">{{item.observer.count}}</text>
+            </view>
+            <view class="auxiliary-item" wx:if="{{item.sentry}}">
+              <van-image image-class="package-image" custom-class="custom-package-image" width="25" height="25" src="https://images.weserv.nl/?url={{item.sentry.img}}"></van-image>
+              <text class="auxiliary-count">{{item.sentry.count}}</text>
+            </view>
+            <view class="auxiliary-item" wx:if="{{item.gem}}">
+              <van-image image-class="package-image" custom-class="custom-package-image" width="25" height="25" src="https://images.weserv.nl/?url={{item.gem.img}}"></van-image>
+              <text class="auxiliary-count">{{item.gem.count}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="match-package-item" wx:if="{{item.killList}}">
+          <view class="match-package-item_left">击杀</view>
+          <view class="match-package-item_right">
+            <view class="kill-item" wx:for-item="killItem" wx:for="{{item.killList}}">
+              <van-image custom-class="custom-package-image" width="20" height="20" src="https://images.weserv.nl/?url={{killItem.img}}"></van-image>
+              <text class="kill-count">x {{killItem.count}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="match-fight">
+        <view class="match-fight-row">
+          <view class="match-fight-info">
+            <text class="match-fight_text">{{item.fight_rate}}%</text>
+            <text class="match-fight_value">参战率</text>
+          </view>
+          <view class="match-fight-info">
+            <text class="match-fight_text">{{item.damage_rate}}%</text>
+            <text class="match-fight_value">伤害占比</text>
+          </view>
+          <view class="match-fight-info">
+            <text class="match-fight_text">{{item.gold_per_min}}/{{item.xp_per_min}}</text>
+            <text class="match-fight_value">GPM/XPM</text>
+          </view>
+          <view class="match-fight-info">
+            <text class="match-fight_text">{{item.imp_score}}</text>
+            <text class="match-fight_value">评分</text>
+          </view>
+        </view>
+        <view class="match-fight-row">
+          <view class="match-fight-info">
+            <text class="match-fight_text">{{item.last_hits}}/{{item.denies}}</text>
+            <text class="match-fight_value">正补/反补</text>
+          </view>
+          <view class="match-fight-info">
+            <text class="match-fight_text">{{item.tower_damage}}</text>
+            <text class="match-fight_value">塔伤</text>
+          </view>
+          <view class="match-fight-info">
+            <text class="match-fight_text">{{item.hero_healing}}</text>
+            <text class="match-fight_value">治疗量</text>
+          </view>
+          <view class="match-fight-info">
+            <text class="match-fight_text">{{item.campsStacked || '--'}}</text>
+            <text class="match-fight_value">堆野</text>
+          </view>
+        </view>
+      </view>
+      <view class="match-ability">
+        <view class="match-ability-item">
+          <view class="custom-ability-image" wx:for="{{item.ability_upgrades}}" wx:for-item="abilityItem">
+            <van-image width="30" height="30" image-class="ability-image" src="https://images.weserv.nl/?url={{abilityItem.ability_img}}"></van-image>
+            <view class="ability-special_bonus" wx:if="{{abilityItem.special_bonus}}">{{abilityItem.name_zh}}</view>
+            <view class="ability-level" wx:if="{{!abilityItem.special_bonus}}">{{abilityItem.level}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -12,7 +12,7 @@
         </view>
         <view class="game-team">
           <view wx:for="{{item.children}}" wx:for-item="subItem" class="schedule-item">
-            <view class="game-team-item">
+            <view class="game-team-item" data-team="{{subItem}}" bindtap="toMatchDetail">
               <view class="team-info">
                 <view class="game-team-box">
                   <van-image wx:if="{{subItem.homeLogo}}" width="30" height="30" src="https://images.weserv.nl/?url={{subItem.homeLogo}}"></van-image>
@@ -21,10 +21,10 @@
                 </view>
                 <view class="game-team-middle">
                   <view class="game-score">{{subItem.homeScore}} - {{subItem.awayScore}}</view>
-                  <view class="game-status">
+                  <view class="game-status" data-team="{{subItem}}" catchtap="getMatchHeroes">
                     <text>{{subItem.statusText}}</text>
                     <view class="arrow-down" wx:if="{{subItem.matchStatus === 3}}">
-                      <van-icon name="arrow-down" data-team="{{subItem}}" bind:click="getMatchHeroes" />
+                      <van-icon name="arrow-down" />
                     </view>
                   </view>
                 </view>

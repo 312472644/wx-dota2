@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "match-result": "../../components/match-result/match-result",
-    "match-detail-list": "../../components/match-detail-list/match-detail-list"
+    "van-image": "@vant/weapp/image/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "match-heroes": "../../components/match-detail/match-heroes/match-heroes"
   }
 }

@@ -70,23 +70,28 @@ Component({
           item.showHeros = !item.showHeros;
           item.heroList = item.heroList.length > 0 ? item.heroList : result;
         }
-      })
-      this.setData({ gameList: this.getCategoryList(originList) as any })
+      });
+      this.setData({ gameList: this.getCategoryList(originList) as any });
     },
     getMatchHeroes(event: IEvent) {
       const team = event.currentTarget.dataset.team;
+      if (team.matchStatus !== 3) {
+        return;
+      }
       const originList = this.data.initGameList;
-      const result = originList.find((item: any) => item.matchId === team.matchId) as any;
+      const result = originList.find(
+        (item: any) => item.matchId === team.matchId
+      ) as any;
       if (result.heroList.length > 0) {
         this.getHeroList(team.matchId);
         return;
       } else {
         axios({
-          url: `https://gwapi.pwesports.cn/eventcenter/app/dota/match/detail?matchId=${team.matchId}`
+          url: `https://gwapi.pwesports.cn/eventcenter/app/dota/match/detail?matchId=${team.matchId}`,
         }).then((res: IResult<any>) => {
           const result = res.data.result;
           this.getHeroList(team.matchId, result);
-        })
+        });
       }
     },
     confirmEvent() {
@@ -181,6 +186,12 @@ Component({
             scrollIntoView: `macth_${formatDateTime(+new Date())}`,
           });
         }
+      });
+    },
+    toMatchDetail(event: IEvent) {
+      const team = event.currentTarget.dataset.team;
+      wx.navigateTo({
+        url: `../../pages/match-detail/match-detail?eventId=${team.eventId}&matchId=${team.matchId}`, 
       });
     },
   },
