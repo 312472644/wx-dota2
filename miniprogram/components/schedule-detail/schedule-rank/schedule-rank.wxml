@@ -8,7 +8,7 @@
       <view class="category-column"></view>
       <view class="schedule-table_column {{index === 0?'first-column':''}}" wx:for="{{columnList}}">{{item}}</view>
     </view>
-    <view class="schedule-table-body">
+    <view class="schedule-table-body" wx:if="{{tableList.length > 0}}">
       <scroll-view class="sidebar" scroll-y="true" style="height: calc(100vh - 360px)">
         <view class="sidebar-item {{sidebar===item.type?'active':''}}" wx:for="{{sidebarList}}" data-item="{{item}}" bindtap="sidebarEvent">{{item.name}}</view>
       </scroll-view>
@@ -24,5 +24,6 @@
         </view>
       </scroll-view>
     </view>
+    <van-empty wx:else />
   </view>
 </view>

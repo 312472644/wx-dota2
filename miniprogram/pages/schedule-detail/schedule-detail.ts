@@ -1,6 +1,6 @@
 import { IResult } from "miniprogram/interface";
 import { scheduleMapStatus } from "../../map/index";
-import { axios, formatDateTime, transFormMS } from "../../utils/index";
+import { axios, formatDateTime } from "../../utils/index";
 
 // pages/schedule-detail/schedule-detail.ts
 Page({
@@ -10,6 +10,7 @@ Page({
    */
   data: {
     eventSummary: null,
+    eventId: 0,
     scrollTop: 0,
     activeTab: "overview",
     scheduleList: []
@@ -19,7 +20,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options: any) {
-    const eventId = options.eventId || 1330;
+    const eventId = options.eventId;
+    this.setData({ eventId })
     this.getEventSummary(eventId);
     this.getScheduleMatchList(eventId);
   },

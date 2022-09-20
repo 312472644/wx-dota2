@@ -78,6 +78,24 @@ const formatDateTime = (timeStamp: number, isNeedMS = false, separator = "-") =>
   return isNeedMS ? `${year}${separator}${month}${separator}${day} ${hours}:${mins}:${seconds}` : `${year}${separator}${month}${separator}${day}`;
 };
 
+/***
+ * 获取dota max api公共查询参数
+ */
+const getDotaMaxQueryParam = () => {
+  return {
+    max_id: 0,
+    game_type: "dota2",
+    os_type: "Android",
+    os_version: "5.1.1",
+    version: "4.4.53",
+    lang: "zh-cn",
+    channel: "dotamax",
+    x_app: "maxjia",
+    x_client_type: "mobile",
+    x_os_type: "Android",
+  };
+};
+
 const formatMillimeter = (value: string) => {
   return value.toString().replace(/\d(?=(\d{3})+$)/g, "$&,");
 };
@@ -88,5 +106,6 @@ export {
   transFormMS,
   getHeroCNList,
   formatDateTime,
-  formatMillimeter
+  formatMillimeter,
+  getDotaMaxQueryParam
 };

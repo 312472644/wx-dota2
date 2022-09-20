@@ -27,6 +27,6 @@
     <schedule-list scheduleList="{{scheduleList}}" eventId="{{eventSummary.id}}"></schedule-list>
   </van-tab>
   <van-tab title="榜单" name="rank">
-    <schedule-rank eventId="{{eventSummary.id}}"></schedule-rank>
+    <schedule-rank eventId="{{eventId}}"></schedule-rank>
   </van-tab>
 </van-tabs>
