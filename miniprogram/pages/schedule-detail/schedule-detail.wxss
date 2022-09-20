@@ -1,0 +1,55 @@
+/* pages/schedule-detail/schedule-detail.wxss */
+.event-summary {}
+
+.event-logo {
+  font-size: 0;
+}
+
+.event-desc {
+  background: #1c1c1c;
+  padding: 10px 15px;
+}
+
+.event-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-item:first-of-type {
+  padding-bottom: 8px;
+}
+
+.event-name {
+  color: #fdfdfd;
+  font-size: 14px;
+}
+
+.event-award {
+  font-size: 14px;
+  color: #e9bd6f;
+}
+
+.event-city,
+.event-date {
+  color: #909090;
+  font-size: 13px;
+}
+
+.summary-thumbnail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: #1c1c1c;
+  font-size: 12px;
+  color: #fdfdfd;
+  height: 35px;
+  line-height: 35px;
+  z-index: 99;
+}
+
+.summary-full,
+.summary-thumbnail {
+  transition: opacity 0.3s ease-in-out;
+}

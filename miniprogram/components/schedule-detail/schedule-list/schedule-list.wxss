@@ -1,0 +1,137 @@
+/* components/schedule-detail/schedule-list/schedule-list.wxss */
+.schedule-list {
+  padding: 15px;
+  border-top: 10px solid #f7f7f7;
+}
+
+.schedule-item {
+  position: relative;
+}
+
+.schedule-item::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 4px;
+  height: calc(100% - 25px);
+  width: 1px;
+  background: #faf9f9;
+}
+
+.schedule-item-date {
+  position: relative;
+}
+
+.schedule-item-date::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #eb6c4c;
+}
+
+.date-text {
+  color: #1f1f1f;
+  font-size: 13px;
+  padding-left: 25px;
+}
+
+.schedule-list-box {
+  padding: 20px;
+}
+
+.schedule-item-box {
+  padding: 10px;
+  background: #fafafa;
+  box-shadow: 1px 1px 10px #ccc;
+}
+
+.schedule-name {
+  display: flex;
+  align-items: center;
+}
+
+.schedule-text {
+  color: #7d7d7f;
+  font-size: 13px;
+  padding-left: 10px;
+}
+
+.custom-schedule-image {
+  vertical-align: middle;
+}
+
+.schedule_item {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ededed;
+}
+
+.schedule_item:last-of-type {
+  border-bottom: none;
+}
+
+.schedule_team {
+  display: flex;
+}
+
+.schedule-status {
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-right: 1px solid #efefef;
+}
+
+.schedule-status_text {
+  color: #666;
+  font-size: 12px;
+}
+
+.schedule-status_text:first-of-type {
+  padding-bottom: 5px;
+}
+
+.schedule_team {
+  display: flex;
+  flex: 1;
+  padding: 0 10px;
+  justify-content: space-between;
+}
+
+.schedule_team_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.schedule_team_item_text {
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+}
+
+.schedule_team_score {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule_team_score_text {
+  color: #1f1f1f;
+  font-size: 12px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.schedule_team_score_bo {
+  color: #666;
+  font-size: 12px;
+}

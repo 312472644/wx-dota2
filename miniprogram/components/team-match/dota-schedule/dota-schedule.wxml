@@ -1,6 +1,6 @@
 <!--components/dota-schedule/dota-schedule.wxml-->
 <view class="schedule-box">
-  <view class="schedule-item" wx:for="{{scheduleList}}">
+  <view class="schedule-item" wx:for="{{scheduleList}}" data-schedule="{{item}}" bindtap="toScheduleDetail">
     <van-image width="100%" fit="widthFix" image-class="schedule-image" lazy-load src="https://images.weserv.nl/?url={{item.coverUrl}}"></van-image>
     <view class="footer">
       <view class="schedule-name">

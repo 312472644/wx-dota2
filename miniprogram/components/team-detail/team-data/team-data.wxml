@@ -28,7 +28,7 @@
   </view>
   <view class="team-honor">
     <view class="title">历史荣誉</view>
-    <view class="honor">
+    <view class="honor" wx:if="{{teamHonor.firstHonorList.length>0}}">
       <view class="honor-count">
         <image src="../../../assets/common/gold.png" class="medal-iamge"></image>
         <text class="honor-count-text">x{{teamHonor.firstHonorList.length}}</text>
@@ -37,7 +37,7 @@
         <view class="honor-item" wx:for="{{teamHonor.firstHonorList}}">{{item.eventName}}</view>
       </view>
     </view>
-    <view class="honor">
+    <view class="honor" wx:if="{{teamHonor.secondHonorList.length>0}}">
       <view class="honor-count">
         <image src="../../../assets/common/silver.png" class="medal-iamge"></image>
         <text class="honor-count-text">x{{teamHonor.secondHonorList.length}}</text>
@@ -46,7 +46,7 @@
         <view class="honor-item" wx:for="{{teamHonor.secondHonorList}}">{{item.eventName}}</view>
       </view>
     </view>
-    <view class="honor">
+    <view class="honor" wx:if="{{teamHonor.thirdHonorList.length>0}}">
       <view class="honor-count">
         <image src="../../../assets/common/bronze.png" class="medal-iamge"></image>
         <text class="honor-count-text">x{{teamHonor.thirdHonorList.length}}</text>

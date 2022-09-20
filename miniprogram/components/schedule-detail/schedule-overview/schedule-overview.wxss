@@ -1,0 +1,37 @@
+/* components/schedule-detail/schedule-overview/schedule-overview.wxss */
+.schedule-overview {
+  border-top: 10px solid #f7f7f7;
+}
+
+.schedule-team {
+  padding: 15px;
+}
+
+.schedule-team-title {
+  color: #1f1f1f;
+  font-size: 13px;
+}
+
+.schedule-team-list {
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.schedule-team-item {
+  width: calc((100% - 40px)/5);
+  border-radius: 3px;
+  box-shadow: 1px 1px 10px #ccc;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 0;
+}
+
+.schedule-team-item:nth-of-type(5n) {
+  margin-right: 0;
+}
+
+.schedule-team-image {
+  padding: 5px;
+  box-sizing: border-box;
+}

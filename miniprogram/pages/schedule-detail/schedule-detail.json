@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "schedule-overview":"../../components/schedule-detail/schedule-overview/schedule-overview",
+    "schedule-list":"../../components/schedule-detail/schedule-list/schedule-list"
+  }
+}

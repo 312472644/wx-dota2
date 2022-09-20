@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "schedule-list":"../../schedule-detail/schedule-list/schedule-list"
+  }
+}

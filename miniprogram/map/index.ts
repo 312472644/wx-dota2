@@ -70,4 +70,9 @@ GameTypeMap.set(7, '天梯');
 GameTypeMap.set(8, '中路对单');
 GameTypeMap.set(9, '勇士联赛');
 
-export { HeroTypeMap, HeroTypeImgMap, HeroAttackTypeImgMap, HeroAttackTypeMap, RoleList, HeroComplexityMap, GameModeMap, GameTypeMap };
+const scheduleMapStatus = new Map();
+scheduleMapStatus.set(1,'未开始');
+scheduleMapStatus.set(2,'进行中');
+scheduleMapStatus.set(3, '已结束');
+
+export { HeroTypeMap, HeroTypeImgMap, HeroAttackTypeImgMap, HeroAttackTypeMap, RoleList, HeroComplexityMap, GameModeMap, GameTypeMap, scheduleMapStatus };

@@ -42,11 +42,17 @@ Component({
           });
           if (list.length > 0) {
             this.setData({ scheduleList: this.data.scheduleList.concat(list) });
-          }else {
+          } else {
             this.triggerEvent("loadComplete");
           }
         }
       });
     },
+    toScheduleDetail(event: IEvent) {
+      const schedule = event.currentTarget.dataset.schedule;
+      wx.navigateTo({
+        url: `../../pages/schedule-detail/schedule-detail?eventId=${schedule.id}`
+      })
+    }
   },
 });

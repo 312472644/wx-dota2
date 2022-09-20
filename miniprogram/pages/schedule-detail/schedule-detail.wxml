@@ -1,0 +1,30 @@
+<!--pages/schedule-detail/schedule-detail.wxml-->
+<view class="event-summary">
+  <view role="full" class="summary-full" style="opacity:{{scrollTop <=180?1:0}}; ">
+    <view class="event-logo">
+      <van-image width="100%" height="150" fit="cover" src="https://images.weserv.nl/?url={{eventSummary.coverUrl}}"></van-image>
+    </view>
+    <view class="event-desc">
+      <view class="event-item">
+        <text class="event-name">{{eventSummary.eventName}}</text>
+        <text class="event-award">{{eventSummary.eventAward}}</text>
+      </view>
+      <view class="event-item">
+        <text class="event-city">{{eventSummary.eventCity}}</text>
+        <text class="event-date">{{eventSummary.eventStartTime}} - {{eventSummary.eventEndTime}} </text>
+      </view>
+    </view>
+  </view>
+  <view role="thumbnail" class="summary-thumbnail" style="opacity:{{scrollTop > 180?1:0}}; ">
+    <text>{{eventSummary.eventName}}</text>
+  </view>
+</view>
+<van-tabs offset-top="{{35}}" active="{{ activeTab }}" sticky color="#000000" title-inactive-color="#787d7e">
+  <van-tab title="概览" name="overview">
+    <schedule-overview teamList="{{eventSummary.eventTeamList}}"></schedule-overview>
+  </van-tab>
+  <van-tab title="赛程" name="schedule">
+    <schedule-list scheduleList="{{scheduleList}}" eventId="{{eventSummary.id}}"></schedule-list>
+  </van-tab>
+  <van-tab title="榜单" name="rank"></van-tab>
+</van-tabs>

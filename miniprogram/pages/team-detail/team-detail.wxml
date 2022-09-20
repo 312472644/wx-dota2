@@ -31,11 +31,13 @@
       </view>
     </view>
   </view>
-  <van-tabs nav-class="nav-tabs" offset-top="{{34}}" sticky color="#000000" title-inactive-color="#787d7e">
+  <van-tabs nav-class="nav-tabs" active="{{active}}" offset-top="{{34}}" bind:change="onChange" sticky color="#000000" title-inactive-color="#787d7e">
     <van-tab title="概览" name="overview">
       <team-overview teamId="{{teamId}}" playerList="{{teamInfo.teamPlayerList}}"></team-overview>
     </van-tab>
-    <van-tab title="赛程" name="schedule"></van-tab>
+    <van-tab title="赛程" name="schedule">
+      <team-schedule scheduleList="{{scheduleList}}"></team-schedule>
+    </van-tab>
     <van-tab title="资料" name="data">
       <team-data teamId="{{teamId}}" teamInfo="{{teamInfo}}"></team-data>
     </van-tab>

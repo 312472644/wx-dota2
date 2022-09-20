@@ -1,0 +1,4 @@
+<!--components/team-detail/team-schedule/team-schedule.wxml-->
+<view>
+  <schedule-list scheduleList="{{scheduleList}}"></schedule-list>
+</view>
