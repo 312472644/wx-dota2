@@ -11,7 +11,7 @@ Page({
   data: {
     eventSummary: null,
     scrollTop: 0,
-    activeTab: "schedule",
+    activeTab: "overview",
     scheduleList: []
   },
 
@@ -19,7 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options: any) {
-    const eventId = options.eventId;
+    const eventId = options.eventId || 1330;
     this.getEventSummary(eventId);
     this.getScheduleMatchList(eventId);
   },

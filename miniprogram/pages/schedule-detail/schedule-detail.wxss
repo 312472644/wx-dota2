@@ -1,6 +1,4 @@
 /* pages/schedule-detail/schedule-detail.wxss */
-.event-summary {}
-
 .event-logo {
   font-size: 0;
 }

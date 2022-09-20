@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/team-match/team-match",
-    "pages/team-detail/team-detail",
     "pages/schedule-detail/schedule-detail",
+    "pages/team-detail/team-detail",
     "pages/match-detail/match-detail",
     "pages/team-player-detail/team-player-detail",
     "pages/dota-rank/dota-rank",

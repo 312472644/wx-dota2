@@ -28,7 +28,7 @@
         </view>
       </view>
       <view class="table-body-item third-column" wx:if="{{item.rank_img_url}}">
-        <van-image width="30" height="30" class="team-logo" round src="{{item.rank_img_url}}" use-error-slot>
+        <van-image width="30" height="30" class="team-logo" lazy-load round src="{{item.rank_img_url}}" use-error-slot>
           <text slot="error" error-class="team-logo">-</text>
         </van-image>
       </view>

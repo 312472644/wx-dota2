@@ -1,0 +1,28 @@
+<!--components/schedule-detail/schedule-rank/schedule-rank.wxml-->
+<view class="schedule-rank">
+  <view class="schedule-category">
+    <text class="schedule-category_text {{category===item.value?'active':''}}" data-item="{{item}}" wx:for="{{categoryList}}" bindtap="categoryEvent">{{item.text}}</text>
+  </view>
+  <view class="schedule-table">
+    <view class="schedule-table-header">
+      <view class="category-column"></view>
+      <view class="schedule-table_column {{index === 0?'first-column':''}}" wx:for="{{columnList}}">{{item}}</view>
+    </view>
+    <view class="schedule-table-body">
+      <scroll-view class="sidebar" scroll-y="true" style="height: calc(100vh - 360px)">
+        <view class="sidebar-item {{sidebar===item.type?'active':''}}" wx:for="{{sidebarList}}" data-item="{{item}}" bindtap="sidebarEvent">{{item.name}}</view>
+      </scroll-view>
+      <scroll-view class="schedule-table-content" scroll-y="true" style="height: calc(100vh - 360px)">
+        <view class="schedule-table-row" wx:for="{{tableList}}">
+          <view class="schedule-table_column" style="text-align: left;padding: 0 10px;">
+            <text class="column-index">{{index+1}}</text>
+            <van-image width="20" height="20" custom-class="schedule-table-row-image" round src="https://images.weserv.nl/?url={{item.logoUrl}}"></van-image>
+            <text class="schedule-table_text">{{item.name}}</text>
+          </view>
+          <view class="schedule-table_column" wx:if="{{category === 'players'}}">{{item.position}}</view>
+          <view class="schedule-table_column">{{item.score}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

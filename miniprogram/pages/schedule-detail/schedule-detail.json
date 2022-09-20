@@ -5,6 +5,7 @@
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "schedule-overview":"../../components/schedule-detail/schedule-overview/schedule-overview",
-    "schedule-list":"../../components/schedule-detail/schedule-list/schedule-list"
+    "schedule-list":"../../components/schedule-detail/schedule-list/schedule-list",
+    "schedule-rank":"../../components/schedule-detail/schedule-rank/schedule-rank"
   }
 }
