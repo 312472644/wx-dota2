@@ -1,32 +1,35 @@
 <!--components/schedule-detail/schedule-list/schedule-list.wxml-->
 <view class="schedule-list">
-  <view class="schedule-item" wx:for="{{scheduleList}}">
-    <view class="schedule-item-date">
-      <text class="date-text">{{item.matchTime}}</text>
-    </view>
-    <view class="schedule-list-box">
-      <view class="schedule-item-box">
-        <view class="schedule-name" wx:if="{{item.eventName}}">
-          <van-image custom-class="custom-schedule-image" radius="3" width="20" height="20" src="https://images.weserv.nl/?url={{item.coverUrl}}"></van-image>
-          <text class="schedule-text">{{item.eventName}}</text>
-        </view>
-        <view class="schedule_item" data-schedule="{{scheduleItem}}" wx:for="{{item.children}}" wx:for-item="scheduleItem" bindtap="toScheduleDetail">
-          <view class="schedule-status">
-            <text class="schedule-status_text">{{scheduleItem.initMatchTime}}</text>
-            <text class="schedule-status_text">{{scheduleItem.matchStatus}}</text>
+  <van-loading custom-class="loading" wx:if="{{scheduleList.length === 0}}" />
+  <view wx:else>
+    <view class="schedule-item" wx:for="{{scheduleList}}">
+      <view class="schedule-item-date">
+        <text class="date-text">{{item.matchTime}}</text>
+      </view>
+      <view class="schedule-list-box">
+        <view class="schedule-item-box">
+          <view class="schedule-name" wx:if="{{item.eventName}}">
+            <van-image custom-class="custom-schedule-image" radius="3" width="20" height="20" src="https://images.weserv.nl/?url={{item.coverUrl}}"></van-image>
+            <text class="schedule-text">{{item.eventName}}</text>
           </view>
-          <view class="schedule_team">
-            <view class="schedule_team_item" data-team="{{scheduleItem}}" catchtap="toAwayTeamDetail">
-              <van-image width="30" height="30" src="https://images.weserv.nl/?url={{scheduleItem.awayLogo}}"></van-image>
-              <text class="schedule_team_item_text">{{scheduleItem.awayName}}</text>
+          <view class="schedule_item" data-schedule="{{scheduleItem}}" wx:for="{{item.children}}" wx:for-item="scheduleItem" bindtap="toScheduleDetail">
+            <view class="schedule-status">
+              <text class="schedule-status_text">{{scheduleItem.initMatchTime}}</text>
+              <text class="schedule-status_text">{{scheduleItem.matchStatus}}</text>
             </view>
-            <view class="schedule_team_score">
-              <text class="schedule_team_score_text">{{scheduleItem.awayScore}} - {{scheduleItem.homeScore}}</text>
-              <text class="schedule_team_score_bo">BO{{scheduleItem.box}}</text>
-            </view>
-            <view class="schedule_team_item" data-team="{{scheduleItem}}" catchtap="toHomeTeamDetail">
-              <van-image width="30" height="30" src="https://images.weserv.nl/?url={{scheduleItem.homeLogo}}"></van-image>
-              <text class="schedule_team_item_text">{{scheduleItem.homeName}}</text>
+            <view class="schedule_team">
+              <view class="schedule_team_item" data-team="{{scheduleItem}}" catchtap="toAwayTeamDetail">
+                <van-image width="30" height="30" src="https://images.weserv.nl/?url={{scheduleItem.awayLogo}}"></van-image>
+                <text class="schedule_team_item_text">{{scheduleItem.awayName}}</text>
+              </view>
+              <view class="schedule_team_score">
+                <text class="schedule_team_score_text">{{scheduleItem.awayScore}} - {{scheduleItem.homeScore}}</text>
+                <text class="schedule_team_score_bo">BO{{scheduleItem.box}}</text>
+              </view>
+              <view class="schedule_team_item" data-team="{{scheduleItem}}" catchtap="toHomeTeamDetail">
+                <van-image width="30" height="30" src="https://images.weserv.nl/?url={{scheduleItem.homeLogo}}"></van-image>
+                <text class="schedule_team_item_text">{{scheduleItem.homeName}}</text>
+              </view>
             </view>
           </view>
         </view>

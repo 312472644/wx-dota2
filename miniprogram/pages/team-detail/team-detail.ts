@@ -23,7 +23,6 @@ Page({
     const { teamId } = options;
     this.setData({ teamId });
     this.getTeamDetail(teamId);
-    this.getTeamParticipatedEventList(teamId);
   },
   onReachBottom() {
     if (this.data.active === 'schedule') {
@@ -37,7 +36,13 @@ Page({
     const scrollTop = event.scrollTop;
     this.setData({ scrollTop });
   },
-  onChange(event: IEvent) { 
+  onChange(event: IEvent) {
+    const name = event.detail.name;
+    if (name === 'schedule') {
+      if(this.data.scheduleList.length === 0) {
+        this.getTeamParticipatedEventList(this.data.teamId, 1);
+      } 
+    }
     this.setData({ active: event.detail.name });
   },
   getTeamDetail(teamId: string) {

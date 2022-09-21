@@ -147,3 +147,13 @@
   font-size: 12px;
   padding: 0 10px;
 }
+
+.loading {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.player_kda {
+  display: flex;
+  align-items: center;
+}

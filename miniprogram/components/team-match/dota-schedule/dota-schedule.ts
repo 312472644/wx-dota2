@@ -13,11 +13,11 @@ Component({
   data: {
     scheduleList: [],
   },
-  lifetimes: {
-    created() {
-      this.getScheduleList();
-    },
-  },
+  // lifetimes: {
+  //   created() {
+  //     this.getScheduleList();
+  //   },
+  // },
   /**
    * 组件的方法列表
    */

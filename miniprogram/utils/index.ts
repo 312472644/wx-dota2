@@ -100,6 +100,19 @@ const formatMillimeter = (value: string) => {
   return value.toString().replace(/\d(?=(\d{3})+$)/g, "$&,");
 };
 
+/***
+ * tabs请求数据，只进行第一网络请求
+ * @param component 组件对象
+ * @param dsName 组件数据源
+ * @param getMethodName 获取组件数据方法名称
+ */
+const tabRequest = (component: any, dsName: string, getMethodName: any) => {
+  const scheduleList = component.data[dsName];
+  if (scheduleList.length === 0) {
+    component[getMethodName]();
+  }
+};
+
 export {
   getTagByClassRegex,
   axios,
@@ -107,5 +120,6 @@ export {
   getHeroCNList,
   formatDateTime,
   formatMillimeter,
-  getDotaMaxQueryParam
+  getDotaMaxQueryParam,
+  tabRequest
 };

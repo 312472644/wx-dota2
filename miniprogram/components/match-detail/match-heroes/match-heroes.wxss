@@ -179,8 +179,9 @@
 }
 
 .player-separator {
-  color: #e4e6e5;
+  color: #d8d8d8;
   padding: 0 3px;
+  font-size: 12px;
 }
 
 .svg-image {

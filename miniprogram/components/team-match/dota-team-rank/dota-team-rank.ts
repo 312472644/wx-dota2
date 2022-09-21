@@ -25,11 +25,6 @@ Component({
       { text: "东南亚", value: 6 },
     ],
   },
-  lifetimes: {
-    ready() {
-      this.getTeamList();
-    },
-  },
   /**
    * 组件的方法列表
    */

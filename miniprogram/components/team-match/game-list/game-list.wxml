@@ -39,10 +39,10 @@
                 </view>
               </view>
             </view>
-            <view class="team-heroes" wx:if="{{subItem.showHeros}}">
+            <view class="team-heroes {{subItem.showHeros?'show':''}}">
               <view class="hero-row" wx:for="{{subItem.heroList}}" wx:for-item="hero">
                 <view class="heros-item">
-                  <van-image width="20" custom-class="custom-image" height="20" wx:for="{{hero.radiantHeros}}" wx:for-item="radiantHeros" src="https://images.weserv.nl/?url={{radiantHeros.heroIcon}}"></van-image>
+                  <van-image width="20" custom-class="custom-image" height="20" wx:for="{{hero.radiantHeros}}" wx:for-item="radiantHeros" lazy-load src="https://images.weserv.nl/?url={{radiantHeros.heroIcon}}"></van-image>
                 </view>
                 <view class="hero-score">
                   <text>{{hero.radiantScore}}</text>
@@ -50,7 +50,7 @@
                   <text>{{hero.direScore}}</text>
                 </view>
                 <view class="heros-item">
-                  <van-image width="20" height="20" custom-class="custom-image" wx:for="{{hero.direHeros}}" wx:for-item="direHeros" src="https://images.weserv.nl/?url={{direHeros.heroIcon}}"></van-image>
+                  <van-image width="20" height="20" lazy-load custom-class="custom-image" wx:for="{{hero.direHeros}}" wx:for-item="direHeros" src="https://images.weserv.nl/?url={{direHeros.heroIcon}}"></van-image>
                 </view>
               </view>
             </view>

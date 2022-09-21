@@ -87,7 +87,7 @@
 }
 
 .help-text {
-  padding-left: 3px;
+  padding: 0 3px;
 }
 
 .medal-iamge {

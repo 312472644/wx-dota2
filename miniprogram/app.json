@@ -31,7 +31,7 @@
         "pagePath": "pages/dota-rank/dota-rank",
         "iconPath": "./assets/icon/rank.png",
         "selectedIconPath": "./assets/icon/rank_active.png",
-        "text": "天梯排名"
+        "text": "发现"
       },
       {
         "pagePath": "pages/new-log/new-log",

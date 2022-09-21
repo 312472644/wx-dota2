@@ -27,18 +27,13 @@ Component({
     sidebar: 0,
     sidebarName: "",
   },
-  lifetimes: {
-    ready() {
-      this.getRankInfo(this.properties.eventId);
-    }
-  },
   /**
    * 组件的方法列表
    */
   methods: {
-    getRankInfo(eventId: number) {
+    getRankInfo() {
       axios({
-        url: `https://appengine.wmpvp.com/dota/event/getRankInfo?eventId=${eventId}`
+        url: `https://appengine.wmpvp.com/dota/event/getRankInfo?eventId=${this.properties.eventId}`
       }).then((res: IResult<any>) => {
         const rankInfo = res.data.result;
         const players = rankInfo.players;

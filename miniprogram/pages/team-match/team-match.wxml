@@ -1,15 +1,15 @@
 <!--pages/team-match.wxml-->
 <view>
   <van-icon wx:if="{{activeTab === 'match'}}" bindtap="filterTapEvent" style="display: inline;" custom-class="filter-box" name="filter-o" size="20" color="#666" />
-  <van-tabs sticky color="#000000" active="{{activeTab}}" title-inactive-color="#787d7e" bind:change="change">
+  <van-tabs sticky color="#000000" active="{{activeTab}}" title-inactive-color="#787d7e" bind:change="changeEvent">
     <van-tab title="赛事" name="match">
-      <game-list showFilter="{{showFilter}}" bind:close="closeEvent"></game-list>
+      <game-list showFilter="{{showFilter}}" id="match" bind:close="closeEvent"></game-list>
     </van-tab>
     <van-tab title="赛程" name="schedule">
       <dota-schedule id="schedule" bind:loadComplete="loadComplete"></dota-schedule>
     </van-tab>
     <van-tab title="排行" name="rank">
-      <dota-team-rank></dota-team-rank>
+      <dota-team-rank id="rank"></dota-team-rank>
     </van-tab>
   </van-tabs>
 </view>

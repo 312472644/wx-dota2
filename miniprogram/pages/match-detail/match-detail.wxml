@@ -42,11 +42,14 @@
           </view>
         </view>
       </view>
-      <view class="match-heroes">
-        <match-heroes heroesList="{{radiantHeroList}}" totalKill="{{activeMatch.radiant_total_kill}}" totalGold="{{activeMatch.radiant_total_gold}}" campText="{{activeMatch.radiantWin?'天辉胜利':'夜魇失败'}}" isWin="{{activeMatch.radiantWin}}"></match-heroes>
-      </view>
-      <view class="match-heroes">
-        <match-heroes heroesList="{{direHeroList}}" totalKill="{{activeMatch.dire_total_kill}}" totalGold="{{activeMatch.dire_total_gold}}" campText="{{!activeMatch.radiantWin?'夜魇胜利':'天辉失败'}}" isWin="{{!activeMatch.radiantWin}}"></match-heroes>
+      <van-loading custom-class="loading" wx:if="{{radiantHeroList.length === 0 || direHeroList.length === 0}}" />
+      <view wx:else>
+        <view class="match-heroes">
+          <match-heroes heroesList="{{radiantHeroList}}" totalKill="{{activeMatch.radiant_total_kill}}" totalGold="{{activeMatch.radiant_total_gold}}" campText="{{activeMatch.radiantWin?'天辉胜利':'天辉失败'}}" isWin="{{activeMatch.radiantWin}}"></match-heroes>
+        </view>
+        <view class="match-heroes">
+          <match-heroes heroesList="{{direHeroList}}" totalKill="{{activeMatch.dire_total_kill}}" totalGold="{{activeMatch.dire_total_gold}}" campText="{{!activeMatch.radiantWin?'夜魇胜利':'夜魇失败'}}" isWin="{{!activeMatch.radiantWin}}"></match-heroes>
+        </view>
       </view>
     </van-tab>
   </van-tabs>

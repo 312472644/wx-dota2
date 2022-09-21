@@ -29,18 +29,13 @@
 }
 
 .table-header {
-    border: none;
     margin: 0 8px;
-    border-radius: 3px;
 }
 
 .table-tr {
     display: flex;
     align-items: center;
-    border-bottom: none;
-    background: #f9f9f9;
     margin: 8px;
-    border-radius: 3px;
 }
 
 .player-box {

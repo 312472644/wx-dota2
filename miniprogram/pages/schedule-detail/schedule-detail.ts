@@ -1,6 +1,6 @@
-import { IResult } from "miniprogram/interface";
+import { IEvent, IResult } from "miniprogram/interface";
 import { scheduleMapStatus } from "../../map/index";
-import { axios, formatDateTime } from "../../utils/index";
+import { axios, formatDateTime, tabRequest } from "../../utils/index";
 
 // pages/schedule-detail/schedule-detail.ts
 Page({
@@ -23,7 +23,7 @@ Page({
     const eventId = options.eventId;
     this.setData({ eventId })
     this.getEventSummary(eventId);
-    this.getScheduleMatchList(eventId);
+    // this.getScheduleMatchList(eventId);
   },
 
   onPageScroll(event: any) {
@@ -59,12 +59,24 @@ Page({
     });
     return scheduleList;
   },
-  getScheduleMatchList(eventId: number = 1330) {
+  getScheduleMatchList() {
     axios({
-      url: `https://appengine.wmpvp.com/dota/event/getScheduleMatchList?eventId=${eventId}`
+      url: `https://appengine.wmpvp.com/dota/event/getScheduleMatchList?eventId=${this.data.eventId}`
     }).then((res: IResult<any>) => {
       const scheduleList = this.getScheduleList(res.data.result) as any;
       this.setData({ scheduleList })
     })
+  },
+  changeEvent(event: IEvent) {
+    const name = event.detail.name;
+    this.setData({ activeTab: name });
+    if (name === 'rank') {
+      const rankComponent = this.selectComponent("#rank");
+      tabRequest(rankComponent, 'sidebarList', 'getRankInfo');
+    } else if (name === 'schedule') {
+      if (this.data.scheduleList.length === 0) {
+        this.getScheduleMatchList();
+      }
+    }
   }
 })

@@ -4,7 +4,7 @@
     <view class="schedule-team-title">参赛队伍</view>
     <view class="schedule-team-list" wx:if="{{teamList.length > 0}}">
       <view class="schedule-team-item" wx:for="{{teamList}}" data-team="{{item}}" bindtap="toTeamDetail">
-        <van-image width="100%" image-class="schedule-team-image" fit="widthFix" src="https://images.weserv.nl/?url={{item.logo}}"></van-image>
+        <van-image width="100%" image-class="schedule-team-image" height="50" lazy-load src="https://images.weserv.nl/?url={{item.logo}}"></van-image>
       </view>
     </view>
     <van-empty wx:else />

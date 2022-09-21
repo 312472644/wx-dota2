@@ -60,7 +60,7 @@
   color: #808080;
   height: 40px;
   line-height: 40px;
-  background: #fafafa;
+  background: #f7f8fa;
   text-align: center;
   border-bottom: 1px solid #ececec;
   border-right: 1px solid #ececec;
@@ -97,7 +97,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  max-width: calc(100% - 20px);
+  max-width: calc(100% - 25px);
 }
 
 .schedule-table-row-image {
@@ -106,5 +106,5 @@
 
 .column-index {
   font-size: 12px;
-  padding-right: 5px;
+  padding-right: 8px;
 }

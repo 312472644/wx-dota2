@@ -19,14 +19,14 @@
     <text>{{eventSummary.eventName}}</text>
   </view>
 </view>
-<van-tabs offset-top="{{35}}" active="{{ activeTab }}" sticky color="#000000" title-inactive-color="#787d7e">
+<van-tabs offset-top="{{35}}" active="{{ activeTab }}" sticky color="#000000" title-inactive-color="#787d7e" bind:change="changeEvent">
   <van-tab title="概览" name="overview">
     <schedule-overview teamList="{{eventSummary.eventTeamList}}"></schedule-overview>
   </van-tab>
   <van-tab title="赛程" name="schedule">
-    <schedule-list scheduleList="{{scheduleList}}" eventId="{{eventSummary.id}}"></schedule-list>
+    <schedule-list scheduleList="{{scheduleList}}" id="schedule" eventId="{{eventSummary.id}}"></schedule-list>
   </van-tab>
   <van-tab title="榜单" name="rank">
-    <schedule-rank eventId="{{eventId}}"></schedule-rank>
+    <schedule-rank eventId="{{eventId}}" id="rank"></schedule-rank>
   </van-tab>
 </van-tabs>

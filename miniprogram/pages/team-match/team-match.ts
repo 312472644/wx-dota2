@@ -1,4 +1,5 @@
 import { IEvent } from "miniprogram/interface";
+import { tabRequest } from "../../utils/index";
 
 // pages/team-match.ts
 Page({
@@ -15,32 +16,32 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {},
+  onLoad() { },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {},
+  onReady() { },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {},
+  onShow() { },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide() {},
+  onHide() { },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload() {},
+  onUnload() { },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh() {},
+  onPullDownRefresh() { },
 
   /**
    * 页面上拉触底事件的处理函数
@@ -54,16 +55,19 @@ Page({
     }
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {},
   loadComplete() {
     this.setData({ loadComplete: true });
   },
-  change(value: IEvent) {
+  changeEvent(value: IEvent) {
     const { name } = value.detail;
     this.setData({ activeTab: name });
+    if (name === 'schedule') {
+      const scheduleComponent = this.selectComponent("#schedule");
+      tabRequest(scheduleComponent, 'scheduleList', 'getScheduleList');
+    } else if (name === 'rank') {
+      const rankComponent = this.selectComponent("#rank");
+      tabRequest(rankComponent, 'teamList', 'getTeamList')
+    }
   },
   filterTapEvent() {
     this.setData({ showFilter: !this.data.showFilter });
