@@ -1,0 +1,34 @@
+/* components/dota-rank/rank-version/rank-version.wxss */
+@import '../../../app.wxss';
+
+.rank-version-filter {
+  display: flex;
+  background: #fff;
+}
+
+.dropdown-menu {
+  margin-right: 15px;
+}
+
+.table-header {
+  background-color: #f3f2f7;
+}
+
+.table-header-item.dy-width,
+.table-body-item.dy-width {
+  width: calc(100% - 240px);
+}
+
+.table-header-item.fixed-width,
+.table-body-item.fixed-width {
+  width: 80px;
+}
+
+.dy-width .custom-class {
+  vertical-align: middle;
+}
+
+.version .hero-name {
+  vertical-align: middle;
+  padding-left: 8px;
+}

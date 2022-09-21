@@ -81,6 +81,24 @@
   line-height: 40px;
 }
 
+.schedule-table-row:nth-of-type(1) .column-index {
+  color: #fff;
+  background: linear-gradient(39deg, #fa0, #ffd500 99%);
+  box-shadow: 0 2px 6px 0 rgb(255 179 0 / 40%);
+}
+
+.schedule-table-row:nth-of-type(2) .column-index {
+  color: #fff;
+  background: linear-gradient(39deg, #bcc1cc, #dadde3 99%);
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 12%);
+}
+
+.schedule-table-row:nth-of-type(3) .column-index {
+  color: #fff;
+  background: linear-gradient(39deg, #ff9a57, #ffbb80 99%);
+  box-shadow: 0 2px 6px 0 rgb(255 154 87 / 40%);
+}
+
 .schedule-table-row .schedule-table_column {
   color: #292929;
   font-size: 12px;
@@ -106,5 +124,7 @@
 
 .column-index {
   font-size: 12px;
-  padding-right: 8px;
+  padding: 2px 3px;
+  border-radius: 3px;
+  margin-right: 5px;
 }

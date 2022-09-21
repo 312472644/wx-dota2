@@ -3,6 +3,9 @@
     "van-tab": "@vant/weapp/tab/index",
     "van-icon": "@vant/weapp/icon/index",
     "van-tabs": "@vant/weapp/tabs/index",
-    "rank-table": "../../components/dota-rank/rank-table/rank-table"
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "rank-table": "../../components/dota-rank/rank-table/rank-table",
+    "rank-version": "../../components/dota-rank/rank-version/rank-version"
   }
 }

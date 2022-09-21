@@ -1,1 +1,9 @@
 /* pages/rank/rank.wxss */
+.dropdown-menu {
+  box-shadow: none !important;
+  height: 40px !important;
+  padding-right: 15px;
+}
+.dropdown-menu-title {
+  font-size: 13px;
+}

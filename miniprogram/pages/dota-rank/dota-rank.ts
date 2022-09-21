@@ -1,28 +1,29 @@
-import { ICustom, IEvent, IResult } from "miniprogram/interface";
-import { IRank, IRankResult } from "miniprogram/interface/IPage";
-import { axios, getDotaMaxQueryParam } from "../../utils/index";
-
-interface IData {
-  tabName: string;
-  rankList: IRank[];
-  scrollTop: number;
-}
+import { IEvent, IResult } from "miniprogram/interface";
+import { IRankResult } from "miniprogram/interface/IPage";
+import { axios, getDotaMaxQueryParam, tabRequest } from "../../utils/index";
 
 // pages/rank/rank.ts
-Page<IData, ICustom>({
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-    tabName: "china",
+    tabName: "rank",
     rankList: [],
     scrollTop: 0,
+    regionId: 'china',
+    regionOptions: [
+      { text: "国服", value: 'china' },
+      { text: "美洲", value: 'americas' },
+      { text: "欧洲", value: 'europe' },
+      { text: "东南亚", value: 'se_asia' },
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {},
+  onLoad() { },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -32,8 +33,14 @@ Page<IData, ICustom>({
   },
   changeEvent(event: IEvent) {
     const { detail } = event;
-    this.setData({ tabName: detail.name, scrollTop: 0 });
-    this.getRankList(detail.name);
+    this.setData({ tabName: detail.name });
+    if (detail.name === 'version') {
+      const versionComponent = this.selectComponent("#version");
+      tabRequest(versionComponent, 'versionOptions', 'getVersionList');
+    }
+  },
+  reginonChange(event: IEvent) {
+    this.getRankList(event.detail);
   },
   getRankList(division: string = "china") {
     axios({
@@ -54,7 +61,7 @@ Page<IData, ICustom>({
               avatar_url: item?.steam_id_info?.avatar_url || null,
             };
           })
-          .splice(0, 100);
+          .splice(0, 100) as any;
         this.setData({ rankList });
       }
     });

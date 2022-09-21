@@ -1,17 +1,21 @@
 <!--pages/rank/rank.wxml-->
 <scroll-view scroll-y="true" style="height: 100vh;" scroll-top="{{scrollTop}}">
-  <van-tabs sticky color="#000000" title-inactive-color="#787d7e" bind:change="changeEvent">
-    <van-tab title="国服" name="china">
+  <van-tabs sticky color="#000000" active="{{tabName}}" title-inactive-color="#787d7e" bind:change="changeEvent">
+    <van-tab title="天梯排行" name="rank">
+      <view class="help-info">
+        <view>
+          <van-icon class="help-info-icon" name="question-o" size="18" />
+          <text class="help-info-text">Elo等级分排名</text>
+          <text>k = 32, init = 1000</text>
+        </view>
+        <van-dropdown-menu custom-class="dropdown-menu" active-color="#1989fa" z-index="999">
+          <van-dropdown-item title-class="dropdown-menu-title" value="{{ regionId }}" options="{{ regionOptions }}" bind:change="reginonChange" />
+        </van-dropdown-menu>
+      </view>
       <rank-table tableList="{{rankList}}"></rank-table>
     </van-tab>
-    <van-tab title="美洲" name="americas">
-      <rank-table tableList="{{rankList}}"></rank-table>
-    </van-tab>
-    <van-tab title="欧洲" name="europe">
-      <rank-table tableList="{{rankList}}"></rank-table>
-    </van-tab>
-    <van-tab title="东南亚" name="se_asia">
-      <rank-table tableList="{{rankList}}"></rank-table>
+    <van-tab title="版本答案" name="version">
+      <rank-version id="version"></rank-version>
     </van-tab>
   </van-tabs>
 </scroll-view>

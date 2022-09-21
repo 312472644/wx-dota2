@@ -107,8 +107,8 @@ const formatMillimeter = (value: string) => {
  * @param getMethodName 获取组件数据方法名称
  */
 const tabRequest = (component: any, dsName: string, getMethodName: any) => {
-  const scheduleList = component.data[dsName];
-  if (scheduleList.length === 0) {
+  const dataList = component.data[dsName];
+  if (dataList.length === 0) {
     component[getMethodName]();
   }
 };

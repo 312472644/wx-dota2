@@ -1,0 +1,28 @@
+<!--components/dota-rank/rank-version/rank-version.wxml-->
+<view class="rank-version-filter">
+  <van-dropdown-menu custom-class="dropdown-menu" active-color="#1989fa" z-index="999">
+    <van-dropdown-item title-class="dropdown-menu-title" value="{{ version }}" options="{{ versionOptions }}" bind:change="versionChange" />
+  </van-dropdown-menu>
+  <van-dropdown-menu custom-class="dropdown-menu" active-color="#1989fa" z-index="999">
+    <van-dropdown-item title-class="dropdown-menu-title" value="{{ level }}" options="{{ levelOptions }}" bind:change="levelChange" />
+  </van-dropdown-menu>
+</view>
+<view class="table version">
+  <view class="table-header">
+    <view class="table-header-item dy-width" style="text-align: left;">英雄</view>
+    <view class="table-header-item fixed-width">胜率</view>
+    <view class="table-header-item fixed-width">出场率</view>
+    <view class="table-header-item fixed-width">场次</view>
+  </view>
+  <scroll-view class="table-body" scroll-y="true" style="height: calc(100vh - 124px);">
+    <view class="table-tr" wx:for="{{rankVersionList}}">
+      <view class="table-body-item dy-width" style="text-align: left;">
+        <van-image radius="3" width="30" custom-class="custom-class" height="30" lazy-load src="https://images.weserv.nl/?url={{item.hero_img}}"></van-image>
+        <text class="hero-name">{{item.hero_name}}</text>
+      </view>
+      <view class="table-body-item fixed-width">{{item.hero_win_rate}}</view>
+      <view class="table-body-item fixed-width">{{item.hero_picks_rate}}</view>
+      <view class="table-body-item fixed-width">{{item.sum_hero_matches}}</view>
+    </view>
+  </scroll-view>
+</view>
