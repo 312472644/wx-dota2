@@ -89,3 +89,8 @@
     width: 32px;
     height: 32px;
 }
+
+.loading {
+  width: 100%;
+  padding: 10px 0;
+}

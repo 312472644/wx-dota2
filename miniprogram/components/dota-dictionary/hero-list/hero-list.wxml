@@ -11,9 +11,9 @@
     <view class="hero-list" wx:if="{{heroList.length > 0}}" id="hero-list">
       <view wx:for="{{heroList}}" wx:key="index" style="width:100%">
         <view class="hero-category" wx:if="{{item.list.length > 0}}">{{item.name}}</view>
-        <view class="hero-category-container" wx:if="{{item.list.length > 0}}">
+        <view class="hero-category-container">
           <view data-hero="{{heroItem}}" wx:for="{{item.list}}" class="hero-item" bindtap="goHeroDetail" wx:for-item="heroItem" wx:key="index">
-            <van-image width="100%" image-class="hero-logo-item" height="80rpx" use-loading-slot lazy-load src="{{heroItem.avatar}}">
+            <van-image width="100%" image-class="hero-logo-item" height="80rpx" use-loading-slot lazy-load src="https://images.weserv.nl/?url={{heroItem.index_img}}">
               <van-loading slot="loading" type="spinner" size="20" vertical />
             </van-image>
             <text class="hero-item-text">{{heroItem.name_loc}}</text>
@@ -21,7 +21,7 @@
         </view>
       </view>
     </view>
-    <van-empty wx:elif="{{heroList.length == 0 && isFirstLoad}}" image="search" description="暂无数据~"></van-empty>
+    <van-loading wx:else custom-class="loading" />
   </scroll-view>
   <view class="go-top" bindtap="bindGoTop" wx:if="{{isShowTop}}">
     <image class="go-top-image" src="../../../assets/common/et-rocket.svg"></image>

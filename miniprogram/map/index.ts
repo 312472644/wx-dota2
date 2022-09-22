@@ -5,10 +5,17 @@ HeroTypeImgMap.set(1, '../../assets/common/agile.png'); // 敏捷
 HeroTypeImgMap.set(2, '../../assets/common/intellect.png'); // 智力 
 
 // 英雄类型
-const HeroTypeMap: Map<number, string> = new Map();
-HeroTypeMap.set(0, '力量'); // 力量
-HeroTypeMap.set(1, '敏捷'); // 敏捷
-HeroTypeMap.set(2, '智力'); // 智力 
+const HeroTypeMap: Map<number | string, string> = new Map();
+HeroTypeMap.set(0, '力量');
+HeroTypeMap.set(1, '敏捷');
+HeroTypeMap.set(2, '智力'); 
+HeroTypeMap.set('str', '力量');
+HeroTypeMap.set('agi', '敏捷'); 
+HeroTypeMap.set('int', '智力');
+
+const CampMap = new Map();
+CampMap.set('radiant', '天辉');
+CampMap.set('dire', '夜魇');
 
 // 英雄攻击类型图片
 const HeroAttackTypeImgMap: Map<number, string> = new Map();
@@ -71,8 +78,41 @@ GameTypeMap.set(8, '中路对单');
 GameTypeMap.set(9, '勇士联赛');
 
 const scheduleMapStatus = new Map();
-scheduleMapStatus.set(1,'未开始');
-scheduleMapStatus.set(2,'进行中');
+scheduleMapStatus.set(1, '未开始');
+scheduleMapStatus.set(2, '进行中');
 scheduleMapStatus.set(3, '已结束');
 
-export { HeroTypeMap, HeroTypeImgMap, HeroAttackTypeImgMap, HeroAttackTypeMap, RoleList, HeroComplexityMap, GameModeMap, GameTypeMap, scheduleMapStatus };
+const SkillMap = new Map();
+SkillMap.set(0, '未知等级');
+SkillMap.set(1, 'Normal');
+SkillMap.set(2, 'High');
+SkillMap.set(3, 'Very Hig');
+
+const LaneMap = new Map();
+LaneMap.set(0, '未知');
+LaneMap.set(1, '优势路');
+LaneMap.set(2, '中路');
+LaneMap.set(3, '劣势路');
+LaneMap.set(4, '辅助');
+LaneMap.set(5, '纯辅助');
+
+const RoleMap = new Map();
+RoleMap.set('unknown', '未知');
+RoleMap.set('carry', '核心');
+RoleMap.set('support', '辅助');
+
+export {
+  HeroTypeMap,
+  HeroTypeImgMap,
+  HeroAttackTypeImgMap,
+  HeroAttackTypeMap,
+  RoleList,
+  HeroComplexityMap,
+  GameModeMap,
+  GameTypeMap,
+  scheduleMapStatus,
+  SkillMap,
+  LaneMap,
+  RoleMap,
+  CampMap
+};

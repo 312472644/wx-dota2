@@ -1,0 +1,23 @@
+<!--pages/game-player-detail/game-player-detail.wxml-->
+<view class="player-base-info">
+  <view class="player-avatar">
+    <view class="image-avatar">
+      <van-image width="50" height="50" radius="3" src="{{gamePlayerInfo.profile.avatarfull}}"></van-image>
+    </view>
+    <view class="player-extra-info">
+      <text class="avatar-text">{{gamePlayerInfo.profile.personaname}}</text>
+      <text class="avatar-text">SteamId:{{gamePlayerInfo.profile.account_id}}</text>
+    </view>
+  </view>
+</view>
+<van-tabs active="{{ activeTab }}" sticky bind:change="onChange" color="#000000" title-inactive-color="#787d7e" >
+  <van-tab title="综合数据" name="aggregate-data">
+    <aggregate-data steamId="{{steamId}}" leaderboardRank="{{gamePlayerInfo.leaderboard_rank}}"></aggregate-data>
+  </van-tab>
+  <van-tab title="近期表现" name="recent-performance">
+    <recent-performance></recent-performance>
+  </van-tab>
+  <van-tab title="最近玩家" name="recent-player">
+    <recent-player></recent-player>
+  </van-tab>
+</van-tabs>

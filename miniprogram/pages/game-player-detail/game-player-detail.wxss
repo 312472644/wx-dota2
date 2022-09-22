@@ -1,0 +1,35 @@
+/* pages/game-player-detail/game-player-detail.wxss */
+.player-base-info {
+  padding: 0 15px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2e2e36;
+}
+
+.player-avatar {
+  display: flex;
+  align-items: center;
+}
+
+.image-avatar {
+  font-size: 0;
+}
+
+.player-extra-info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.avatar-text {
+  color: #fff;
+  font-size: 14px;
+}
+
+.avatar-text:nth-of-type(2) {
+  padding-top: 5px;
+  color: #646878;
+  font-size: 12px;
+}

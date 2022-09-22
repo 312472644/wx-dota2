@@ -7,7 +7,7 @@
     <view class="table-header-item third-column"></view>
   </view>
   <view class="table-body">
-    <view class="table-tr" wx:for="{{tableList}}" wx:key="index">
+    <view class="table-tr" wx:for="{{tableList}}" data-item="{{item}}" wx:key="index" bindtap="tapEvent">
       <view class="table-body-item first-column"><text class="level-text">{{item.rank}}</text></view>
       <view class="table-body-item fourth-column">
         <view wx:if="{{item.diff_rank === 0 }}">-</view>
@@ -35,5 +35,6 @@
       <view wx:else class="table-body-item third-column">-</view>
     </view>
   </view>
+  <van-toast id="van-toast" />
   <van-empty wx:if="{{tableList.length === 0}}" description="暂无数据" />
 </view>

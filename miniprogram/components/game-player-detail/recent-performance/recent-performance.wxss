@@ -1,0 +1,56 @@
+/* components/game-player-detail/recent-performance/recent-performance.wxss */
+.recent-performance {
+  padding: 10px;
+}
+
+.recent-performance-row {
+  padding-top: 10px;
+}
+
+.recent-performance-row .table-header {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  height: 30px;
+}
+
+.recent-performance-row .table-body {
+  border-radius: 3;
+  box-shadow: 1px 1px 10px #d8d8d8;
+}
+
+.recent-performance-row .table-header-item {
+  width: 33.333333%;
+  color: #666;
+  text-align: left;
+  font-size: 12px;
+}
+
+.recent-performance-row .table-tr {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.recent-performance-row .table-tr:last-of-type {
+  border-bottom: none;
+}
+
+.recent-performance-row .table-column {
+  font-size: 12px;
+  width: 33.333333%;
+  box-sizing: border-box;
+}
+
+.table-column.porgess-bar {
+  padding-right: 20px;
+}
+
+.loading {
+  width: 100%;
+  padding: 10px 0;
+}

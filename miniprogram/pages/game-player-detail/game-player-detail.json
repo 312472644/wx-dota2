@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-image": "@vant/weapp/image/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "aggregate-data":"../../components/game-player-detail/aggregate-data/aggregate-data",
+    "recent-performance":"../../components/game-player-detail/recent-performance/recent-performance",
+    "recent-player":"../../components/game-player-detail/recent-player/recent-player"
+  }
+}

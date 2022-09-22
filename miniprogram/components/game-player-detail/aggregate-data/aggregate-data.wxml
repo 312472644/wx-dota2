@@ -1,0 +1,125 @@
+<!--components/game-player-detail/aggregate-data/aggregate-data.wxml-->
+<view class="aggregate-data">
+  <view class="aggregate-data-card">
+    <view class="title">概览</view>
+    <view class="content aggregate-overview-content {{showFlag?'expand':''}}">
+      <view class="aggregate-overview">
+        <view class="aggregate-overview-row">
+          <view class="aggregate-overview-item">
+            <view class="value">{{winTotal}}</view>
+            <view class="text">已收录</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{winRate}}</view>
+            <view class="text">胜率</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{avgPoints}}</view>
+            <view class="text">场均表现分</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{leaderboardRank}}</view>
+            <view class="text">天梯排名</view>
+          </view>
+        </view>
+        <view class="aggregate-overview-row">
+          <view class="aggregate-overview-item">
+            <view class="value">{{mvps}}</view>
+            <view class="text">近50场MVP</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{totalList[3].value}}</view>
+            <view class="text">KDA</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{totalList[11].value}}</view>
+            <view class="text">场均伤害</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{totalList[0].value}}</view>
+            <view class="text">场均击杀</view>
+          </view>
+        </view>
+        <view class="aggregate-overview-row">
+          <view class="aggregate-overview-item">
+            <view class="value">{{totalList[1].value}}</view>
+            <view class="text">场均死亡</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{totalList[2].value}}</view>
+            <view class="text">场均助攻</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{totalList[6].value}}</view>
+            <view class="text">场均正补</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{totalList[7].value}}</view>
+            <view class="text">场均反补</view>
+          </view>
+        </view>
+        <view class="aggregate-overview-row">
+          <view class="aggregate-overview-item">
+            <view class="value">{{totalList[5].value}}</view>
+            <view class="text">场均XPM</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{totalList[4].value}}</view>
+            <view class="text">场均GPM</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{totalList[13].value}}</view>
+            <view class="text">场均治疗</view>
+          </view>
+          <view class="aggregate-overview-item">
+            <view class="value">{{totalList[12].value}}</view>
+            <view class="text">场均建筑伤害</view>
+          </view>
+        </view>
+      </view>
+      <view class="load-more" bindtap="showMore">
+        <text class="load-more-text">{{showFlag?'收起':'加载更多'}}</text>
+        <van-icon name="arrow-down" wx:if="{{!showFlag}}" />
+        <van-icon name="arrow-up" wx:else />
+      </view>
+    </view>
+  </view>
+  <view class="aggregate-data-card">
+    <view class="title">比赛记录</view>
+    <view class="content" wx:if="{{matchList.length > 0}}">
+      <view class="match-row" wx:for="{{matchList}}">
+        <view class="match-row_left">
+          <van-image width="50" height="40" radius="3" src="https://images.weserv.nl/?url={{item.heroInfo.index_img}}"></van-image>
+          <view class="result-status {{item.win?'win':'lose'}}">{{item.win?'胜':'负'}}</view>
+        </view>
+        <view class="match-row_center">
+          <view class="match-score">{{item.kills}}/{{item.deaths}}/{{item.assists}}</view>
+          <view class="match-gamemode">{{item.game_mode}}</view>
+        </view>
+        <view class="match-row_right">{{item.start_time}}</view>
+      </view>
+    </view>
+    <van-loading custom-class="loading" wx:else />
+  </view>
+  <view class="aggregate-data-card">
+    <view class="title">常用英雄</view>
+    <view wx:if="{{heroList.length > 0}}" class="content" style="box-shadow: none;padding: 0;">
+      <view class="aggregate-data-hero">
+        <view class="aggregate-data-hero-item" wx:for="{{heroList}}">
+          <van-image radius="3" width="50" height="40" src="https://images.weserv.nl/?url={{item.heroInfo.index_img}}"></van-image>
+          <view class="aggregate-hero-analysis">
+            <view class="item">
+              <text>{{item.winRate}}</text>
+              <text>胜率</text>
+            </view>
+            <view class="item">
+              <text>{{item.games}}</text>
+              <text>场次</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <van-loading custom-class="loading" wx:else />
+  </view>
+</view>

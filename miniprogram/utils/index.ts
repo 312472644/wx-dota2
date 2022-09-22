@@ -101,6 +101,44 @@ const formatMillimeter = (value: string) => {
 };
 
 /***
+ * dotaMind请求数据
+ */
+const dotaMindRequest = (queryParam: string) => {
+  return axios({
+    url: "https://apidota.gamesmind.com/handler",
+    method: "POST",
+    data: {
+      route: "dota2router.dota2data.req",
+      message: {
+        "path": queryParam, "method": "GET", "json": {}
+      }
+    }
+  })
+};
+
+const getHandlerParam = (queryParam: string) => {
+  return {
+    route: "dota2router.dota2data.req", message: {
+      "path": queryParam, "method": "GET", "json": {}
+    }
+  }
+};
+
+/***
+ * 从英雄列表通过heroId缓存中获取英雄详情
+ * @param heroId 
+ */
+const getStorageHeroById = (heroId: number) => {
+  let heroInfo = null;
+  const heroListStr = wx.getStorageSync('heroList');
+  if (heroListStr) { 
+    const heroList = JSON.parse(heroListStr) || [];
+    heroInfo = heroList.find((item: any) => item.id.toString() === heroId.toString());
+  }
+  return heroInfo;
+}
+
+/***
  * tabs请求数据，只进行第一网络请求
  * @param component 组件对象
  * @param dsName 组件数据源
@@ -113,6 +151,14 @@ const tabRequest = (component: any, dsName: string, getMethodName: any) => {
   }
 };
 
+/***
+ * 是否是天辉
+ * @param component 组件对象
+ */
+const isRadiant = (playerSlot: number) => { 
+  return playerSlot >= 0 && playerSlot <= 127;
+};
+
 export {
   getTagByClassRegex,
   axios,
@@ -121,5 +167,9 @@ export {
   formatDateTime,
   formatMillimeter,
   getDotaMaxQueryParam,
-  tabRequest
+  tabRequest,
+  getHandlerParam,
+  dotaMindRequest,
+  getStorageHeroById,
+  isRadiant
 };

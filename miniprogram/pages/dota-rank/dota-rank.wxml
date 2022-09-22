@@ -8,7 +8,7 @@
           <text class="help-info-text">Elo等级分排名</text>
           <text>k = 32, init = 1000</text>
         </view>
-        <van-dropdown-menu custom-class="dropdown-menu" active-color="#1989fa" z-index="999">
+        <van-dropdown-menu custom-class="dropdown-menu" active-color="#1989fa" z-index="99">
           <van-dropdown-item title-class="dropdown-menu-title" value="{{ regionId }}" options="{{ regionOptions }}" bind:change="reginonChange" />
         </van-dropdown-menu>
       </view>

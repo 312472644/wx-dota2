@@ -1,0 +1,7 @@
+<!--components/progress-bar/progress-bar.wxml-->
+<view class="progress-bar">
+  <view class="progress-text">{{text}}</view>
+  <view class="progress">
+    <view class="current-progress" style="width:{{percentage}};background: {{pivotColor ||'#afb5cb'}}"></view>
+  </view>
+</view>

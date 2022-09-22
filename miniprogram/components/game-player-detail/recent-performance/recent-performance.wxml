@@ -1,0 +1,25 @@
+<!--components/game-player-detail/recent-performance/recent-performance.wxml-->
+<view class="recent-performance">
+  <van-dropdown-menu active-color="#1989fa">
+    <van-dropdown-item value="{{ date }}" options="{{ dataOptions }}" bind:change="dateChange" />
+  </van-dropdown-menu>
+  <view wx:if="{{performanceList.length > 0}}">
+    <view class="recent-performance-row" wx:for="{{performanceList}}">
+      <view class="table-header">
+        <view class="table-header-item" wx:for="{{item.cloumnList}}" wx:for-item="column">{{column}}</view>
+      </view>
+      <view class="table-body">
+        <view class="table-tr" wx:for="{{item.stats}}" wx:for-item="dataItem">
+          <view class="table-column">{{dataItem.label}}</view>
+          <view class="table-column porgess-bar">
+            <progress-bar text="{{dataItem.matches}}" percentage="50%"></progress-bar>
+          </view>
+          <view class="table-column porgess-bar">
+            <progress-bar text="{{dataItem.winRate}}" percentage="{{dataItem.winRate}}" pivotColor="#5dc79a"></progress-bar>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <van-loading custom-class="loading" wx:else />
+</view>
