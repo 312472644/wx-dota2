@@ -12,7 +12,7 @@
         <view class="table-tr" wx:for="{{item.stats}}" wx:for-item="dataItem">
           <view class="table-column">{{dataItem.label}}</view>
           <view class="table-column porgess-bar">
-            <progress-bar text="{{dataItem.matches}}" percentage="50%"></progress-bar>
+            <text>{{dataItem.matches}}</text>
           </view>
           <view class="table-column porgess-bar">
             <progress-bar text="{{dataItem.winRate}}" percentage="{{dataItem.winRate}}" pivotColor="#5dc79a"></progress-bar>

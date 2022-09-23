@@ -1,16 +1,19 @@
 {
   "pages": [
-    "pages/game-player-detail/game-player-detail",
+    "pages/dota-dictionary/dota-dictionary",
     "pages/dota-rank/dota-rank",
+    "pages/game-player-detail/game-player-detail",
+    "pages/player-result-detail/player-result-detail",
     "pages/team-match/team-match",
     "pages/schedule-detail/schedule-detail",
     "pages/team-detail/team-detail",
     "pages/match-detail/match-detail",
     "pages/team-player-detail/team-player-detail",
-    "pages/dota-dictionary/dota-dictionary",
     "pages/new-log/new-log",
     "pages/hero-detail/hero-detail",
-    "pages/new-log-detail/new-log-detail"
+    "pages/new-log-detail/new-log-detail",
+    "pages/player-all-match/player-all-match",
+    "pages/player-all-heroes/player-all-heroes"
   ],
   "tabBar": {
     "color": "#787d7e",

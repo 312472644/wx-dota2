@@ -1,0 +1,33 @@
+<!--pages/player-result-detail/player-result-detail.wxml-->
+<view class="player-result-detail-base">
+  <view class="player-result_avatar">
+    <van-image width="50" height="50" radius="3" src="https://images.weserv.nl/?url={{nickUrl}}"></van-image>
+    <view class="player_avatar_info">
+      <text>{{nickName}}</text>
+      <text>SteamId:{{steamId}}</text>
+    </view>
+  </view>
+  <view class="player-result_statistics">
+    <view class="player-result_statistics_item">
+      <text>{{matchDetail.game_mode_name}}</text>
+      <text>游戏模式</text>
+    </view>
+    <view class="player-result_statistics_item">
+      <text>{{matchDetail.start_time_string}}</text>
+      <text>结束时间</text>
+    </view>
+    <view class="player-result_statistics_item">
+      <text>{{matchDetail.duration}}</text>
+      <text>持续时间</text>
+    </view>
+    <view class="player-result_statistics_item">
+      <text>{{matchDetail.rank_name}}</text>
+      <text>级别</text>
+    </view>
+  </view>
+</view>
+<view class="player-result-heroes" wx:if="{{radiantHeroList.length > 0}}">
+  <match-heroes uid="{{uid}}" heroesList="{{radiantHeroList}}" isWin="{{matchDetail.radiant_score>matchDetail.dire_score}}" campText="{{matchDetail.radiant_score>matchDetail.dire_score?'天辉胜利':'天辉失败'}}" totalGold="{{matchDetail.radiant_total_gold}}" totalKill="{{matchDetail.radiant_score}}"></match-heroes>
+  <match-heroes uid="{{uid}}" heroesList="{{direHeroList}}" isWin="{{matchDetail.dire_score>matchDetail.radiant_score}}" campText="{{matchDetail.dire_score>matchDetail.radiant_score?'夜魇胜利':'夜魇失败'}}" totalGold="{{matchDetail.dire_total_gold}}" totalKill="{{matchDetail.dire_score}}"></match-heroes>
+</view>
+<van-loading custom-class="loading" wx:else />

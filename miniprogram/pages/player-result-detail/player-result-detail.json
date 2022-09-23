@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-loading": "@vant/weapp/loading/index",
+    "van-image": "@vant/weapp/image/index",
+    "match-heroes": "../../components/match-detail/match-heroes/match-heroes"
+  }
+}

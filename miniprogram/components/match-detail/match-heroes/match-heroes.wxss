@@ -152,6 +152,17 @@
 .player_name_text {
   font-size: 12px;
   color: #464646;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 65px);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.player_name_item_text {
+  font-size: 12px;
+  color: #464646;
 }
 
 .custom_item_image {
@@ -184,6 +195,10 @@
   font-size: 12px;
 }
 
+.current-player {
+  color:#1989fa;
+}
+
 .svg-image {
   width: 18px;
   height: 18px;
@@ -203,6 +218,7 @@
 }
 
 .honor {
+  display: inline-block;
   padding: 3px 8px;
   color: #ecb851;
   font-size: 12px;
@@ -210,6 +226,8 @@
   background: #fcf1df;
   margin-left: 10px;
   border-radius: 3px;
+  max-width: 65px;
+  vertical-align: middle;
 }
 
 .mvp {

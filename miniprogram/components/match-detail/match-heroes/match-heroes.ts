@@ -10,10 +10,11 @@ Component({
     isWin: Boolean,
     totalKill: Number,
     totalGold: String,
-    campText: String
+    campText: String,
+    uid: String,
   },
   observers: {
-    heroesList: function (newValue, oldValue) { 
+    heroesList: function (newValue) { 
       this.setData({ dataList: newValue });
     }
   },

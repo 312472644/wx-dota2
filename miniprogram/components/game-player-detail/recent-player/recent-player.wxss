@@ -1,1 +1,12 @@
 /* components/game-player-detail/recent-player/recent-player.wxss */
+@import "../../../app.wxss";
+
+.table-body-item .custom-class {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.loading {
+  width: 100%;
+  padding: 10px 0;
+}

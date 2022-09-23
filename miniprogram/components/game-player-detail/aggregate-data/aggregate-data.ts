@@ -1,6 +1,6 @@
-import { IResult } from "miniprogram/interface";
+import { IEvent, IResult } from "miniprogram/interface";
 import { GameModeMap } from "../../../map/index";
-import { dotaMindRequest, formatDateTime, getStorageHeroById, isRadiant } from "../../../utils/index";
+import { axios, dotaMindRequest, formatDateTime, getStorageHeroById, isRadiant } from "../../../utils/index";
 
 // components/game-player-detail/aggregate-data/aggregate-data.ts
 Component({
@@ -9,7 +9,8 @@ Component({
    */
   properties: {
     steamId: Number,
-    leaderboardRank: Number
+    leaderboardRank: Number,
+    gamePlayerInfo: Object
   },
 
   /**
@@ -61,9 +62,9 @@ Component({
         this.setData({ totalList })
       })
     },
-    getMatches() { 
+    getMatches() {
       dotaMindRequest(`/players/${this.properties.steamId}/matches?offset=0&limit=20&significant=0&`).then((res: IResult<any>) => {
-        const matchList = res.data.map((item: any) => { 
+        const matchList = res.data.map((item: any) => {
           return {
             ...item,
             win: isRadiant(item.player_slot) ? item.radiant_win : !item.radiant_win,
@@ -82,7 +83,7 @@ Component({
     },
     getHeroList() {
       dotaMindRequest(`/players/${this.properties.steamId}/heroes?hero_limit=3`).then((res: IResult<any>) => {
-        const heroList = res.data.map((item:any) => {
+        const heroList = res.data.map((item: any) => {
           return {
             ...item,
             winRate: ((item.win / item.games) * 100).toFixed(1).concat('%'),
@@ -91,9 +92,44 @@ Component({
         });
         this.setData({ heroList });
       })
-     },
+    },
     showMore() {
       this.setData({ showFlag: !this.data.showFlag });
+    },
+    toAllMatch() {
+      wx.showToast({
+        title: '该功能还在开发中'
+      });
+      // wx.navigateTo({
+      //   url: "../../pages/player-all-match/player-all-match"
+      // });
+    },
+    toAllHeroes() {
+      wx.showToast({
+        title: '该功能还在开发中'
+      });
+      // wx.navigateTo({
+      //   url: "../../pages/player-all-heroes/player-all-heroes"
+      // });
+    },
+    toTeamDetail(event: IEvent) {
+      const team = event.currentTarget.dataset.team;
+      axios({
+        url: "https://appengine.wmpvp.com/dota/team/getTiRank?regionId=0"
+      }).then((res: IResult<any>) => {
+        const teamResult = res.data.result.find((item: any) => item.teamName === team.team_name);
+        const teamId = teamResult ? teamResult.teamId : team.team_id;
+        wx.navigateTo({
+          url: `../../pages/team-detail/team-detail?teamId=${teamId}`
+        });
+      })
+    },
+    toGamePlayerDetail(event: IEvent) {
+      const matchId = event.currentTarget.dataset.match.match_id;
+      const { avatarfull, account_id, name, steamid } = this.properties.gamePlayerInfo.profile;
+      wx.navigateTo({
+        url: `../../pages/player-result-detail/player-result-detail?matchId=${matchId}&steamId=${account_id}&nickUrl=${avatarfull}&nickName=${name}&uid=${steamid}`
+      });
     }
   }
 })

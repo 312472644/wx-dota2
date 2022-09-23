@@ -24,11 +24,6 @@ Component({
     ],
     performanceList: [],
   },
-  lifetimes: {
-    ready() {
-      this.getPerformance();
-    }
-  },
   /**
    * 组件的方法列表
    */

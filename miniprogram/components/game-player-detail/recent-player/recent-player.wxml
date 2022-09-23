@@ -1,2 +1,23 @@
 <!--components/game-player-detail/recent-player/recent-player.wxml-->
-<text>components/game-player-detail/recent-player/recent-player.wxml</text>
+<view class="recent-player table">
+  <view class="table-header">
+    <view class="table-header-item" style="width:110px">玩家</view>
+    <view class="table-header-item" style="width:calc(100% - 290px);text-align: left;">胜率</view>
+    <view class="table-header-item" style="width:50px">场次</view>
+    <view class="table-header-item" style="width:130px">上次游戏时间</view>
+  </view>
+  <view class="table-body" wx:if="{{peerList.length > 0}}">
+    <view class="table-tr" wx:for="{{peerList}}" data-player="{{item}}" bindtap="toPlayerDetail">
+      <view class="table-body-item" style="width:100px;line-height: 40px;text-align: left;">
+        <van-image radius="3" width="30" height="30" custom-class="custom-class" src="https://images.weserv.nl/?url={{item.avatarfull}}"></van-image>
+        <text>{{item.personaname}}</text>
+      </view>
+      <view class="table-body-item" style="width:calc(100% - 290px);line-height: normal;text-align: left;padding-top: 7px;">
+        <progress-bar text="{{item.winRate}}" percentage="{{item.winRate}}"></progress-bar>
+      </view>
+      <view class="table-body-item" style="width:50px;line-height: 40px;">{{item.with_games}}</view>
+      <view class="table-body-item" style="width:130px;line-height: 40px;">{{item.lastPlayed}}</view>
+    </view>
+  </view>
+  <van-loading custom-class="loading" wx:else />
+</view>

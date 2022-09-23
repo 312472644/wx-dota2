@@ -1,0 +1,54 @@
+/* pages/player-result-detail/player-result-detail.wxss */
+.player-result-detail-base {
+  padding: 10px;
+  background: linear-gradient(45deg, #24292e, #71787f);
+}
+
+.player-result_avatar {
+  display: flex;
+}
+
+.player_avatar_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.player_avatar_info text {
+  color: #fff;
+  font-size: 12px;
+}
+
+.player_avatar_info text:first-of-type {
+  padding-bottom: 5px;
+}
+
+.player-result_statistics {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-result_statistics_item {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-result_statistics_item text:first-of-type {
+  color: #ecebea;
+  font-size: 12px;
+}
+
+.player-result_statistics_item text:nth-of-type(2) {
+  color: #bebebe;
+  font-size: 11px;
+  padding-top: 5px;
+}
+
+.loading {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}

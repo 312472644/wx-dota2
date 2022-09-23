@@ -10,14 +10,14 @@
     </view>
   </view>
 </view>
-<van-tabs active="{{ activeTab }}" sticky bind:change="onChange" color="#000000" title-inactive-color="#787d7e" >
+<van-tabs active="{{ activeTab }}" sticky bind:change="onChange" color="#000000" title-inactive-color="#787d7e">
   <van-tab title="综合数据" name="aggregate-data">
-    <aggregate-data steamId="{{steamId}}" leaderboardRank="{{gamePlayerInfo.leaderboard_rank}}"></aggregate-data>
+    <aggregate-data steamId="{{steamId}}" leaderboardRank="{{gamePlayerInfo.leaderboard_rank}}" gamePlayerInfo="{{gamePlayerInfo}}"></aggregate-data>
   </van-tab>
   <van-tab title="近期表现" name="recent-performance">
-    <recent-performance></recent-performance>
+    <recent-performance id="recent-performance"></recent-performance>
   </van-tab>
   <van-tab title="最近玩家" name="recent-player">
-    <recent-player></recent-player>
+    <recent-player id="recent-player" steamId="{{steamId}}"></recent-player>
   </van-tab>
 </van-tabs>

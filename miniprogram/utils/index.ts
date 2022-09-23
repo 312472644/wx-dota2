@@ -96,7 +96,7 @@ const getDotaMaxQueryParam = () => {
   };
 };
 
-const formatMillimeter = (value: string) => {
+const formatMillimeter = (value: string = '0') => {
   return value.toString().replace(/\d(?=(\d{3})+$)/g, "$&,");
 };
 

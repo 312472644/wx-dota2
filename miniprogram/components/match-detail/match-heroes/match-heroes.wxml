@@ -21,7 +21,7 @@
         </view>
         <view class="player_box">
           <view class="player_name">
-            <text class="player_name_text">{{item.nickname}}</text>
+            <text class="player_name_text {{item.steam_id64 === uid?'current-player':''}}">{{item.nickname}}</text>
             <text wx:if="{{item.honor}}" class="honor">荣誉提名</text>
             <text wx:if="{{item.mvp}}" class="honor mvp">MVP</text>
           </view>
@@ -41,11 +41,11 @@
             </view>
             <view class="player_money">
               <image src="../../../assets/common/money_bag_silver.svg" class="svg-image"></image>
-              <text class="player_name_text">{{item.gold}}</text>
+              <text class="player_name_item_text">{{item.gold}}</text>
             </view>
             <view class="player_damage">
               <image src="../../../assets/common/sword-line.svg" class="svg-image"></image>
-              <text class="player_name_text">{{item.hero_damage}}</text>
+              <text class="player_name_item_text">{{item.hero_damage}}</text>
             </view>
           </view>
         </view>
