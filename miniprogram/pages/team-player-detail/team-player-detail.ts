@@ -54,10 +54,10 @@ Page({
       url: `https://appactivity.wmpvp.com/steamcn/app/dota/event/new/playerMaterial?namiId=${playerId}`
     }).then((res: IResult<any>) => {
       const playerInfo = res.data.result;
-      const recentHonor = playerInfo.dotaHonorLists[0];
+      const recentHonor = playerInfo.dotaHonorLists.filter((item: any) => item.ranking <= 3)[0];
       if (recentHonor) {
-        const recentHonorInfo = this.formatHonor(recentHonor.ranking);
-        playerInfo.recentHonor = `${recentHonor.eventNameZH} ${recentHonorInfo.honorText}`
+        const recentHonorInfo = this.formatHonor(recentHonor.ranking) || {};
+        playerInfo.recentHonor = `${recentHonor.eventNameZH} ${recentHonorInfo.honorText}` || '';
       }
       playerInfo.dotaHonorLists = playerInfo.dotaHonorLists.map((item: any) => {
         const result = this.formatHonor(item.ranking);
@@ -67,11 +67,12 @@ Page({
           honorText: result?.honorText
         };
       }).filter((item: any) => item.ranking <= 3);
+      playerInfo.dotaHonorLists.sort((a: any, b: any) => parseInt(a.ranking) - parseInt(b.ranking));
       playerInfo.transferList = playerInfo.transferList.map((item: any) => {
         return {
           ...item,
-          startTime: item.startTime ? formatDateTime(item.startTime) : '-',
-          endTime: item.endTime ? formatDateTime(item.endTime) : '-',
+          startTime: item.startTime > 0 ? formatDateTime(item.startTime) : '-',
+          endTime: item.endTime > 0 ? formatDateTime(item.endTime) : '-',
         };
       })
       this.setData({ playerInfo: res.data.result })

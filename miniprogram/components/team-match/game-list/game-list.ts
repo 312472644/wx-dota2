@@ -190,6 +190,10 @@ Component({
     },
     toMatchDetail(event: IEvent) {
       const team = event.currentTarget.dataset.team;
+      if(team.matchStatus === 2) {
+        wx.showToast({ title: '该比赛还在进行中', icon: 'none' });
+        return;
+      }
       wx.navigateTo({
         url: `../../pages/match-detail/match-detail?eventId=${team.eventId}&matchId=${team.matchId}`, 
       });

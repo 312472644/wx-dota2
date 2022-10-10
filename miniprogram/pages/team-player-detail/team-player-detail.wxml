@@ -50,7 +50,7 @@
       <view class="table-body">
         <view class="table-tr" wx:for="{{playerInfo.transferList}}">
           <view class="table-body-item" style="width: 50%;">
-            <view wx:if="{{item.startTime !== '-'}}">
+            <view>
               <text>{{item.startTime}}</text>
               <text> 至 </text>
               <text>{{item.endTime}}</text>

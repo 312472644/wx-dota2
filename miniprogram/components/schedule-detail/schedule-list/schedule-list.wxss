@@ -40,7 +40,7 @@
 }
 
 .schedule-list-box {
-  padding: 20px;
+  padding: 10px 0 20px 20px;
 }
 
 .schedule-item-box {
