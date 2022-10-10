@@ -8,7 +8,7 @@
   background: #fff;
   border-radius: 3px;
   padding: 10px;
-  box-shadow: 1px 1px 8px #ccc;
+  box-shadow: 1px 1px 8px #999;
   margin-bottom: 10px;
 }
 
@@ -86,13 +86,17 @@
   position: relative;
 }
 
-.body .image-item:last-of-type .image-item_time,
+.body .image-item:last-of-type .image-item_time {
+  right: 0;
+}
+
 .body .image-item:last-of-type {
   padding-right: 0;
 }
 
 .image-item_class {
   width: 100%;
+  background: #333;
 }
 
 .image-item_time {
@@ -136,10 +140,16 @@
   color: #fff;
   right: 5px;
   bottom: 5px;
-  padding: 3px;
+  width: 16px;
+  padding: 2px;
+  text-align: center;
   font-size: 11px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   background: #8ab559;
+}
+
+.body .skill-image-item:nth-of-type(9n) .skill-level {
+  right: 0;
 }
