@@ -1,0 +1,56 @@
+<!--pages/hero-strategy/hero-strategy.wxml-->
+<view class="strategy-box">
+  <view class="strategy-item" wx:for="{{strategyList}}">
+    <view class="strategy-item_base">
+      <view class="strategy-item_base_left">
+        <van-image radius="3" width="40" height="40" custom-class="strategy-item_image-class" src="https://images.weserv.nl/?url={{item.avatar}}"></van-image>
+        <text class="strategy-item_nickName">{{item.nickName}}</text>
+      </view>
+      <view class="strategy-item_base_right">
+        <view class="strategy-item_base_item">{{item.role}}</view>
+        <view class="strategy-item_base_item">{{item.avgRank}} MMR</view>
+        <view class="strategy-item_base_item">{{item.state}}</view>
+      </view>
+    </view>
+    <view class="strategy-item-info">
+      <view class="strategy-item-info_item">
+        <view>KDA</view>
+        <view class="strategy-item-info_value">{{item.kill}}/{{item.death}}/{{item.assist}}</view>
+      </view>
+      <view class="strategy-item-info_item">
+        <view>GPM</view>
+        <view class="strategy-item-info_value">{{item.gpm}}</view>
+      </view>
+      <view class="strategy-item-info_item">
+        <view>XPM</view>
+        <view class="strategy-item-info_value">{{item.xpm}}</view>
+      </view>
+    </view>
+    <view class="strategy-init-equipment">
+      <view class="title">出门装</view>
+      <view class="body">
+        <view class="image-item" wx:for="{{item.firstInventory}}" wx:for-item="firstInventory">
+          <van-image radius="3" custom-class="image-item_class" height="40" src="https://images.weserv.nl/?url={{firstInventory.img}}"></van-image>
+        </view>
+      </view>
+    </view>
+    <view class="strategy-equipment">
+      <view class="title">出装</view>
+      <view class="body">
+        <view class="image-item" wx:for="{{item.lastInventory}}" wx:for-item="lastInventory">
+          <van-image radius="3" custom-class="image-item_class" height="40" src="https://images.weserv.nl/?url={{lastInventory.img}}"></van-image>
+          <view class="image-item_time">{{lastInventory.time}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="strategy-skill">
+      <view class="title">技能加点</view>
+      <view class="body">
+        <view class="skill-image-item" wx:for="{{item.abilityList}}" wx:for-item="ability">
+          <van-image radius="3" custom-class="image-item_class" height="30" src="https://images.weserv.nl/?url={{ability.ability_img}}"></van-image>
+          <view class="skill-level">{{ability.level}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

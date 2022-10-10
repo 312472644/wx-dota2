@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/dota-dictionary/dota-dictionary",
+    "pages/hero-strategy/hero-strategy",
     "pages/dota-rank/dota-rank",
     "pages/game-player-detail/game-player-detail",
     "pages/player-result-detail/player-result-detail",

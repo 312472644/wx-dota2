@@ -87,12 +87,12 @@
   <view class="aggregate-data-card">
     <view class="title">
       <text>比赛记录</text>
-      <text class="link" bindtap="toAllMatch">查看全部</text>
+      <!-- <text class="link" bindtap="toAllMatch">查看全部</text> -->
     </view>
     <view class="content" wx:if="{{matchList.length > 0}}">
       <view class="match-row" data-match="{{item}}" bindtap="toGamePlayerDetail" wx:for="{{matchList}}">
         <view class="match-row_left">
-          <van-image width="50" height="40" radius="3" src="https://images.weserv.nl/?url={{item.heroInfo.index_img}}"></van-image>
+          <van-image width="50" height="40" custom-class="match-row_left_img" radius="3" src="https://images.weserv.nl/?url={{item.heroInfo.index_img}}"></van-image>
           <view class="result-status {{item.win?'win':'lose'}}">{{item.win?'胜':'负'}}</view>
         </view>
         <view class="match-row_center">
@@ -107,7 +107,7 @@
   <view class="aggregate-data-card">
     <view class="title">
       <text>常用英雄</text>
-      <text class="link" bindtap="toAllHeroes">查看全部</text>
+      <!-- <text class="link" bindtap="toAllHeroes">查看全部</text> -->
     </view>
     <view wx:if="{{heroList.length > 0}}" class="content" style="box-shadow: none;padding: 0;">
       <view class="aggregate-data-hero">
@@ -128,11 +128,11 @@
     </view>
     <van-loading custom-class="loading" wx:else />
   </view>
-  <view class="aggregate-data-card">
+  <view class="aggregate-data-card" wx:if="{{gamePlayerInfo.pro}}">
     <view class="title">
       <text>所属战队</text>
     </view>
-    <view class="content player-team" wx:if="{{gamePlayerInfo.pro}}">
+    <view class="content player-team">
       <view>
         <van-image width="40" height="40" custom-class="player-team_image" src="https://images.weserv.nl/?url={{gamePlayerInfo.pro.team_logo_url}}"></van-image>
         <text class="player-team_text">{{gamePlayerInfo.pro.team_name}}</text>

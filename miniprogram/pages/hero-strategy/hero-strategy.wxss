@@ -1,0 +1,145 @@
+/* pages/hero-strategy/hero-strategy.wxss */
+.strategy-box {
+  background: #f1f1f1;
+  padding: 10px;
+}
+
+.strategy-item {
+  background: #fff;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: 1px 1px 8px #ccc;
+  margin-bottom: 10px;
+}
+
+.strategy-item_base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.strategy-item_nickName {
+  display: inline-block;
+  color: #666;
+  font-size: 12px;
+  padding-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200rpx;
+  vertical-align: middle;
+}
+
+.strategy-item_image-class {
+  vertical-align: middle;
+}
+
+.strategy-item_base_right {
+  display: flex;
+}
+
+.strategy-item_base_item {
+  color: #666;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.strategy-item_base_item+.strategy-item_base_item {
+  padding-left: 10px;
+}
+
+.strategy-item-info {
+  display: flex;
+  margin-top: 15px;
+}
+
+.strategy-item-info_item {
+  color: #999;
+  font-size: 12px;
+  flex: 1;
+}
+
+.strategy-item-info_value {
+  color: #333;
+  padding-top: 5px;
+}
+
+.strategy-init-equipment {
+  margin-top: 10px;
+}
+
+.strategy-box .title {
+  color: #333;
+  font-size: 12px;
+}
+
+.strategy-box .body {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10px 0;
+}
+
+.body .image-item {
+  width: calc((100% - 50px) / 6);
+  font-size: 0;
+  padding-right: 10px;
+  position: relative;
+}
+
+.body .image-item:last-of-type .image-item_time,
+.body .image-item:last-of-type {
+  padding-right: 0;
+}
+
+.image-item_class {
+  width: 100%;
+}
+
+.image-item_time {
+  position: absolute;
+  color: #fff;
+  right: 10px;
+  bottom: 0;
+  padding: 3px;
+  font-size: 11px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.body .image-item_time:last-of-type .image-item_time {
+  right: 0;
+}
+
+.strategy-skill .body {
+  flex-wrap: wrap;
+}
+
+.skill-image-item {
+  position: relative;
+}
+
+.body .skill-image-item {
+  width: calc((100% - 40px) / 9);
+  font-size: 0;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
+
+.body .skill-image-item:nth-of-type(9n) {
+  padding-right: 0;
+}
+
+.skill-level {
+  position: absolute;
+  color: #fff;
+  right: 5px;
+  bottom: 5px;
+  padding: 3px;
+  font-size: 11px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background: #8ab559;
+}

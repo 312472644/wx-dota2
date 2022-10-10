@@ -11,3 +11,4 @@
     bindperview="perviewHero"
     ></hero-preview>
 </view>
+<view class="hero-strategy" bindtap="toHeroStrategy">英雄攻略</view>

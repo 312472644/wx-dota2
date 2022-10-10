@@ -78,12 +78,18 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ebebeb;
-  padding-bottom: 5px;
+  padding: 5px 0;
+}
+
+.match-row:last-of-type {
+  border-bottom: none;
 }
 
 .match-row_left {
   display: flex;
   align-items: center;
+  height: 50px;
+  font-size: 0;
 }
 
 .result-status {
@@ -106,11 +112,18 @@
 .match-row_center {
   font-size: 12px;
   text-align: left;
+  flex: 1;
+  padding-left: 20px;
 }
 
 .match-row_right {
   color: #1f1f1f;
   font-size: 12px;
+  flex: 1;
+}
+
+.match-row_left_img {
+  font-size: 0;
 }
 
 .match-row_center {

@@ -1,5 +1,17 @@
 /* pages/hero-detail/hero-detail.wxss */
 .hero-detail-container {
-    background: #f4f4f4;
-    min-height: 100vh;
+  background: #f4f4f4;
+  min-height: 100vh;
+}
+
+.hero-strategy {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  font-size: 12px;
+  color: #fff;
+  padding: 10px 10px 10px 12px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background: linear-gradient(to right, #333, #666);
 }
