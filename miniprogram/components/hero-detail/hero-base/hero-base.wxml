@@ -19,5 +19,5 @@
             <view class="attr">{{heroComplexity}}</view>
         </view>
     </view>
-    <van-dialog show="{{dialogVisible}}" message="{{message}}" title="标题" show-cancel-button></van-dialog>
+    <van-dialog show="{{dialogVisible}}" custom-style="background: #252525;color: #f1f1f1;" close-on-click-overlay message-align="left" message="{{message}}" title="背景故事" show-confirm-button="{{false}}"></van-dialog>
 </view>

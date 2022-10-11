@@ -55,7 +55,7 @@ Component({
             const { heroes } = this.properties;
             this.setData({
                 dialogVisible: true,
-                message: heroes.bio_loc.replaceAll('<br>', '')
+                message: heroes.bio_loc.replaceAll('<br>', '\n')
             })
         }
     }

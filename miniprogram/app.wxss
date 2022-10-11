@@ -159,3 +159,8 @@ page {
 .van-dropdown-menu__item {
   justify-content: flex-start !important;
 }
+
+.van-dialog__message-text {
+  color: #c0c0c0;
+  font-size: 12px;
+}

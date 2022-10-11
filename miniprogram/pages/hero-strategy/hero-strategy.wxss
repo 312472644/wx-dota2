@@ -2,6 +2,7 @@
 .strategy-box {
   background: #f1f1f1;
   padding: 10px;
+  min-height: 100vh;
 }
 
 .strategy-item {
