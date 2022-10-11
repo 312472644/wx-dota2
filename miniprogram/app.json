@@ -30,7 +30,7 @@
         "pagePath": "pages/team-match/team-match",
         "iconPath": "./assets/icon/team.png",
         "selectedIconPath": "./assets/icon/team_active.png",
-        "text": "赛事信息"
+        "text": "赛事"
       },
       {
         "pagePath": "pages/dota-rank/dota-rank",

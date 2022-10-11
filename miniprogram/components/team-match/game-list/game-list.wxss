@@ -62,13 +62,12 @@
 .game-score {
   font-weight: bold;
   font-size: 13px;
-  margin-top: 10px;
 }
 
 .game-status {
   display: flex;
   align-items: center;
-  font-size: 13px;
+  font-size: 12px;
   color: #999;
 }
 
@@ -189,4 +188,9 @@
 
 .custom-image {
   padding-top: 5px;
+}
+
+.game-match-time {
+  color: #999;
+  font-size: 12px;
 }

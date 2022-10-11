@@ -1,6 +1,6 @@
 // components/game-list/game-list.ts
 import { IEvent, IResult } from "../../../interface";
-import { axios, formatDateTime } from "../../../utils/index";
+import { axios, formatDateTime, transFormMS } from "../../../utils/index";
 
 Component({
   /**
@@ -46,11 +46,28 @@ Component({
       const eventId = event.detail;
       this.setData({ eventId });
     },
+    getWeek(date: string) {
+      const day = new Date(date).getDay();
+      const mapDay: any = {
+        0: '周日',
+        1: '周一',
+        2: '周二',
+        3: '周三',
+        4: '周四',
+        5: '周五',
+        6: '周六',
+      };
+      return mapDay[day];
+    },
     formatDate(dateStr: number) {
       const date = formatDateTime(dateStr, true);
+      const dateList = date.split(" ");
+      const mins = dateList?.[1].split(":");
+      mins.pop();
       return {
-        date: date.split(" ")?.[0],
-        mins: date.split(" ")?.[1],
+        week: this.getWeek(date),
+        date: `${dateList?.[0]}`,
+        mins: mins.join(":")
       };
     },
     formatStatus(status: number) {
@@ -127,7 +144,7 @@ Component({
         const result = list.find(
           (subItem) => subItem.matchDate === item.matchDate
         );
-        const { eventId, eventLogo, eventName, matchDate } = item;
+        const { eventId, eventLogo, eventName, matchDate,week } = item;
         if (!result) {
           list.push({
             anchor: `macth_${item.matchDate}`,
@@ -135,6 +152,7 @@ Component({
             eventLogo,
             eventName,
             matchDate,
+            week,
             children: [item],
           });
         } else {
@@ -164,7 +182,8 @@ Component({
             };
           });
           const gameList = matchDTOList.map((item: any) => {
-            const { date, mins } = this.formatDate(item.matchTime);
+            const { date, mins, week } = this.formatDate(item.matchTime);
+            console.log(week);
             return {
               ...item,
               matchStartTime: mins,
@@ -174,6 +193,8 @@ Component({
               eventName,
               showHeros: false,
               heroList: [],
+              week: week,
+              matchTime: transFormMS(item.matchTime),
               statusText: this.formatStatus(item.matchStatus),
             };
           });
@@ -190,12 +211,12 @@ Component({
     },
     toMatchDetail(event: IEvent) {
       const team = event.currentTarget.dataset.team;
-      if(team.matchStatus === 2) {
-        wx.showToast({ title: '该比赛还在进行中', icon: 'none' });
+      if (team.matchStatus !== 3) {
+        wx.showToast({ title: '比赛还在进行中或未开始', icon: 'none' });
         return;
       }
       wx.navigateTo({
-        url: `../../pages/match-detail/match-detail?eventId=${team.eventId}&matchId=${team.matchId}`, 
+        url: `../../pages/match-detail/match-detail?eventId=${team.eventId}&matchId=${team.matchId}`,
       });
     },
   },

@@ -11,9 +11,9 @@ interface IData {
   attrValue: string;
   complexValue: string;
   heroName: string;
-  isFirstLoad: boolean;
   scrollTop: number;
   isShowTop: boolean;
+  loading: boolean;
 }
 
 // components/hero-list/hero-list.ts
@@ -33,6 +33,7 @@ Component<IData, any, any>({
    */
   data: {
     _initHeroList: [], // 初始化列表,
+    loading: false,
     attrList: [
       { label: "全部属性", value: PropEnum.All },
       { label: "力量", value: HeroTypeEnum.Power },
@@ -49,7 +50,6 @@ Component<IData, any, any>({
     complexValue: PropEnum.All, // 难度值
     heroName: '', // 英雄名称
     heroList: [], // 查询列表
-    isFirstLoad: false, // 是否第一次加载
     scrollTop: 0, // 滚动距离
     isShowTop: false, // 是否现实滚动顶部按钮
   },
@@ -68,7 +68,11 @@ Component<IData, any, any>({
       this.filterHeroList(heroName, attrValue, complexValue);
     },
     searchEvent(event: IEvent) {
-      this.setValue('heroName', event.detail);
+      this.setData({ loading: true });
+      setTimeout(() => { 
+        this.setValue('heroName', event.detail);
+        this.setData({ loading: false });
+      }, 1000) 
     },
     selectAttrChange(event: IEvent) {
       this.setValue('attrValue', event.detail.value);
@@ -91,7 +95,6 @@ Component<IData, any, any>({
       if (complexValue !== PropEnum.All) {
         heroList = heroList.filter((item) => item.complexity.toString() == complexValue);
       }
-      console.log('heroList', heroList);
       this.setData({
         heroList: this.getCategoryHero([...heroList]) as any
       });
@@ -113,17 +116,15 @@ Component<IData, any, any>({
     },
     // 获取英雄列表
     getHeroList() {
+      this.setData({ loading: true });
       axios({
         url: "https://www.dota2.com.cn/datafeed/heroList?task=herolist",
         method: "GET",
-        complete: () => {
-          this.setData({ isFirstLoad: true });
-          wx.hideLoading();
-        },
       }).then((res: IResult<IHeroResult>) => {
         const heroList = res.data?.result?.heroes || [];
         wx.setStorageSync('heroList', JSON.stringify(heroList));
         this.setData({
+          loading: false,
           heroList: this.getCategoryHero(heroList),
           _initHeroList: heroList
         });

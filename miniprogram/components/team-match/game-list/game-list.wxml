@@ -3,7 +3,7 @@
   <view class="game-list-box">
     <view wx:for="{{gameList}}" class="game-list-item" id="{{item.anchor}}">
       <view class="game-header">
-        <text class="game-date">{{item.matchDate}}</text>
+        <text class="game-date">{{item.matchDate}} {{item.week}}</text>
       </view>
       <view class="game-body">
         <view class="game-name">
@@ -22,6 +22,7 @@
                   <text class="game-name-text">{{subItem.homeName}}</text>
                 </view>
                 <view class="game-team-middle">
+                  <view class="game-match-time">{{subItem.matchStartTime}}</view>
                   <view class="game-score">{{subItem.homeScore}} - {{subItem.awayScore}}</view>
                   <view class="game-status" data-team="{{subItem}}" catchtap="getMatchHeroes">
                     <text>{{subItem.statusText}}</text>

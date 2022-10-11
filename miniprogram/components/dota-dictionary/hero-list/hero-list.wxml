@@ -1,14 +1,14 @@
 <!--pages/hero/hero.wxml-->
 <view class="hero-container">
   <!--查询条件-->
-  <van-search placeholder="请输入英雄名称" shape="round" bind:change="searchEvent" />
+  <van-search placeholder="请输入英雄名称" shape="round" bind:search="searchEvent" />
   <!--英雄列表-->
   <scroll-view bindscroll="bindscrollEvent" scroll-y="true" scroll-top="{{scrollTop}}" class="scroll-view" id="scroll-view" scroll-with-animation="true">
     <view class="hero-attr-condition">
       <select-text dataList="{{attrList}}" bindchange="selectAttrChange"></select-text>
       <select-text dataList="{{complexList}}" bindchange="selectComplexChange"></select-text>
     </view>
-    <view class="hero-list" wx:if="{{heroList.length > 0}}" id="hero-list">
+    <view class="hero-list" wx:if="{{!loading}}" id="hero-list">
       <view wx:for="{{heroList}}" wx:key="index" style="width:100%">
         <view class="hero-category" wx:if="{{item.list.length > 0}}">{{item.name}}</view>
         <view class="hero-category-container">

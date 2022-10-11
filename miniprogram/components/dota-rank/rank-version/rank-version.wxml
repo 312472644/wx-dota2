@@ -15,7 +15,7 @@
     <view class="table-header-item fixed-width">场次</view>
   </view>
   <scroll-view class="table-body" scroll-y="true" style="height: calc(100vh - 124px);">
-    <view class="table-tr" wx:for="{{rankVersionList}}">
+    <view class="table-tr" wx:for="{{rankVersionList}}" data-hero="{{item}}" bindtap="toHeroDetail">
       <view class="table-body-item dy-width" style="text-align: left;">
         <van-image radius="3" width="30" custom-class="custom-class" height="30" lazy-load src="https://images.weserv.nl/?url={{item.hero_img}}"></van-image>
         <text class="hero-name">{{item.hero_name}}</text>

@@ -75,6 +75,12 @@ Component({
         });
         this.setData({ rankVersionList });
       })
-    }
+    },
+    toHeroDetail(event: IEvent) {
+      const hero = event.currentTarget.dataset.hero;
+      wx.navigateTo({
+        url: `../hero-detail/hero-detail?id=${hero.hero_id}&name=${hero.hero_name}`
+      });
+     }
   }
 })
