@@ -1,4 +1,4 @@
-import { IEvent, IResult } from "miniprogram/interface";
+import { IEvent, IResult } from "../../../interface/index";
 import { GameModeMap } from "../../../map/index";
 import { axios, dotaMindRequest, formatDateTime, getStorageHeroById, isRadiant } from "../../../utils/index";
 

@@ -1,4 +1,4 @@
-import { ICustom, IResult } from "miniprogram/interface";
+import { ICustom, IResult } from "../../interface/index";
 import { getTagByClassRegex } from '../../utils/index';
 import { axios } from '../../utils/index';
 

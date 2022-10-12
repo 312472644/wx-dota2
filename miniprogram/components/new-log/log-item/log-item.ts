@@ -1,4 +1,4 @@
-import { IEvent } from "miniprogram/interface";
+import { IEvent } from "../../../interface/index";
 
 // components/log-item/log-item.ts
 Component({

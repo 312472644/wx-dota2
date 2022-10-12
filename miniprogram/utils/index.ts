@@ -1,4 +1,4 @@
-import { IAxiosOption, IResult } from "miniprogram/interface";
+import { IAxiosOption, IResult } from "../interface/index";
 import { IHeroResult } from "../interface/IPage";
 
 /***

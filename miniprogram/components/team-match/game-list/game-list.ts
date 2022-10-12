@@ -1,5 +1,5 @@
 // components/game-list/game-list.ts
-import { IEvent, IResult } from "../../../interface";
+import { IEvent, IResult } from "../../../interface/index";
 import { axios, formatDateTime, transFormMS } from "../../../utils/index";
 
 Component({

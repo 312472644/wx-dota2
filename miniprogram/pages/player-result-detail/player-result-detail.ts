@@ -1,4 +1,4 @@
-import { IResult } from "miniprogram/interface";
+import { IResult } from "../../interface/index";
 import { axios, formatMillimeter } from "../../utils/index";
 
 // pages/player-result-detail/player-result-detail.ts

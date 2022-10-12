@@ -1,4 +1,4 @@
-import { IEvent, IResult } from "miniprogram/interface";
+import { IEvent, IResult } from "../../../interface/index";
 import { CampMap, GameModeMap, HeroTypeMap, LaneMap, RoleMap, SkillMap } from "../../../map/index";
 import { dotaMindRequest } from "../../../utils/index";
 

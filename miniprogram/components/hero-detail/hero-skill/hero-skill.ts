@@ -1,4 +1,4 @@
-import { IEvent, IOption } from "../../../interface";
+import { IEvent, IOption } from "../../../interface/index";
 
 // components/hero-skill/hero-skill.ts
 Component({

@@ -1,4 +1,4 @@
-import { IEvent, IResult } from "../../../interface";
+import { IEvent, IResult } from "../../../interface/index";
 import { ITeam } from "../../../interface/IPage";
 import { axios } from "../../../utils/index";
 

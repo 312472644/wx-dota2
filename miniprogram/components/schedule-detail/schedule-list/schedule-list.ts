@@ -1,4 +1,4 @@
-import { IEvent } from "miniprogram/interface";
+import { IEvent } from "../../../interface/index";
 
 // components/schedule-detail/schedule-list/schedule-list.ts
 Component({

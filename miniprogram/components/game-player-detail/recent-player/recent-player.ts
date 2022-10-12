@@ -1,4 +1,4 @@
-import { IEvent, IResult } from "miniprogram/interface"
+import { IEvent, IResult } from "../../../interface/index"
 import { dotaMindRequest, formatDateTime } from "../../../utils/index"
 
 // components/game-player-detail/recent-player/recent-player.ts

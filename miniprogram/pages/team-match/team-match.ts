@@ -1,4 +1,4 @@
-import { IEvent } from "miniprogram/interface";
+import { IEvent } from "../../interface/index";
 import { tabRequest } from "../../utils/index";
 
 // pages/team-match.ts

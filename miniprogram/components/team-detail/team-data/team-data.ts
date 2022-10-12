@@ -1,4 +1,4 @@
-import { IResult } from "miniprogram/interface";
+import { IResult } from "../../../interface/index";
 import { axios, formatDateTime } from "../../../utils/index";
 
 // components/team-data/team-data.ts

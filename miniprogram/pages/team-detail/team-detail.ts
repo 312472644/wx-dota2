@@ -1,4 +1,4 @@
-import { IEvent, IResult } from "miniprogram/interface";
+import { IEvent, IResult } from "../../interface/index";
 import { scheduleMapStatus } from "../../map/index";
 import { axios, formatDateTime } from "../../utils/index";
 

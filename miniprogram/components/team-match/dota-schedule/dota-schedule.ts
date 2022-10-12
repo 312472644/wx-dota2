@@ -1,5 +1,5 @@
 // components/dota-schedule/dota-schedule.ts
-import { IEvent, IResult } from "../../../interface";
+import { IEvent, IResult } from "../../../interface/index";
 import { axios, formatDateTime } from "../../../utils/index";
 Component({
   /**

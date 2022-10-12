@@ -1,4 +1,4 @@
-import { IEvent, IResult } from "miniprogram/interface";
+import { IEvent, IResult } from "../../interface/index";
 import { axios, formatDateTime, formatMillimeter } from "../../utils/index";
 
 // pages/match-detail/match-detail.ts

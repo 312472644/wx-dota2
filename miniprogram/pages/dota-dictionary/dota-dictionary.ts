@@ -1,5 +1,5 @@
-import { IGoodCategoryList, IGoodDetail, IGoodResult, IGoodResultDetail } from "miniprogram/interface/IPage";
-import { ICustom, IEvent, IResult } from "../../interface";
+import { IGoodCategoryList, IGoodDetail, IGoodResult, IGoodResultDetail } from "../../interface/IPage";
+import { ICustom, IEvent, IResult } from "../../interface/index";
 import { axios } from '../../utils/index';
 
 interface IData {

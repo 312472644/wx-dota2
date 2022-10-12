@@ -1,4 +1,4 @@
-import { IEvent, IResult } from "miniprogram/interface";
+import { IEvent, IResult } from "../../../interface/index";
 import { axios } from "../../../utils/index";
 
 // components/schedule-detail/schedule-rank/schedule-rank.ts

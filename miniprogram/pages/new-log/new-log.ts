@@ -1,6 +1,5 @@
-import { ICustom, IEvent, IResult } from "../../interface";
-import { getTagByClassRegex } from '../../utils/index';
-import { axios } from '../../utils/index';
+import { ICustom, IEvent, IResult } from "../../interface/index";
+import { getTagByClassRegex, axios } from '../../utils/index';
 
 interface INews {
     title?: string;

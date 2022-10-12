@@ -1,4 +1,4 @@
-import { IEvent, IResult } from "miniprogram/interface";
+import { IEvent, IResult } from "../../interface/index";
 import { axios, getHandlerParam, tabRequest } from "../../utils/index";
 
 // pages/game-player-detail/game-player-detail.ts

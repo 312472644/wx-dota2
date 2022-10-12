@@ -1,4 +1,4 @@
-import { IResult } from "miniprogram/interface";
+import { IResult } from "../../interface/index";
 import { axios, transFormMS } from "../../utils/index";
 
 // pages/hero-strategy/hero-strategy.ts

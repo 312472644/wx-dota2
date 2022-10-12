@@ -1,5 +1,5 @@
-import { IEvent, IResult } from "miniprogram/interface";
-import { IRankResult } from "miniprogram/interface/IPage";
+import { IEvent, IResult } from "../../interface/index";
+import { IRankResult } from "../../interface/IPage";
 import { axios, getDotaMaxQueryParam, tabRequest } from "../../utils/index";
 
 // pages/rank/rank.ts

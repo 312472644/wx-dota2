@@ -1,6 +1,6 @@
-import { IHero, IHeroResult } from "miniprogram/interface/IPage";
+import { IHero, IHeroResult } from "../../../interface/IPage";
 import { HeroComplexEnum, HeroTypeEnum, PropEnum } from "../../../enum/index";
-import { IEvent, IOption, IResult } from "../../../interface";
+import { IEvent, IOption, IResult } from "../../../interface/index";
 import { axios } from '../../../utils/index';
 
 interface IData {

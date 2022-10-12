@@ -1,5 +1,5 @@
-import { IResult } from "miniprogram/interface";
-import { IMatch } from "miniprogram/interface/IPage";
+import { IResult } from "../../interface/index";
+import { IMatch } from "../../interface/IPage";
 import { axios, transFormMS } from "../../utils/index";
 
 // components/dota-team-match/dota-team-match.ts
