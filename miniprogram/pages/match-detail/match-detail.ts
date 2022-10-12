@@ -63,7 +63,7 @@ Page({
   formatDuration(duration: number) {
     const mins = parseInt((duration / 60).toString());
     const seconds = duration % 60;
-    return `${mins}：${seconds}`;
+    return `${mins} : ${seconds}`;
   },
   getItems(items: any = [],total = 6) { 
     const length = items.length;

@@ -24,11 +24,6 @@
   padding-right: 5px;
 }
 
-.table-body-item {
-  height: 50px;
-  line-height: 50px;
-}
-
 .team-tag-text {
   font-size: 12px;
   max-width: 100%;

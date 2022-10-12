@@ -97,20 +97,15 @@ Component({
       this.setData({ showFlag: !this.data.showFlag });
     },
     toAllMatch() {
-      wx.showToast({
-        title: '该功能还在开发中'
+      wx.navigateTo({
+        url: `../../pages/player-all-match/player-all-match?profile=${JSON.stringify(this.properties.gamePlayerInfo.profile)}`
       });
-      // wx.navigateTo({
-      //   url: "../../pages/player-all-match/player-all-match"
-      // });
     },
     toAllHeroes() {
-      wx.showToast({
-        title: '该功能还在开发中'
+      const { account_id } = this.properties.gamePlayerInfo.profile;
+      wx.navigateTo({
+        url: `../../pages/player-all-heroes/player-all-heroes?accountId=${account_id}`
       });
-      // wx.navigateTo({
-      //   url: "../../pages/player-all-heroes/player-all-heroes"
-      // });
     },
     toTeamDetail(event: IEvent) {
       const team = event.currentTarget.dataset.team;
@@ -126,9 +121,9 @@ Component({
     },
     toGamePlayerDetail(event: IEvent) {
       const matchId = event.currentTarget.dataset.match.match_id;
-      const { avatarfull, account_id, name, steamid } = this.properties.gamePlayerInfo.profile;
+      const { avatarfull, account_id, name, steamid, personaname } = this.properties.gamePlayerInfo.profile;
       wx.navigateTo({
-        url: `../../pages/player-result-detail/player-result-detail?matchId=${matchId}&steamId=${account_id}&nickUrl=${avatarfull}&nickName=${name}&uid=${steamid}`
+        url: `../../pages/player-result-detail/player-result-detail?matchId=${matchId}&steamId=${account_id}&nickUrl=${avatarfull}&nickName=${name || personaname}&uid=${steamid}`
       });
     }
   }

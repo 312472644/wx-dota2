@@ -33,7 +33,7 @@
             <view class="join-team-score">{{activeMatch.radiant_total_kill}}</view>
             <view class="join-team-time">
               <text>时长</text>
-              <text>{{activeMatch.duration}}</text>
+              <text style="line-height: 15px;">{{activeMatch.duration}}</text>
             </view>
             <view class="join-team-score">{{activeMatch.dire_total_kill}}</view>
           </view>

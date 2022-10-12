@@ -85,7 +85,7 @@
 }
 
 .body {
-  padding: 20px 15px;
+  padding: 10px 0;
 }
 
 .player-honor-item {

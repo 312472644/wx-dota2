@@ -87,7 +87,7 @@
   <view class="aggregate-data-card">
     <view class="title">
       <text>比赛记录</text>
-      <!-- <text class="link" bindtap="toAllMatch">查看全部</text> -->
+      <text class="link" bindtap="toAllMatch">查看全部</text>
     </view>
     <view class="content" wx:if="{{matchList.length > 0}}">
       <view class="match-row" data-match="{{item}}" bindtap="toGamePlayerDetail" wx:for="{{matchList}}">
@@ -107,7 +107,7 @@
   <view class="aggregate-data-card">
     <view class="title">
       <text>常用英雄</text>
-      <!-- <text class="link" bindtap="toAllHeroes">查看全部</text> -->
+      <text class="link" bindtap="toAllHeroes">查看全部</text>
     </view>
     <view wx:if="{{heroList.length > 0}}" class="content" style="box-shadow: none;padding: 0;">
       <view class="aggregate-data-hero">

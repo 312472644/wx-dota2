@@ -1,1 +1,77 @@
 /* pages/player-all-match/toAllHeroes.wxss */
+@import '../../app.wxss';
+
+.all-match-filter {
+  padding: 10px 15px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ebedf0;
+}
+
+.all-match-filter text {
+  font-size: 12px;
+}
+
+.all-match-summary {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 10px #d8d8d8;
+}
+
+.all-match-summary_item {
+  flex: 1;
+  text-align: center;
+}
+
+.all-match-summary_item text {
+  color: #323233;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.all-match-summary_item>text:first-of-type {
+  padding-right: 5px;
+}
+
+.table-body-item_iamge {
+  margin-top: 5px;
+}
+
+.win-lose {
+  color: #fff;
+  margin-left: 8px;
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 25px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.win-lose.summary-win {
+  background: #40e57c;
+}
+
+.win-lose.summary-lose {
+  background: #7b8094;
+}
+
+.game-mode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-mode text {
+  line-height: normal;
+}
+
+.table-header-item,
+.table-body-item {
+  text-align: left;
+}

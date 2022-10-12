@@ -1,2 +1,33 @@
 <!--pages/player-all-heroes/player-all-heroes.wxml-->
-<text>pages/player-all-heroes/player-all-heroes.wxml</text>
+<view class="all-heros-box">
+  <view class="all-heros-filter">
+    <text>常用英雄</text>
+    <van-dropdown-menu custom-class="dropdown-menu" active-color="#1989fa" z-index="9999">
+      <van-dropdown-item title-class="dropdown-menu-title" value="{{ gameMode }}" options="{{ gameModeOptions }}" bind:change="gameModeChange" />
+    </van-dropdown-menu>
+  </view>
+  <view class="table">
+    <view class="table-header">
+      <view class="table-header-item" style="width:30px"></view>
+      <view class="table-header-item" style="width:calc(16.666667% - 5px)">英雄</view>
+      <view class="table-header-item" style="width:calc(16.666667% - 5px)">场次</view>
+      <view class="table-header-item" style="width:calc(16.666667% - 5px)">胜率</view>
+      <view class="table-header-item" style="width:calc(16.666667% - 5px)">KDA</view>
+      <view class="table-header-item" style="width:calc(16.666667% - 5px)">GPM</view>
+      <view class="table-header-item" style="width:calc(16.666667% - 5px)">XPM</view>
+    </view>
+    <view class="table-body">
+      <view class="table-tr" wx:for="{{heroList}}">
+        <view class="table-header-item" style="width:30px;color:#636873;">{{index+1}}</view>
+        <view class="table-body-item" style="width:calc(16.666667% - 5px)">
+          <van-image custom-class="table-body-item_iamge" src="https://images.weserv.nl/?url={{item.heroImageUrl}}" radius="3" width="30" height="30"></van-image>
+        </view>
+        <view class="table-body-item" style="width:calc(16.666667% - 5px)">{{item.games}}</view>
+        <view class="table-body-item" style="width:calc(16.666667% - 5px)">{{item.winRate}}</view>
+        <view class="table-body-item" style="width:calc(16.666667% - 5px)">{{item.kda}}</view>
+        <view class="table-body-item" style="width:calc(16.666667% - 5px)">{{item.gold_per_min}}</view>
+        <view class="table-body-item" style="width:calc(16.666667% - 5px)">{{item.xp_per_min}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,1 +1,17 @@
 /* pages/player-all-heroes/player-all-heroes.wxss */
+@import '../../app.wxss';
+
+.all-heros-filter {
+  padding: 10px 15px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.all-heros-filter text {
+  font-size: 12px;
+}
+
+.table-body-item_iamge {
+  margin-top: 5px;
+}

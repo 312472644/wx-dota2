@@ -13,8 +13,8 @@
     "pages/new-log/new-log",
     "pages/hero-detail/hero-detail",
     "pages/new-log-detail/new-log-detail",
-    "pages/player-all-match/player-all-match",
-    "pages/player-all-heroes/player-all-heroes"
+    "pages/player-all-heroes/player-all-heroes",
+    "pages/player-all-match/player-all-match"
   ],
   "tabBar": {
     "color": "#787d7e",

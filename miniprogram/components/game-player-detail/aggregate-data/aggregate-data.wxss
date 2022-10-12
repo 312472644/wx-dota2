@@ -98,7 +98,6 @@
   padding: 5px;
   font-size: 12px;
   margin-left: 5px;
-
 }
 
 .result-status.lose {

@@ -67,7 +67,7 @@ Component({
       return {
         week: this.getWeek(date),
         date: `${dateList?.[0]}`,
-        mins: mins.join(":")
+        mins: mins.join(" : ")
       };
     },
     formatStatus(status: number) {
@@ -183,7 +183,6 @@ Component({
           });
           const gameList = matchDTOList.map((item: any) => {
             const { date, mins, week } = this.formatDate(item.matchTime);
-            console.log(week);
             return {
               ...item,
               matchStartTime: mins,

@@ -28,14 +28,9 @@
     height: 100%;
 }
 
-.table-header {
-    margin: 0 8px;
-}
-
 .table-tr {
     display: flex;
     align-items: center;
-    margin: 8px;
 }
 
 .player-box {

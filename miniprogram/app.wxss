@@ -59,10 +59,12 @@ page {
   top: 0;
   left: 0;
   right: 0;
-  color: #3a3d44;
+  color: #323233;
   height: 40px;
-  border-bottom: 1px solid #ebedf2;
+  border-top: 1px solid #ebedf0;
+  border-bottom: 1px solid #ebedf0;
   z-index: 99;
+  background-color: #f8f8f8;
 }
 
 .table-header-item {
@@ -92,6 +94,10 @@ page {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #ebedf2;
+}
+
+.table-tr:nth-of-type(2n) {
+  background-color: #f8f8f8;
 }
 
 .table-body-item {
@@ -144,11 +150,12 @@ page {
 }
 
 .dropdown-menu-title {
-  font-size: 13px !important;
+  font-size: 12px !important;
 }
 
-.van-ellipsis {
-  font-size: 13px;
+.van-ellipsis,
+.van-dropdown-item__title {
+  font-size: 12px;
 }
 
 .van-dropdown-menu {

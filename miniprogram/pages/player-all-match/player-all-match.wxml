@@ -1,2 +1,46 @@
-<!--pages/player-all-match/toAllHeroes.wxml-->
-<text>pages/player-all-match/toAllHeroes.wxml</text>
+<view class="all-match-box">
+  <view class="all-match-filter">
+    <text>比赛记录</text>
+    <van-dropdown-menu custom-class="dropdown-menu" active-color="#1989fa" z-index="9999">
+      <van-dropdown-item title-class="dropdown-menu-title" value="{{ gameMode }}" options="{{ gameModeOptions }}" bind:change="gameModeChange" />
+    </van-dropdown-menu>
+  </view>
+  <view class="all-match-summary">
+    <view class="all-match-summary_item">
+      <text>比赛场次</text>
+      <text>{{summary.total}}</text>
+    </view>
+    <view class="all-match-summary_item" style="display: flex;">
+      <text>胜负</text>
+      <view style="display: flex;">
+        <text style="color:green">{{summary.win}}</text>
+        <text style="padding: 0 3px;">-</text>
+        <text style="color:red">{{summary.lose}}</text>
+      </view>
+    </view>
+    <view class="all-match-summary_item">
+      <text>胜率</text>
+      <text>{{summary.winRate}}</text>
+    </view>
+  </view>
+  <view class="table">
+    <view class="table-header">
+      <view class="table-header-item" style="width: 100px">英雄</view>
+      <view class="table-header-item" style="width:calc(100% - 230px)">模式/KDA</view>
+      <view class="table-header-item" style="width:130px">时间</view>
+    </view>
+    <view class="table-body">
+      <view class="table-tr" wx:for="{{matchList}}" data-match="{{item}}" bindtap="toMatchDetail">
+        <view class="table-body-item" style="width: 100px;display: flex;">
+          <van-image custom-class="table-body-item_iamge" src="https://images.weserv.nl/?url={{item.heroImageUrl}}" radius="3" width="30" height="30"></van-image>
+          <view class="win-lose {{item.win?'summary-win':'summary-lose'}}">{{item.win?'胜':'负'}}</view>
+        </view>
+        <view class="table-body-item game-mode" style="width:calc(100% - 230px)">
+          <text>{{item.kills}}/{{item.deaths}}/{{item.assists}}</text>
+          <text>{{item.gameModeName}}</text>
+        </view>
+        <view class="table-body-item" style="width:130px">{{item.matchDate}}</view>
+      </view>
+    </view>
+  </view>
+</view>
