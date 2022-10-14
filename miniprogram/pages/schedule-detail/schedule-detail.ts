@@ -64,7 +64,7 @@ Page({
       url: `https://appengine.wmpvp.com/dota/event/getScheduleMatchList?eventId=${this.data.eventId}`
     }).then((res: IResult<any>) => {
       const scheduleList = this.getScheduleList(res.data.result) as any;
-      this.setData({ scheduleList: scheduleList.reverse() })
+      this.setData({ scheduleList })
     })
   },
   changeEvent(event: IEvent) {

@@ -14,10 +14,12 @@ Component({
    * 组件的初始数据
    */
   data: {
+    isSearched: false,
     scrollIntoView: "",
     eventId: "",
     status: "",
     originList: [],
+    summaryGameList: [],
     initGameList: [],
     gameList: [],
     gameHeroList: [],
@@ -112,20 +114,16 @@ Component({
       }
     },
     confirmEvent() {
-      const initGameList = this.data.initGameList;
-      let resultList = initGameList.filter(
-        (item: any) => item.eventId === this.data.eventId
-      );
-      if (this.data.status) {
-        resultList = resultList.filter(
-          (item: any) => item.matchStatus.toString() === this.data.status
-        );
-      }
-      const gameList = (this.getCategoryList(resultList) || []) as any;
-      this.setData({
-        gameList,
+      this.getGameInfo(this.data.summaryGameList, this.data.eventId as any);
+      const resultList = this.data.initGameList.filter((item: any) => {
+        if (this.data.status) { 
+          return item.eventId === this.data.eventId && item.matchStatus.toString() === this.data.status;
+        }
+        return item.eventId === this.data.eventId;
       });
+      const gameList = (this.getCategoryList(resultList) || []) as any;
       this.cancelEvent();
+      this.setData({ gameList, scrollIntoView: `macth_${formatDateTime(+new Date())}`, isSearched: true });
     },
     getQueryTime() {
       const date = new Date();
@@ -144,7 +142,7 @@ Component({
         const result = list.find(
           (subItem) => subItem.matchDate === item.matchDate
         );
-        const { eventId, eventLogo, eventName, matchDate,week } = item;
+        const { eventId, eventLogo, eventName, matchDate, week } = item;
         if (!result) {
           list.push({
             anchor: `macth_${item.matchDate}`,
@@ -161,51 +159,57 @@ Component({
       });
       return list;
     },
+    getGameInfo(result: any, matchEventId?: number) {
+      const matchResult = matchEventId ? result.find((item: any) => item.eventId === matchEventId) : result[result.length - 1];
+      const {
+        eventId,
+        eventLogo,
+        eventName,
+        matchDTOList = [],
+      } = matchResult;
+      const gameOptions = result.map((item: any) => {
+        return {
+          text: item.eventName,
+          value: item.eventId,
+        };
+      }).reverse();
+      const gameList = matchDTOList.map((item: any) => {
+        const { date, mins, week } = this.formatDate(item.matchTime);
+        return {
+          ...item,
+          matchStartTime: mins,
+          matchDate: date,
+          eventId,
+          eventLogo,
+          eventName,
+          showHeros: false,
+          heroList: [],
+          week: week,
+          matchTime: transFormMS(item.matchTime),
+          statusText: this.formatStatus(item.matchStatus),
+        };
+      });
+      const list = this.getCategoryList(gameList);
+      this.setData({
+        eventId: matchEventId || gameOptions[0].value,
+        initGameList: JSON.parse(JSON.stringify(gameList)),
+      });
+      return { gameOptions, list };
+    },
     getGameList() {
       axios({
         url:
           "https://gwapi.pwesports.cn/eventcenter/dota/event/getEventListByPeriod",
         data: this.getQueryTime(),
       }).then((res: IResult<any>) => {
-        const { message, result = [] } = res.data;
-        if (message === "success") {
-          const {
-            eventId,
-            eventLogo,
-            eventName,
-            matchDTOList = [],
-          } = result[0];
-          const gameOptions = result.map((item: any) => {
-            return {
-              text: item.eventName,
-              value: item.eventId,
-            };
-          });
-          const gameList = matchDTOList.map((item: any) => {
-            const { date, mins, week } = this.formatDate(item.matchTime);
-            return {
-              ...item,
-              matchStartTime: mins,
-              matchDate: date,
-              eventId,
-              eventLogo,
-              eventName,
-              showHeros: false,
-              heroList: [],
-              week: week,
-              matchTime: transFormMS(item.matchTime),
-              statusText: this.formatStatus(item.matchStatus),
-            };
-          });
-          const list = this.getCategoryList(gameList);
-          this.setData({
-            eventId: gameOptions[0].value,
-            gameList: list as any,
-            initGameList: JSON.parse(JSON.stringify(gameList)),
-            gameOptions,
-            scrollIntoView: `macth_${formatDateTime(+new Date())}`,
-          });
-        }
+        const { result = [] } = res.data;
+        const { gameOptions, list } = this.getGameInfo(result);
+        this.setData({
+          gameOptions,
+          summaryGameList: JSON.parse(JSON.stringify(result)),
+          gameList: list as any,
+          scrollIntoView: `macth_${formatDateTime(+new Date())}`,
+        });
       });
     },
     toMatchDetail(event: IEvent) {

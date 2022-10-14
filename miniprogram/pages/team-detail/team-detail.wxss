@@ -2,7 +2,7 @@
 .team-base-info {
   display: flex;
   background: linear-gradient(45deg, #24292e, #71787f);
-  padding-bottom: 15px;
+  padding: 15px 0;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;

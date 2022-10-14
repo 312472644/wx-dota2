@@ -30,6 +30,7 @@
   color: #666;
   font-size: 13px;
   margin-left: 5px;
+  max-width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
