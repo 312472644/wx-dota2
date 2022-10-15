@@ -17,6 +17,7 @@ Component({
     isSearched: false,
     scrollIntoView: "",
     eventId: "",
+    teamId: "",
     status: "",
     originList: [],
     summaryGameList: [],
@@ -24,6 +25,7 @@ Component({
     gameList: [],
     gameHeroList: [],
     gameOptions: [],
+    teamOptions: [],
     statusList: [
       { text: "全部状态", value: "" },
       { text: "未开始", value: "1" },
@@ -47,6 +49,10 @@ Component({
     matchChangeEvent(event: IEvent) {
       const eventId = event.detail;
       this.setData({ eventId });
+    },
+    teamChangeEvent(event: IEvent) { 
+      const teamId = event.detail;
+      this.setData({ teamId });
     },
     getWeek(date: string) {
       const day = new Date(date).getDay();
@@ -115,12 +121,26 @@ Component({
     },
     confirmEvent() {
       this.getGameInfo(this.data.summaryGameList, this.data.eventId as any);
-      const resultList = this.data.initGameList.filter((item: any) => {
-        if (this.data.status) { 
-          return item.eventId === this.data.eventId && item.matchStatus.toString() === this.data.status;
-        }
+      let resultList = this.data.initGameList.filter((item: any) => {
         return item.eventId === this.data.eventId;
       });
+      if (this.data.status) {
+        resultList = resultList.filter((item: any) => { 
+          return item.matchStatus.toString() === this.data.status;
+        });    
+      }
+      if(this.data.teamId) {
+        resultList = resultList.filter((item: any) => { 
+          return item.awayId === this.data.teamId || item.homeId === this.data.teamId;
+        }); 
+      }
+      // const resultList = this.data.initGameList.filter((item: any) => {
+      //   if (this.data.status) {
+      //     return item.eventId === this.data.eventId && item.matchStatus.toString() === this.data.status;
+      //   }
+      //   return item.eventId === this.data.eventId;
+      // });
+      // console.log(resultList);
       const gameList = (this.getCategoryList(resultList) || []) as any;
       this.cancelEvent();
       this.setData({ gameList, scrollIntoView: `macth_${formatDateTime(+new Date())}`, isSearched: true });
@@ -196,6 +216,19 @@ Component({
       });
       return { gameOptions, list };
     },
+    getTeamList() {
+      axios({
+        url: `https://appengine.wmpvp.com/dota/event/getEventSummary?eventId=${this.data.eventId}`
+      }).then((res => {
+        const teamList = [{ text: '全部队伍', value: '' }].concat((res.data.result.eventTeamList || []).map((item: any) => {
+          return {
+            text: item.name,
+            value: item.id
+          }
+        }));
+        this.setData({ teamOptions: teamList as any })
+      }))
+    },
     getGameList() {
       axios({
         url:
@@ -204,6 +237,7 @@ Component({
       }).then((res: IResult<any>) => {
         const { result = [] } = res.data;
         const { gameOptions, list } = this.getGameInfo(result);
+        this.getTeamList();
         this.setData({
           gameOptions,
           summaryGameList: JSON.parse(JSON.stringify(result)),

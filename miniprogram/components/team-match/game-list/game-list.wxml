@@ -62,7 +62,7 @@
   </view>
   <van-empty wx:if="{{gameList.length === 0 && isSearched}}" description="暂无数据" />
   <!--筛选弹框-->
-  <van-popup show="{{ showFilter }}" position="bottom" round custom-style="height: 45%;">
+  <van-popup show="{{ showFilter }}" position="bottom" round custom-style="height: 60%;">
     <view class="filter-title">
       <text class="text-item" bindtap="cancelEvent">取消</text>
       <text class="text-item">筛选</text>
@@ -74,6 +74,14 @@
         <view class="filter-content">
           <van-dropdown-menu custom-class="match-dropdown" active-color="#1989fa">
             <van-dropdown-item bind:change="matchChangeEvent" title-class="dropdown-menu-title" value="{{ eventId }}" options="{{ gameOptions }}" />
+          </van-dropdown-menu>
+        </view>
+      </view>
+      <view class="filter-item">
+        <view class="filter-title-text">队伍</view>
+        <view class="filter-content">
+          <van-dropdown-menu custom-class="match-dropdown" active-color="#1989fa" direction="up">
+            <van-dropdown-item bind:change="teamChangeEvent" title-class="dropdown-menu-title" value="{{ teamId }}" options="{{ teamOptions }}" />
           </van-dropdown-menu>
         </view>
       </view>
