@@ -48,9 +48,10 @@ Component({
     },
     matchChangeEvent(event: IEvent) {
       const eventId = event.detail;
-      this.setData({ eventId });
+      this.setData({ eventId, teamId: '' });
+      this.getTeamList();
     },
-    teamChangeEvent(event: IEvent) { 
+    teamChangeEvent(event: IEvent) {
       const teamId = event.detail;
       this.setData({ teamId });
     },
@@ -125,22 +126,15 @@ Component({
         return item.eventId === this.data.eventId;
       });
       if (this.data.status) {
-        resultList = resultList.filter((item: any) => { 
+        resultList = resultList.filter((item: any) => {
           return item.matchStatus.toString() === this.data.status;
-        });    
+        });
       }
-      if(this.data.teamId) {
-        resultList = resultList.filter((item: any) => { 
+      if (this.data.teamId) {
+        resultList = resultList.filter((item: any) => {
           return item.awayId === this.data.teamId || item.homeId === this.data.teamId;
-        }); 
+        });
       }
-      // const resultList = this.data.initGameList.filter((item: any) => {
-      //   if (this.data.status) {
-      //     return item.eventId === this.data.eventId && item.matchStatus.toString() === this.data.status;
-      //   }
-      //   return item.eventId === this.data.eventId;
-      // });
-      // console.log(resultList);
       const gameList = (this.getCategoryList(resultList) || []) as any;
       this.cancelEvent();
       this.setData({ gameList, scrollIntoView: `macth_${formatDateTime(+new Date())}`, isSearched: true });
@@ -180,7 +174,9 @@ Component({
       return list;
     },
     getGameInfo(result: any, matchEventId?: number) {
-      const matchResult = matchEventId ? result.find((item: any) => item.eventId === matchEventId) : result[result.length - 1];
+      const matchResult = matchEventId ? result.find((item: any) => item.eventId === matchEventId) : result.sort((a: any, b: any) => {
+        return b.eventId - a.eventId;
+      })?.[0];
       const {
         eventId,
         eventLogo,
@@ -192,7 +188,10 @@ Component({
           text: item.eventName,
           value: item.eventId,
         };
-      }).reverse();
+      });
+      gameOptions.sort((a: any, b: any) => { 
+        return b.value - a.value;
+      });
       const gameList = matchDTOList.map((item: any) => {
         const { date, mins, week } = this.formatDate(item.matchTime);
         return {
@@ -221,10 +220,7 @@ Component({
         url: `https://appengine.wmpvp.com/dota/event/getEventSummary?eventId=${this.data.eventId}`
       }).then((res => {
         const teamList = [{ text: '全部队伍', value: '' }].concat((res.data.result.eventTeamList || []).map((item: any) => {
-          return {
-            text: item.name,
-            value: item.id
-          }
+          return { text: item.name, value: item.id, icon: `https://images.weserv.nl/?url=${item.logo}` }
         }));
         this.setData({ teamOptions: teamList as any })
       }))

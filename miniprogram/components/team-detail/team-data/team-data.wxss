@@ -30,7 +30,7 @@
   position: relative;
   color: #2b2b2b;
   font-size: 14px;
-  padding: 15px 16px 0 16px;
+  padding: 15px 16px;
 }
 
 .title::before {
@@ -50,7 +50,7 @@
 .honor {
   display: flex;
   justify-content: flex-start;
-  padding: 10px;
+  padding: 0 10px 10px 10px;
 }
 
 .honor-count {
