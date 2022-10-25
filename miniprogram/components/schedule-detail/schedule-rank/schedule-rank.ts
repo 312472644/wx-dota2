@@ -36,9 +36,9 @@ Component({
         url: `https://appengine.wmpvp.com/dota/event/getRankInfo?eventId=${this.properties.eventId}`
       }).then((res: IResult<any>) => {
         const rankInfo = res.data.result;
-        const players = rankInfo.players;
-        const scoreDetails = players.scoreDetails[0];
-        this.setData({ rankInfo: res.data.result, sidebarList: scoreDetails.detail.slice(0, 50), sidebar: scoreDetails.type });
+        const players = rankInfo.playerRankDTO;
+        // const scoreDetails = players.scoreDetails[0];
+        this.setData({ rankInfo: res.data.result, sidebarList: players.detail.slice(0, 50), sidebar: players.type });
         this.getTableList();
       })
     },
