@@ -66,4 +66,10 @@ Page({
       }
     });
   },
+  onShareAppMessage() {
+    return {
+      title: 'Dota2 天梯排行',
+      path: 'pages/dota-rank/dota-rank',
+    }
+  }
 });

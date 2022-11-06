@@ -131,5 +131,11 @@ Page<IData, ICustom>({
         wx.navigateTo({
             url: `../new-log-detail/new-log-detail?href=${href}&title=${title}&date=${date}`
         });
+    },
+    onShareAppMessage() {
+      return {
+        title: 'Dota2 天梯排行',
+        path: 'pages/new-log/new-log',
+      }
     }
 })

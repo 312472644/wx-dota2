@@ -95,5 +95,11 @@ Page<IData, ICustom>({
             this.getCategory();
             this.getCategoryDetail();
         }
+    },
+    onShareAppMessage() {
+      return {
+        title: 'Dota2 英雄物品',
+        path: 'pages/dota-dictionary/dota-dictionary',
+      }
     }
 })

@@ -75,4 +75,10 @@ Page({
   closeEvent() {
     this.setData({ showFilter: false });
   },
+  onShareAppMessage() {
+    return {
+      title: 'Dota2 赛事信息',
+      path: 'pages/team-match/team-match',
+    }
+  }
 });
