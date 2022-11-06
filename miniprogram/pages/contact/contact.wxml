@@ -7,7 +7,7 @@
   </view>
   <view class="contact-text">
     <text>微信</text>
-    <text class="link">请备注来意哈，否则可能不通过</text>
+    <text class="link">请备注来意哈</text>
   </view>
   <view class="contact-image">
     <image style="width: 400rpx;" show-menu-by-longpress src="../../assets/common/we_chat.png" mode="widthFix"></image>

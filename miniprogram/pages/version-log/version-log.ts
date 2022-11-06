@@ -10,13 +10,13 @@ Page({
         versionName: 'v1.1',
         versionDate: '2022-11-06',
         bugFixList: ['修复赛事页面报错的bug'],
-        featureList: ['新增关于页面，包括关于、联系作者、版本日志等功能']
+        featureList: ['新增其他页面，包括关于、联系作者、版本日志等功能']
       },
       {
         versionName: 'v1.0',
         versionDate: '2022-10-25',
         bugFixList: [],
-        featureList: ['第一个版本初始化', '新增英雄物品功能', '新增赛事功能', '新增发现功能', '新增资讯功能']
+        featureList: ['第一个版本上线~', '新增英雄物品功能', '新增赛事功能', '新增发现功能', '新增资讯功能']
       },
     ],
   },

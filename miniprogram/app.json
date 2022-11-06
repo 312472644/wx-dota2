@@ -52,7 +52,7 @@
         "pagePath": "pages/about/about",
         "iconPath": "./assets/icon/about.png",
         "selectedIconPath": "./assets/icon/about_active.png",
-        "text": "关于"
+        "text": "其他"
       }
     ]
   },
