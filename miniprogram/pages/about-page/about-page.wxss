@@ -1,0 +1,21 @@
+/* pages/about-page/about-page.wxss */
+.about {
+  color: #323233;
+  font-size: 12px;
+}
+
+.about-text {
+  padding: 0 10px 10px 10px;
+}
+
+.about-text text:first-of-type {
+  padding-right: 5px;
+}
+
+.about-text .link {
+  color:#1989fa;
+}
+
+.about-image {
+  text-align: center;
+}

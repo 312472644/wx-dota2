@@ -1,0 +1,68 @@
+/* pages/version-log/version-log.wxss */
+.version-log {
+  background: #f7f8fa;
+  margin: 10px;
+}
+
+.version-log_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.version-log-item {
+  border-radius: 3px;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 1px 1px 5px #d8d8d8;
+  margin-bottom: 10px;
+}
+
+.version-name {
+  color: #323233;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.version-date {
+  color: #515a6e;
+  font-size: 14px;
+}
+
+.version-cotent {
+  padding-top: 10px;
+}
+
+.version-cotent-item {
+  padding-bottom: 10px;
+}
+
+.version-cotent-item_title {
+  color: #323233;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.version-log-list {
+  padding-top: 10px;
+}
+
+.version-log_item {
+  display: flex;
+  align-items: center;
+  color: #34495e;
+  padding-bottom: 5px;
+  font-size: 13px;
+}
+
+.version-log-list .version-log_item:last-of-type {
+  padding-bottom: 0;
+}
+
+.circle-index {
+  border-radius: 50%;
+  border: 1px solid #666;
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  margin-right: 10px;
+}

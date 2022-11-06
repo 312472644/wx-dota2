@@ -1,6 +1,6 @@
 <!--components/game-list/game-list.wxml-->
 <scroll-view scroll-y="true" style="height: calc(100vh - 50px);" scroll-into-view="{{scrollIntoView}}">
-  <view class="game-list-box">
+  <view class="game-list-box" wx:if="{{gameList.length > 0}}">
     <view wx:for="{{gameList}}" class="game-list-item" id="{{item.anchor}}">
       <view class="game-header">
         <text class="game-date">{{item.matchDate}} {{item.week}}</text>
@@ -60,7 +60,7 @@
       </view>
     </view>
   </view>
-  <van-empty wx:if="{{gameList.length === 0 && isSearched}}" description="暂无数据" />
+  <van-empty wx:if="{{gameList.length === 0}}" description="暂无数据" />
   <!--筛选弹框-->
   <van-popup show="{{ showFilter }}" position="bottom" round custom-style="height: 60%;">
     <view class="filter-title">

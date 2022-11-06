@@ -1,0 +1,29 @@
+<!--pages/version-log/version-log.wxml-->
+<view class="version-log">
+  <view class="version-log-item" wx:for="{{versionLogList}}">
+    <view class="version-log_header">
+      <view class="version-name">{{item.versionName}}</view>
+      <view class="version-date">{{item.versionDate}}</view>
+    </view>
+    <view class="version-cotent">
+      <view class="version-cotent-item" wx:if="{{item.bugFixList.length > 0}}">
+        <view class="version-cotent-item_title">Bug Fixes</view>
+        <view class="version-log-list">
+          <view class="version-log_item" wx:for="{{item.bugFixList}}" wx:for-item="bugItem" wx:for-index="bugIndex">
+            <text class="circle-index"></text>
+            <text>{{bugItem}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="version-cotent-item" wx:if="{{item.featureList.length > 0}}">
+        <view class="version-cotent-item_title">Feature</view>
+        <view class="version-log-list">
+          <view class="version-log_item" wx:for="{{item.featureList}}" wx:for-item="featureItem" wx:for-index="featureIndex">
+            <text class="circle-index"></text>
+            <text>{{featureItem}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

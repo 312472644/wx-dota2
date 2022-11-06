@@ -1,0 +1,6 @@
+<!--pages/about/about.wxml-->
+<view class="about-container">
+  <van-cell is-link title="关于" link-type="navigateTo" url="/pages/about-page/about-page" />
+  <van-cell is-link title="联系作者" link-type="navigateTo" url="/pages/contact/contact" />
+  <van-cell is-link title="版本日志" link-type="navigateTo" url="/pages/version-log/version-log" />
+</view>

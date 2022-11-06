@@ -1,0 +1,10 @@
+<!--pages/about/about.wxml-->
+<view class="about-container">
+  <view class="about">
+    <van-divider contentPosition="center">关于</van-divider>
+    <view class="about-text">本小程序为个人兴趣开发，作为技术交流使用，不作它用。开发不易，如果觉得该小程序还不错，请作者喝杯奶茶也是可以的哈~</view>
+    <view class="about-image">
+      <image style="width: 400rpx;" show-menu-by-longpress src="../../assets/common/we_pay.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>

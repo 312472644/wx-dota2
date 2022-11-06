@@ -25,7 +25,7 @@ Component({
     gameList: [],
     gameHeroList: [],
     gameOptions: [],
-    teamOptions: [],
+    teamOptions: [{ text: '全部队伍', value: '' }],
     statusList: [
       { text: "全部状态", value: "" },
       { text: "未开始", value: "1" },
@@ -182,7 +182,7 @@ Component({
         eventLogo,
         eventName,
         matchDTOList = [],
-      } = matchResult;
+      } = matchResult || {};
       const gameOptions = result.map((item: any) => {
         return {
           text: item.eventName,
@@ -210,16 +210,19 @@ Component({
       });
       const list = this.getCategoryList(gameList);
       this.setData({
-        eventId: matchEventId || gameOptions[0].value,
+        eventId: matchEventId || gameOptions[0]?.value,
         initGameList: JSON.parse(JSON.stringify(gameList)),
       });
       return { gameOptions, list };
     },
     getTeamList() {
+      if(!this.data.eventId){
+        return;
+      }
       axios({
         url: `https://appengine.wmpvp.com/dota/event/getEventSummary?eventId=${this.data.eventId}`
       }).then((res => {
-        const teamList = [{ text: '全部队伍', value: '' }].concat((res.data.result.eventTeamList || []).map((item: any) => {
+        const teamList = this.data.teamOptions.concat((res.data.result.eventTeamList || []).map((item: any) => {
           return { text: item.name, value: item.id, icon: `https://images.weserv.nl/?url=${item.logo}` }
         }));
         this.setData({ teamOptions: teamList as any })
@@ -235,7 +238,7 @@ Component({
         const { gameOptions, list } = this.getGameInfo(result);
         this.getTeamList();
         this.setData({
-          gameOptions,
+          gameOptions: [{ text: '全部赛事', value: '' }].concat(gameOptions) as any,
           summaryGameList: JSON.parse(JSON.stringify(result)),
           gameList: list as any,
           scrollIntoView: `macth_${formatDateTime(+new Date())}`,

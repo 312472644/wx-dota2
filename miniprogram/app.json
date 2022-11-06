@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/dota-dictionary/dota-dictionary",
+    "pages/about/about",
     "pages/hero-strategy/hero-strategy",
     "pages/dota-rank/dota-rank",
     "pages/game-player-detail/game-player-detail",
@@ -14,7 +15,10 @@
     "pages/hero-detail/hero-detail",
     "pages/new-log-detail/new-log-detail",
     "pages/player-all-heroes/player-all-heroes",
-    "pages/player-all-match/player-all-match"
+    "pages/player-all-match/player-all-match",
+    "pages/about-page/about-page",
+    "pages/contact/contact",
+    "pages/version-log/version-log"
   ],
   "tabBar": {
     "color": "#787d7e",
@@ -43,6 +47,12 @@
         "iconPath": "./assets/icon/news.png",
         "selectedIconPath": "./assets/icon/news_active.png",
         "text": "资讯"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "./assets/icon/about.png",
+        "selectedIconPath": "./assets/icon/about_active.png",
+        "text": "关于"
       }
     ]
   },

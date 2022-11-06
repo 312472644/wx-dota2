@@ -1,0 +1,21 @@
+/* pages/contact/contact.wxss */
+.contact {
+  color: #323233;
+  font-size: 12px;
+}
+
+.contact-text {
+  padding: 0 10px 10px 10px;
+}
+
+.contact-text text:first-of-type {
+  padding-right: 5px;
+}
+
+.contact-text .link {
+  color:#1989fa;
+}
+
+.contact-image {
+  text-align: center;
+}
