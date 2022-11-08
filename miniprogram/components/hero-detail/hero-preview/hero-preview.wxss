@@ -1,49 +1,50 @@
 /* components/hero-preview/hero-preview.wxss */
 .hero-preview {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .pre-hero,
 .next-hero {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .pre-hero_image,
 .next-hero_image {
-    width: 180rpx;
-    height: 130rpx;
+  width: 180rpx;
+  height: 130rpx;
+  padding: 0 8px;
 }
 
 .hero-text {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .all-hero {
-    font-size: 12px;
-    width: 49px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  font-size: 12px;
+  width: 49px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .all-hero-box {
-    width: 15px;
-    height: 15px;
-    margin-bottom: 3px;
-    background-color: #9e9fa0;
+  width: 15px;
+  height: 15px;
+  margin-bottom: 3px;
+  background-color: #9e9fa0;
 }
 
 .all-hero-item {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

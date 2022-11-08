@@ -3,6 +3,7 @@
     "hero-base": "../../components/hero-detail/hero-base/hero-base",
     "hero-status": "../../components/hero-detail/hero-status/hero-status",
     "hero-skill": "../../components/hero-detail/hero-skill/hero-skill",
-    "hero-preview": "../../components/hero-detail/hero-preview/hero-preview"
+    "hero-preview": "../../components/hero-detail/hero-preview/hero-preview",
+    "hero-talents": "../../components/hero-detail/hero-talents/hero-talents"
   }
 }

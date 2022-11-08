@@ -6,6 +6,8 @@
     <hero-status heroes="{{heroes}}"></hero-status>
     <!--英雄技能-->
     <hero-skill heroes="{{heroes}}"></hero-skill>
+    <!--英雄天赋-->
+    <hero-talents heroes="{{heroes}}"></hero-talents>
     <!--英雄预览-->
     <hero-preview leftHero="{{heroes.left_hero_info}}" rightHero="{{heroes.next_hero_info}}" 
     bindperview="perviewHero"

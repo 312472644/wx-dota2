@@ -1,0 +1,42 @@
+/* components/hero-detail/hero-talents/hero-talents.wxss */
+.hero-talents {
+  padding: 0 8px;
+}
+
+.talents-container {}
+
+.talents-item {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.talents-item-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+  height: 40px;
+  width: calc(50% - 18px);
+  background: #242525;
+  border-radius: 3px;
+  word-break: break-all;
+  padding: 0px 5px;
+  box-sizing: border-box;
+}
+
+.talents-item-skill {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ecd09e;
+  font-size: 13px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  background: #191d20;
+  border: 3px solid #565656;
+}
