@@ -2,6 +2,7 @@
 <scroll-view scroll-y="true" style="height: 100vh;" scroll-top="{{scrollTop}}">
   <van-tabs sticky color="#000000" active="{{tabName}}" title-inactive-color="#787d7e" bind:change="changeEvent">
     <van-tab title="天梯排行" name="rank">
+      <van-search value="{{ steamId }}" input-class="search-input" shape="round" bind:search="searchEvent" placeholder="请输入Steam ID" />
       <view class="help-info">
         <view>
           <van-icon class="help-info-icon" name="question-o" size="18" />

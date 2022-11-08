@@ -9,7 +9,7 @@ Component({
    */
   properties: {
     steamId: Number,
-    leaderboardRank: Number,
+    leaderboardRank: String,
     gamePlayerInfo: Object
   },
 
@@ -50,7 +50,7 @@ Component({
         const winRate = (win / (win + lose));
         const winRateStr = `${(winRate * 100).toFixed(1)}%`
         this.setData({ winRate: winRateStr, winTotal: win + lose });
-      })
+      });
     },
     getTotals() {
       dotaMindRequest(`/players/${this.properties.steamId}/totals?`).then((res: IResult<any>) => {
@@ -78,7 +78,7 @@ Component({
     },
     getLatestPerformances() {
       dotaMindRequest(`/playerext/${this.properties.steamId}/latestPerformances?limit=50`).then((res: IResult<any>) => {
-        this.setData({ mvps: res.data.mvps, avgPoints: res.data.avg_points });
+        this.setData({ mvps: res.data.mvps, avgPoints: parseInt(res.data.avg_points) });
       })
     },
     getHeroList() {

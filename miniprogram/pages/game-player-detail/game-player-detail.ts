@@ -41,6 +41,7 @@ Page({
       data: getHandlerParam(`/players/${steamId}`),
     }).then((res: IResult<any>) => {
       const result = res.data;
+      result.leaderboard_rank = result.leaderboard_rank || '-';
       this.setData({ gamePlayerInfo: result });
      })
   }

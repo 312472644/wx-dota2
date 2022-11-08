@@ -37,7 +37,7 @@ Page<IData, ICustom>({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady() { },
+    onReady() {},
     // 获取物品分类
     getCategory() {
         axios({

@@ -14,6 +14,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    loadComplete: false,
     peerList: []
   },
   /**
@@ -22,14 +23,14 @@ Component({
   methods: {
     getPeerList() { 
       dotaMindRequest(`/players/${this.properties.steamId}/peers`).then((res: IResult<any>) => { 
-        const peerList = res.data.map((item:any) => {
+        const peerList = (res.data || []).map((item:any) => {
           return {
             ...item,
             lastPlayed: formatDateTime((item.last_played * 1000), true),
             winRate: ((item.with_win / item.with_games)*100).toFixed(1).concat('%')
           }
         });
-        this.setData({ peerList });
+        this.setData({ peerList, loadComplete: true });
       });
     },
     toPlayerDetail(event: IEvent) {

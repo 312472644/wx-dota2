@@ -4,7 +4,7 @@
     <van-image width="50" height="50" radius="3" src="https://images.weserv.nl/?url={{nickUrl}}"></van-image>
     <view class="player_avatar_info">
       <text>{{nickName}}</text>
-      <text>SteamId:{{steamId}}</text>
+      <text>SteamId：{{uid}}</text>
     </view>
   </view>
   <view class="player-result_statistics">

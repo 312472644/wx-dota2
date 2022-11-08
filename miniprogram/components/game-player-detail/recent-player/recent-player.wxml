@@ -19,5 +19,6 @@
       <view class="table-body-item" style="width:130px;line-height: 40px;">{{item.lastPlayed}}</view>
     </view>
   </view>
-  <van-loading custom-class="loading" wx:else />
+  <van-empty description="暂无数据" wx:if="{{loadComplete&&peerList.length===0}}" />
+  <van-loading custom-class="loading" wx:if="{{!loadComplete}}" />
 </view>

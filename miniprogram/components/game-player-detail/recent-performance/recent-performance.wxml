@@ -21,5 +21,6 @@
       </view>
     </view>
   </view>
-  <van-loading custom-class="loading" wx:else />
+  <van-empty description="暂无数据" wx:if="{{loadComplete&&performanceList.length===0}}" />
+  <van-loading custom-class="loading" wx:if="{{!loadComplete}}" />
 </view>

@@ -1,7 +1,7 @@
 <!--pages/hero/hero.wxml-->
 <view class="hero-container">
   <!--查询条件-->
-  <van-search placeholder="请输入英雄名称" shape="round" bind:search="searchEvent" />
+  <van-search placeholder="请输入英雄名称" input-class="search-input" shape="round" bind:search="searchEvent" />
   <!--英雄列表-->
   <scroll-view bindscroll="bindscrollEvent" scroll-y="true" scroll-top="{{scrollTop}}" class="scroll-view" id="scroll-view" scroll-with-animation="true">
     <view class="hero-attr-condition">

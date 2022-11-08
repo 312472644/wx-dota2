@@ -1,6 +1,8 @@
 import { IEvent, IResult } from "../../interface/index";
 import { IRankResult } from "../../interface/IPage";
-import { axios, getDotaMaxQueryParam, tabRequest } from "../../utils/index";
+import { axios, dotaMindRequest, getDotaMaxQueryParam, tabRequest } from "../../utils/index";
+import BigNumber from 'bignumber.js';
+import JsonBigInt from 'json-bigint';
 
 // pages/rank/rank.ts
 Page({
@@ -11,6 +13,7 @@ Page({
     tabName: "rank",
     rankList: [],
     scrollTop: 0,
+    steamId: null,
     regionId: 'china',
     regionOptions: [
       { text: "国服", value: 'china' },
@@ -70,6 +73,33 @@ Page({
     return {
       title: 'Dota2 天梯排行',
       path: 'pages/dota-rank/dota-rank',
+    }
+  },
+  async isValidSteamId(steamId: number) {
+    let isValid = false;
+    await dotaMindRequest(`/players/${steamId}/wl?`).then((res: IResult<any>) => {
+      isValid = res.data.win > 0 || res.data.lose > 0;
+    });
+    return isValid;
+  },
+  async searchEvent(event: IEvent) {
+    const steamId = event.detail;
+    if (!steamId) {
+      return;
+    }
+    if (!Number.isInteger(Number(steamId))) {
+      wx.showToast({ icon: "none", title: "Steam ID格式不正确" });
+      return;
+    }
+    const steam64Id = new BigNumber(steamId);
+    const steam32Id = steam64Id.minus('76561197960265728').toNumber();
+    const isValid = await this.isValidSteamId(steam32Id);
+    if (isValid) {
+      wx.navigateTo({
+        url: `../../pages/game-player-detail/game-player-detail?steamId=${steam32Id}`
+      });
+    } else {
+      wx.showToast({ icon: "none", title: "未找到该Steam ID数据" });
     }
   }
 });

@@ -6,6 +6,7 @@
     "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
     "van-dropdown-item": "@vant/weapp/dropdown-item/index",
     "rank-table": "../../components/dota-rank/rank-table/rank-table",
-    "rank-version": "../../components/dota-rank/rank-version/rank-version"
+    "rank-version": "../../components/dota-rank/rank-version/rank-version",
+    "van-search": "@vant/weapp/search/index"
   }
 }

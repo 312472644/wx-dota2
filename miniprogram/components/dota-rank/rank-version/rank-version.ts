@@ -65,7 +65,7 @@ Component({
           rank: this.data.level
         }
       }).then((res: IResult<any>) => {
-        const rankVersionList = res.data.result.map((item: any) => {
+        const rankVersionList = (res.data.result || []).map((item: any) => {
           return {
             ...item,
             hero_win_rate: `${(item.hero_win_rate * 100).toFixed(1)}%`,

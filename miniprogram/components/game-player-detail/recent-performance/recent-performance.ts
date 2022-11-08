@@ -8,14 +8,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    steamId: Number
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    steamId: 98887913,
+    loadComplete: false,
     date: 30,
     dataOptions: [
       { text: '最近一个月', value: 30 },
@@ -54,7 +54,7 @@ Component({
       };
       const params = this.data.date ? `date=${this.data.date}` : '';
       dotaMindRequest(`/players/${this.properties.steamId}/performance?${params}`).then((res: IResult<any>) => {
-        const performanceList = res.data.map((item: any) => {
+        const performanceList = (res.data || []).map((item: any) => {
           const stats = item.stats;
           return {
             ...item,
@@ -68,7 +68,7 @@ Component({
             })
           };
         });
-        this.setData({ performanceList });
+        this.setData({ performanceList, loadComplete: true });
       })
     }
   }
