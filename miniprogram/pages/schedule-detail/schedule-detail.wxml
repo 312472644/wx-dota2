@@ -10,8 +10,8 @@
         <text class="event-award">{{eventSummary.eventAward}}</text>
       </view>
       <view class="event-item">
-        <text class="event-city">{{eventSummary.eventCity}}</text>
-        <text class="event-date">{{eventSummary.eventStartTime}} - {{eventSummary.eventEndTime}} </text>
+        <text class="event-city" style="width: calc(100% - 135px)">{{eventSummary.eventCity}}</text>
+        <text class="event-date" style="width: 135px;">{{eventSummary.eventStartTime}} - {{eventSummary.eventEndTime}} </text>
       </view>
     </view>
   </view>

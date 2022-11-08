@@ -4,4 +4,6 @@
   right: 10px;
   top: 13px;
   z-index: 9;
+  width: 30px;
+  height: 30px;
 }

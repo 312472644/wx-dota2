@@ -12,7 +12,6 @@
   display: flex;
   justify-content: space-between;
   line-height: 17px;
-  align-items: center;
 }
 
 .event-item:first-of-type {
