@@ -1,0 +1,12 @@
+<!--pages/search-record/search-record.wxml-->
+<van-search value="{{ steamId }}" input-class="search-input" shape="round" bind:search="searchEvent" placeholder="请输入Steam ID" />
+<van-dialog id="van-dialog" />
+<view class="search-history">
+  <view class="search-history_title" wx:if="{{recordList.length > 0}}">
+    <text>历史记录</text>
+    <van-icon name="delete-o" bindtap="clearRecord" />
+  </view>
+  <view class="search-history_content" wx:if="{{recordList.length > 0}}">
+    <van-tag wx:for="{{recordList}}" data-item="{{item}}" color="#f1f1f1" text-color="#999" custom-class="custom-tag" bindtap="tagTapEvent" size="large">{{item}}</van-tag>
+  </view>
+</view>

@@ -2,6 +2,7 @@
   "pages": [
     "pages/dota-dictionary/dota-dictionary",
     "pages/about/about",
+    "pages/search-record/search-record",
     "pages/hero-strategy/hero-strategy",
     "pages/dota-rank/dota-rank",
     "pages/game-player-detail/game-player-detail",
