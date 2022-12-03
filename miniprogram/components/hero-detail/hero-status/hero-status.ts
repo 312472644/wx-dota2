@@ -57,7 +57,7 @@ Component({
                 { label: '魔抗', value: `${magic_resistance}%` },
                 { label: '攻击范围', value: attack_range },
                 { label: '视野(白/夜)', value: `${sight_range_day}/${sight_range_night}` },
-                { label: '攻击距离', value: projectile_speed }
+                { label: '弹道速度', value: projectile_speed }
             ];
             this.setData({
                 statusList: statusList as any

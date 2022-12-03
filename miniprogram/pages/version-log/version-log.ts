@@ -7,6 +7,11 @@ Page({
   data: {
     versionLogList: [
       {
+        versionName: 'v1.3.0',
+        versionDate: '2022-12-03',
+        bugFixList: ['修复bug若干']
+      },
+      {
         versionName: 'v1.2.0',
         versionDate: '2022-11-06',
         bugFixList: ['修复bug若干'],

@@ -2,52 +2,50 @@
 <view class="hero-skill-container">
   <hero-card title="技能">
     <!--技能视频介绍-->
-    <video class="skill-video" wx:if="{{skillDetal.video}}" src="{{skillDetal.video}}" loop="loop" autoplay controls="{{false}}" object-fit="fill"></video>
+    <video class="skill-video" wx:if="{{skillDetail.video}}" src="{{skillDetail.video}}" loop="loop" autoplay controls="{{false}}" object-fit="fill"></video>
     <!--技能列表-->
     <view class="skill-name-container">
-      <view class='skill-name-item {{item.guid === selectSkillId ? "select-skill":""}}' wx:for="{{skillLogoList}}" wx:key="index" bindtap="changeSkill" data-skill="{{item}}">
+      <view class='skill-name-item {{item.guid === selectSkillId ? "select-skill":""}}' wx:for="{{skillLogoList}}" wx:key="index" bindtap="changeSkill" data-skill="{{item}}" data-index="{{index}}">
         <van-image width="100%" height="70rpx" radius="2px" src="{{item.logo}}"></van-image>
-        <image wx:if="{{item.hasShard}}" src="../../../assets/common/aghs_shard.png" class="upgrade-logo"></image>
-        <image wx:if="{{item.hasScepter}}" src="../../../assets/common/aghs_scepter.png" class="upgrade-logo"></image>
+        <image wx:if="{{item.ability_type === 'shard'}}" src="../../../assets/common/aghs_shard.png" class="upgrade-logo"></image>
+        <image wx:if="{{item.ability_type === 'scepter'}}" src="../../../assets/common/aghs_scepter.png" class="upgrade-logo"></image>
       </view>
     </view>
     <!--技能介绍-->
     <view class="skill-content">
       <view class="skill-logo">
-        <van-image class="skill-image" width="60px" height="60px" radius="2px" src="{{skillDetal.logo}}"></van-image>
+        <van-image class="skill-image" width="60px" height="60px" radius="2px" src="{{skillDetail.logo}}"></van-image>
         <view class="skill-log">
           <view class="skill-log_title">
-            <text>{{skillDetal.nameLoc}}</text>
-            <text class="upgrade-text" wx:if="{{skillDetal.hasShard}}">{{skillDetal.grantedShard?'魔晶提供新技能':'魔晶技能升级'}}</text>
-            <text class="upgrade-text" wx:if="{{skillDetal.hasScepter}}">{{skillDetal.grantedScepter?'神杖提供新技能':'神杖技能升级'}}
-            </text>
+            <text>{{skillDetail.nameLoc}}</text>
+            <text class="upgrade-text" wx:if="{{abilityTpe === 'shard' || abilityTpe === 'scepter'}}">{{skillDetail.upgradeName}}</text>
           </view>
-          <rich-text class="skill-log_detail" nodes="{{skillDetal.descLog}}"></rich-text>
+          <rich-text class="skill-log_detail" nodes="{{skillDetail.descLog}}"></rich-text>
         </view>
       </view>
       <!--技能属性-->
-      <view class="skill-attr">
+      <view class="skill-attr" wx:if="{{skillDetail.specialValues.length > 0}}">
         <!--技能详情-->
         <view class="skill-attr-list">
-          <view class="skill-attr-item" wx:for="{{skillDetal.specialValues}}" wx:key="index">
+          <view class="skill-attr-item" wx:for="{{skillDetail.specialValues}}" wx:key="index">
             <rich-text nodes="{{item.label}}" class="skill-attr-item_text"></rich-text>
             <rich-text nodes="{{item.value}}" class="skill-attr-item_value"></rich-text>
           </view>
         </view>
-        <!--技能消耗-->
-        <view class="skill-bottom">
-          <view class="skill-cd" wx:if="{{skillDetal.cooldowns}}">
-            <image class="skill-cd_image" src="../../../assets/common/cooldown.png"></image>
-            <text>{{skillDetal.cooldowns}}</text>
-          </view>
-          <view class="skill-mana" wx:if="{{skillDetal.manaCosts}}">
-            <text class="skill-mana_text"></text>
-            <text>{{skillDetal.manaCosts}}</text>
-          </view>
+      </view>
+      <!--技能消耗-->
+      <view class="skill-bottom">
+        <view class="skill-cd" wx:if="{{skillDetail.cooldowns}}">
+          <image class="skill-cd_image" src="../../../assets/common/cooldown.png"></image>
+          <text>{{skillDetail.cooldowns}}</text>
         </view>
-        <view class="skill-lore" wx:if="{{skillDetal.loreLoc}}">
-          <text>{{skillDetal.loreLoc}}</text>
+        <view class="skill-mana" wx:if="{{skillDetail.manaCosts}}">
+          <text class="skill-mana_text"></text>
+          <text>{{skillDetail.manaCosts}}</text>
         </view>
+      </view>
+      <view class="skill-lore" wx:if="{{skillDetail.loreLoc}}">
+        <text>{{skillDetail.loreLoc}}</text>
       </view>
     </view>
   </hero-card>

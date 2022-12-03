@@ -5,11 +5,11 @@
     <text>Bug反馈或新增功能</text>
     <text class="link">xx312472644@163.com</text>
   </view>
-  <view class="contact-text">
+  <!-- <view class="contact-text">
     <text>微信</text>
     <text class="link">请备注来意哈</text>
   </view>
   <view class="contact-image">
     <image style="width: 400rpx;" show-menu-by-longpress src="../../assets/common/we_chat.png" mode="widthFix"></image>
-  </view>
+  </view> -->
 </view>

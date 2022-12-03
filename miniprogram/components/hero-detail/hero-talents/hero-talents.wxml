@@ -2,7 +2,7 @@
 <view class="hero-talents">
   <hero-card title="天赋" class="hero-card">
     <view class="talents-container">
-      <view class="talents-item" wx:for="{{talentsList}}">
+      <view class="talents-item" wx:for="{{talentsList}}" wx:key="index">
         <view class="talents-item-name">{{item.left.talentName}}</view>
         <view class="talents-item-skill">{{item.level}}</view>
         <view class="talents-item-name">{{item.right.talentName}}</view>
