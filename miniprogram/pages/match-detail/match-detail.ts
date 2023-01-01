@@ -65,10 +65,10 @@ Page({
     const seconds = duration % 60;
     return `${mins} : ${seconds}`;
   },
-  getItems(items: any = [],total = 6) { 
+  getItems(items: any = [], total = 6) {
     const length = items.length;
     const list = [];
-    for (let i = 0; i < total - length; i++) { 
+    for (let i = 0; i < total - length; i++) {
       list.push({ isEmpty: true });
     }
     return items.concat(list);
@@ -89,14 +89,14 @@ Page({
         killList: extra.killList,
         campsStacked: extra.campsStacked,
         gold: formatMillimeter(extra.gold),
-        role: extraResult.players.find((subItem: any) => subItem.heroId === item.hero_id).role
+        role: (extraResult?.players || []).find((subItem: any) => subItem.heroId === item.hero_id)?.role || ''
       }
     });
     return heroList;
   },
   getGold(extraResult: any, heroId: number) {
-    const list = extraResult.players.find((heroItem: any) => heroItem.heroId === heroId).playerDataPerMinutes;
-    return list[list.length - 1];
+    const list = (extraResult?.players || []).find((heroItem: any) => heroItem.heroId === heroId)?.playerDataPerMinutes || [];
+    return list.length > 0 ? list[list.length - 1] : {};
   },
   getMatches(matchId: number) {
     axios({
