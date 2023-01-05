@@ -46,7 +46,7 @@ Page({
       const result = res.data.result;
       result.matchTime = formatDateTime(result.matchTime, true);
       const matchStatusList = result.matchStatusList;
-      const matchId = matchStatusList[matchStatusList.length - 1].matchId;
+      const matchId = matchStatusList[matchStatusList.length - 1]?.matchId;
       this.setData({ matchResult: res.data.result, activeTab: matchId });
       this.getSteamIdByNid(matchId);
     })
@@ -107,6 +107,9 @@ Page({
         matchId,
       }
     }).then((res: IResult<any>) => {
+      if(!res.data?.data[0]?.data) {
+        return;
+      }
       const result = res.data.data[0].data;
       const extraResult = res.data.data[1].data;
       const matchResult = this.data.matchResult as any || {};

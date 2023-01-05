@@ -7,6 +7,11 @@ Page({
   data: {
     versionLogList: [
       {
+        versionName: 'v1.3.1',
+        versionDate: '2023-01-05',
+        bugFixList: ['修复bug若干', '新增PC端上线Tips']
+      },
+      {
         versionName: 'v1.3.0',
         versionDate: '2022-12-03',
         bugFixList: ['修复bug若干']
@@ -15,13 +20,13 @@ Page({
         versionName: 'v1.2.0',
         versionDate: '2022-11-06',
         bugFixList: ['修复bug若干'],
-        featureList: ['新增查询战绩功能','英雄技能页面新增天赋树','部分交互体验优化']
+        featureList: ['新增查询战绩功能', '英雄技能页面新增天赋树', '部分交互体验优化']
       },
       {
         versionName: 'v1.1.0',
         versionDate: '2022-11-06',
         bugFixList: ['修复赛事页面报错的bug'],
-        featureList: ['新增其他页面，包括关于、联系作者、版本日志等功能','新增小程序转发功能']
+        featureList: ['新增其他页面，包括关于、联系作者、版本日志等功能', '新增小程序转发功能']
       },
       {
         versionName: 'v1.0.0',

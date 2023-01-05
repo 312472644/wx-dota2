@@ -14,15 +14,19 @@ Component({
     uid: String,
   },
   observers: {
-    heroesList: function (newValue) { 
+    heroesList: function (newValue) {
       this.setData({ dataList: newValue });
+    },
+    totalGold: function (newValue) {
+      this.setData({ glod: Object.is(newValue, "NaN") ? 0 : newValue });
     }
   },
   /**
    * 组件的初始数据
    */
   data: {
-    dataList: []
+    dataList: [],
+    glod: 0
   },
   /**
    * 组件的方法列表
@@ -30,8 +34,8 @@ Component({
   methods: {
     tapEvent(event: IEvent) {
       const currentItem = event.currentTarget.dataset.item;
-      this.data.dataList.forEach((item: any) => { 
-        if (item.hero_id === currentItem.hero_id) { 
+      this.data.dataList.forEach((item: any) => {
+        if (item.hero_id === currentItem.hero_id) {
           item.isExpand = !item.isExpand;
         }
       });

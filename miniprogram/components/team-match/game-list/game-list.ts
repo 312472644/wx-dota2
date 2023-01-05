@@ -121,10 +121,11 @@ Component({
       }
     },
     confirmEvent() {
-      this.getGameInfo(this.data.summaryGameList, this.data.eventId as any);
+      const eventId = this.data.eventId as any;
+      this.getGameInfo(this.data.summaryGameList, eventId, true);
       let resultList = this.data.initGameList.filter((item: any) => {
-        return item.eventId === this.data.eventId;
-      });
+        return item.eventId === eventId;
+      })
       if (this.data.status) {
         resultList = resultList.filter((item: any) => {
           return item.matchStatus.toString() === this.data.status;
@@ -173,7 +174,7 @@ Component({
       });
       return list;
     },
-    getGameInfo(result: any, matchEventId?: number) {
+    getGameInfo(result: any, matchEventId?: number, isResetEventId = false) {
       const matchResult = matchEventId ? result.find((item: any) => item.eventId === matchEventId) : result.sort((a: any, b: any) => {
         return b.eventId - a.eventId;
       })?.[0];
@@ -189,7 +190,7 @@ Component({
           value: item.eventId,
         };
       });
-      gameOptions.sort((a: any, b: any) => { 
+      gameOptions.sort((a: any, b: any) => {
         return b.value - a.value;
       });
       const gameList = matchDTOList.map((item: any) => {
@@ -210,13 +211,13 @@ Component({
       });
       const list = this.getCategoryList(gameList);
       this.setData({
-        eventId: matchEventId || gameOptions[0]?.value,
+        eventId: isResetEventId ? '' : matchEventId || gameOptions[0]?.value,
         initGameList: JSON.parse(JSON.stringify(gameList)),
       });
       return { gameOptions, list };
     },
     getTeamList() {
-      if(!this.data.eventId){
+      if (!this.data.eventId) {
         return;
       }
       axios({
@@ -238,7 +239,7 @@ Component({
         const { gameOptions, list } = this.getGameInfo(result);
         this.getTeamList();
         this.setData({
-          gameOptions: [{ text: '全部赛事', value: '' }].concat(gameOptions) as any,
+          gameOptions: (gameOptions) as any,
           summaryGameList: JSON.parse(JSON.stringify(result)),
           gameList: list as any,
           scrollIntoView: `macth_${formatDateTime(+new Date())}`,

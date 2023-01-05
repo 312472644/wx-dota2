@@ -5,7 +5,7 @@
   </view>
   <view class="match-kill">
     <text class="match-kill-item">杀敌 {{totalKill}}</text>
-    <text class="match-kill-item">经济 {{totalGold}}</text>
+    <text class="match-kill-item">经济 {{glod}}</text>
   </view>
 </view>
 <view class="match-heroes_list" wx:if="{{dataList.length > 0}}">

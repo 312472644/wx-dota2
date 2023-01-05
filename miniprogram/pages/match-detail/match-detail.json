@@ -4,6 +4,7 @@
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "van-loading": "@vant/weapp/loading/index",
-    "match-heroes": "../../components/match-detail/match-heroes/match-heroes"
+    "match-heroes": "../../components/match-detail/match-heroes/match-heroes",
+    "van-empty": "@vant/weapp/empty/index"
   }
 }
