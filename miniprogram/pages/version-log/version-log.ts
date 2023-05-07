@@ -7,6 +7,11 @@ Page({
   data: {
     versionLogList: [
       {
+        versionName: 'v1.3.2',
+        versionDate: '2023-05-07',
+        featureList: ['新增小程序广告位']
+      },
+      {
         versionName: 'v1.3.1',
         versionDate: '2023-01-05',
         bugFixList: ['修复bug若干', '新增PC端上线Tips']

@@ -1,4 +1,5 @@
 <!--pages/hero-detail/hero-detail.wxml-->
+<ad unit-id="adunit-8da9d98ea7a4bd47"></ad>
 <view class="hero-detail-container" wx:if="{{heroes}}">
     <!--英雄简介-->
     <hero-base heroes="{{heroes}}"></hero-base>

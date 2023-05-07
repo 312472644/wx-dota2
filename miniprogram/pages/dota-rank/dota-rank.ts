@@ -13,6 +13,7 @@ Page({
     scrollTop: 0,
     steamId: null,
     regionId: 'china',
+    adLoadComplete: false,
     regionOptions: [
       { text: "国服", value: 'china' },
       { text: "美洲", value: 'americas' },
@@ -73,9 +74,14 @@ Page({
       path: 'pages/dota-rank/dota-rank',
     }
   },
-  inputEvent() { 
+  inputEvent() {
     wx.navigateTo({
       url: '../search-record/search-record'
     })
+  },
+  adLoadHandle() {
+    setTimeout(() => {
+      this.setData({ adLoadComplete: true });
+    }, 200)
   }
 });

@@ -1,6 +1,6 @@
 <!--pages/team-match.wxml-->
-<ad unit-id="adunit-8da9d98ea7a4bd47"></ad>
-<view>
+<ad unit-id="adunit-8da9d98ea7a4bd47" bindload="adLoadHandle" binderror="adLoadHandle"></ad>
+<view wx:if="{{adLoadComplete}}">
   <van-icon wx:if="{{activeTab === 'match'}}" bindtap="filterTapEvent" style="display: inline;" custom-class="filter-box" name="filter-o" size="20" color="#666" />
   <van-tabs sticky color="#000000" active="{{activeTab}}" title-inactive-color="#787d7e" bind:change="changeEvent">
     <van-tab title="赛事" name="match">

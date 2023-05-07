@@ -11,6 +11,7 @@ Page({
     loadComplete: false,
     activeTab: "match",
     showFilter: false,
+    adLoadComplete: false,
   },
 
   /**
@@ -80,5 +81,10 @@ Page({
       title: 'Dota2 赛事信息',
       path: 'pages/team-match/team-match',
     }
-  }
+  },
+  adLoadHandle() {
+    setTimeout(() => {
+      this.setData({ adLoadComplete: true });
+    }, 200)
+  },
 });
