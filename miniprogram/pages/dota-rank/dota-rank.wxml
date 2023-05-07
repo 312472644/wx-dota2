@@ -1,3 +1,4 @@
+<ad unit-id="adunit-8da9d98ea7a4bd47"></ad>
 <!--pages/rank/rank.wxml-->
 <scroll-view scroll-y="true" style="height: 100vh;" scroll-top="{{scrollTop}}">
   <van-tabs sticky color="#000000" active="{{tabName}}" title-inactive-color="#787d7e" bind:change="changeEvent">
