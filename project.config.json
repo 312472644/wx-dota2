@@ -52,7 +52,8 @@
     "useCompilerPlugins": [
       "typescript"
     ],
-    "ignoreUploadUnusedFiles": true
+    "ignoreUploadUnusedFiles": true,
+    "condition": false
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
