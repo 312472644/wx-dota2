@@ -41,7 +41,7 @@
 
 .category-logo_container {
     font-size: 0;
-    width: calc(20% - 16px);
+    width: calc(25% - 16px);
     margin: 8px 16px 8px 0;
     box-sizing: border-box;
 }

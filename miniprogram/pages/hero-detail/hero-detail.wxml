@@ -10,8 +10,8 @@
     <!--英雄天赋-->
     <hero-talents heroes="{{heroes}}"></hero-talents>
     <!--英雄预览-->
-    <hero-preview leftHero="{{heroes.left_hero_info}}" rightHero="{{heroes.next_hero_info}}" 
+    <!-- <hero-preview leftHero="{{heroes.left_hero_info}}" rightHero="{{heroes.next_hero_info}}" 
     bindperview="perviewHero"
-    ></hero-preview>
+    ></hero-preview> -->
 </view>
 <view class="hero-strategy" bindtap="toHeroStrategy">英雄攻略</view>

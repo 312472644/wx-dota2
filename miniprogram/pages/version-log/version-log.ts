@@ -7,6 +7,11 @@ Page({
   data: {
     versionLogList: [
       {
+        versionName: 'v1.3.3',
+        versionDate: '2023-07-01',
+        featureList: ['删除小程序广告位','英雄物品列表调整']
+      },
+      {
         versionName: 'v1.3.2',
         versionDate: '2023-05-07',
         featureList: ['新增小程序广告位']

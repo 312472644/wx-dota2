@@ -13,7 +13,7 @@
         <view class="hero-category" wx:if="{{item.list.length > 0}}">{{item.name}}</view>
         <view class="hero-category-container">
           <view data-hero="{{heroItem}}" wx:for="{{item.list}}" class="hero-item" bindtap="goHeroDetail" wx:for-item="heroItem" wx:key="index">
-            <van-image width="100%" image-class="hero-logo-item" height="80rpx" use-loading-slot lazy-load src="https://images.weserv.nl/?url={{heroItem.index_img}}">
+            <van-image width="100%" image-class="hero-logo-item" height="140rpx" use-loading-slot lazy-load src="https://images.weserv.nl/?url={{heroItem.index_img}}">
               <van-loading slot="loading" type="spinner" size="20" vertical />
             </van-image>
             <text class="hero-item-text">{{heroItem.name_loc}}</text>

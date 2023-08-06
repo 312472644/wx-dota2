@@ -1,7 +1,7 @@
 <!--pages/hero-goods/hero-goods.wxml-->
-<ad unit-id="adunit-8da9d98ea7a4bd47"></ad>
+<!-- <ad unit-id="adunit-8da9d98ea7a4bd47"></ad> -->
 <view class="hero-goods-container">
-  <van-notice-bar left-icon="volume-o" text="PC版上线啦，更加丰富的功能，更加详细的数据。请访问http://119.91.19.53" mode="closeable" />
+  <!-- <van-notice-bar left-icon="volume-o" text="PC版上线啦，更加丰富的功能，更加详细的数据。请访问http://119.91.19.53" mode="closeable" /> -->
   <van-tabs color="#000000" title-inactive-color="#787d7e" sticky="true" bind:change="changeEvent">
     <van-tab title="英雄" name="hero">
       <hero-list></hero-list>

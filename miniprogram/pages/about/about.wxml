@@ -1,4 +1,5 @@
 <!--pages/about/about.wxml-->
+<ad unit-id="adunit-8da9d98ea7a4bd47"></ad>
 <view class="about-container">
   <van-cell is-link title="关于" link-type="navigateTo" url="/pages/about-page/about-page" />
   <van-cell is-link title="联系作者" link-type="navigateTo" url="/pages/contact/contact" />

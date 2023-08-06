@@ -1,6 +1,6 @@
 <!--pages/upgrade-log/upgrade-log.wxml-->
-<ad unit-id="adunit-8da9d98ea7a4bd47" bindload="adLoadHandle" binderror="adLoadHandle"></ad>
-<van-tabs wx:if="{{adLoadComplete}}" color="#000000" title-inactive-color="#787d7e" sticky="true" bind:change="changeEvent">
+<!-- <ad unit-id="adunit-8da9d98ea7a4bd47" bindload="adLoadHandle" binderror="adLoadHandle"></ad> -->
+<van-tabs color="#000000" title-inactive-color="#787d7e" sticky="true" bind:change="changeEvent">
   <van-tab title="更新日志" name="news_update">
     <log-item bindclick="goNewsDetail" logList="{{newList}}" isFinshed="{{isFinshed}}"></log-item>
   </van-tab>
