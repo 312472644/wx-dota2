@@ -7,6 +7,11 @@ Page({
   data: {
     versionLogList: [
       {
+        versionName: 'v1.3.4',
+        versionDate: '2024-01-12',
+        featureList: ['新增全才英雄','感谢【👨Danny】、【👨随风大侠】两位用户进行功能反馈']
+      },
+      {
         versionName: 'v1.3.3',
         versionDate: '2023-07-01',
         featureList: ['删除小程序广告位','英雄物品列表调整']

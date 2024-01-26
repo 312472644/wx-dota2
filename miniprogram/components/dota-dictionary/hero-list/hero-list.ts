@@ -39,6 +39,7 @@ Component<IData, any, any>({
       { label: "力量", value: HeroTypeEnum.Power },
       { label: "智力", value: HeroTypeEnum.Intellect },
       { label: "敏捷", value: HeroTypeEnum.Agile },
+      { label: "全才", value: HeroTypeEnum.Almighty },
     ],
     complexList: [
       { label: "全部难度", value: PropEnum.All },
@@ -69,10 +70,10 @@ Component<IData, any, any>({
     },
     searchEvent(event: IEvent) {
       this.setData({ loading: true });
-      setTimeout(() => { 
+      setTimeout(() => {
         this.setValue('heroName', event.detail);
         this.setData({ loading: false });
-      }, 1000) 
+      }, 1000)
     },
     selectAttrChange(event: IEvent) {
       this.setValue('attrValue', event.detail.value);
@@ -103,14 +104,19 @@ Component<IData, any, any>({
     getCategoryHero(heroes: IHero[] = []) {
       // 力量英雄
       const powerHeroList = heroes.filter((item: IHero) => item.primary_attr.toString() === HeroTypeEnum.Power) || [];
+      console.log('powerHeroList', powerHeroList)
       // 智力英雄
       const intellectHeroList = heroes.filter((item: IHero) => item.primary_attr.toString() === HeroTypeEnum.Intellect) || [];
       // 敏捷英雄
       const AgileHeroList = heroes.filter((item: IHero) => item.primary_attr.toString() === HeroTypeEnum.Agile) || [];
+      // 全才英雄
+      const almightyList = heroes.filter((item: IHero) => item.primary_attr.toString() === HeroTypeEnum.Almighty) || [];
       const heroList = [
         { name: '力量', list: powerHeroList },
         { name: '智力', list: intellectHeroList },
-        { name: '敏捷', list: AgileHeroList }];
+        { name: '敏捷', list: AgileHeroList }, {
+          name: '全才', list: almightyList
+        }];
       const hasNotEmpty = heroList.some((item) => item.list.length > 0);
       return hasNotEmpty ? heroList : [];
     },

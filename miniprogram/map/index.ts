@@ -3,14 +3,16 @@ const HeroTypeImgMap: Map<number, string> = new Map();
 HeroTypeImgMap.set(0, '../../assets/common/power.png'); // 力量
 HeroTypeImgMap.set(1, '../../assets/common/agile.png'); // 敏捷
 HeroTypeImgMap.set(2, '../../assets/common/intellect.png'); // 智力 
+HeroTypeImgMap.set(3, '../../assets/common/almighty.png');
 
 // 英雄类型
 const HeroTypeMap: Map<number | string, string> = new Map();
 HeroTypeMap.set(0, '力量');
 HeroTypeMap.set(1, '敏捷');
-HeroTypeMap.set(2, '智力'); 
+HeroTypeMap.set(2, '智力');
+HeroTypeMap.set(3, '全才');
 HeroTypeMap.set('str', '力量');
-HeroTypeMap.set('agi', '敏捷'); 
+HeroTypeMap.set('agi', '敏捷');
 HeroTypeMap.set('int', '智力');
 
 const CampMap = new Map();

@@ -10,7 +10,8 @@
         <view class="version-cotent-item_title">Bug Fixes</view>
         <view class="version-log-list">
           <view class="version-log_item" wx:for="{{item.bugFixList}}" wx:for-item="bugItem" wx:for-index="bugIndex">
-            <text class="circle-index"></text>
+            <!-- <text class="circle-index"></text> -->
+            <text style="padding-right: 5px;">🐞</text>
             <text>{{bugItem}}</text>
           </view>
         </view>
@@ -19,7 +20,8 @@
         <view class="version-cotent-item_title">Feature</view>
         <view class="version-log-list">
           <view class="version-log_item" wx:for="{{item.featureList}}" wx:for-item="featureItem" wx:for-index="featureIndex">
-            <text class="circle-index"></text>
+            <!-- <text class="circle-index"></text> -->
+            <text style="padding-right: 5px;">🎉</text>
             <text>{{featureItem}}</text>
           </view>
         </view>
