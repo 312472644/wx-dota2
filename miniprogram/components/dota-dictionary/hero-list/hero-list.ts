@@ -16,6 +16,9 @@ interface IData {
   loading: boolean;
 }
 
+// 广告Id
+let interstitialAd = null
+
 // components/hero-list/hero-list.ts
 Component<IData, any, any>({
   options: {
@@ -57,7 +60,7 @@ Component<IData, any, any>({
   lifetimes: {
     ready() {
       this.getHeroList();
-    }
+    },
   },
   /**
    * 组件的方法列表
@@ -104,7 +107,6 @@ Component<IData, any, any>({
     getCategoryHero(heroes: IHero[] = []) {
       // 力量英雄
       const powerHeroList = heroes.filter((item: IHero) => item.primary_attr.toString() === HeroTypeEnum.Power) || [];
-      console.log('powerHeroList', powerHeroList)
       // 智力英雄
       const intellectHeroList = heroes.filter((item: IHero) => item.primary_attr.toString() === HeroTypeEnum.Intellect) || [];
       // 敏捷英雄
@@ -151,10 +153,9 @@ Component<IData, any, any>({
     },
     // 跳转至英雄详情界面
     goHeroDetail(event: IEvent) {
+      // 在适合的场景显示插屏广告
       const heroInfo = event.currentTarget.dataset.hero;
-      wx.navigateTo({
-        url: `../hero-detail/hero-detail?id=${heroInfo.id}&name=${heroInfo.name_loc}`
-      });
+      this.triggerEvent('hero', heroInfo)
     }
   }
 })

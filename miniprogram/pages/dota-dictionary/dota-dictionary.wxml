@@ -7,7 +7,7 @@
   </van-notice-bar>
   <van-tabs color="#000000" title-inactive-color="#787d7e" sticky="true" bind:change="changeEvent">
     <van-tab title="英雄" name="hero">
-      <hero-list></hero-list>
+      <hero-list bindhero="handleHero"></hero-list>
     </van-tab>
     <van-tab title="物品" name="goods">
       <goods-item title="基础分类" categoryList="{{baseCategory}}" bindcategory="perviewCategory"></goods-item>
@@ -16,4 +16,5 @@
       <dialog visible="{{dialogVisible}}" bindclose="closeDialog" categoryDetail="{{currentCategoryDetail}}"></dialog>
     </van-tab>
   </van-tabs>
+  <van-notify id="van-notify" />
 </view>
