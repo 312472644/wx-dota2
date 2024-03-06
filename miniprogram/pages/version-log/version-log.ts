@@ -7,6 +7,11 @@ Page({
   data: {
     versionLogList: [
       {
+        versionName: 'v1.4.1',
+        versionDate: '2024-03-06',
+        featureList: ['新增插屏和激励广告']
+      },
+      {
         versionName: 'v1.3.4',
         versionDate: '2024-01-12',
         featureList: ['新增全才英雄','感谢【👨Danny】、【👨随风大侠】两位用户进行功能反馈']
